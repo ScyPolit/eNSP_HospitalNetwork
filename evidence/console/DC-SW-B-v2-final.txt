@@ -1,0 +1,53 @@
+system-view
+Enter system view, return user view with Ctrl+Z.
+[Huawei]
+undo info-center enable
+Info: Information center is disabled.
+[Huawei]
+sysname DC-SW-B
+[DC-SW-B]
+stp mode mstp
+[DC-SW-B]
+vlan batch 60
+Info: This operation may take a few seconds. Please wait for a moment...done.
+[DC-SW-B]
+interface Eth-Trunk1
+[DC-SW-B-Eth-Trunk1]
+mode lacp-static
+[DC-SW-B-Eth-Trunk1]
+port link-type trunk
+[DC-SW-B-Eth-Trunk1]
+port trunk allow-pass vlan 60
+[DC-SW-B-Eth-Trunk1]
+quit
+[DC-SW-B]
+interface GigabitEthernet0/0/23
+[DC-SW-B-GigabitEthernet0/0/23]
+eth-trunk 1
+Info: This operation may take a few seconds. Please wait for a moment...done.
+[DC-SW-B-GigabitEthernet0/0/23]
+quit
+[DC-SW-B]
+interface GigabitEthernet0/0/24
+[DC-SW-B-GigabitEthernet0/0/24]
+eth-trunk 1
+Info: This operation may take a few seconds. Please wait for a moment...done.
+[DC-SW-B-GigabitEthernet0/0/24]
+quit
+[DC-SW-B]
+interface GigabitEthernet0/0/1
+[DC-SW-B-GigabitEthernet0/0/1]
+port link-type access
+[DC-SW-B-GigabitEthernet0/0/1]
+port default vlan 60
+[DC-SW-B-GigabitEthernet0/0/1]
+quit
+[DC-SW-B]
+interface GigabitEthernet0/0/1
+[DC-SW-B-GigabitEthernet0/0/1]
+stp edged-port enable
+[DC-SW-B-GigabitEthernet0/0/1]
+quit
+[DC-SW-B]
+return
+<DC-SW-B>

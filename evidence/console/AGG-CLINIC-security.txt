@@ -1,0 +1,141 @@
+system-view
+Enter system view, return user view with Ctrl+Z.
+[AGG-CLINIC]
+return
+<AGG-CLINIC>
+system-view
+Enter system view, return user view with Ctrl+Z.
+[AGG-CLINIC]
+acl number 3010
+[AGG-CLINIC-acl-adv-3010]
+rule 5 permit udp source-port eq bootpc destination-por [1Dt eq bootps
+Error: The ACL is contained by some application(s) and forbidden to be modified
+[AGG-CLINIC-acl-adv-3010]
+rule 10 permit icmp destination 10.162.101.1 0
+Error: The ACL is contained by some application(s) and forbidden to be modified
+[AGG-CLINIC-acl-adv-3010]
+rule 15 permit tcp destination 10.162.106.10 0 destinat [1Dion-port eq 443
+Error: The ACL is contained by some application(s) and forbidden to be modified
+[AGG-CLINIC-acl-adv-3010]
+rule 20 permit icmp destination 10.162.106.10 0
+Error: The ACL is contained by some application(s) and forbidden to be modified
+[AGG-CLINIC-acl-adv-3010]
+rule 25 permit tcp destination 10.162.108.10 0 destinat [1Dion-port eq 80
+Error: The ACL is contained by some application(s) and forbidden to be modified
+[AGG-CLINIC-acl-adv-3010]
+rule 30 deny ip destination 10.0.0.0 0.255.255.255
+Error: The ACL is contained by some application(s) and forbidden to be modified
+[AGG-CLINIC-acl-adv-3010]
+rule 35 deny ip destination 172.16.0.0 0.15.255.255
+Error: The ACL is contained by some application(s) and forbidden to be modified
+[AGG-CLINIC-acl-adv-3010]
+rule 40 deny ip destination 192.168.0.0 0.0.255.255
+Error: The ACL is contained by some application(s) and forbidden to be modified
+[AGG-CLINIC-acl-adv-3010]
+rule 45 permit ip
+Error: The ACL is contained by some application(s) and forbidden to be modified
+[AGG-CLINIC-acl-adv-3010]
+quit
+[AGG-CLINIC]
+interface Vlanif10
+[AGG-CLINIC-Vlanif10]
+traffic-filter inbound acl 3010
+Error: Sacl doesn't support config the same acl or rule repeatedly.
+[AGG-CLINIC]
+return
+<AGG-CLINIC>
+system-view
+Enter system view, return user view with Ctrl+Z.
+[AGG-CLINIC]
+ospf 1
+[AGG-CLINIC-ospf-1]
+silent-interface Vlanif10
+[AGG-CLINIC-ospf-1]
+quit
+[AGG-CLINIC]
+return
+<AGG-CLINIC>
+system-view
+Enter system view, return user view with Ctrl+Z.
+[AGG-CLINIC]
+acl number 3080
+[AGG-CLINIC-acl-adv-3080]
+rule 5 permit udp source-port eq bootpc destination-por [1Dt eq bootps
+[AGG-CLINIC-acl-adv-3080]
+rule 10 permit icmp destination 10.162.109.1 0
+[AGG-CLINIC-acl-adv-3080]
+rule 15 permit tcp destination 10.162.106.10 0 destinat [1Dion-port eq 443
+[AGG-CLINIC-acl-adv-3080]
+rule 20 permit icmp destination 10.162.106.10 0
+[AGG-CLINIC-acl-adv-3080]
+rule 25 permit tcp destination 10.162.108.10 0 destinat [1Dion-port eq 80
+[AGG-CLINIC-acl-adv-3080]
+rule 30 deny ip destination 10.0.0.0 0.255.255.255
+[AGG-CLINIC-acl-adv-3080]
+rule 35 deny ip destination 172.16.0.0 0.15.255.255
+[AGG-CLINIC-acl-adv-3080]
+rule 40 deny ip destination 192.168.0.0 0.0.255.255
+[AGG-CLINIC-acl-adv-3080]
+rule 45 permit ip
+[AGG-CLINIC-acl-adv-3080]
+quit
+[AGG-CLINIC]
+interface Vlanif80
+[AGG-CLINIC-Vlanif80]
+traffic-filter inbound acl 3080
+[AGG-CLINIC]
+return
+<AGG-CLINIC>
+system-view
+Enter system view, return user view with Ctrl+Z.
+[AGG-CLINIC]
+ospf 1
+[AGG-CLINIC-ospf-1]
+silent-interface Vlanif80
+[AGG-CLINIC-ospf-1]
+quit
+[AGG-CLINIC]
+return
+<AGG-CLINIC>
+system-view
+Enter system view, return user view with Ctrl+Z.
+[AGG-CLINIC]
+acl number 3090
+[AGG-CLINIC-acl-adv-3090]
+rule 5 permit udp source-port eq bootpc destination-por [1Dt eq bootps
+[AGG-CLINIC-acl-adv-3090]
+rule 10 permit icmp destination 10.162.110.1 0
+[AGG-CLINIC-acl-adv-3090]
+rule 15 permit tcp destination 10.162.106.10 0 destinat [1Dion-port eq 443
+[AGG-CLINIC-acl-adv-3090]
+rule 20 permit icmp destination 10.162.106.10 0
+[AGG-CLINIC-acl-adv-3090]
+rule 25 permit tcp destination 10.162.108.10 0 destinat [1Dion-port eq 80
+[AGG-CLINIC-acl-adv-3090]
+rule 30 deny ip destination 10.0.0.0 0.255.255.255
+[AGG-CLINIC-acl-adv-3090]
+rule 35 deny ip destination 172.16.0.0 0.15.255.255
+[AGG-CLINIC-acl-adv-3090]
+rule 40 deny ip destination 192.168.0.0 0.0.255.255
+[AGG-CLINIC-acl-adv-3090]
+rule 45 permit ip
+[AGG-CLINIC-acl-adv-3090]
+quit
+[AGG-CLINIC]
+interface Vlanif90
+[AGG-CLINIC-Vlanif90]
+traffic-filter inbound acl 3090
+[AGG-CLINIC]
+return
+<AGG-CLINIC>
+system-view
+Enter system view, return user view with Ctrl+Z.
+[AGG-CLINIC]
+ospf 1
+[AGG-CLINIC-ospf-1]
+silent-interface Vlanif90
+[AGG-CLINIC-ospf-1]
+quit
+[AGG-CLINIC]
+return
+<AGG-CLINIC>

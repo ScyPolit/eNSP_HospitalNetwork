@@ -1,0 +1,5 @@
+save
+13:43:14  2026/10/30
+The current configuration will be written to the device.
+Are you sure to continue?[Y/N]y
+Do you want to synchronically save the configuration to the startup saved-configuration file on peer device?[Y/N]:

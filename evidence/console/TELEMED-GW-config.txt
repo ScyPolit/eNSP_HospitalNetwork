@@ -1,0 +1,31 @@
+screen-length 0 temporary
+Error: The type of the included user interface must be VTY.
+<Huawei>
+
+<Huawei>
+system-view
+Enter system view, return user view with Ctrl+Z.
+[Huawei]
+
+[Huawei]
+undo info-center enable
+Info: Information center is disabled.
+[Huawei]
+
+[Huawei]
+sysname TELEMED-GW
+[TELEMED-GW]
+
+[TELEMED-GW]
+interface GigabitEthernet0/0/0
+[TELEMED-GW-GigabitEthernet0/0/0]
+
+[TELEMED-GW-GigabitEthernet0/0/0]
+ip address 10.162.105.20 255.255.255.0
+[TELEMED-GW-GigabitEthernet0/0/0]
+
+[TELEMED-GW-GigabitEthernet0/0/0]
+quit
+[TELEMED-GW]
+
+[TELEMED-GW]

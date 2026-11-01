@@ -1,0 +1,406 @@
+display current-configuration
+#
+sysname AGG-DC
+#
+undo info-center enable
+#
+vlan batch 60 to 61 1104 1204
+#
+cluster enable
+ntdp enable
+ndp enable
+#
+drop illegal-mac alarm
+#
+dhcp enable
+#
+diffserv domain default
+#
+drop-profile default
+#
+aaa
+ authentication-scheme default
+ authorization-scheme default
+ accounting-scheme default
+ domain default
+  ---- More ----[42D                                          [42D domain default_admin
+ local-user admin password simple admin
+ local-user admin service-type http
+#
+interface Vlanif1
+#
+interface Vlanif60
+ ip address 10.162.106.1 255.255.255.0
+ dhcp select interface
+ dhcp server excluded-ip-address 10.162.106.2 10.162.106.49
+#
+interface Vlanif61
+ ip address 10.162.107.1 255.255.255.0
+ dhcp select interface
+ dhcp server excluded-ip-address 10.162.107.2 10.162.107.49
+#
+interface Vlanif1104
+ ip address 10.162.99.110 255.255.255.252
+#
+interface Vlanif1204
+ ip address 10.162.99.138 255.255.255.252
+#
+interface MEth0/0/1
+#
+  ---- More ----[42D                                          [42Dinterface Eth-Trunk1
+ port link-type trunk
+ port trunk allow-pass vlan 60
+ mode lacp-static
+#
+interface Eth-Trunk2
+ port link-type trunk
+ port trunk allow-pass vlan 60
+ mode lacp-static
+#
+interface Eth-Trunk3
+ port link-type trunk
+ port trunk allow-pass vlan 61
+ mode lacp-static
+#
+interface GigabitEthernet0/0/1
+ eth-trunk 1
+#
+interface GigabitEthernet0/0/2
+ eth-trunk 1
+#
+interface GigabitEthernet0/0/3
+ eth-trunk 2
+#
+  ---- More ----[42D                                          [42Dinterface GigabitEthernet0/0/4
+ eth-trunk 2
+#
+interface GigabitEthernet0/0/5
+ eth-trunk 3
+#
+interface GigabitEthernet0/0/6
+ eth-trunk 3
+#
+interface GigabitEthernet0/0/7
+#
+interface GigabitEthernet0/0/8
+#
+interface GigabitEthernet0/0/9
+#
+interface GigabitEthernet0/0/10
+#
+interface GigabitEthernet0/0/11
+#
+interface GigabitEthernet0/0/12
+#
+interface GigabitEthernet0/0/13
+#
+interface GigabitEthernet0/0/14
+  ---- More ----[42D                                          [42D#
+interface GigabitEthernet0/0/15
+#
+interface GigabitEthernet0/0/16
+#
+interface GigabitEthernet0/0/17
+#
+interface GigabitEthernet0/0/18
+#
+interface GigabitEthernet0/0/19
+#
+interface GigabitEthernet0/0/20
+#
+interface GigabitEthernet0/0/21
+#
+interface GigabitEthernet0/0/22
+#
+interface GigabitEthernet0/0/23
+ port link-type access
+ port default vlan 1104
+#
+interface GigabitEthernet0/0/24
+ port link-type access
+ port default vlan 1204
+  ---- More ----[42D                                          [42D#
+interface NULL0
+#
+ospf 1 router-id 10.255.254.4
+ area 0.0.0.0
+  network 10.162.99.108 0.0.0.3
+  network 10.162.99.136 0.0.0.3
+ area 0.0.0.30
+  network 10.162.106.0 0.0.0.255
+  network 10.162.107.0 0.0.0.255
+#
+user-interface con 0
+user-interface vty 0 4
+#
+return
+<AGG-DC>
+      display interface brief
+PHY: Physical
+*down: administratively down
+(l): loopback
+(s): spoofing
+(b): BFD down
+(e): ETHOAM down
+(dl): DLDP down
+(d): Dampening Suppressed
+InUti/OutUti: input utility/output utility
+Interface                   PHY   Protocol InUti OutUti   inErrors  outErrors
+Eth-Trunk1                  up    up          0%     0%          0          0
+  GigabitEthernet0/0/1      up    up          0%     0%          0          0
+  GigabitEthernet0/0/2      up    up          0%     0%          0          0
+Eth-Trunk2                  up    up          0%     0%          0          0
+  GigabitEthernet0/0/3      up    up          0%     0%          0          0
+  GigabitEthernet0/0/4      up    up          0%     0%          0          0
+Eth-Trunk3                  up    up          0%     0%          0          0
+  GigabitEthernet0/0/5      up    up          0%     0%          0          0
+  GigabitEthernet0/0/6      up    up          0%     0%          0          0
+GigabitEthernet0/0/7        down  down        0%     0%          0          0
+GigabitEthernet0/0/8        down  down        0%     0%          0          0
+GigabitEthernet0/0/9        down  down        0%     0%          0          0
+GigabitEthernet0/0/10       down  down        0%     0%          0          0
+GigabitEthernet0/0/11       down  down        0%     0%          0          0
+GigabitEthernet0/0/12       down  down        0%     0%          0          0
+GigabitEthernet0/0/13       down  down        0%     0%          0          0
+GigabitEthernet0/0/14       down  down        0%     0%          0          0
+GigabitEthernet0/0/15       down  down        0%     0%          0          0
+GigabitEthernet0/0/16       down  down        0%     0%          0          0
+GigabitEthernet0/0/17       down  down        0%     0%          0          0
+GigabitEthernet0/0/18       down  down        0%     0%          0          0
+GigabitEthernet0/0/19       down  down        0%     0%          0          0
+GigabitEthernet0/0/20       down  down        0%     0%          0          0
+GigabitEthernet0/0/21       down  down        0%     0%          0          0
+  ---- More ----[42D                                          [42DGigabitEthernet0/0/22       down  down        0%     0%          0          0
+GigabitEthernet0/0/23       up    up          0%     0%          0          0
+GigabitEthernet0/0/24       up    up          0%     0%          0          0
+MEth0/0/1                   down  down        0%     0%          0          0
+NULL0                       up    up(s)       0%     0%          0          0
+Vlanif1                     up    down        --     --          0          0
+Vlanif60                    up    up          --     --          0          0
+Vlanif61                    up    up          --     --          0          0
+Vlanif1104                  up    up          --     --          0          0
+Vlanif1204                  up    up          --     --          0          0
+<AGG-DC>
+ display ip routing-table
+Route Flags: R - relay, D - download to fib
+------------------------------------------------------------------------------
+Routing Tables: Public
+         Destinations : 46       Routes : 46       
+
+Destination/Mask    Proto   Pre  Cost      Flags NextHop         Interface
+
+        0.0.0.0/0   O_ASE   150  3           D   10.162.99.109   Vlanif1104
+    10.162.99.0/27  OSPF    10   2           D   10.162.99.109   Vlanif1104
+    10.162.99.1/32  OSPF    10   3           D   10.162.99.109   Vlanif1104
+   10.162.99.32/27  OSPF    10   2           D   10.162.99.109   Vlanif1104
+   10.162.99.33/32  OSPF    10   3           D   10.162.99.109   Vlanif1104
+   10.162.99.64/27  OSPF    10   2           D   10.162.99.109   Vlanif1104
+   10.162.99.65/32  OSPF    10   2           D   10.162.99.109   Vlanif1104
+   10.162.99.96/30  OSPF    10   2           D   10.162.99.109   Vlanif1104
+  10.162.99.100/30  OSPF    10   2           D   10.162.99.109   Vlanif1104
+  10.162.99.104/30  OSPF    10   2           D   10.162.99.109   Vlanif1104
+  10.162.99.108/30  Direct  0    0           D   10.162.99.110   Vlanif1104
+  10.162.99.110/32  Direct  0    0           D   127.0.0.1       Vlanif1104
+  10.162.99.112/30  OSPF    10   2           D   10.162.99.109   Vlanif1104
+  10.162.99.116/30  OSPF    10   2           D   10.162.99.109   Vlanif1104
+  10.162.99.120/30  OSPF    10   2           D   10.162.99.109   Vlanif1104
+  10.162.99.124/30  OSPF    10   3           D   10.162.99.109   Vlanif1104
+  10.162.99.128/30  OSPF    10   3           D   10.162.99.109   Vlanif1104
+  10.162.99.132/30  OSPF    10   3           D   10.162.99.109   Vlanif1104
+  10.162.99.136/30  Direct  0    0           D   10.162.99.138   Vlanif1204
+  10.162.99.138/32  Direct  0    0           D   127.0.0.1       Vlanif1204
+  10.162.99.140/30  OSPF    10   3           D   10.162.99.109   Vlanif1104
+  10.162.99.144/30  OSPF    10   3           D   10.162.99.109   Vlanif1104
+  10.162.99.148/30  OSPF    10   3           D   10.162.99.109   Vlanif1104
+   10.162.101.0/24  OSPF    10   3           D   10.162.99.109   Vlanif1104
+  ---- More ----[42D                                          [42D   10.162.102.0/24  OSPF    10   3           D   10.162.99.109   Vlanif1104
+   10.162.103.0/24  OSPF    10   3           D   10.162.99.109   Vlanif1104
+   10.162.104.0/24  OSPF    10   3           D   10.162.99.109   Vlanif1104
+   10.162.105.0/24  OSPF    10   3           D   10.162.99.109   Vlanif1104
+   10.162.106.0/24  Direct  0    0           D   10.162.106.1    Vlanif60
+   10.162.106.1/32  Direct  0    0           D   127.0.0.1       Vlanif60
+   10.162.107.0/24  Direct  0    0           D   10.162.107.1    Vlanif61
+   10.162.107.1/32  Direct  0    0           D   127.0.0.1       Vlanif61
+   10.162.108.0/24  OSPF    10   3           D   10.162.99.109   Vlanif1104
+   10.162.108.1/32  OSPF    10   3           D   10.162.99.109   Vlanif1104
+   10.162.109.0/24  OSPF    10   3           D   10.162.99.109   Vlanif1104
+   10.162.110.0/24  OSPF    10   3           D   10.162.99.109   Vlanif1104
+   10.162.111.0/24  OSPF    10   3           D   10.162.99.109   Vlanif1104
+   10.162.112.0/24  OSPF    10   3           D   10.162.99.109   Vlanif1104
+   10.162.114.0/23  OSPF    10   3           D   10.162.99.109   Vlanif1104
+   10.162.116.0/22  OSPF    10   3           D   10.162.99.109   Vlanif1104
+   10.162.120.0/24  OSPF    10   3           D   10.162.99.109   Vlanif1104
+   10.162.121.0/24  O_ASE   150  1           D   10.162.99.109   Vlanif1104
+      127.0.0.0/8   Direct  0    0           D   127.0.0.1       InLoopBack0
+      127.0.0.1/32  Direct  0    0           D   127.0.0.1       InLoopBack0
+     172.20.1.0/24  O_ASE   150  1           D   10.162.99.109   Vlanif1104
+    203.0.114.0/24  O_ASE   150  1           D   10.162.99.109   Vlanif1104
+
+<AGG-DC>
+ display port vlan
+Port                    Link Type    PVID  Trunk VLAN List
+-------------------------------------------------------------------------------
+Eth-Trunk1              trunk        1     1 60
+Eth-Trunk2              trunk        1     1 60
+Eth-Trunk3              trunk        1     1 61
+GigabitEthernet0/0/1    hybrid       0     -                                   
+GigabitEthernet0/0/2    hybrid       0     -                                   
+GigabitEthernet0/0/3    hybrid       0     -                                   
+GigabitEthernet0/0/4    hybrid       0     -                                   
+GigabitEthernet0/0/5    hybrid       0     -                                   
+GigabitEthernet0/0/6    hybrid       0     -                                   
+GigabitEthernet0/0/7    hybrid       1     -                                   
+GigabitEthernet0/0/8    hybrid       1     -                                   
+GigabitEthernet0/0/9    hybrid       1     -                                   
+GigabitEthernet0/0/10   hybrid       1     -                                   
+GigabitEthernet0/0/11   hybrid       1     -                                   
+GigabitEthernet0/0/12   hybrid       1     -                                   
+GigabitEthernet0/0/13   hybrid       1     -                                   
+GigabitEthernet0/0/14   hybrid       1     -                                   
+GigabitEthernet0/0/15   hybrid       1     -                                   
+GigabitEthernet0/0/16   hybrid       1     -                                   
+GigabitEthernet0/0/17   hybrid       1     -                                   
+GigabitEthernet0/0/18   hybrid       1     -                                   
+GigabitEthernet0/0/19   hybrid       1     -                                   
+GigabitEthernet0/0/20   hybrid       1     -                                   
+GigabitEthernet0/0/21   hybrid       1     -                                   
+  ---- More ----[42D                                          [42DGigabitEthernet0/0/22   hybrid       1     -                                   
+GigabitEthernet0/0/23   access       1104  -                                   
+GigabitEthernet0/0/24   access       1204  -                                   
+<AGG-DC> 
+display eth-trunk
+Eth-Trunk1's state information is:
+Local:
+LAG ID: 1                   WorkingMode: STATIC                               
+Preempt Delay: Disabled     Hash arithmetic: According to SIP-XOR-DIP         
+System Priority: 32768      System ID: 4c1f-cc53-644d                         
+Least Active-linknumber: 1  Max Active-linknumber: 8                          
+Operate status: up          Number Of Up Port In Trunk: 2                     
+--------------------------------------------------------------------------------
+ActorPortName          Status   PortType PortPri PortNo PortKey PortState Weight
+GigabitEthernet0/0/1   Selected 1GE      32768   2      305     10111100  1     
+GigabitEthernet0/0/2   Selected 1GE      32768   3      305     10111100  1     
+
+Partner:
+--------------------------------------------------------------------------------
+ActorPortName          SysPri   SystemID        PortPri PortNo PortKey PortState
+GigabitEthernet0/0/1   32768    4c1f-ccb6-5048  32768   24     305     10111100
+GigabitEthernet0/0/2   32768    4c1f-ccb6-5048  32768   25     305     10111100
+    
+Eth-Trunk2's state information is:
+Local:
+LAG ID: 2                   WorkingMode: STATIC                               
+Preempt Delay: Disabled     Hash arithmetic: According to SIP-XOR-DIP         
+System Priority: 32768      System ID: 4c1f-cc53-644d                         
+Least Active-linknumber: 1  Max Active-linknumber: 8                          
+Operate status: up          Number Of Up Port In Trunk: 2                     
+--------------------------------------------------------------------------------
+ActorPortName          Status   PortType PortPri PortNo PortKey PortState Weight
+GigabitEthernet0/0/3   Selected 1GE      32768   4      561     10111100  1     
+GigabitEthernet0/0/4   Selected 1GE      32768   5      561     10111100  1     
+
+Partner:
+--------------------------------------------------------------------------------
+ActorPortName          SysPri   SystemID        PortPri PortNo PortKey PortState
+GigabitEthernet0/0/3   32768    4c1f-cc44-32b0  32768   24     305     10111100
+GigabitEthernet0/0/4   32768    4c1f-cc44-32b0  32768   25     305     10111100
+    
+Eth-Trunk3's state information is:
+Local:
+LAG ID: 3                   WorkingMode: STATIC                               
+Preempt Delay: Disabled     Hash arithmetic: According to SIP-XOR-DIP         
+System Priority: 32768      System ID: 4c1f-cc53-644d                         
+Least Active-linknumber: 1  Max Active-linknumber: 8                          
+  ---- More ----[42D                                          [42DOperate status: up          Number Of Up Port In Trunk: 2                     
+--------------------------------------------------------------------------------
+ActorPortName          Status   PortType PortPri PortNo PortKey PortState Weight
+GigabitEthernet0/0/5   Selected 1GE      32768   6      817     10111100  1     
+GigabitEthernet0/0/6   Selected 1GE      32768   7      817     10111100  1     
+
+Partner:
+--------------------------------------------------------------------------------
+ActorPortName          SysPri   SystemID        PortPri PortNo PortKey PortState
+GigabitEthernet0/0/5   32768    4c1f-cc06-699e  32768   24     305     10111100
+GigabitEthernet0/0/6   32768    4c1f-cc06-699e  32768   25     305     10111100
+    
+<AGG-DC> 
+display stp brief
+ MSTID  Port                        Role  STP State     Protection
+   0    GigabitEthernet0/0/23       ROOT  FORWARDING      NONE
+   0    GigabitEthernet0/0/24       ALTE  DISCARDING      NONE
+   0    Eth-Trunk1                  DESI  FORWARDING      NONE
+   0    Eth-Trunk2                  DESI  FORWARDING      NONE
+   0    Eth-Trunk3                  DESI  FORWARDING      NONE
+<AGG-DC>
+display ospf peer brief
+
+	 OSPF Process 1 with Router ID 10.255.254.4
+		  Peer Statistic Information
+ ----------------------------------------------------------------------------
+ Area Id          Interface                        Neighbor id      State    
+ 0.0.0.0          Vlanif1104                       10.255.255.11    Full        
+ ----------------------------------------------------------------------------
+<AGG-DC>
+display ospf brief
+
+	 OSPF Process 1 with Router ID 10.255.254.4
+		 OSPF Protocol Information
+
+ RouterID: 10.255.254.4     Border Router:  AREA 
+ Multi-VPN-Instance is not enabled
+ Graceful-restart capability: disabled
+ Helper support capability  : not configured
+ Spf-schedule-interval: max 10000ms, start 500ms, hold 1000ms
+ Default ASE parameters: Metric: 1 Tag: 1 Type: 2
+ Route Preference: 10 
+ ASE Route Preference: 150 
+ SPF Computation Count: 31    
+ RFC 1583 Compatible
+ Retransmission limitation is disabled
+ Area Count: 2   Nssa Area Count: 0 
+ ExChange/Loading Neighbors: 0
+ 
+ Area: 0.0.0.0        
+ Authtype: None   Area flag: Normal
+ SPF scheduled Count: 31    
+ ExChange/Loading Neighbors: 0
+ Router ID conflict state: Normal
+
+ Interface: 10.162.99.110 (Vlanif1104)
+ Cost: 1       State: BDR       Type: Broadcast    MTU: 1500  
+ Priority: 1
+ Designated Router: 10.162.99.109
+ Backup Designated Router: 10.162.99.110
+ Timers: Hello 10 , Dead 40 , Poll  120 , Retransmit 5 , Transmit Delay 1 
+
+ Interface: 10.162.99.138 (Vlanif1204)
+ Cost: 1       State: DR        Type: Broadcast    MTU: 1500  
+ Priority: 1
+  ---- More ----[42D                                          [42D Designated Router: 10.162.99.138
+ Backup Designated Router: 0.0.0.0
+ Timers: Hello 10 , Dead 40 , Poll  120 , Retransmit 5 , Transmit Delay 1 
+ 
+ Area: 0.0.0.30       
+ Authtype: None   Area flag: Normal
+ SPF scheduled Count: 30    
+ ExChange/Loading Neighbors: 0
+ Router ID conflict state: Normal
+
+ Interface: 10.162.106.1 (Vlanif60)
+ Cost: 1       State: DR        Type: Broadcast    MTU: 1500  
+ Priority: 1
+ Designated Router: 10.162.106.1
+ Backup Designated Router: 0.0.0.0
+ Timers: Hello 10 , Dead 40 , Poll  120 , Retransmit 5 , Transmit Delay 1 
+
+ Interface: 10.162.107.1 (Vlanif61)
+ Cost: 1       State: DR        Type: Broadcast    MTU: 1500  
+ Priority: 1
+ Designated Router: 10.162.107.1
+ Backup Designated Router: 0.0.0.0
+ Timers: Hello 10 , Dead 40 , Poll  120 , Retransmit 5 , Transmit Delay 1 
+<AGG-DC> 
+display acl all
+ Total nonempty ACL number is 0 
+
+<AGG-DC>

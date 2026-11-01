@@ -1,0 +1,138 @@
+Welcome to use PC Simulator!
+
+PC>ping -c 2 203.0.113.10
+Bad argument: 2
+
+PC>ping
+
+Usage: ping <host> [-t] [-f] [-c count] [-l size][-i TTL] [-w timeout] 
+
+Options:
+-t             Ping the specified host until stopped.
+-f             Set Don't Fragment flag in packet (IPv4-only).
+-c count       Number of echo requests to send.
+-l size        Send buffer size.
+-i TTL         Time To Live.
+-w timeout     Timeout in milliseconds to wait for each reply.
+-4             Force using IPv4.
+-6             Force using IPv6.
+
+PC>ping 203.0.113.10
+
+Ping 203.0.113.10: 32 data bytes, Press Ctrl_C to break
+Request timeout!
+Request timeout!
+Request timeout!
+From 203.0.113.10: bytes=32 seq=4 ttl=124 time=156 ms
+From 203.0.113.10: bytes=32 seq=5 ttl=124 time=110 ms
+
+--- 203.0.113.10 ping statistics ---
+  5 packet(s) transmitted
+  2 packet(s) received
+  60.00% packet loss
+  round-trip min/avg/max = 0/133/156 ms
+
+PC>ping 10.162.106.10 -c 2
+
+Ping 10.162.106.10: 32 data bytes, Press Ctrl_C to break
+From 10.162.106.10: bytes=32 seq=1 ttl=125 time=187 ms
+From 10.162.106.10: bytes=32 seq=2 ttl=125 time=125 ms
+
+--- 10.162.106.10 ping statistics ---
+  2 packet(s) transmitted
+  2 packet(s) received
+  0.00% packet loss
+  round-trip min/avg/max = 125/156/187 ms
+
+PC>ping 10.162.104.10 -c 2
+
+Ping 10.162.104.10: 32 data bytes, Press Ctrl_C to break
+Request timeout!
+Request timeout!
+
+--- 10.162.104.10 ping statistics ---
+  2 packet(s) transmitted
+  0 packet(s) received
+  100.00% packet loss
+
+PC>ping 10.162.106.10 -c 2
+
+Ping 10.162.106.10: 32 data bytes, Press Ctrl_C to break
+Request timeout!
+From 10.162.106.10: bytes=32 seq=2 ttl=125 time=140 ms
+
+--- 10.162.106.10 ping statistics ---
+  2 packet(s) transmitted
+  1 packet(s) received
+  50.00% packet loss
+  round-trip min/avg/max = 0/140/140 ms
+
+PC>ping 10.162.104.10 -c 2
+
+Ping 10.162.104.10: 32 data bytes, Press Ctrl_C to break
+Request timeout!
+Request timeout!
+
+--- 10.162.104.10 ping statistics ---
+  2 packet(s) transmitted
+  0 packet(s) received
+  100.00% packet loss
+
+PC>ping 10.162.107.10 -c 2
+
+Ping 10.162.107.10: 32 data bytes, Press Ctrl_C to break
+Request timeout!
+Request timeout!
+
+--- 10.162.107.10 ping statistics ---
+  2 packet(s) transmitted
+  0 packet(s) received
+  100.00% packet loss
+
+PC>ping 10.162.99.65 -c 2
+
+Ping 10.162.99.65: 32 data bytes, Press Ctrl_C to break
+Request timeout!
+Request timeout!
+
+--- 10.162.99.65 ping statistics ---
+  2 packet(s) transmitted
+  0 packet(s) received
+  100.00% packet loss
+
+PC>ping 203.0.113.10 -c 2
+
+Ping 203.0.113.10: 32 data bytes, Press Ctrl_C to break
+Request timeout!
+From 203.0.113.10: bytes=32 seq=2 ttl=124 time=141 ms
+
+--- 203.0.113.10 ping statistics ---
+  2 packet(s) transmitted
+  1 packet(s) received
+  50.00% packet loss
+  round-trip min/avg/max = 0/141/141 ms
+
+PC>ping 203.0.114.10 -c 2
+
+Ping 203.0.114.10: 32 data bytes, Press Ctrl_C to break
+Request timeout!
+Request timeout!
+
+--- 203.0.114.10 ping statistics ---
+  2 packet(s) transmitted
+  0 packet(s) received
+  100.00% packet loss
+
+PC>ping 203.0.114.10 -c 2
+
+Ping 203.0.114.10: 32 data bytes, Press Ctrl_C to break
+Request timeout!
+From 203.0.114.10: bytes=32 seq=2 ttl=124 time=110 ms
+
+--- 203.0.114.10 ping statistics ---
+  2 packet(s) transmitted
+  1 packet(s) received
+  50.00% packet loss
+  round-trip min/avg/max = 0/110/110 ms
+
+PC>

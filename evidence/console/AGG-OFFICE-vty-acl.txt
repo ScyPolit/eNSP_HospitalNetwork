@@ -1,0 +1,17 @@
+system-view
+Enter system view, return user view with Ctrl+Z.
+[AGG-OFFICE]
+acl number 2001
+[AGG-OFFICE-acl-basic-2001]
+rule 5 permit source 10.162.120.20 0
+[AGG-OFFICE-acl-basic-2001]
+rule 10 deny
+[AGG-OFFICE-acl-basic-2001]
+quit
+[AGG-OFFICE]
+user-interface vty 0 4
+[AGG-OFFICE-ui-vty0-4]
+acl 2001 inbound
+[AGG-OFFICE-ui-vty0-4]
+return
+<AGG-OFFICE>

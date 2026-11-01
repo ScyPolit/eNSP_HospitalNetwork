@@ -1,0 +1,57 @@
+system-view
+Enter system view, return user view with Ctrl+Z.
+[AGG-MEDTECH]
+return
+<AGG-MEDTECH>
+system-view
+Enter system view, return user view with Ctrl+Z.
+[AGG-MEDTECH]
+acl number 3030
+[AGG-MEDTECH-acl-adv-3030]
+rule 5 permit udp source-port eq bootpc destination-po [1Drt eq bootps
+Error: The ACL is contained by some application(s) and forbidden to be modified
+[AGG-MEDTECH-acl-adv-3030]
+rule 10 permit icmp destination 10.162.103.1 0
+Error: The ACL is contained by some application(s) and forbidden to be modified
+[AGG-MEDTECH-acl-adv-3030]
+rule 15 permit tcp destination 10.162.106.10 0 destina [1Dtion-port eq 443
+Error: The ACL is contained by some application(s) and forbidden to be modified
+[AGG-MEDTECH-acl-adv-3030]
+rule 20 permit icmp destination 10.162.106.10 0
+Error: The ACL is contained by some application(s) and forbidden to be modified
+[AGG-MEDTECH-acl-adv-3030]
+rule 25 permit tcp destination 10.162.108.10 0 destina [1Dtion-port eq 80
+Error: The ACL is contained by some application(s) and forbidden to be modified
+[AGG-MEDTECH-acl-adv-3030]
+rule 30 deny ip destination 10.0.0.0 0.255.255.255
+Error: The ACL is contained by some application(s) and forbidden to be modified
+[AGG-MEDTECH-acl-adv-3030]
+rule 35 deny ip destination 172.16.0.0 0.15.255.255
+Error: The ACL is contained by some application(s) and forbidden to be modified
+[AGG-MEDTECH-acl-adv-3030]
+rule 40 deny ip destination 192.168.0.0 0.0.255.255
+Error: The ACL is contained by some application(s) and forbidden to be modified
+[AGG-MEDTECH-acl-adv-3030]
+rule 45 permit ip
+Error: The ACL is contained by some application(s) and forbidden to be modified
+[AGG-MEDTECH-acl-adv-3030]
+quit
+[AGG-MEDTECH]
+interface Vlanif30
+[AGG-MEDTECH-Vlanif30]
+traffic-filter inbound acl 3030
+Error: Sacl doesn't support config the same acl or rule repeatedly.
+[AGG-MEDTECH]
+return
+<AGG-MEDTECH>
+system-view
+Enter system view, return user view with Ctrl+Z.
+[AGG-MEDTECH]
+ospf 1
+[AGG-MEDTECH-ospf-1]
+silent-interface Vlanif30
+[AGG-MEDTECH-ospf-1]
+quit
+[AGG-MEDTECH]
+return
+<AGG-MEDTECH>

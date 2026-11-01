@@ -1,0 +1,53 @@
+system-view
+Enter system view, return user view with Ctrl+Z.
+[Huawei]
+undo info-center enable
+Info: Information center is disabled.
+[Huawei]
+sysname ACC-ER
+[ACC-ER]
+stp mode mstp
+[ACC-ER]
+vlan batch 80
+Info: This operation may take a few seconds. Please wait for a moment...done.
+[ACC-ER]
+interface Eth-Trunk1
+[ACC-ER-Eth-Trunk1]
+mode lacp-static
+[ACC-ER-Eth-Trunk1]
+port link-type trunk
+[ACC-ER-Eth-Trunk1]
+port trunk allow-pass vlan 80
+[ACC-ER-Eth-Trunk1]
+quit
+[ACC-ER]
+interface GigabitEthernet0/0/23
+[ACC-ER-GigabitEthernet0/0/23]
+eth-trunk 1
+Info: This operation may take a few seconds. Please wait for a moment...done.
+[ACC-ER-GigabitEthernet0/0/23]
+quit
+[ACC-ER]
+interface GigabitEthernet0/0/24
+[ACC-ER-GigabitEthernet0/0/24]
+eth-trunk 1
+Info: This operation may take a few seconds. Please wait for a moment...done.
+[ACC-ER-GigabitEthernet0/0/24]
+quit
+[ACC-ER]
+interface GigabitEthernet0/0/1
+[ACC-ER-GigabitEthernet0/0/1]
+port link-type access
+[ACC-ER-GigabitEthernet0/0/1]
+port default vlan 80
+[ACC-ER-GigabitEthernet0/0/1]
+quit
+[ACC-ER]
+interface GigabitEthernet0/0/1
+[ACC-ER-GigabitEthernet0/0/1]
+stp edged-port enable
+[ACC-ER-GigabitEthernet0/0/1]
+quit
+[ACC-ER]
+return
+<ACC-ER>

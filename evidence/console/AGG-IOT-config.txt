@@ -1,0 +1,198 @@
+system-view
+Enter system view, return user view with Ctrl+Z.
+[Huawei]
+undo info-center enable
+Info: Information center is disabled.
+[Huawei]
+sysname AGG-IOT
+[AGG-IOT]
+stp mode mstp
+[AGG-IOT]
+dhcp enable
+Info: The operation may take a few seconds. Please wait for a moment.done.
+[AGG-IOT]
+vlan batch 100 110 120 140 1106 1206
+Info: This operation may take a few seconds. Please wait for a moment...done.
+[AGG-IOT]
+interface GigabitEthernet0/0/23
+[AGG-IOT-GigabitEthernet0/0/23]
+port link-type access
+[AGG-IOT-GigabitEthernet0/0/23]
+port default vlan 1106
+[AGG-IOT-GigabitEthernet0/0/23]
+quit
+[AGG-IOT]
+interface Vlanif1106
+[AGG-IOT-Vlanif1106]
+ip address 10.162.99.118 255.255.255.252
+[AGG-IOT-Vlanif1106]
+quit
+[AGG-IOT]
+interface GigabitEthernet0/0/24
+[AGG-IOT-GigabitEthernet0/0/24]
+port link-type access
+[AGG-IOT-GigabitEthernet0/0/24]
+port default vlan 1206
+[AGG-IOT-GigabitEthernet0/0/24]
+quit
+[AGG-IOT]
+interface Vlanif1206
+[AGG-IOT-Vlanif1206]
+ip address 10.162.99.146 255.255.255.252
+[AGG-IOT-Vlanif1206]
+quit
+[AGG-IOT]
+interface Vlanif100
+[AGG-IOT-Vlanif100]
+ip address 10.162.111.1 255.255.255.0
+[AGG-IOT-Vlanif100]
+quit
+[AGG-IOT]
+interface Vlanif100
+[AGG-IOT-Vlanif100]
+dhcp select interface
+[AGG-IOT-Vlanif100]
+dhcp server excluded-ip-address 10.162.111.2 10.162.111.49
+[AGG-IOT-Vlanif100]
+quit
+[AGG-IOT]
+interface Vlanif110
+[AGG-IOT-Vlanif110]
+ip address 10.162.112.1 255.255.255.0
+[AGG-IOT-Vlanif110]
+quit
+[AGG-IOT]
+interface Vlanif110
+[AGG-IOT-Vlanif110]
+dhcp select interface
+[AGG-IOT-Vlanif110]
+dhcp server excluded-ip-address 10.162.112.2 10.162.112.49
+[AGG-IOT-Vlanif110]
+quit
+[AGG-IOT]
+interface Vlanif120
+[AGG-IOT-Vlanif120]
+ip address 10.162.114.1 255.255.254.0
+[AGG-IOT-Vlanif120]
+quit
+[AGG-IOT]
+interface Vlanif120
+[AGG-IOT-Vlanif120]
+dhcp select interface
+[AGG-IOT-Vlanif120]
+dhcp server excluded-ip-address 10.162.114.2 10.162.114.49
+[AGG-IOT-Vlanif120]
+quit
+[AGG-IOT]
+interface Vlanif140
+[AGG-IOT-Vlanif140]
+ip address 10.162.116.1 255.255.252.0
+[AGG-IOT-Vlanif140]
+quit
+[AGG-IOT]
+interface Vlanif140
+[AGG-IOT-Vlanif140]
+dhcp select interface
+[AGG-IOT-Vlanif140]
+dhcp server excluded-ip-address 10.162.116.2 10.162.116.49
+[AGG-IOT-Vlanif140]
+quit
+[AGG-IOT]
+interface Eth-Trunk1
+[AGG-IOT-Eth-Trunk1]
+mode lacp-static
+[AGG-IOT-Eth-Trunk1]
+port link-type trunk
+[AGG-IOT-Eth-Trunk1]
+port trunk allow-pass vlan 100
+[AGG-IOT-Eth-Trunk1]
+quit
+[AGG-IOT]
+interface GigabitEthernet0/0/1
+[AGG-IOT-GigabitEthernet0/0/1]
+eth-trunk 1
+Info: This operation may take a few seconds. Please wait for a moment...done.
+[AGG-IOT-GigabitEthernet0/0/1]
+quit
+[AGG-IOT]
+interface GigabitEthernet0/0/2
+[AGG-IOT-GigabitEthernet0/0/2]
+eth-trunk 1
+Info: This operation may take a few seconds. Please wait for a moment...done.
+[AGG-IOT-GigabitEthernet0/0/2]
+quit
+[AGG-IOT]
+interface Eth-Trunk2
+[AGG-IOT-Eth-Trunk2]
+mode lacp-static
+[AGG-IOT-Eth-Trunk2]
+port link-type trunk
+[AGG-IOT-Eth-Trunk2]
+port trunk allow-pass vlan 110
+[AGG-IOT-Eth-Trunk2]
+quit
+[AGG-IOT]
+interface GigabitEthernet0/0/3
+[AGG-IOT-GigabitEthernet0/0/3]
+eth-trunk 2
+Info: This operation may take a few seconds. Please wait for a moment...done.
+[AGG-IOT-GigabitEthernet0/0/3]
+quit
+[AGG-IOT]
+interface GigabitEthernet0/0/4
+[AGG-IOT-GigabitEthernet0/0/4]
+eth-trunk 2
+Info: This operation may take a few seconds. Please wait for a moment...done.
+[AGG-IOT-GigabitEthernet0/0/4]
+quit
+[AGG-IOT]
+interface Eth-Trunk3
+[AGG-IOT-Eth-Trunk3]
+mode lacp-static
+[AGG-IOT-Eth-Trunk3]
+port link-type trunk
+[AGG-IOT-Eth-Trunk3]
+port trunk allow-pass vlan 120 140
+[AGG-IOT-Eth-Trunk3]
+quit
+[AGG-IOT]
+interface GigabitEthernet0/0/5
+[AGG-IOT-GigabitEthernet0/0/5]
+eth-trunk 3
+Info: This operation may take a few seconds. Please wait for a moment...done.
+[AGG-IOT-GigabitEthernet0/0/5]
+quit
+[AGG-IOT]
+interface GigabitEthernet0/0/6
+[AGG-IOT-GigabitEthernet0/0/6]
+eth-trunk 3
+Info: This operation may take a few seconds. Please wait for a moment...done.
+[AGG-IOT-GigabitEthernet0/0/6]
+quit
+[AGG-IOT]
+ospf 1 router-id 10.255.254.6
+[AGG-IOT-ospf-1]
+area 0
+[AGG-IOT-ospf-1-area-0.0.0.0]
+network 10.162.99.116 0.0.0.3
+[AGG-IOT-ospf-1-area-0.0.0.0]
+network 10.162.99.144 0.0.0.3
+[AGG-IOT-ospf-1-area-0.0.0.0]
+quit
+[AGG-IOT-ospf-1]
+area 40
+[AGG-IOT-ospf-1-area-0.0.0.40]
+network 10.162.111.0 0.0.0.255
+[AGG-IOT-ospf-1-area-0.0.0.40]
+network 10.162.112.0 0.0.0.255
+[AGG-IOT-ospf-1-area-0.0.0.40]
+network 10.162.114.0 0.0.1.255
+[AGG-IOT-ospf-1-area-0.0.0.40]
+network 10.162.116.0 0.0.3.255
+[AGG-IOT-ospf-1-area-0.0.0.40]
+quit
+[AGG-IOT-ospf-1]
+quit
+[AGG-IOT]
+return
+<AGG-IOT>

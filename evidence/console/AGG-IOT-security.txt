@@ -1,0 +1,172 @@
+system-view
+Enter system view, return user view with Ctrl+Z.
+[AGG-IOT]
+return
+<AGG-IOT>
+system-view
+Enter system view, return user view with Ctrl+Z.
+[AGG-IOT]
+acl number 3100
+[AGG-IOT-acl-adv-3100]
+rule 5 permit udp source-port eq bootpc destination-port e [1Dq bootps
+Error: The ACL is contained by some application(s) and forbidden to be modified
+[AGG-IOT-acl-adv-3100]
+rule 10 permit icmp destination 10.162.111.1 0
+Error: The ACL is contained by some application(s) and forbidden to be modified
+[AGG-IOT-acl-adv-3100]
+rule 15 permit tcp destination 10.162.106.10 0 destination [1D-port eq 8883
+Error: The ACL is contained by some application(s) and forbidden to be modified
+[AGG-IOT-acl-adv-3100]
+rule 20 permit icmp destination 10.162.106.10 0
+Error: The ACL is contained by some application(s) and forbidden to be modified
+[AGG-IOT-acl-adv-3100]
+rule 25 deny ip destination 10.0.0.0 0.255.255.255
+Error: The ACL is contained by some application(s) and forbidden to be modified
+[AGG-IOT-acl-adv-3100]
+rule 30 deny ip destination 172.16.0.0 0.15.255.255
+Error: The ACL is contained by some application(s) and forbidden to be modified
+[AGG-IOT-acl-adv-3100]
+rule 35 deny ip destination 192.168.0.0 0.0.255.255
+Error: The ACL is contained by some application(s) and forbidden to be modified
+[AGG-IOT-acl-adv-3100]
+rule 40 deny ip
+Error: The ACL is contained by some application(s) and forbidden to be modified
+[AGG-IOT-acl-adv-3100]
+quit
+[AGG-IOT]
+interface Vlanif100
+[AGG-IOT-Vlanif100]
+traffic-filter inbound acl 3100
+Error: Sacl doesn't support config the same acl or rule repeatedly.
+[AGG-IOT]
+return
+<AGG-IOT>
+system-view
+Enter system view, return user view with Ctrl+Z.
+[AGG-IOT]
+ospf 1
+[AGG-IOT-ospf-1]
+silent-interface Vlanif100
+[AGG-IOT-ospf-1]
+quit
+[AGG-IOT]
+return
+<AGG-IOT>
+system-view
+Enter system view, return user view with Ctrl+Z.
+[AGG-IOT]
+acl number 3110
+[AGG-IOT-acl-adv-3110]
+rule 5 permit udp source-port eq bootpc destination-port e [1Dq bootps
+[AGG-IOT-acl-adv-3110]
+rule 10 permit icmp destination 10.162.112.1 0
+[AGG-IOT-acl-adv-3110]
+rule 15 permit tcp destination 10.162.106.11 0 destination [1D-port eq 554
+[AGG-IOT-acl-adv-3110]
+rule 20 permit icmp destination 10.162.106.11 0
+[AGG-IOT-acl-adv-3110]
+rule 25 deny ip destination 10.0.0.0 0.255.255.255
+[AGG-IOT-acl-adv-3110]
+rule 30 deny ip destination 172.16.0.0 0.15.255.255
+[AGG-IOT-acl-adv-3110]
+rule 35 deny ip destination 192.168.0.0 0.0.255.255
+[AGG-IOT-acl-adv-3110]
+rule 40 deny ip
+[AGG-IOT-acl-adv-3110]
+quit
+[AGG-IOT]
+interface Vlanif110
+[AGG-IOT-Vlanif110]
+traffic-filter inbound acl 3110
+[AGG-IOT]
+return
+<AGG-IOT>
+system-view
+Enter system view, return user view with Ctrl+Z.
+[AGG-IOT]
+ospf 1
+[AGG-IOT-ospf-1]
+silent-interface Vlanif110
+[AGG-IOT-ospf-1]
+quit
+[AGG-IOT]
+return
+<AGG-IOT>
+system-view
+Enter system view, return user view with Ctrl+Z.
+[AGG-IOT]
+acl number 3120
+[AGG-IOT-acl-adv-3120]
+rule 5 permit udp source-port eq bootpc destination-port e [1Dq bootps
+[AGG-IOT-acl-adv-3120]
+rule 10 permit icmp destination 10.162.114.1 0
+[AGG-IOT-acl-adv-3120]
+rule 15 permit tcp destination 10.162.106.10 0 destination [1D-port eq 443
+[AGG-IOT-acl-adv-3120]
+rule 20 permit icmp destination 10.162.106.10 0
+[AGG-IOT-acl-adv-3120]
+rule 25 permit tcp destination 10.162.108.10 0 destination [1D-port eq 80
+[AGG-IOT-acl-adv-3120]
+rule 30 deny ip destination 10.0.0.0 0.255.255.255
+[AGG-IOT-acl-adv-3120]
+rule 35 deny ip destination 172.16.0.0 0.15.255.255
+[AGG-IOT-acl-adv-3120]
+rule 40 deny ip destination 192.168.0.0 0.0.255.255
+[AGG-IOT-acl-adv-3120]
+rule 45 permit ip
+[AGG-IOT-acl-adv-3120]
+quit
+[AGG-IOT]
+interface Vlanif120
+[AGG-IOT-Vlanif120]
+traffic-filter inbound acl 3120
+[AGG-IOT]
+return
+<AGG-IOT>
+system-view
+Enter system view, return user view with Ctrl+Z.
+[AGG-IOT]
+ospf 1
+[AGG-IOT-ospf-1]
+silent-interface Vlanif120
+[AGG-IOT-ospf-1]
+quit
+[AGG-IOT]
+return
+<AGG-IOT>
+system-view
+Enter system view, return user view with Ctrl+Z.
+[AGG-IOT]
+acl number 3140
+[AGG-IOT-acl-adv-3140]
+rule 5 permit udp source-port eq bootpc destination-port e [1Dq bootps
+[AGG-IOT-acl-adv-3140]
+rule 10 permit icmp destination 10.162.116.1 0
+[AGG-IOT-acl-adv-3140]
+rule 15 deny ip destination 10.0.0.0 0.255.255.255
+[AGG-IOT-acl-adv-3140]
+rule 20 deny ip destination 172.16.0.0 0.15.255.255
+[AGG-IOT-acl-adv-3140]
+rule 25 deny ip destination 192.168.0.0 0.0.255.255
+[AGG-IOT-acl-adv-3140]
+rule 30 permit ip
+[AGG-IOT-acl-adv-3140]
+quit
+[AGG-IOT]
+interface Vlanif140
+[AGG-IOT-Vlanif140]
+traffic-filter inbound acl 3140
+[AGG-IOT]
+return
+<AGG-IOT>
+system-view
+Enter system view, return user view with Ctrl+Z.
+[AGG-IOT]
+ospf 1
+[AGG-IOT-ospf-1]
+silent-interface Vlanif140
+[AGG-IOT-ospf-1]
+quit
+[AGG-IOT]
+return
+<AGG-IOT>

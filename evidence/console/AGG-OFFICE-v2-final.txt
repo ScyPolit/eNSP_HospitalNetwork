@@ -1,0 +1,113 @@
+system-view
+Enter system view, return user view with Ctrl+Z.
+[AGG-OFFICE]
+undo traffic-filter inbound acl 3040
+[AGG-OFFICE]
+undo traffic-filter vlan 40 inbound acl 3040
+[AGG-OFFICE]
+undo acl 3040
+Error: No such an acl.
+[AGG-OFFICE]
+undo traffic-filter inbound acl 3160
+[AGG-OFFICE]
+undo traffic-filter vlan 160 inbound acl 3160
+[AGG-OFFICE]
+undo acl 3160
+Error: No such an acl.
+[AGG-OFFICE]
+return
+<AGG-OFFICE>
+system-view
+Enter system view, return user view with Ctrl+Z.
+[AGG-OFFICE]
+return
+<AGG-OFFICE>
+system-view
+Enter system view, return user view with Ctrl+Z.
+[AGG-OFFICE]
+acl number 3040
+[AGG-OFFICE-acl-adv-3040]
+rule 5 permit udp source-port eq bootpc destination-por [1Dt eq bootps
+[AGG-OFFICE-acl-adv-3040]
+rule 10 permit icmp destination 10.162.104.1 0
+[AGG-OFFICE-acl-adv-3040]
+rule 15 permit tcp destination 10.162.106.10 0 destinat [1Dion-port eq 443
+[AGG-OFFICE-acl-adv-3040]
+rule 20 permit icmp destination 10.162.106.10 0
+[AGG-OFFICE-acl-adv-3040]
+rule 25 permit tcp destination 10.162.108.10 0 destinat [1Dion-port eq 80
+[AGG-OFFICE-acl-adv-3040]
+rule 30 deny ip destination 10.0.0.0 0.255.255.255
+[AGG-OFFICE-acl-adv-3040]
+rule 35 deny ip destination 172.16.0.0 0.15.255.255
+[AGG-OFFICE-acl-adv-3040]
+rule 40 deny ip destination 192.168.0.0 0.0.255.255
+[AGG-OFFICE-acl-adv-3040]
+rule 45 permit ip
+[AGG-OFFICE-acl-adv-3040]
+quit
+[AGG-OFFICE]
+interface Vlanif40
+[AGG-OFFICE-Vlanif40]
+quit
+[AGG-OFFICE]
+traffic-filter vlan 40 inbound acl 3040
+[AGG-OFFICE]
+return
+<AGG-OFFICE>
+system-view
+Enter system view, return user view with Ctrl+Z.
+[AGG-OFFICE]
+ospf 1
+[AGG-OFFICE-ospf-1]
+silent-interface Vlanif40
+[AGG-OFFICE-ospf-1]
+quit
+[AGG-OFFICE]
+return
+<AGG-OFFICE>
+system-view
+Enter system view, return user view with Ctrl+Z.
+[AGG-OFFICE]
+acl number 3160
+[AGG-OFFICE-acl-adv-3160]
+rule 5 permit udp source-port eq bootpc destination-por [1Dt eq bootps
+[AGG-OFFICE-acl-adv-3160]
+rule 10 permit icmp destination 10.162.120.1 0
+[AGG-OFFICE-acl-adv-3160]
+rule 15 permit ip source 10.162.120.20 0
+[AGG-OFFICE-acl-adv-3160]
+rule 20 permit ip destination 10.162.120.20 0
+[AGG-OFFICE-acl-adv-3160]
+rule 25 deny ip destination 10.0.0.0 0.255.255.255
+[AGG-OFFICE-acl-adv-3160]
+rule 30 deny ip destination 10.0.0.0 0.255.255.255
+Error: The rule already exists.
+[AGG-OFFICE-acl-adv-3160]
+rule 35 deny ip destination 172.16.0.0 0.15.255.255
+[AGG-OFFICE-acl-adv-3160]
+rule 40 deny ip destination 192.168.0.0 0.0.255.255
+[AGG-OFFICE-acl-adv-3160]
+rule 45 permit ip
+[AGG-OFFICE-acl-adv-3160]
+quit
+[AGG-OFFICE]
+interface Vlanif160
+[AGG-OFFICE-Vlanif160]
+quit
+[AGG-OFFICE]
+traffic-filter vlan 160 inbound acl 3160
+[AGG-OFFICE]
+return
+<AGG-OFFICE>
+system-view
+Enter system view, return user view with Ctrl+Z.
+[AGG-OFFICE]
+ospf 1
+[AGG-OFFICE-ospf-1]
+silent-interface Vlanif160
+[AGG-OFFICE-ospf-1]
+quit
+[AGG-OFFICE]
+return
+<AGG-OFFICE>

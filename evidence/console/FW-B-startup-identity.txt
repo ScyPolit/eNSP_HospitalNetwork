@@ -1,0 +1,4 @@
+display current-configuration | include sysname
+16:35:21  2026/10/30
+ sysname FW-B
+HRP_S<FW-B>

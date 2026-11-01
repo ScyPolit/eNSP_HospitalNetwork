@@ -1,0 +1,64 @@
+display interface brief
+13:36:02  2026/10/30
+PHY: Physical
+*down: administratively down
+^down: standby down
+(s): spoofing
+InUti/OutUti: input utility/output utility
+Interface                   PHY   Protocol InUti OutUti   inErrors  outErrors
+GigabitEthernet0/0/0        up    up          0%     0%          0          0
+GigabitEthernet0/0/1        up    up          0%     0%          0          0
+GigabitEthernet0/0/2        up    up          0%     0%          0          0
+GigabitEthernet0/0/3        up    up          0%     0%          0          0
+GigabitEthernet0/0/4        up    up          0%     0%          0          0
+GigabitEthernet0/0/5        up    up          0%     0%          0          0
+GigabitEthernet0/0/6        up    up          0%     0%          0          0
+GigabitEthernet0/0/7        down  down        0%     0%          0          0
+GigabitEthernet0/0/8        down  down        0%     0%          0          0
+NULL0                       up    up(s)       0%     0%          0          0
+HRP_M<FW-B>
+display arp
+13:36:02  2026/10/30
+IP ADDRESS      MAC ADDRESS     EXPIRE(M) TYPE        INTERFACE   VPN-INSTANCE   
+                                          VLAN/PVC                        
+------------------------------------------------------------------------------
+172.31.255.2    0000-00de-b306            I           GE0/0/6
+10.162.108.3    0000-00de-b305            I           GE0/0/5
+10.162.108.2    0000-007d-1505  18        D           GE0/0/5
+10.162.108.1    0000-5e00-0106  19        D           GE0/0/5
+10.162.99.35    0000-00de-b304            I           GE0/0/4
+10.162.99.33    0000-5e00-0105  19        D           GE0/0/4
+10.162.99.36    4c1f-cc50-3e43  20        D           GE0/0/4
+10.162.99.37    4c1f-ccb4-5e41  20        D           GE0/0/4
+10.162.99.3     0000-00de-b303            I           GE0/0/3
+10.162.99.2     0000-007d-1503  18        D           GE0/0/3
+10.162.99.1     0000-5e00-0104  19        D           GE0/0/3
+10.162.99.4     4c1f-cc50-3e43  20        D           GE0/0/3
+10.162.99.5     4c1f-ccb4-5e41  20        D           GE0/0/3
+192.0.2.3       0000-00de-b302            I           GE0/0/2
+192.0.2.2       0000-007d-1502  18        D           GE0/0/2
+192.0.2.254     00e0-fc37-24b4  18        D           GE0/0/2
+192.0.2.1       0000-5e00-0103  19        D           GE0/0/2
+13.1.1.3        0000-00de-b301            I           GE0/0/1
+13.1.1.2        0000-007d-1501  18        D           GE0/0/1
+13.1.1.254      00e0-fca1-0efc  18        D           GE0/0/1
+13.1.1.1        0000-5e00-0102  19        D           GE0/0/1
+  ---- More ----[42D                                          [42D12.1.1.3        0000-00de-b300            I           GE0/0/0
+12.1.1.254      00e0-fca2-033b  18        D           GE0/0/0
+12.1.1.1        0000-5e00-0101  19        D           GE0/0/0
+------------------------------------------------------------------------------
+Total:24        Dynamic:17      Static:0    Interface:7    
+HRP_M<FW-B>
+ display current-configuration interface GigabitEthernet0/0/6
+13:36:02  2026/10/30
+#
+interface GigabitEthernet0/0/6
+ ip address 172.31.255.2 255.255.255.252
+#
+return
+HRP_M<FW-B>
+display hrp interface
+13:36:02  2026/10/30
+             GigabitEthernet0/0/6 : 172.31.255.1 peerdown
+
+HRP_M<FW-B>

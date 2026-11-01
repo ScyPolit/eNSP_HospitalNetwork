@@ -1,0 +1,21 @@
+system-view
+Enter system view, return user view with Ctrl+Z.
+[AGG-IOT]
+undo traffic-filter inbound acl 3100
+[AGG-IOT]
+traffic-filter vlan 100 inbound acl 3100
+[AGG-IOT]
+undo traffic-filter inbound acl 3110
+[AGG-IOT]
+traffic-filter vlan 110 inbound acl 3110
+[AGG-IOT]
+undo traffic-filter inbound acl 3120
+[AGG-IOT]
+traffic-filter vlan 120 inbound acl 3120
+[AGG-IOT]
+undo traffic-filter inbound acl 3140
+[AGG-IOT]
+traffic-filter vlan 140 inbound acl 3140
+[AGG-IOT]
+return
+<AGG-IOT>

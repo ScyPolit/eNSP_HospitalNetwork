@@ -1,0 +1,47 @@
+system-view
+Enter system view, return user view with Ctrl+Z.
+[Huawei]
+[Huawei]
+undo info-center enable
+Info: Information center is disabled.
+[Huawei]
+[Huawei]
+sysname HEALTH-R
+[HEALTH-R]
+[HEALTH-R]
+interface GigabitEthernet0/0/0
+[HEALTH-R-GigabitEthernet0/0/0]
+[HEALTH-R-GigabitEthernet0/0/0]
+ip address 192.0.2.254 255.255.255.0
+[HEALTH-R-GigabitEthernet0/0/0]
+[HEALTH-R-GigabitEthernet0/0/0]
+quit
+[HEALTH-R]
+[HEALTH-R]
+interface GigabitEthernet0/0/1
+[HEALTH-R-GigabitEthernet0/0/1]
+[HEALTH-R-GigabitEthernet0/0/1]
+ip address 172.20.1.1 255.255.255.0
+[HEALTH-R-GigabitEthernet0/0/1]
+[HEALTH-R-GigabitEthernet0/0/1]
+quit
+[HEALTH-R]
+[HEALTH-R]
+interface GigabitEthernet0/0/2
+[HEALTH-R-GigabitEthernet0/0/2]
+[HEALTH-R-GigabitEthernet0/0/2]
+ip address 198.18.0.1 255.255.255.252
+[HEALTH-R-GigabitEthernet0/0/2]
+[HEALTH-R-GigabitEthernet0/0/2]
+quit
+[HEALTH-R]
+[HEALTH-R]
+ip route-static 10.162.106.0 24 192.0.2.1
+[HEALTH-R]
+[HEALTH-R]
+ip route-static 10.162.121.0 24 192.0.2.1
+[HEALTH-R]
+[HEALTH-R]
+return
+<HEALTH-R>
+<HEALTH-R>

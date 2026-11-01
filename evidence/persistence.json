@@ -1,0 +1,172 @@
+[
+  {
+    "name": "WAN-L2",
+    "saved": true,
+    "detail": "save\r\nThe current configuration will be written to the device.\r\nAre you sure to continue?[Y/N]y\r\nNow saving the current configuration to the slot 0.\r\nSave the configuration successfully.\r\n<WAN-L2>"
+  },
+  {
+    "name": "ISP-R1",
+    "saved": true,
+    "detail": "The current configuration will be written to the device.\n  Are you sure to continue? (y/n)[n]:Y\n  It will take several minutes to save configuration file, please wait......\n  Configuration file had been saved successfully\n  Note: The configuration file will take effect after being activated\n<ISP-R1>"
+  },
+  {
+    "name": "ISP-R2",
+    "saved": true,
+    "detail": "he current configuration will be written to the device.\n  Are you sure to continue? (y/n)[n]:Y\n  It will take several minutes to save configuration file, please wait.......\n  Configuration file had been saved successfully\n  Note: The configuration file will take effect after being activated\n<ISP-R2>"
+  },
+  {
+    "name": "HEALTH-R",
+    "saved": true,
+    "detail": "e current configuration will be written to the device.\n  Are you sure to continue? (y/n)[n]:Y\n  It will take several minutes to save configuration file, please wait......\n  Configuration file had been saved successfully\n  Note: The configuration file will take effect after being activated\n<HEALTH-R>"
+  },
+  {
+    "name": "FW-A",
+    "saved": true,
+    "detail": "0/30\r\nThe current configuration will be written to the device.\r\nAre you sure to continue?[Y/N]y\r\nDo you want to synchronically save the configuration to the startup saved-configuration file on peer device?[Y/N]:y\r\nNow saving the current configuration to the device...\r\nInfo:The current configuration was saved to the device successfully.\r\nHRP_M<FW-A>"
+  },
+  {
+    "name": "FW-B",
+    "saved": true,
+    "detail": "0/30\r\nThe current configuration will be written to the device.\r\nAre you sure to continue?[Y/N]y\r\nDo you want to synchronically save the configuration to the startup saved-configuration file on peer device?[Y/N]:y\r\nNow saving the current configuration to the device...\r\nInfo:The current configuration was saved to the device successfully.\r\nHRP_S<FW-B>"
+  },
+  {
+    "name": "CORE-SW1",
+    "saved": true,
+    "detail": "save\r\nThe current configuration will be written to the device.\r\nAre you sure to continue?[Y/N]y\r\nNow saving the current configuration to the slot 0.\r\nSave the configuration successfully.\r\n<CORE-SW1>"
+  },
+  {
+    "name": "CORE-SW2",
+    "saved": true,
+    "detail": "save\r\nThe current configuration will be written to the device.\r\nAre you sure to continue?[Y/N]y\r\nNow saving the current configuration to the slot 0.\r\nSave the configuration successfully.\r\n<CORE-SW2>"
+  },
+  {
+    "name": "DMZ-SW",
+    "saved": true,
+    "detail": "save\r\nThe current configuration will be written to the device.\r\nAre you sure to continue?[Y/N]y\r\nNow saving the current configuration to the slot 0.\r\nSave the configuration successfully.\r\n<DMZ-SW>"
+  },
+  {
+    "name": "AGG-CLINIC",
+    "saved": true,
+    "detail": "save\r\nThe current configuration will be written to the device.\r\nAre you sure to continue?[Y/N]y\r\nNow saving the current configuration to the slot 0.\r\nSave the configuration successfully.\r\n<AGG-CLINIC>"
+  },
+  {
+    "name": "ACC-OPD",
+    "saved": true,
+    "detail": "save\r\nThe current configuration will be written to the device.\r\nAre you sure to continue?[Y/N]y\r\nNow saving the current configuration to the slot 0.\r\nSave the configuration successfully.\r\n<ACC-OPD>"
+  },
+  {
+    "name": "ACC-ER",
+    "saved": true,
+    "detail": "save\r\nThe current configuration will be written to the device.\r\nAre you sure to continue?[Y/N]y\r\nNow saving the current configuration to the slot 0.\r\nSave the configuration successfully.\r\n<ACC-ER>"
+  },
+  {
+    "name": "ACC-PHARM",
+    "saved": true,
+    "detail": "save\r\nThe current configuration will be written to the device.\r\nAre you sure to continue?[Y/N]y\r\nNow saving the current configuration to the slot 0.\r\nSave the configuration successfully.\r\n<ACC-PHARM>"
+  },
+  {
+    "name": "AGG-INPATIENT",
+    "saved": true,
+    "detail": "save\r\nThe current configuration will be written to the device.\r\nAre you sure to continue?[Y/N]y\r\nNow saving the current configuration to the slot 0.\r\nSave the configuration successfully.\r\n<AGG-INPATIENT>"
+  },
+  {
+    "name": "ACC-WARD-A",
+    "saved": true,
+    "detail": "save\r\nThe current configuration will be written to the device.\r\nAre you sure to continue?[Y/N]y\r\nNow saving the current configuration to the slot 0.\r\nSave the configuration successfully.\r\n<ACC-WARD-A>"
+  },
+  {
+    "name": "ACC-WARD-B",
+    "saved": true,
+    "detail": "save\r\nThe current configuration will be written to the device.\r\nAre you sure to continue?[Y/N]y\r\nNow saving the current configuration to the slot 0.\r\nSave the configuration successfully.\r\n<ACC-WARD-B>"
+  },
+  {
+    "name": "AGG-MEDTECH",
+    "saved": true,
+    "detail": "save\r\nThe current configuration will be written to the device.\r\nAre you sure to continue?[Y/N]y\r\nNow saving the current configuration to the slot 0.\r\nSave the configuration successfully.\r\n<AGG-MEDTECH>"
+  },
+  {
+    "name": "ACC-PACS",
+    "saved": true,
+    "detail": "save\r\nThe current configuration will be written to the device.\r\nAre you sure to continue?[Y/N]y\r\nNow saving the current configuration to the slot 0.\r\nSave the configuration successfully.\r\n<ACC-PACS>"
+  },
+  {
+    "name": "ACC-LAB",
+    "saved": true,
+    "detail": "save\r\nThe current configuration will be written to the device.\r\nAre you sure to continue?[Y/N]y\r\nNow saving the current configuration to the slot 0.\r\nSave the configuration successfully.\r\n<ACC-LAB>"
+  },
+  {
+    "name": "AGG-DC",
+    "saved": true,
+    "detail": "save\r\nThe current configuration will be written to the device.\r\nAre you sure to continue?[Y/N]y\r\nNow saving the current configuration to the slot 0.\r\nSave the configuration successfully.\r\n<AGG-DC>"
+  },
+  {
+    "name": "DC-SW-A",
+    "saved": true,
+    "detail": "save\r\nThe current configuration will be written to the device.\r\nAre you sure to continue?[Y/N]y\r\nNow saving the current configuration to the slot 0.\r\nSave the configuration successfully.\r\n<DC-SW-A>"
+  },
+  {
+    "name": "DC-SW-B",
+    "saved": true,
+    "detail": "save\r\nThe current configuration will be written to the device.\r\nAre you sure to continue?[Y/N]y\r\nNow saving the current configuration to the slot 0.\r\nSave the configuration successfully.\r\n<DC-SW-B>"
+  },
+  {
+    "name": "BACKUP-SW",
+    "saved": true,
+    "detail": "save\r\nThe current configuration will be written to the device.\r\nAre you sure to continue?[Y/N]y\r\nNow saving the current configuration to the slot 0.\r\nSave the configuration successfully.\r\n<BACKUP-SW>"
+  },
+  {
+    "name": "AGG-OFFICE",
+    "saved": true,
+    "detail": "save\r\nThe current configuration will be written to the device.\r\nAre you sure to continue?[Y/N]y\r\nNow saving the current configuration to the slot 0.\r\nSave the configuration successfully.\r\n<AGG-OFFICE>"
+  },
+  {
+    "name": "ACC-ADMIN",
+    "saved": true,
+    "detail": "save\r\nThe current configuration will be written to the device.\r\nAre you sure to continue?[Y/N]y\r\nNow saving the current configuration to the slot 0.\r\nSave the configuration successfully.\r\n<ACC-ADMIN>"
+  },
+  {
+    "name": "ACC-FIN",
+    "saved": true,
+    "detail": "save\r\nThe current configuration will be written to the device.\r\nAre you sure to continue?[Y/N]y\r\nNow saving the current configuration to the slot 0.\r\nSave the configuration successfully.\r\n<ACC-FIN>"
+  },
+  {
+    "name": "NMS-SW",
+    "saved": true,
+    "detail": "save\r\nThe current configuration will be written to the device.\r\nAre you sure to continue?[Y/N]y\r\nNow saving the current configuration to the slot 0.\r\nSave the configuration successfully.\r\n<NMS-SW>"
+  },
+  {
+    "name": "AGG-IOT",
+    "saved": true,
+    "detail": "save\r\nThe current configuration will be written to the device.\r\nAre you sure to continue?[Y/N]y\r\nNow saving the current configuration to the slot 0.\r\nSave the configuration successfully.\r\n<AGG-IOT>"
+  },
+  {
+    "name": "ACC-IOT",
+    "saved": true,
+    "detail": "save\r\nThe current configuration will be written to the device.\r\nAre you sure to continue?[Y/N]y\r\nNow saving the current configuration to the slot 0.\r\nSave the configuration successfully.\r\n<ACC-IOT>"
+  },
+  {
+    "name": "ACC-CCTV",
+    "saved": true,
+    "detail": "save\r\nThe current configuration will be written to the device.\r\nAre you sure to continue?[Y/N]y\r\nNow saving the current configuration to the slot 0.\r\nSave the configuration successfully.\r\n<ACC-CCTV>"
+  },
+  {
+    "name": "ACC-WLAN",
+    "saved": true,
+    "detail": "save\r\nThe current configuration will be written to the device.\r\nAre you sure to continue?[Y/N]y\r\nNow saving the current configuration to the slot 0.\r\nSave the configuration successfully.\r\n<ACC-WLAN>"
+  },
+  {
+    "name": "AGG-BRANCH",
+    "saved": true,
+    "detail": "save\r\nThe current configuration will be written to the device.\r\nAre you sure to continue?[Y/N]y\r\nNow saving the current configuration to the slot 0.\r\nSave the configuration successfully.\r\n<AGG-BRANCH>"
+  },
+  {
+    "name": "BRANCH-SW",
+    "saved": true,
+    "detail": "save\r\nThe current configuration will be written to the device.\r\nAre you sure to continue?[Y/N]y\r\nNow saving the current configuration to the slot 0.\r\nSave the configuration successfully.\r\n<BRANCH-SW>"
+  },
+  {
+    "name": "TELEMED-GW",
+    "saved": true,
+    "detail": "current configuration will be written to the device.\n  Are you sure to continue? (y/n)[n]:Y\n  It will take several minutes to save configuration file, please wait......\n  Configuration file had been saved successfully\n  Note: The configuration file will take effect after being activated\n<TELEMED-GW>"
+  }
+]

@@ -1,0 +1,172 @@
+[
+  {
+    "name": "WAN-L2",
+    "ok": true,
+    "output": "display current-configuration | include sysname\r\nsysname WAN-L2\r\n<WAN-L2>"
+  },
+  {
+    "name": "ISP-R1",
+    "ok": true,
+    "output": "display current-configuration | include sysname\r\n sysname ISP-R1\r\n<ISP-R1>"
+  },
+  {
+    "name": "ISP-R2",
+    "ok": true,
+    "output": "display current-configuration | include sysname\r\n sysname ISP-R2\r\n<ISP-R2>"
+  },
+  {
+    "name": "HEALTH-R",
+    "ok": true,
+    "output": "display current-configuration | include sysname\r\n sysname HEALTH-R\r\n<HEALTH-R>"
+  },
+  {
+    "name": "FW-A",
+    "ok": true,
+    "output": "display current-configuration | include sysname\r\n16:35:22  2026/10/30\r\n sysname FW-A\r\nHRP_M<FW-A>"
+  },
+  {
+    "name": "FW-B",
+    "ok": true,
+    "output": "display current-configuration | include sysname\r\n16:35:21  2026/10/30\r\n sysname FW-B\r\nHRP_S<FW-B>"
+  },
+  {
+    "name": "CORE-SW1",
+    "ok": true,
+    "output": "display current-configuration | include sysname\r\nsysname CORE-SW1\r\n<CORE-SW1>"
+  },
+  {
+    "name": "CORE-SW2",
+    "ok": true,
+    "output": "display current-configuration | include sysname\r\nsysname CORE-SW2\r\n<CORE-SW2>"
+  },
+  {
+    "name": "DMZ-SW",
+    "ok": true,
+    "output": "display current-configuration | include sysname\r\nsysname DMZ-SW\r\n<DMZ-SW>"
+  },
+  {
+    "name": "AGG-CLINIC",
+    "ok": true,
+    "output": "display current-configuration | include sysname\r\nsysname AGG-CLINIC\r\n<AGG-CLINIC>"
+  },
+  {
+    "name": "ACC-OPD",
+    "ok": true,
+    "output": "display current-configuration | include sysname\r\nsysname ACC-OPD\r\n<ACC-OPD>"
+  },
+  {
+    "name": "ACC-ER",
+    "ok": true,
+    "output": "display current-configuration | include sysname\r\nsysname ACC-ER\r\n<ACC-ER>"
+  },
+  {
+    "name": "ACC-PHARM",
+    "ok": true,
+    "output": "display current-configuration | include sysname\r\nsysname ACC-PHARM\r\n<ACC-PHARM>"
+  },
+  {
+    "name": "AGG-INPATIENT",
+    "ok": true,
+    "output": "display current-configuration | include sysname\r\nsysname AGG-INPATIENT\r\n<AGG-INPATIENT>"
+  },
+  {
+    "name": "ACC-WARD-A",
+    "ok": true,
+    "output": "display current-configuration | include sysname\r\nsysname ACC-WARD-A\r\n<ACC-WARD-A>"
+  },
+  {
+    "name": "ACC-WARD-B",
+    "ok": true,
+    "output": "display current-configuration | include sysname\r\nsysname ACC-WARD-B\r\n<ACC-WARD-B>"
+  },
+  {
+    "name": "AGG-MEDTECH",
+    "ok": true,
+    "output": "display current-configuration | include sysname\r\nsysname AGG-MEDTECH\r\n<AGG-MEDTECH>"
+  },
+  {
+    "name": "ACC-PACS",
+    "ok": true,
+    "output": "display current-configuration | include sysname\r\nsysname ACC-PACS\r\n<ACC-PACS>"
+  },
+  {
+    "name": "ACC-LAB",
+    "ok": true,
+    "output": "display current-configuration | include sysname\r\nsysname ACC-LAB\r\n<ACC-LAB>"
+  },
+  {
+    "name": "AGG-DC",
+    "ok": true,
+    "output": "display current-configuration | include sysname\r\nsysname AGG-DC\r\n<AGG-DC>"
+  },
+  {
+    "name": "DC-SW-A",
+    "ok": true,
+    "output": "display current-configuration | include sysname\r\nsysname DC-SW-A\r\n<DC-SW-A>"
+  },
+  {
+    "name": "DC-SW-B",
+    "ok": true,
+    "output": "display current-configuration | include sysname\r\nsysname DC-SW-B\r\n<DC-SW-B>"
+  },
+  {
+    "name": "BACKUP-SW",
+    "ok": true,
+    "output": "display current-configuration | include sysname\r\nsysname BACKUP-SW\r\n<BACKUP-SW>"
+  },
+  {
+    "name": "AGG-OFFICE",
+    "ok": true,
+    "output": "display current-configuration | include sysname\r\nsysname AGG-OFFICE\r\n<AGG-OFFICE>"
+  },
+  {
+    "name": "ACC-ADMIN",
+    "ok": true,
+    "output": "display current-configuration | include sysname\r\nsysname ACC-ADMIN\r\n<ACC-ADMIN>"
+  },
+  {
+    "name": "ACC-FIN",
+    "ok": true,
+    "output": "display current-configuration | include sysname\r\nsysname ACC-FIN\r\n<ACC-FIN>"
+  },
+  {
+    "name": "NMS-SW",
+    "ok": true,
+    "output": "display current-configuration | include sysname\r\nsysname NMS-SW\r\n<NMS-SW>"
+  },
+  {
+    "name": "AGG-IOT",
+    "ok": true,
+    "output": "display current-configuration | include sysname\r\nsysname AGG-IOT\r\n<AGG-IOT>"
+  },
+  {
+    "name": "ACC-IOT",
+    "ok": true,
+    "output": "display current-configuration | include sysname\r\nsysname ACC-IOT\r\n<ACC-IOT>"
+  },
+  {
+    "name": "ACC-CCTV",
+    "ok": true,
+    "output": "display current-configuration | include sysname\r\nsysname ACC-CCTV\r\n<ACC-CCTV>"
+  },
+  {
+    "name": "ACC-WLAN",
+    "ok": true,
+    "output": "display current-configuration | include sysname\r\nsysname ACC-WLAN\r\n<ACC-WLAN>"
+  },
+  {
+    "name": "AGG-BRANCH",
+    "ok": true,
+    "output": "display current-configuration | include sysname\r\nsysname AGG-BRANCH\r\n<AGG-BRANCH>"
+  },
+  {
+    "name": "BRANCH-SW",
+    "ok": true,
+    "output": "display current-configuration | include sysname\r\nsysname BRANCH-SW\r\n<BRANCH-SW>"
+  },
+  {
+    "name": "TELEMED-GW",
+    "ok": true,
+    "output": "display current-configuration | include sysname\r\n sysname TELEMED-GW\r\n<TELEMED-GW>"
+  }
+]

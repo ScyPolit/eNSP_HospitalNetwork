@@ -1,0 +1,28 @@
+display nat address-group
+14:17:04  2026/10/30
+NAT address-group information:
+ number        : 1                       name          : ---                    
+ startaddr     : 12.1.1.20               endaddr       : 12.1.1.30              
+ reference     : 1                       vrrp          : ---                    
+ vpninstance   : public                 
+
+ number        : 2                       name          : ---                    
+ startaddr     : 13.1.1.20               endaddr       : 13.1.1.30              
+ reference     : 1                       vrrp          : ---                    
+ vpninstance   : public                 
+
+  Total   2 address-groups
+HRP_S<FW-B>
+display hrp state
+14:17:04  2026/10/30
+ The firewall's config state is: SLAVE
+
+ Current state of virtual routers configured as slave:
+             GigabitEthernet0/0/5    vrid   6 : slave
+             GigabitEthernet0/0/4    vrid   5 : slave
+             GigabitEthernet0/0/3    vrid   4 : slave
+             GigabitEthernet0/0/2    vrid   3 : slave
+             GigabitEthernet0/0/1    vrid   2 : slave
+             GigabitEthernet0/0/0    vrid   1 : slave
+
+HRP_S<FW-B>

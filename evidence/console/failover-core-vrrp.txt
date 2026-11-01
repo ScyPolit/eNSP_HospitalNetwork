@@ -1,0 +1,19 @@
+display vrrp brief
+VRID  State        Interface                Type     Virtual IP     
+----------------------------------------------------------------
+1     Master       Vlanif4094               Normal   10.162.99.65   
+----------------------------------------------------------------
+Total:1     Master:1     Backup:0     Non-active:0     
+<CORE-SW2>
+ping -c 2 10.162.106.10
+  PING 10.162.106.10: 56  data bytes, press CTRL_C to break
+    Reply from 10.162.106.10: bytes=56 Sequence=1 ttl=126 time=110 ms
+    Reply from 10.162.106.10: bytes=56 Sequence=2 ttl=126 time=80 ms
+
+  --- 10.162.106.10 ping statistics ---
+    2 packet(s) transmitted
+    2 packet(s) received
+    0.00% packet loss
+    round-trip min/avg/max = 80/95/110 ms
+
+<CORE-SW2>

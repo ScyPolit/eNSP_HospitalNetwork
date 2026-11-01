@@ -1,0 +1,23 @@
+display policy interzone trust medical inbound
+14:53:13  2026/10/30
+policy interzone trust medical inbound
+ firewall default packet-filter is deny
+ policy 1 (0 times matched)
+  action permit 
+  policy service service-set https (predefined)
+  policy source 172.20.1.10 0
+  policy destination 10.162.106.10 0
+
+ policy 2 (0 times matched)
+  action permit 
+  policy service service-set icmp (predefined)
+  policy source 172.20.1.10 0
+  policy destination 10.162.106.10 0
+
+ policy 3 (0 times matched)
+  action permit 
+  policy service service-set ip
+  policy source 172.20.1.10 0
+  policy destination 10.162.121.10 0
+
+HRP_M<FW-A>

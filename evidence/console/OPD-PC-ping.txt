@@ -1,0 +1,20 @@
+Welcome to use PC Simulator!
+
+PC>ping -c 2 203.0.113.10
+Bad argument: 2
+
+PC>ping
+
+Usage: ping <host> [-t] [-f] [-c count] [-l size][-i TTL] [-w timeout] 
+
+Options:
+-t             Ping the specified host until stopped.
+-f             Set Don't Fragment flag in packet (IPv4-only).
+-c count       Number of echo requests to send.
+-l size        Send buffer size.
+-i TTL         Time To Live.
+-w timeout     Timeout in milliseconds to wait for each reply.
+-4             Force using IPv4.
+-6             Force using IPv6.
+
+PC>

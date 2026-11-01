@@ -1,0 +1,3 @@
+display current-configuration | include sysname
+sysname AGG-IOT
+<AGG-IOT>

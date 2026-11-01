@@ -1,0 +1,180 @@
+display current-configuration
+#
+sysname DMZ-SW
+#
+undo info-center enable
+#
+vlan batch 70
+#
+cluster enable
+ntdp enable
+ndp enable
+#
+drop illegal-mac alarm
+#
+diffserv domain default
+#
+drop-profile default
+#
+aaa
+ authentication-scheme default
+ authorization-scheme default
+ accounting-scheme default
+ domain default
+ domain default_admin
+ local-user admin password simple admin
+  ---- More ----[42D                                          [42D local-user admin service-type http
+#
+interface Vlanif1
+#
+interface MEth0/0/1
+#
+interface GigabitEthernet0/0/1
+ port link-type access
+ port default vlan 70
+#
+interface GigabitEthernet0/0/2
+#
+interface GigabitEthernet0/0/3
+#
+interface GigabitEthernet0/0/4
+#
+interface GigabitEthernet0/0/5
+#
+interface GigabitEthernet0/0/6
+#
+interface GigabitEthernet0/0/7
+#
+interface GigabitEthernet0/0/8
+#
+  ---- More ----[42D                                          [42Dinterface GigabitEthernet0/0/9
+#
+interface GigabitEthernet0/0/10
+#
+interface GigabitEthernet0/0/11
+#
+interface GigabitEthernet0/0/12
+#
+interface GigabitEthernet0/0/13
+#
+interface GigabitEthernet0/0/14
+#
+interface GigabitEthernet0/0/15
+#
+interface GigabitEthernet0/0/16
+#
+interface GigabitEthernet0/0/17
+#
+interface GigabitEthernet0/0/18
+#
+interface GigabitEthernet0/0/19
+#
+interface GigabitEthernet0/0/20
+#
+  ---- More ----[42D                                          [42Dinterface GigabitEthernet0/0/21
+#
+interface GigabitEthernet0/0/22
+#
+interface GigabitEthernet0/0/23
+ port link-type access
+ port default vlan 70
+#
+interface GigabitEthernet0/0/24
+ port link-type access
+ port default vlan 70
+#
+interface NULL0
+#
+user-interface con 0
+user-interface vty 0 4
+#
+return
+<DMZ-SW>     
+display interface brief
+PHY: Physical
+*down: administratively down
+(l): loopback
+(s): spoofing
+(b): BFD down
+(e): ETHOAM down
+(dl): DLDP down
+(d): Dampening Suppressed
+InUti/OutUti: input utility/output utility
+Interface                   PHY   Protocol InUti OutUti   inErrors  outErrors
+GigabitEthernet0/0/1        up    up          0%     0%          0          0
+GigabitEthernet0/0/2        down  down        0%     0%          0          0
+GigabitEthernet0/0/3        down  down        0%     0%          0          0
+GigabitEthernet0/0/4        down  down        0%     0%          0          0
+GigabitEthernet0/0/5        down  down        0%     0%          0          0
+GigabitEthernet0/0/6        down  down        0%     0%          0          0
+GigabitEthernet0/0/7        down  down        0%     0%          0          0
+GigabitEthernet0/0/8        down  down        0%     0%          0          0
+GigabitEthernet0/0/9        down  down        0%     0%          0          0
+GigabitEthernet0/0/10       down  down        0%     0%          0          0
+GigabitEthernet0/0/11       down  down        0%     0%          0          0
+GigabitEthernet0/0/12       down  down        0%     0%          0          0
+GigabitEthernet0/0/13       down  down        0%     0%          0          0
+GigabitEthernet0/0/14       down  down        0%     0%          0          0
+GigabitEthernet0/0/15       down  down        0%     0%          0          0
+GigabitEthernet0/0/16       down  down        0%     0%          0          0
+GigabitEthernet0/0/17       down  down        0%     0%          0          0
+GigabitEthernet0/0/18       down  down        0%     0%          0          0
+GigabitEthernet0/0/19       down  down        0%     0%          0          0
+GigabitEthernet0/0/20       down  down        0%     0%          0          0
+GigabitEthernet0/0/21       down  down        0%     0%          0          0
+GigabitEthernet0/0/22       down  down        0%     0%          0          0
+GigabitEthernet0/0/23       up    up          0%     0%          0          0
+GigabitEthernet0/0/24       up    up          0%     0%          0          0
+  ---- More ----[42D                                          [42DMEth0/0/1                   down  down        0%     0%          0          0
+NULL0                       up    up(s)       0%     0%          0          0
+Vlanif1                     down  down        --     --          0          0
+<DMZ-SW>
+ display ip routing-table
+Route Flags: R - relay, D - download to fib
+------------------------------------------------------------------------------
+Routing Tables: Public
+         Destinations : 2        Routes : 2        
+
+Destination/Mask    Proto   Pre  Cost      Flags NextHop         Interface
+
+      127.0.0.0/8   Direct  0    0           D   127.0.0.1       InLoopBack0
+      127.0.0.1/32  Direct  0    0           D   127.0.0.1       InLoopBack0
+
+<DMZ-SW>
+display port vlan
+Port                    Link Type    PVID  Trunk VLAN List
+-------------------------------------------------------------------------------
+GigabitEthernet0/0/1    access       70    -                                   
+GigabitEthernet0/0/2    hybrid       1     -                                   
+GigabitEthernet0/0/3    hybrid       1     -                                   
+GigabitEthernet0/0/4    hybrid       1     -                                   
+GigabitEthernet0/0/5    hybrid       1     -                                   
+GigabitEthernet0/0/6    hybrid       1     -                                   
+GigabitEthernet0/0/7    hybrid       1     -                                   
+GigabitEthernet0/0/8    hybrid       1     -                                   
+GigabitEthernet0/0/9    hybrid       1     -                                   
+GigabitEthernet0/0/10   hybrid       1     -                                   
+GigabitEthernet0/0/11   hybrid       1     -                                   
+GigabitEthernet0/0/12   hybrid       1     -                                   
+GigabitEthernet0/0/13   hybrid       1     -                                   
+GigabitEthernet0/0/14   hybrid       1     -                                   
+GigabitEthernet0/0/15   hybrid       1     -                                   
+GigabitEthernet0/0/16   hybrid       1     -                                   
+GigabitEthernet0/0/17   hybrid       1     -                                   
+GigabitEthernet0/0/18   hybrid       1     -                                   
+GigabitEthernet0/0/19   hybrid       1     -                                   
+GigabitEthernet0/0/20   hybrid       1     -                                   
+GigabitEthernet0/0/21   hybrid       1     -                                   
+GigabitEthernet0/0/22   hybrid       1     -                                   
+GigabitEthernet0/0/23   access       70    -                                   
+GigabitEthernet0/0/24   access       70    -                                   
+<DMZ-SW>
+display eth-trunk
+Info: No valid trunk in the system.
+<DMZ-SW>
+display stp brief
+ MSTID  Port                        Role  STP State     Protection
+   0    GigabitEthernet0/0/1        DESI  FORWARDING      NONE
+   0    GigabitEthernet0/0/23       DESI  FORWARDING      NONE
+   0    GigabitEthernet0/0/24       DESI  FORWARDING      NONE
+<DMZ-SW>

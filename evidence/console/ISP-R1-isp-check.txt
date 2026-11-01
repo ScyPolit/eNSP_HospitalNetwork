@@ -1,0 +1,50 @@
+display ip interface brief
+*down: administratively down
+^down: standby
+(l): loopback
+(s): spoofing
+The number of interface that is UP in Physical is 3
+The number of interface that is DOWN in Physical is 1
+The number of interface that is UP in Protocol is 3
+The number of interface that is DOWN in Protocol is 1
+
+Interface                         IP Address/Mask      Physical   Protocol  
+GigabitEthernet0/0/0              12.1.1.254/24        up         up        
+GigabitEthernet0/0/1              203.0.113.1/24       up         up        
+GigabitEthernet0/0/2              unassigned           down       down      
+NULL0                             unassigned           up         up(s)     
+<ISP-R1>
+<ISP-R1>
+display ip routing-table
+Route Flags: R - relay, D - download to fib
+------------------------------------------------------------------------------
+Routing Tables: Public
+         Destinations : 10       Routes : 10       
+
+Destination/Mask    Proto   Pre  Cost      Flags NextHop         Interface
+
+       12.1.1.0/24  Direct  0    0           D   12.1.1.254      GigabitEthernet0/0/0
+     12.1.1.254/32  Direct  0    0           D   127.0.0.1       GigabitEthernet0/0/0
+     12.1.1.255/32  Direct  0    0           D   127.0.0.1       GigabitEthernet0/0/0
+      127.0.0.0/8   Direct  0    0           D   127.0.0.1       InLoopBack0
+      127.0.0.1/32  Direct  0    0           D   127.0.0.1       InLoopBack0
+127.255.255.255/32  Direct  0    0           D   127.0.0.1       InLoopBack0
+    203.0.113.0/24  Direct  0    0           D   203.0.113.1     GigabitEthernet0/0/1
+    203.0.113.1/32  Direct  0    0           D   127.0.0.1       GigabitEthernet0/0/1
+  203.0.113.255/32  Direct  0    0           D   127.0.0.1       GigabitEthernet0/0/1
+255.255.255.255/32  Direct  0    0           D   127.0.0.1       InLoopBack0
+
+<ISP-R1>
+<ISP-R1>
+ping -c 2 203.0.113.10
+  PING 203.0.113.10: 56  data bytes, press CTRL_C to break
+    Reply from 203.0.113.10: bytes=56 Sequence=1 ttl=128 time=40 ms
+    Reply from 203.0.113.10: bytes=56 Sequence=2 ttl=128 time=20 ms
+
+  --- 203.0.113.10 ping statistics ---
+    2 packet(s) transmitted
+    2 packet(s) received
+    0.00% packet loss
+    round-trip min/avg/max = 20/30/40 ms
+
+<ISP-R1>

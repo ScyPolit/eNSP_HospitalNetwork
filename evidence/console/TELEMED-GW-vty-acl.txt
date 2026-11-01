@@ -1,0 +1,17 @@
+system-view
+Enter system view, return user view with Ctrl+Z.
+[TELEMED-GW]
+acl number 2001
+[TELEMED-GW-acl-basic-2001]
+rule 5 permit source 10.162.120.20 0
+[TELEMED-GW-acl-basic-2001]
+rule 10 deny
+[TELEMED-GW-acl-basic-2001]
+quit
+[TELEMED-GW]
+user-interface vty 0 4
+[TELEMED-GW-ui-vty0-4]
+acl 2001 inbound
+[TELEMED-GW-ui-vty0-4]
+return
+<TELEMED-GW>

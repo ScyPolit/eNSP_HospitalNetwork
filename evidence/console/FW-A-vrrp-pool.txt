@@ -1,0 +1,32 @@
+display nat address-group
+13:50:48  2026/10/30
+NAT address-group information:
+ number        : 1                       name          : ---                    
+ startaddr     : 12.1.1.10               endaddr       : 12.1.1.30              
+ reference     : 1                       vrrp          : ---                    
+ vpninstance   : public                 
+
+ number        : 2                       name          : ---                    
+ startaddr     : 13.1.1.10               endaddr       : 13.1.1.30              
+ reference     : 1                       vrrp          : ---                    
+ vpninstance   : public                 
+
+  Total   2 address-groups
+HRP_M<FW-A>
+display vrrp interface GigabitEthernet0/0/0
+13:50:48  2026/10/30
+  GigabitEthernet0/0/0 | Virtual Router 1
+    VRRP Group : Master 
+    state : Master 
+    Virtual IP : 12.1.1.1
+    Virtual MAC : 0000-5e00-0101
+    Primary IP : 12.1.1.2
+    PriorityRun : 120
+    PriorityConfig : 100
+    MasterPriority : 120
+    Preempt : YES   Delay Time : 0
+    Advertisement Timer : 1
+    Auth Type : NONE
+    Check TTL : YES
+
+HRP_M<FW-A>

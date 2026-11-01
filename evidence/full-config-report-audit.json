@@ -1,0 +1,308 @@
+[
+  {
+    "name": "WAN-L2",
+    "title": "外联隔离交换机（WAN-L2）完整配置",
+    "source": "D:\\Windows\\桌面\\计网实验课程报告\\output\\医院园区网\\配置\\WAN-L2-running.cfg",
+    "lines": 70,
+    "original_lines": 108,
+    "removed_separator_or_blank_lines": 38,
+    "sha256": "fccfed25cac361c1e7504b0b27f2cd07716f34563119a633f1a2a5ef7cedf6a8"
+  },
+  {
+    "name": "ISP-R1",
+    "title": "主运营商路由器（ISP-R1）完整配置",
+    "source": "D:\\Windows\\桌面\\计网实验课程报告\\output\\医院园区网\\配置\\ISP-R1-running.cfg",
+    "lines": 36,
+    "original_lines": 53,
+    "removed_separator_or_blank_lines": 17,
+    "sha256": "da57854390916e74f7946104e80345f317feac7e19340c2b2f3c54f8319c2e89"
+  },
+  {
+    "name": "ISP-R2",
+    "title": "备运营商路由器（ISP-R2）完整配置",
+    "source": "D:\\Windows\\桌面\\计网实验课程报告\\output\\医院园区网\\配置\\ISP-R2-running.cfg",
+    "lines": 36,
+    "original_lines": 53,
+    "removed_separator_or_blank_lines": 17,
+    "sha256": "7a26aa16a510ca46d0a9b722a69c1647dc16972dfb2af1ec889d8b6ea11e2505"
+  },
+  {
+    "name": "HEALTH-R",
+    "title": "医疗专线路由器（HEALTH-R）完整配置",
+    "source": "D:\\Windows\\桌面\\计网实验课程报告\\output\\医院园区网\\配置\\HEALTH-R-running.cfg",
+    "lines": 68,
+    "original_lines": 92,
+    "removed_separator_or_blank_lines": 24,
+    "sha256": "2a2f70b097d766af7439c21036ba305873c3b0ae0576793b329ec6bfa99a528a"
+  },
+  {
+    "name": "FW-A",
+    "title": "主防火墙（FW-A）完整配置",
+    "source": "D:\\Windows\\桌面\\计网实验课程报告\\output\\医院园区网\\配置\\FW-A-running.cfg",
+    "lines": 198,
+    "original_lines": 265,
+    "removed_separator_or_blank_lines": 67,
+    "sha256": "141b09a6a35b9dd9893de2d2457837d2f7702961ddb28dacd1b1d2b02e627102"
+  },
+  {
+    "name": "FW-B",
+    "title": "备防火墙（FW-B）完整配置",
+    "source": "D:\\Windows\\桌面\\计网实验课程报告\\output\\医院园区网\\配置\\FW-B-running.cfg",
+    "lines": 193,
+    "original_lines": 259,
+    "removed_separator_or_blank_lines": 66,
+    "sha256": "0968917ba813f95e346a564a208fda6e90f124014dc6485fc5ce2918e11017b3"
+  },
+  {
+    "name": "CORE-SW1",
+    "title": "核心交换机一（CORE-SW1）完整配置",
+    "source": "D:\\Windows\\桌面\\计网实验课程报告\\output\\医院园区网\\配置\\CORE-SW1-running.cfg",
+    "lines": 118,
+    "original_lines": 169,
+    "removed_separator_or_blank_lines": 51,
+    "sha256": "7e1d46992dd4055898dd4158bb0d77a228f080267c40b43a3aeb3af611949a3b"
+  },
+  {
+    "name": "CORE-SW2",
+    "title": "核心交换机二（CORE-SW2）完整配置",
+    "source": "D:\\Windows\\桌面\\计网实验课程报告\\output\\医院园区网\\配置\\CORE-SW2-running.cfg",
+    "lines": 117,
+    "original_lines": 168,
+    "removed_separator_or_blank_lines": 51,
+    "sha256": "39062d5d5f0fd451bb4821f1a8da4b67ad20a12bc82d3917c3c85ce4745df0d1"
+  },
+  {
+    "name": "DMZ-SW",
+    "title": "非军事区交换机（DMZ-SW）完整配置",
+    "source": "D:\\Windows\\桌面\\计网实验课程报告\\output\\医院园区网\\配置\\DMZ-SW-running.cfg",
+    "lines": 58,
+    "original_lines": 96,
+    "removed_separator_or_blank_lines": 38,
+    "sha256": "d8fc65522e611d8b85af15057532a86cb17e0d63896f59e58a68fde21030ddec"
+  },
+  {
+    "name": "AGG-CLINIC",
+    "title": "门急诊汇聚（AGG-CLINIC）完整配置",
+    "source": "D:\\Windows\\桌面\\计网实验课程报告\\output\\医院园区网\\配置\\AGG-CLINIC-running.cfg",
+    "lines": 137,
+    "original_lines": 187,
+    "removed_separator_or_blank_lines": 50,
+    "sha256": "25dc2fb86dcce38bb7be317f196097f1642d8387e3aa7b9dab0425f7c60c34db"
+  },
+  {
+    "name": "ACC-OPD",
+    "title": "门诊接入（ACC-OPD）完整配置",
+    "source": "D:\\Windows\\桌面\\计网实验课程报告\\output\\医院园区网\\配置\\ACC-OPD-running.cfg",
+    "lines": 61,
+    "original_lines": 100,
+    "removed_separator_or_blank_lines": 39,
+    "sha256": "07cc548e3009f34a225551f2e9efa476f8f172d1abe895315e3e1fa408857ede"
+  },
+  {
+    "name": "ACC-ER",
+    "title": "急诊接入（ACC-ER）完整配置",
+    "source": "D:\\Windows\\桌面\\计网实验课程报告\\output\\医院园区网\\配置\\ACC-ER-running.cfg",
+    "lines": 61,
+    "original_lines": 100,
+    "removed_separator_or_blank_lines": 39,
+    "sha256": "3cbd4ce5575f4203e4a368e1d4d43454701be968d7934ed3a6c4accc3205ea07"
+  },
+  {
+    "name": "ACC-PHARM",
+    "title": "药房接入（ACC-PHARM）完整配置",
+    "source": "D:\\Windows\\桌面\\计网实验课程报告\\output\\医院园区网\\配置\\ACC-PHARM-running.cfg",
+    "lines": 61,
+    "original_lines": 100,
+    "removed_separator_or_blank_lines": 39,
+    "sha256": "1db3e043c1d60763c09815c8e0938cabcdfb390fef1fd05b4af904465132b727"
+  },
+  {
+    "name": "AGG-INPATIENT",
+    "title": "住院部汇聚（AGG-INPATIENT）完整配置",
+    "source": "D:\\Windows\\桌面\\计网实验课程报告\\output\\医院园区网\\配置\\AGG-INPATIENT-running.cfg",
+    "lines": 97,
+    "original_lines": 144,
+    "removed_separator_or_blank_lines": 47,
+    "sha256": "7992a0eee989480511f20a7f3349af4ba17270106b1823b4bac7f85eaad756f7"
+  },
+  {
+    "name": "ACC-WARD-A",
+    "title": "病区一接入（ACC-WARD-A）完整配置",
+    "source": "D:\\Windows\\桌面\\计网实验课程报告\\output\\医院园区网\\配置\\ACC-WARD-A-running.cfg",
+    "lines": 61,
+    "original_lines": 100,
+    "removed_separator_or_blank_lines": 39,
+    "sha256": "769d28edbd05ce9f75d68e8b74485682d3c25c90d9504632bff2af1cbdc74199"
+  },
+  {
+    "name": "ACC-WARD-B",
+    "title": "病区二接入（ACC-WARD-B）完整配置",
+    "source": "D:\\Windows\\桌面\\计网实验课程报告\\output\\医院园区网\\配置\\ACC-WARD-B-running.cfg",
+    "lines": 61,
+    "original_lines": 100,
+    "removed_separator_or_blank_lines": 39,
+    "sha256": "d514b223ceb569c91033b89528095b20297d32417daf61a8484215952e26292d"
+  },
+  {
+    "name": "AGG-MEDTECH",
+    "title": "医技科汇聚（AGG-MEDTECH）完整配置",
+    "source": "D:\\Windows\\桌面\\计网实验课程报告\\output\\医院园区网\\配置\\AGG-MEDTECH-running.cfg",
+    "lines": 97,
+    "original_lines": 144,
+    "removed_separator_or_blank_lines": 47,
+    "sha256": "e0a37f1454d75b77c9227b83ae8dc1d003694cdfccf5ebf7939ca143dc45082d"
+  },
+  {
+    "name": "ACC-PACS",
+    "title": "影像科接入（ACC-PACS）完整配置",
+    "source": "D:\\Windows\\桌面\\计网实验课程报告\\output\\医院园区网\\配置\\ACC-PACS-running.cfg",
+    "lines": 61,
+    "original_lines": 100,
+    "removed_separator_or_blank_lines": 39,
+    "sha256": "d6a31806c857280515ecb991e70e65371b53b143eb3368ff15e05bf24818761b"
+  },
+  {
+    "name": "ACC-LAB",
+    "title": "检验科接入（ACC-LAB）完整配置",
+    "source": "D:\\Windows\\桌面\\计网实验课程报告\\output\\医院园区网\\配置\\ACC-LAB-running.cfg",
+    "lines": 61,
+    "original_lines": 100,
+    "removed_separator_or_blank_lines": 39,
+    "sha256": "faf24cdbddbf615ac4783ab7c9788dbdf3e347984186b82abc5207d247c808e1"
+  },
+  {
+    "name": "AGG-DC",
+    "title": "数据中心汇聚（AGG-DC）完整配置",
+    "source": "D:\\Windows\\桌面\\计网实验课程报告\\output\\医院园区网\\配置\\AGG-DC-running.cfg",
+    "lines": 96,
+    "original_lines": 143,
+    "removed_separator_or_blank_lines": 47,
+    "sha256": "dd5a6abb98f21874cac309a85220ce69970f494af9e333bd73dc8951bd80579f"
+  },
+  {
+    "name": "DC-SW-A",
+    "title": "业务服务器接入（DC-SW-A）完整配置",
+    "source": "D:\\Windows\\桌面\\计网实验课程报告\\output\\医院园区网\\配置\\DC-SW-A-running.cfg",
+    "lines": 61,
+    "original_lines": 100,
+    "removed_separator_or_blank_lines": 39,
+    "sha256": "4d96dbcc72fed449f03f45329d251f8dc6ffee4e82a224960eaf624e97f6d471"
+  },
+  {
+    "name": "DC-SW-B",
+    "title": "影像服务器接入（DC-SW-B）完整配置",
+    "source": "D:\\Windows\\桌面\\计网实验课程报告\\output\\医院园区网\\配置\\DC-SW-B-running.cfg",
+    "lines": 61,
+    "original_lines": 100,
+    "removed_separator_or_blank_lines": 39,
+    "sha256": "67fd681ffd7e0007f1d896328040f6a2594d51997ee21ae92872ac3c768f46d7"
+  },
+  {
+    "name": "BACKUP-SW",
+    "title": "备份服务器接入（BACKUP-SW）完整配置",
+    "source": "D:\\Windows\\桌面\\计网实验课程报告\\output\\医院园区网\\配置\\BACKUP-SW-running.cfg",
+    "lines": 61,
+    "original_lines": 100,
+    "removed_separator_or_blank_lines": 39,
+    "sha256": "8debe419d6fd27ce9a41973f63839411fc64fbbe67f1627bc27dc082a005d9e1"
+  },
+  {
+    "name": "AGG-OFFICE",
+    "title": "办公运维汇聚（AGG-OFFICE）完整配置",
+    "source": "D:\\Windows\\桌面\\计网实验课程报告\\output\\医院园区网\\配置\\AGG-OFFICE-running.cfg",
+    "lines": 119,
+    "original_lines": 168,
+    "removed_separator_or_blank_lines": 49,
+    "sha256": "b8249f7564a938de5a91b0fe8c1e2bb09ec323166d55251c9fc401a014740f55"
+  },
+  {
+    "name": "ACC-ADMIN",
+    "title": "行政接入（ACC-ADMIN）完整配置",
+    "source": "D:\\Windows\\桌面\\计网实验课程报告\\output\\医院园区网\\配置\\ACC-ADMIN-running.cfg",
+    "lines": 61,
+    "original_lines": 100,
+    "removed_separator_or_blank_lines": 39,
+    "sha256": "5e82954ba6aa78678b265876b5a3d3fc8b3a7b79384166782169bd356055a209"
+  },
+  {
+    "name": "ACC-FIN",
+    "title": "财务接入（ACC-FIN）完整配置",
+    "source": "D:\\Windows\\桌面\\计网实验课程报告\\output\\医院园区网\\配置\\ACC-FIN-running.cfg",
+    "lines": 61,
+    "original_lines": 100,
+    "removed_separator_or_blank_lines": 39,
+    "sha256": "1792da8417b71469a0c6afa3b98da2c320100eecf8b6f6ef99fe251ca7a271f9"
+  },
+  {
+    "name": "NMS-SW",
+    "title": "运维接入（NMS-SW）完整配置",
+    "source": "D:\\Windows\\桌面\\计网实验课程报告\\output\\医院园区网\\配置\\NMS-SW-running.cfg",
+    "lines": 63,
+    "original_lines": 102,
+    "removed_separator_or_blank_lines": 39,
+    "sha256": "703c83655d8031ea2ba00e8805b338f313ea12d16bd4260f10eccfe52e93a3fb"
+  },
+  {
+    "name": "AGG-IOT",
+    "title": "物联无线汇聚（AGG-IOT）完整配置",
+    "source": "D:\\Windows\\桌面\\计网实验课程报告\\output\\医院园区网\\配置\\AGG-IOT-running.cfg",
+    "lines": 149,
+    "original_lines": 200,
+    "removed_separator_or_blank_lines": 51,
+    "sha256": "a62eeab6b824f2ceb289fd9ced17db9752b29695e2c65a4f02992375971751e3"
+  },
+  {
+    "name": "ACC-IOT",
+    "title": "医疗物联接入（ACC-IOT）完整配置",
+    "source": "D:\\Windows\\桌面\\计网实验课程报告\\output\\医院园区网\\配置\\ACC-IOT-running.cfg",
+    "lines": 61,
+    "original_lines": 100,
+    "removed_separator_or_blank_lines": 39,
+    "sha256": "669aa0841b82285fd6ffd3ad238079b94408baa4e06556ae13efbdbc53874641"
+  },
+  {
+    "name": "ACC-CCTV",
+    "title": "视频监控接入（ACC-CCTV）完整配置",
+    "source": "D:\\Windows\\桌面\\计网实验课程报告\\output\\医院园区网\\配置\\ACC-CCTV-running.cfg",
+    "lines": 61,
+    "original_lines": 100,
+    "removed_separator_or_blank_lines": 39,
+    "sha256": "a2301cd01802c797ab8a7e49b40b1cb01b6f7c1e36044214d2cfc8e262b97fa2"
+  },
+  {
+    "name": "ACC-WLAN",
+    "title": "无线网络接入（ACC-WLAN）完整配置",
+    "source": "D:\\Windows\\桌面\\计网实验课程报告\\output\\医院园区网\\配置\\ACC-WLAN-running.cfg",
+    "lines": 63,
+    "original_lines": 102,
+    "removed_separator_or_blank_lines": 39,
+    "sha256": "947b62954c531d686db856f140b83f39f8fdd13bdfdc7e5de994bb152755e94a"
+  },
+  {
+    "name": "AGG-BRANCH",
+    "title": "分院汇聚（AGG-BRANCH）完整配置",
+    "source": "D:\\Windows\\桌面\\计网实验课程报告\\output\\医院园区网\\配置\\AGG-BRANCH-running.cfg",
+    "lines": 97,
+    "original_lines": 144,
+    "removed_separator_or_blank_lines": 47,
+    "sha256": "5cc862d97f0140825241bd7f2791db6a9d491a1afe5f3e2a3a837c239348c054"
+  },
+  {
+    "name": "BRANCH-SW",
+    "title": "分院接入（BRANCH-SW）完整配置",
+    "source": "D:\\Windows\\桌面\\计网实验课程报告\\output\\医院园区网\\配置\\BRANCH-SW-running.cfg",
+    "lines": 61,
+    "original_lines": 100,
+    "removed_separator_or_blank_lines": 39,
+    "sha256": "db3b2dffc6db6abd0720f3e1ab1fcf8e0dc9b3184a33594e4a206101e0c01faa"
+  },
+  {
+    "name": "TELEMED-GW",
+    "title": "远程医疗网关（TELEMED-GW）完整配置",
+    "source": "D:\\Windows\\桌面\\计网实验课程报告\\output\\医院园区网\\配置\\TELEMED-GW-running.cfg",
+    "lines": 66,
+    "original_lines": 90,
+    "removed_separator_or_blank_lines": 24,
+    "sha256": "e2ca9a1d62b4484223e466ad2db2aae34b13373fe5ebdf5611ee805968d23c79"
+  }
+]

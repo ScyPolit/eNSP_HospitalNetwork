@@ -1,0 +1,13 @@
+system-view
+14:01:53  2026/10/30
+Enter system view, return user view with Ctrl+Z.
+HRP_S[FW-B]
+hrp slave config enable
+14:01:53  2026/10/30
+HRP_S[FW-B]
+undo hrp auto-sync config
+14:01:53  2026/10/30
+HRP_S[FW-B]
+return
+14:01:54  2026/10/30
+HRP_S<FW-B>

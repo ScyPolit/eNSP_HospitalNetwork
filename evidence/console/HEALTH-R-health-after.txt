@@ -1,0 +1,74 @@
+display nqa results test-instance hospital fwa
+ 
+ NQA entry(hospital, fwa) :testflag is active ,testtype is icmp 
+  1 . Test 3 result   The test is finished
+   Send operation times: 2              Receive response times: 2          
+   Completion:success                   RTD OverThresholds number: 0       
+   Attempts number:1                    Drop operation number:0            
+   Disconnect operation number:0        Operation timeout number:0         
+   System busy operation number:0       Connection fail number:0           
+   Operation sequence errors number:0   RTT Status errors number:0         
+   Destination ip address:192.0.2.1                                      
+   Min/Max/Average Completion Time: 40/140/90                            
+   Sum/Square-Sum  Completion Time: 180/21200                            
+   Last Good Probe Time: 2026-10-30 15:10:33.2                           
+   Lost packet ratio: 0 %                                                
+  2 . Test 4 result   The test is finished
+   Send operation times: 2              Receive response times: 2          
+   Completion:success                   RTD OverThresholds number: 0       
+   Attempts number:1                    Drop operation number:0            
+   Disconnect operation number:0        Operation timeout number:0         
+   System busy operation number:0       Connection fail number:0           
+   Operation sequence errors number:0   RTT Status errors number:0         
+   Destination ip address:192.0.2.1                                      
+   Min/Max/Average Completion Time: 210/450/330                          
+   Sum/Square-Sum  Completion Time: 660/246600                           
+   Last Good Probe Time: 2026-10-30 15:10:38.6                           
+   Lost packet ratio: 0 %                                                
+  3 . Test 5 result   The test is finished
+   Send operation times: 2              Receive response times: 2          
+   Completion:success                   RTD OverThresholds number: 0       
+   Attempts number:1                    Drop operation number:0            
+   Disconnect operation number:0        Operation timeout number:0         
+   System busy operation number:0       Connection fail number:0           
+   Operation sequence errors number:0   RTT Status errors number:0         
+   Destination ip address:192.0.2.1                                      
+   Min/Max/Average Completion Time: 340/420/380                          
+   Sum/Square-Sum  Completion Time: 760/292000                           
+   Last Good Probe Time: 2026-10-30 15:10:43.6                           
+   Lost packet ratio: 0 %                                                
+  4 . Test 6 result   The test is finished
+   Send operation times: 2              Receive response times: 2          
+   Completion:success                   RTD OverThresholds number: 0       
+   Attempts number:1                    Drop operation number:0            
+   Disconnect operation number:0        Operation timeout number:0         
+   System busy operation number:0       Connection fail number:0           
+   Operation sequence errors number:0   RTT Status errors number:0         
+   Destination ip address:192.0.2.1                                      
+   Min/Max/Average Completion Time: 90/110/100                           
+   Sum/Square-Sum  Completion Time: 200/20200                            
+   Last Good Probe Time: 2026-10-30 15:10:48.3                           
+   Lost packet ratio: 0 %                                                
+  5 . Test 7 result   The test is finished
+   Send operation times: 2              Receive response times: 2          
+   Completion:success                   RTD OverThresholds number: 0       
+   Attempts number:1                    Drop operation number:0            
+   Disconnect operation number:0        Operation timeout number:0         
+   System busy operation number:0       Connection fail number:0           
+   Operation sequence errors number:0   RTT Status errors number:0         
+   Destination ip address:192.0.2.1                                      
+   Min/Max/Average Completion Time: 70/290/180                           
+   Sum/Square-Sum  Completion Time: 360/89000                            
+   Last Good Probe Time: 2026-10-30 15:10:53.2                           
+   Lost packet ratio: 0 %                                                
+<HEALTH-R>
+display ip routing-table 10.162.106.10
+Route Flags: R - relay, D - download to fib
+------------------------------------------------------------------------------
+Routing Table : Public
+Summary Count : 1
+Destination/Mask    Proto   Pre  Cost      Flags NextHop         Interface
+
+   10.162.106.0/24  Static  60   0           D   192.0.2.2       GigabitEthernet0/0/0
+
+<HEALTH-R>

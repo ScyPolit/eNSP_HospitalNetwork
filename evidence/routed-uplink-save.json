@@ -1,0 +1,47 @@
+[
+  {
+    "name": "CORE-SW1",
+    "saved": true,
+    "detail": "save\r\nThe current configuration will be written to the device.\r\nAre you sure to continue?[Y/N]y\r\nNow saving the current configuration to the slot 0.\r\nSave the configuration successfully.\r\n<CORE-SW1>"
+  },
+  {
+    "name": "CORE-SW2",
+    "saved": true,
+    "detail": "save\r\nThe current configuration will be written to the device.\r\nAre you sure to continue?[Y/N]y\r\nNow saving the current configuration to the slot 0.\r\nSave the configuration successfully.\r\n<CORE-SW2>"
+  },
+  {
+    "name": "AGG-CLINIC",
+    "saved": true,
+    "detail": "save\r\nThe current configuration will be written to the device.\r\nAre you sure to continue?[Y/N]y\r\nNow saving the current configuration to the slot 0.\r\nSave the configuration successfully.\r\n<AGG-CLINIC>"
+  },
+  {
+    "name": "AGG-INPATIENT",
+    "saved": true,
+    "detail": "save\r\nThe current configuration will be written to the device.\r\nAre you sure to continue?[Y/N]y\r\nNow saving the current configuration to the slot 0.\r\nSave the configuration successfully.\r\n<AGG-INPATIENT>"
+  },
+  {
+    "name": "AGG-MEDTECH",
+    "saved": true,
+    "detail": "save\r\nThe current configuration will be written to the device.\r\nAre you sure to continue?[Y/N]y\r\nNow saving the current configuration to the slot 0.\r\nSave the configuration successfully.\r\n<AGG-MEDTECH>"
+  },
+  {
+    "name": "AGG-DC",
+    "saved": true,
+    "detail": "save\r\nThe current configuration will be written to the device.\r\nAre you sure to continue?[Y/N]y\r\nNow saving the current configuration to the slot 0.\r\nSave the configuration successfully.\r\n<AGG-DC>"
+  },
+  {
+    "name": "AGG-OFFICE",
+    "saved": true,
+    "detail": "save\r\nThe current configuration will be written to the device.\r\nAre you sure to continue?[Y/N]y\r\nNow saving the current configuration to the slot 0.\r\nSave the configuration successfully.\r\n<AGG-OFFICE>"
+  },
+  {
+    "name": "AGG-IOT",
+    "saved": true,
+    "detail": "save\r\nThe current configuration will be written to the device.\r\nAre you sure to continue?[Y/N]y\r\nNow saving the current configuration to the slot 0.\r\nSave the configuration successfully.\r\n<AGG-IOT>"
+  },
+  {
+    "name": "AGG-BRANCH",
+    "saved": true,
+    "detail": "save\r\nThe current configuration will be written to the device.\r\nAre you sure to continue?[Y/N]y\r\nNow saving the current configuration to the slot 0.\r\nSave the configuration successfully.\r\n<AGG-BRANCH>"
+  }
+]

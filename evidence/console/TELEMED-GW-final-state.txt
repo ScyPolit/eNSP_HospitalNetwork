@@ -1,0 +1,7 @@
+screen-length 0 temporary
+Error: The type of the included user interface must be VTY.
+<TELEMED-GW>
+
+<TELEMED-GW>
+display current-configuration
+[V200R003C00]

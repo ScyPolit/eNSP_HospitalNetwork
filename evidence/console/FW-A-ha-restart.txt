@@ -1,0 +1,13 @@
+system-view
+13:37:54  2026/10/30
+Enter system view, return user view with Ctrl+Z.
+HRP_M[FW-A]
+undo hrp enable
+13:37:54  2026/10/30
+[FW-A]
+hrp enable
+13:37:54  2026/10/30
+HRP_S[FW-A]
+return
+13:37:54  2026/10/30
+HRP_S<FW-A>

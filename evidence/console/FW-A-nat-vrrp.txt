@@ -1,0 +1,15 @@
+system-view
+13:50:29  2026/10/30
+Enter system view, return user view with Ctrl+Z.
+HRP_M[FW-A]
+nat address-group 1 12.1.1.10 12.1.1.30 vrrp 1
+13:50:29  2026/10/30
+ Warning: There is no VRRP backup group on the same network segment as the NAT address pool, so you do not need to bind the VRID.
+HRP_M[FW-A]
+nat address-group 2 13.1.1.10 13.1.1.30 vrrp 2
+13:50:29  2026/10/30
+ Warning: There is no VRRP backup group on the same network segment as the NAT address pool, so you do not need to bind the VRID.
+HRP_M[FW-A]
+return
+13:50:29  2026/10/30
+HRP_M<FW-A>

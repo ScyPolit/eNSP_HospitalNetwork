@@ -1,0 +1,149 @@
+display ospf peer brief
+
+	 OSPF Process 1 with Router ID 10.255.255.11
+		  Peer Statistic Information
+ ----------------------------------------------------------------------------
+ Area Id          Interface                        Neighbor id      State    
+ 0.0.0.0          Vlanif900                        10.255.255.1     2-Way       
+ 0.0.0.0          Vlanif900                        10.255.255.2     Full        
+ 0.0.0.0          Vlanif900                        10.255.255.12    Full        
+ 0.0.0.0          Vlanif901                        10.255.255.1     Full        
+ 0.0.0.0          Vlanif901                        10.255.255.2     Full        
+ 0.0.0.0          Vlanif901                        10.255.255.12    Full        
+ 0.0.0.0          Vlanif4094                       10.255.255.12    Full        
+ 0.0.0.0          Vlanif1101                       10.255.254.1     Full        
+ 0.0.0.0          Vlanif1102                       10.255.254.2     Full        
+ 0.0.0.0          Vlanif1103                       10.255.254.3     Full        
+ 0.0.0.0          Vlanif1104                       10.255.254.4     Full        
+ 0.0.0.0          Vlanif1105                       10.255.254.5     Full        
+ 0.0.0.0          Vlanif1106                       10.255.254.6     Full        
+ 0.0.0.0          Vlanif1107                       10.255.254.7     Full        
+ ----------------------------------------------------------------------------
+<CORE-SW1>
+display vrrp brief
+VRID  State        Interface                Type     Virtual IP     
+----------------------------------------------------------------
+1     Master       Vlanif4094               Normal   10.162.99.65   
+----------------------------------------------------------------
+Total:1     Master:1     Backup:0     Non-active:0     
+<CORE-SW1>
+display eth-trunk 1
+Eth-Trunk1's state information is:
+Local:
+LAG ID: 1                   WorkingMode: STATIC                               
+Preempt Delay: Disabled     Hash arithmetic: According to SIP-XOR-DIP         
+System Priority: 32768      System ID: 4c1f-cc50-3e43                         
+Least Active-linknumber: 1  Max Active-linknumber: 8                          
+Operate status: up          Number Of Up Port In Trunk: 2                     
+--------------------------------------------------------------------------------
+ActorPortName          Status   PortType PortPri PortNo PortKey PortState Weight
+GigabitEthernet0/0/23  Selected 1GE      32768   24     305     10111100  1     
+GigabitEthernet0/0/24  Selected 1GE      32768   25     305     10111100  1     
+
+Partner:
+--------------------------------------------------------------------------------
+ActorPortName          SysPri   SystemID        PortPri PortNo PortKey PortState
+GigabitEthernet0/0/23  32768    4c1f-ccb4-5e41  32768   24     305     10111100
+GigabitEthernet0/0/24  32768    4c1f-ccb4-5e41  32768   25     305     10111100
+    
+<CORE-SW1>
+display ip routing-table
+Route Flags: R - relay, D - download to fib
+------------------------------------------------------------------------------
+Routing Tables: Public
+         Destinations : 51       Routes : 90       
+
+Destination/Mask    Proto   Pre  Cost      Flags NextHop         Interface
+
+        0.0.0.0/0   O_ASE   150  1           D   10.162.99.35    Vlanif901
+                    O_ASE   150  1           D   10.162.99.3     Vlanif900
+                    O_ASE   150  1           D   10.162.99.2     Vlanif900
+                    O_ASE   150  1           D   10.162.99.34    Vlanif901
+    10.162.99.0/27  Direct  0    0           D   10.162.99.4     Vlanif900
+    10.162.99.1/32  OSPF    10   2           D   10.162.99.2     Vlanif900
+                    OSPF    10   2           D   10.162.99.34    Vlanif901
+                    OSPF    10   2           D   10.162.99.35    Vlanif901
+                    OSPF    10   2           D   10.162.99.3     Vlanif900
+    10.162.99.4/32  Direct  0    0           D   127.0.0.1       Vlanif900
+   10.162.99.32/27  Direct  0    0           D   10.162.99.36    Vlanif901
+   10.162.99.33/32  OSPF    10   2           D   10.162.99.2     Vlanif900
+                    OSPF    10   2           D   10.162.99.34    Vlanif901
+                    OSPF    10   2           D   10.162.99.35    Vlanif901
+                    OSPF    10   2           D   10.162.99.3     Vlanif900
+   10.162.99.36/32  Direct  0    0           D   127.0.0.1       Vlanif901
+   10.162.99.64/27  Direct  0    0           D   10.162.99.66    Vlanif4094
+   10.162.99.65/32  Direct  0    0           D   127.0.0.1       Vlanif4094
+   10.162.99.66/32  Direct  0    0           D   127.0.0.1       Vlanif4094
+   10.162.99.96/30  Direct  0    0           D   10.162.99.97    Vlanif1101
+   10.162.99.97/32  Direct  0    0           D   127.0.0.1       Vlanif1101
+  10.162.99.100/30  Direct  0    0           D   10.162.99.101   Vlanif1102
+  10.162.99.101/32  Direct  0    0           D   127.0.0.1       Vlanif1102
+  10.162.99.104/30  Direct  0    0           D   10.162.99.105   Vlanif1103
+  ---- More ----[42D                                          [42D  10.162.99.105/32  Direct  0    0           D   127.0.0.1       Vlanif1103
+  10.162.99.108/30  Direct  0    0           D   10.162.99.109   Vlanif1104
+  10.162.99.109/32  Direct  0    0           D   127.0.0.1       Vlanif1104
+  10.162.99.112/30  Direct  0    0           D   10.162.99.113   Vlanif1105
+  10.162.99.113/32  Direct  0    0           D   127.0.0.1       Vlanif1105
+  10.162.99.116/30  Direct  0    0           D   10.162.99.117   Vlanif1106
+  10.162.99.117/32  Direct  0    0           D   127.0.0.1       Vlanif1106
+  10.162.99.120/30  Direct  0    0           D   10.162.99.121   Vlanif1107
+  10.162.99.121/32  Direct  0    0           D   127.0.0.1       Vlanif1107
+  10.162.99.124/30  OSPF    10   2           D   10.162.99.37    Vlanif901
+                    OSPF    10   2           D   10.162.99.67    Vlanif4094
+                    OSPF    10   2           D   10.162.99.98    Vlanif1101
+                    OSPF    10   2           D   10.162.99.5     Vlanif900
+  10.162.99.128/30  OSPF    10   2           D   10.162.99.37    Vlanif901
+                    OSPF    10   2           D   10.162.99.67    Vlanif4094
+                    OSPF    10   2           D   10.162.99.102   Vlanif1102
+                    OSPF    10   2           D   10.162.99.5     Vlanif900
+  10.162.99.132/30  OSPF    10   2           D   10.162.99.37    Vlanif901
+                    OSPF    10   2           D   10.162.99.67    Vlanif4094
+                    OSPF    10   2           D   10.162.99.106   Vlanif1103
+                    OSPF    10   2           D   10.162.99.5     Vlanif900
+  10.162.99.136/30  OSPF    10   2           D   10.162.99.37    Vlanif901
+                    OSPF    10   2           D   10.162.99.67    Vlanif4094
+                    OSPF    10   2           D   10.162.99.5     Vlanif900
+  ---- More ----[42D                                          [42D                    OSPF    10   2           D   10.162.99.110   Vlanif1104
+  10.162.99.140/30  OSPF    10   2           D   10.162.99.37    Vlanif901
+                    OSPF    10   2           D   10.162.99.67    Vlanif4094
+                    OSPF    10   2           D   10.162.99.5     Vlanif900
+                    OSPF    10   2           D   10.162.99.114   Vlanif1105
+  10.162.99.144/30  OSPF    10   2           D   10.162.99.37    Vlanif901
+                    OSPF    10   2           D   10.162.99.67    Vlanif4094
+                    OSPF    10   2           D   10.162.99.5     Vlanif900
+                    OSPF    10   2           D   10.162.99.118   Vlanif1106
+  10.162.99.148/30  OSPF    10   2           D   10.162.99.37    Vlanif901
+                    OSPF    10   2           D   10.162.99.67    Vlanif4094
+                    OSPF    10   2           D   10.162.99.5     Vlanif900
+                    OSPF    10   2           D   10.162.99.122   Vlanif1107
+   10.162.101.0/24  OSPF    10   2           D   10.162.99.98    Vlanif1101
+   10.162.102.0/24  OSPF    10   2           D   10.162.99.102   Vlanif1102
+   10.162.103.0/24  OSPF    10   2           D   10.162.99.106   Vlanif1103
+   10.162.104.0/24  OSPF    10   2           D   10.162.99.114   Vlanif1105
+   10.162.105.0/24  OSPF    10   2           D   10.162.99.122   Vlanif1107
+   10.162.106.0/24  OSPF    10   2           D   10.162.99.110   Vlanif1104
+   10.162.107.0/24  OSPF    10   2           D   10.162.99.110   Vlanif1104
+   10.162.108.0/24  OSPF    10   2           D   10.162.99.35    Vlanif901
+                    OSPF    10   2           D   10.162.99.3     Vlanif900
+                    OSPF    10   2           D   10.162.99.2     Vlanif900
+                    OSPF    10   2           D   10.162.99.34    Vlanif901
+  ---- More ----[42D                                          [42D   10.162.108.1/32  OSPF    10   2           D   10.162.99.2     Vlanif900
+                    OSPF    10   2           D   10.162.99.34    Vlanif901
+                    OSPF    10   2           D   10.162.99.35    Vlanif901
+                    OSPF    10   2           D   10.162.99.3     Vlanif900
+   10.162.109.0/24  OSPF    10   2           D   10.162.99.98    Vlanif1101
+   10.162.110.0/24  OSPF    10   2           D   10.162.99.98    Vlanif1101
+   10.162.111.0/24  OSPF    10   2           D   10.162.99.118   Vlanif1106
+   10.162.112.0/24  OSPF    10   2           D   10.162.99.118   Vlanif1106
+   10.162.114.0/23  OSPF    10   2           D   10.162.99.118   Vlanif1106
+   10.162.116.0/22  OSPF    10   2           D   10.162.99.118   Vlanif1106
+   10.162.120.0/24  OSPF    10   2           D   10.162.99.114   Vlanif1105
+   10.162.121.0/24  O_ASE   150  1           D   10.162.99.122   Vlanif1107
+      127.0.0.0/8   Direct  0    0           D   127.0.0.1       InLoopBack0
+      127.0.0.1/32  Direct  0    0           D   127.0.0.1       InLoopBack0
+     172.20.1.0/24  O_ASE   150  1           D   10.162.99.35    Vlanif901
+                    O_ASE   150  1           D   10.162.99.3     Vlanif900
+                    O_ASE   150  1           D   10.162.99.2     Vlanif900
+                    O_ASE   150  1           D   10.162.99.34    Vlanif901
+
+<CORE-SW1>

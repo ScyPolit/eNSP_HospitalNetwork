@@ -1,0 +1,205 @@
+{
+  "identities": [
+    {
+      "name": "WAN-L2",
+      "ok": true
+    },
+    {
+      "name": "ISP-R1",
+      "ok": true
+    },
+    {
+      "name": "ISP-R2",
+      "ok": true
+    },
+    {
+      "name": "HEALTH-R",
+      "ok": true
+    },
+    {
+      "name": "FW-A",
+      "ok": true
+    },
+    {
+      "name": "FW-B",
+      "ok": true
+    },
+    {
+      "name": "CORE-SW1",
+      "ok": true
+    },
+    {
+      "name": "CORE-SW2",
+      "ok": true
+    },
+    {
+      "name": "DMZ-SW",
+      "ok": true
+    },
+    {
+      "name": "AGG-CLINIC",
+      "ok": true
+    },
+    {
+      "name": "ACC-OPD",
+      "ok": true
+    },
+    {
+      "name": "ACC-ER",
+      "ok": true
+    },
+    {
+      "name": "ACC-PHARM",
+      "ok": true
+    },
+    {
+      "name": "AGG-INPATIENT",
+      "ok": true
+    },
+    {
+      "name": "ACC-WARD-A",
+      "ok": true
+    },
+    {
+      "name": "ACC-WARD-B",
+      "ok": true
+    },
+    {
+      "name": "AGG-MEDTECH",
+      "ok": true
+    },
+    {
+      "name": "ACC-PACS",
+      "ok": true
+    },
+    {
+      "name": "ACC-LAB",
+      "ok": true
+    },
+    {
+      "name": "AGG-DC",
+      "ok": true
+    },
+    {
+      "name": "DC-SW-A",
+      "ok": true
+    },
+    {
+      "name": "DC-SW-B",
+      "ok": true
+    },
+    {
+      "name": "BACKUP-SW",
+      "ok": true
+    },
+    {
+      "name": "AGG-OFFICE",
+      "ok": true
+    },
+    {
+      "name": "ACC-ADMIN",
+      "ok": true
+    },
+    {
+      "name": "ACC-FIN",
+      "ok": true
+    },
+    {
+      "name": "NMS-SW",
+      "ok": true
+    },
+    {
+      "name": "AGG-IOT",
+      "ok": true
+    },
+    {
+      "name": "ACC-IOT",
+      "ok": true
+    },
+    {
+      "name": "ACC-CCTV",
+      "ok": true
+    },
+    {
+      "name": "ACC-WLAN",
+      "ok": true
+    },
+    {
+      "name": "AGG-BRANCH",
+      "ok": true
+    },
+    {
+      "name": "BRANCH-SW",
+      "ok": true
+    },
+    {
+      "name": "TELEMED-GW",
+      "ok": true
+    }
+  ],
+  "states": {
+    "CORE-SW1": "display ospf peer brief\r\n\r\n\t OSPF Process 1 with Router ID 10.255.255.11\r\n\t\t  Peer Statistic Information\r\n ----------------------------------------------------------------------------\r\n Area Id          Interface                        Neighbor id      State    \r\n 0.0.0.0          Vlanif900                        10.255.255.1     Full        \r\n 0.0.0.0          Vlanif900                        10.255.255.2     Full        \r\n 0.0.0.0          Vlanif900                        10.255.255.12    Full        \r\n 0.0.0.0          Vlanif901                        10.255.255.1     Full        \r\n 0.0.0.0          Vlanif901                        10.255.255.2     Full        \r\n 0.0.0.0          Vlanif901                        10.255.255.12    Full        \r\n 0.0.0.0          Vlanif1101                       10.255.254.1     Full        \r\n 0.0.0.0          Vlanif1102                       10.255.254.2     Full        \r\n 0.0.0.0          Vlanif1103                       10.255.254.3     Full        \r\n 0.0.0.0          Vlanif1104                       10.255.254.4     Full        \r\n 0.0.0.0          Vlanif1105                       10.255.254.5     Full        \r\n 0.0.0.0          Vlanif1106                       10.255.254.6     Full        \r\n 0.0.0.0          Vlanif1107                       10.255.254.7     Full        \r\n 0.0.0.0          Vlanif4094                       10.255.255.12    Full        \r\n ----------------------------------------------------------------------------\r\n<CORE-SW1>",
+    "CORE-SW2": "display ospf peer brief\r\n\r\n\t OSPF Process 1 with Router ID 10.255.255.12\r\n\t\t  Peer Statistic Information\r\n ----------------------------------------------------------------------------\r\n Area Id          Interface                        Neighbor id      State    \r\n 0.0.0.0          Vlanif900                        10.255.255.1     Full        \r\n 0.0.0.0          Vlanif900                        10.255.255.2     Full        \r\n 0.0.0.0          Vlanif900                        10.255.255.11    Full        \r\n 0.0.0.0          Vlanif901                        10.255.255.1     Full        \r\n 0.0.0.0          Vlanif901                        10.255.255.2     Full        \r\n 0.0.0.0          Vlanif901                        10.255.255.11    Full        \r\n 0.0.0.0          Vlanif1201                       10.255.254.1     Full        \r\n 0.0.0.0          Vlanif1202                       10.255.254.2     Full        \r\n 0.0.0.0          Vlanif1203                       10.255.254.3     Full        \r\n 0.0.0.0          Vlanif1204                       10.255.254.4     Full        \r\n 0.0.0.0          Vlanif1205                       10.255.254.5     Full        \r\n 0.0.0.0          Vlanif1206                       10.255.254.6     Full        \r\n 0.0.0.0          Vlanif1207                       10.255.254.7     Full        \r\n 0.0.0.0          Vlanif4094                       10.255.255.11    Full        \r\n ----------------------------------------------------------------------------\r\n<CORE-SW2>",
+    "FW-A": "display hrp state\r\n17:12:36  2026/10/30\r\n The firewall's config state is: MASTER\r\n\r\n Current state of virtual routers configured as master:\r\n             GigabitEthernet0/0/5    vrid   6 : master\r\n             GigabitEthernet0/0/4    vrid   5 : master\r\n             GigabitEthernet0/0/3    vrid   4 : master\r\n             GigabitEthernet0/0/2    vrid   3 : master\r\n             GigabitEthernet0/0/1    vrid   2 : master\r\n             GigabitEthernet0/0/0    vrid   1 : master\r\n\r\nHRP_M<FW-A>",
+    "FW-B": "display hrp state\r\n17:12:37  2026/10/30\r\n The firewall's config state is: SLAVE\r\n\r\n Current state of virtual routers configured as slave:\r\n             GigabitEthernet0/0/5    vrid   6 : slave\r\n             GigabitEthernet0/0/4    vrid   5 : slave\r\n             GigabitEthernet0/0/3    vrid   4 : slave\r\n             GigabitEthernet0/0/2    vrid   3 : slave\r\n             GigabitEthernet0/0/1    vrid   2 : slave\r\n             GigabitEthernet0/0/0    vrid   1 : slave\r\n\r\nHRP_S<FW-B>"
+  },
+  "tests": [
+    {
+      "source": "OPD-PC",
+      "destination": "10.162.106.10",
+      "received": 2,
+      "expected": true,
+      "passed": true,
+      "image": "D:\\Windows\\桌面\\计网实验课程报告\\evidence\\live\\OPD-PC-ping_10.162.106.10_-c_2.png"
+    },
+    {
+      "source": "OPD-PC",
+      "destination": "203.0.113.10",
+      "received": 1,
+      "expected": true,
+      "passed": true,
+      "image": "D:\\Windows\\桌面\\计网实验课程报告\\evidence\\live\\OPD-PC-ping_203.0.113.10_-c_2.png"
+    },
+    {
+      "source": "GUEST-PC",
+      "destination": "203.0.113.10",
+      "received": 1,
+      "expected": true,
+      "passed": true,
+      "image": "D:\\Windows\\桌面\\计网实验课程报告\\evidence\\live\\GUEST-PC-ping_203.0.113.10_-c_2.png"
+    },
+    {
+      "source": "GUEST-PC",
+      "destination": "10.162.106.10",
+      "received": 0,
+      "expected": false,
+      "passed": true,
+      "image": "D:\\Windows\\桌面\\计网实验课程报告\\evidence\\live\\GUEST-PC-ping_10.162.106.10_-c_2.png"
+    },
+    {
+      "source": "HEALTH-PC",
+      "destination": "10.162.121.10",
+      "received": 1,
+      "expected": true,
+      "passed": true,
+      "image": "D:\\Windows\\桌面\\计网实验课程报告\\evidence\\live\\HEALTH-PC-ping_10.162.121.10_-c_2.png"
+    },
+    {
+      "source": "BASTION",
+      "destination": "10.162.99.65",
+      "received": 2,
+      "expected": true,
+      "passed": true,
+      "image": "D:\\Windows\\桌面\\计网实验课程报告\\evidence\\live\\BASTION-ping_10.162.99.65_-c_2.png"
+    },
+    {
+      "source": "DMZ-WEB",
+      "destination": "10.162.108.2",
+      "received": 2,
+      "expected": true,
+      "passed": true,
+      "image": "D:\\Windows\\桌面\\计网实验课程报告\\evidence\\live\\DMZ-WEB-ping_10.162.108.2_-c_2.png"
+    }
+  ],
+  "final_project_reopened": true
+}

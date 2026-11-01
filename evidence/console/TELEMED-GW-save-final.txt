@@ -1,0 +1,7 @@
+save
+  The current configuration will be written to the device.
+  Are you sure to continue? (y/n)[n]:Y
+  It will take several minutes to save configuration file, please wait......
+  Configuration file had been saved successfully
+  Note: The configuration file will take effect after being activated
+<TELEMED-GW>

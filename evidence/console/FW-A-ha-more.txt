@@ -1,0 +1,41 @@
+ping -c 2 -a 172.31.255.1 172.31.255.2
+13:37:29  2026/10/30
+  PING 172.31.255.2: 56  data bytes, press CTRL_C to break
+    Request time out
+    Reply from 172.31.255.2: bytes=56 Sequence=2 ttl=255 time=90 ms
+
+  --- 172.31.255.2 ping statistics ---
+    2 packet(s) transmitted
+    1 packet(s) received
+    50.00% packet loss
+    round-trip min/avg/max = 90/90/90 ms
+
+HRP_M<FW-A>
+display firewall zone
+                            ^
+Error: Wrong parameter found at '^' position.
+HRP_M<FW-A>
+display hrp group
+13:37:32  2026/10/30
+ Master group status:
+   Group enabled:         yes
+   State:                 master
+   Priority running:      65001
+   Total VRRP members:    6
+   Hello interval(ms):    1000
+   Preempt enabled:       yes
+   Preempt delay(s):      30
+   Peer group available:  0
+   Peer's member same:    yes
+ Slave group status:
+   Group enabled:         no
+   State:                 initialize
+   Priority running:      65000
+   Total VRRP members:    0
+   Hello interval(ms):    1000
+   Preempt enabled:       yes
+   Preempt delay(s):      0
+   Peer group available:  0
+   Peer's member same:    yes
+
+HRP_M<FW-A>

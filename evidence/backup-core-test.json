@@ -1,0 +1,5 @@
+{
+  "route": "display ip routing-table 10.162.106.10\r\nRoute Flags: R - relay, D - download to fib\r\n------------------------------------------------------------------------------\r\nRouting Table : Public\r\nSummary Count : 1\r\nDestination/Mask    Proto   Pre  Cost      Flags NextHop         Interface\r\n\r\n   10.162.106.0/24  OSPF    10   3           D   10.162.99.125   Vlanif1201\r\n\r\n<AGG-CLINIC>",
+  "image": "D:\\Windows\\桌面\\计网实验课程报告\\evidence\\live\\OPD-PC-ping_10.162.106.10_-c_3.png",
+  "description": "门诊汇聚主核心上联关闭后，经备用核心到达业务服务器"
+}

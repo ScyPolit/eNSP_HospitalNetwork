@@ -1,0 +1,225 @@
+system-view
+Enter system view, return user view with Ctrl+Z.
+[CORE-SW2]
+undo info-center enable
+Info: Information center is disabled.
+[CORE-SW2]
+sysname CORE-SW2
+[CORE-SW2]
+stp mode mstp
+[CORE-SW2]
+vlan batch 900 901 4094 
+Info: This operation may take a few seconds. Please wait for a moment...done.
+[CORE-SW2]
+vlan batch 1201 1202 1203 1204 1205 1206 1207
+Info: This operation may take a few seconds. Please wait for a moment...done.
+[CORE-SW2]
+interface GigabitEthernet0/0/1
+[CORE-SW2-GigabitEthernet0/0/1]
+port link-type access
+[CORE-SW2-GigabitEthernet0/0/1]
+port default vlan 900
+[CORE-SW2-GigabitEthernet0/0/1]
+quit
+[CORE-SW2]
+interface GigabitEthernet0/0/2
+[CORE-SW2-GigabitEthernet0/0/2]
+port link-type access
+[CORE-SW2-GigabitEthernet0/0/2]
+port default vlan 901
+[CORE-SW2-GigabitEthernet0/0/2]
+quit
+[CORE-SW2]
+interface Eth-Trunk1
+[CORE-SW2-Eth-Trunk1]
+mode lacp-static
+[CORE-SW2-Eth-Trunk1]
+port link-type trunk
+[CORE-SW2-Eth-Trunk1]
+port trunk allow-pass vlan 900 901 4094
+[CORE-SW2-Eth-Trunk1]
+quit
+[CORE-SW2]
+interface GigabitEthernet0/0/23
+[CORE-SW2-GigabitEthernet0/0/23]
+eth-trunk 1
+Info: This operation may take a few seconds. Please wait for a moment...
+Error: Failed to add the port into the trunk because the port has been a member of the trunk.
+[CORE-SW2-GigabitEthernet0/0/23]
+quit
+[CORE-SW2]
+interface GigabitEthernet0/0/24
+[CORE-SW2-GigabitEthernet0/0/24]
+eth-trunk 1
+Info: This operation may take a few seconds. Please wait for a moment...
+Error: Failed to add the port into the trunk because the port has been a member of the trunk.
+[CORE-SW2-GigabitEthernet0/0/24]
+quit
+[CORE-SW2]
+interface Vlanif900
+[CORE-SW2-Vlanif900]
+ip address 10.162.99.5 255.255.255.224
+Error: The address already exists.
+[CORE-SW2-Vlanif900]
+quit
+[CORE-SW2]
+interface Vlanif901
+[CORE-SW2-Vlanif901]
+ip address 10.162.99.37 255.255.255.224
+Error: The address already exists.
+[CORE-SW2-Vlanif901]
+quit
+[CORE-SW2]
+interface Vlanif4094
+[CORE-SW2-Vlanif4094]
+ip address 10.162.99.67 255.255.255.224
+Error: The address already exists.
+[CORE-SW2-Vlanif4094]
+quit
+[CORE-SW2]
+interface Vlanif4094
+[CORE-SW2-Vlanif4094]
+vrrp vrid 1 virtual-ip 10.162.99.65
+Error: The virtual IP address already exists.
+[CORE-SW2-Vlanif4094]
+vrrp vrid 1 priority 100
+[CORE-SW2-Vlanif4094]
+quit
+[CORE-SW2]
+stp instance 0 root secondary
+[CORE-SW2]
+interface GigabitEthernet0/0/3
+[CORE-SW2-GigabitEthernet0/0/3]
+port link-type access
+[CORE-SW2-GigabitEthernet0/0/3]
+port default vlan 1201
+[CORE-SW2-GigabitEthernet0/0/3]
+quit
+[CORE-SW2]
+interface Vlanif1201
+[CORE-SW2-Vlanif1201]
+ip address 10.162.99.125 255.255.255.252
+Error: The address already exists.
+[CORE-SW2-Vlanif1201]
+quit
+[CORE-SW2]
+interface GigabitEthernet0/0/4
+[CORE-SW2-GigabitEthernet0/0/4]
+port link-type access
+[CORE-SW2-GigabitEthernet0/0/4]
+port default vlan 1202
+[CORE-SW2-GigabitEthernet0/0/4]
+quit
+[CORE-SW2]
+interface Vlanif1202
+[CORE-SW2-Vlanif1202]
+ip address 10.162.99.129 255.255.255.252
+Error: The address already exists.
+[CORE-SW2-Vlanif1202]
+quit
+[CORE-SW2]
+interface GigabitEthernet0/0/5
+[CORE-SW2-GigabitEthernet0/0/5]
+port link-type access
+[CORE-SW2-GigabitEthernet0/0/5]
+port default vlan 1203
+[CORE-SW2-GigabitEthernet0/0/5]
+quit
+[CORE-SW2]
+interface Vlanif1203
+[CORE-SW2-Vlanif1203]
+ip address 10.162.99.133 255.255.255.252
+Error: The address already exists.
+[CORE-SW2-Vlanif1203]
+quit
+[CORE-SW2]
+interface GigabitEthernet0/0/6
+[CORE-SW2-GigabitEthernet0/0/6]
+port link-type access
+[CORE-SW2-GigabitEthernet0/0/6]
+port default vlan 1204
+[CORE-SW2-GigabitEthernet0/0/6]
+quit
+[CORE-SW2]
+interface Vlanif1204
+[CORE-SW2-Vlanif1204]
+ip address 10.162.99.137 255.255.255.252
+Error: The address already exists.
+[CORE-SW2-Vlanif1204]
+quit
+[CORE-SW2]
+interface GigabitEthernet0/0/7
+[CORE-SW2-GigabitEthernet0/0/7]
+port link-type access
+[CORE-SW2-GigabitEthernet0/0/7]
+port default vlan 1205
+[CORE-SW2-GigabitEthernet0/0/7]
+quit
+[CORE-SW2]
+interface Vlanif1205
+[CORE-SW2-Vlanif1205]
+ip address 10.162.99.141 255.255.255.252
+Error: The address already exists.
+[CORE-SW2-Vlanif1205]
+quit
+[CORE-SW2]
+interface GigabitEthernet0/0/8
+[CORE-SW2-GigabitEthernet0/0/8]
+port link-type access
+[CORE-SW2-GigabitEthernet0/0/8]
+port default vlan 1206
+[CORE-SW2-GigabitEthernet0/0/8]
+quit
+[CORE-SW2]
+interface Vlanif1206
+[CORE-SW2-Vlanif1206]
+ip address 10.162.99.145 255.255.255.252
+Error: The address already exists.
+[CORE-SW2-Vlanif1206]
+quit
+[CORE-SW2]
+interface GigabitEthernet0/0/9
+[CORE-SW2-GigabitEthernet0/0/9]
+port link-type access
+[CORE-SW2-GigabitEthernet0/0/9]
+port default vlan 1207
+[CORE-SW2-GigabitEthernet0/0/9]
+quit
+[CORE-SW2]
+interface Vlanif1207
+[CORE-SW2-Vlanif1207]
+ip address 10.162.99.149 255.255.255.252
+Error: The address already exists.
+[CORE-SW2-Vlanif1207]
+quit
+[CORE-SW2]
+ospf 1 router-id 10.255.255.12
+[CORE-SW2-ospf-1]
+area 0
+[CORE-SW2-ospf-1-area-0.0.0.0]
+network 10.162.99.0 0.0.0.31
+[CORE-SW2-ospf-1-area-0.0.0.0]
+network 10.162.99.32 0.0.0.31
+[CORE-SW2-ospf-1-area-0.0.0.0]
+network 10.162.99.64 0.0.0.31
+[CORE-SW2-ospf-1-area-0.0.0.0]
+network 10.162.99.124 0.0.0.3
+[CORE-SW2-ospf-1-area-0.0.0.0]
+network 10.162.99.128 0.0.0.3
+[CORE-SW2-ospf-1-area-0.0.0.0]
+network 10.162.99.132 0.0.0.3
+[CORE-SW2-ospf-1-area-0.0.0.0]
+network 10.162.99.136 0.0.0.3
+[CORE-SW2-ospf-1-area-0.0.0.0]
+network 10.162.99.140 0.0.0.3
+[CORE-SW2-ospf-1-area-0.0.0.0]
+network 10.162.99.144 0.0.0.3
+[CORE-SW2-ospf-1-area-0.0.0.0]
+network 10.162.99.148 0.0.0.3
+[CORE-SW2-ospf-1-area-0.0.0.0]
+quit
+[CORE-SW2-ospf-1]
+quit
+[CORE-SW2]
+return
+<CORE-SW2>

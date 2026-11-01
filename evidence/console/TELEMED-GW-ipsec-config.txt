@@ -1,0 +1,118 @@
+system-view
+Enter system view, return user view with Ctrl+Z.
+[TELEMED-GW]
+[TELEMED-GW]
+acl number 3500
+[TELEMED-GW-acl-adv-3500]
+[TELEMED-GW-acl-adv-3500]
+rule 5 permit ip source 10.162.121.0 0.0.0.255 destinat [1Dion 172.20.1.0 0.0.0.255
+[TELEMED-GW-acl-adv-3500]
+[TELEMED-GW-acl-adv-3500]
+quit
+[TELEMED-GW]
+[TELEMED-GW]
+ike proposal 10
+[TELEMED-GW-ike-proposal-10]
+[TELEMED-GW-ike-proposal-10]
+encryption-algorithm aes-cbc-256
+[TELEMED-GW-ike-proposal-10]
+[TELEMED-GW-ike-proposal-10]
+authentication-algorithm sha1
+[TELEMED-GW-ike-proposal-10]
+[TELEMED-GW-ike-proposal-10]
+dh group14
+[TELEMED-GW-ike-proposal-10]
+[TELEMED-GW-ike-proposal-10]
+quit
+[TELEMED-GW]
+[TELEMED-GW]
+ike peer HOSP v1
+[TELEMED-GW-ike-peer-HOSP]
+[TELEMED-GW-ike-peer-HOSP]
+pre-shared-key cipher Hospital-Lab-2026
+[TELEMED-GW-ike-peer-HOSP]
+[TELEMED-GW-ike-peer-HOSP]
+ike-proposal 10
+[TELEMED-GW-ike-peer-HOSP]
+[TELEMED-GW-ike-peer-HOSP]
+remote-address 198.18.0.1
+[TELEMED-GW-ike-peer-HOSP]
+[TELEMED-GW-ike-peer-HOSP]
+quit
+[TELEMED-GW]
+[TELEMED-GW]
+ipsec proposal HOSP
+[TELEMED-GW-ipsec-proposal-HOSP]
+[TELEMED-GW-ipsec-proposal-HOSP]
+esp encryption-algorithm aes-256
+[TELEMED-GW-ipsec-proposal-HOSP]
+[TELEMED-GW-ipsec-proposal-HOSP]
+esp authentication-algorithm sha1
+[TELEMED-GW-ipsec-proposal-HOSP]
+[TELEMED-GW-ipsec-proposal-HOSP]
+quit
+[TELEMED-GW]
+[TELEMED-GW]
+ipsec policy HOSP 10 isakmp
+[TELEMED-GW-ipsec-policy-isakmp-HOSP-10]
+[TELEMED-GW-ipsec-policy-isakmp-HOSP-10]
+security acl 3500
+[TELEMED-GW-ipsec-policy-isakmp-HOSP-10]
+[TELEMED-GW-ipsec-policy-isakmp-HOSP-10]
+ike-peer HOSP
+[TELEMED-GW-ipsec-policy-isakmp-HOSP-10]
+[TELEMED-GW-ipsec-policy-isakmp-HOSP-10]
+proposal HOSP
+[TELEMED-GW-ipsec-policy-isakmp-HOSP-10]
+[TELEMED-GW-ipsec-policy-isakmp-HOSP-10]
+quit
+[TELEMED-GW]
+[TELEMED-GW]
+interface GigabitEthernet0/0/2
+[TELEMED-GW-GigabitEthernet0/0/2]
+[TELEMED-GW-GigabitEthernet0/0/2]
+ipsec policy HOSP
+[TELEMED-GW-GigabitEthernet0/0/2]
+[TELEMED-GW-GigabitEthernet0/0/2]
+quit
+[TELEMED-GW]
+[TELEMED-GW]
+ip route-static 172.20.1.1 32 10.162.105.1
+[TELEMED-GW]
+[TELEMED-GW]
+nqa test-instance hospital primary
+[TELEMED-GW-nqa-hospital-primary]
+[TELEMED-GW-nqa-hospital-primary]
+test-type icmp
+[TELEMED-GW-nqa-hospital-primary]
+[TELEMED-GW-nqa-hospital-primary]
+destination-address ipv4 172.20.1.1
+[TELEMED-GW-nqa-hospital-primary]
+[TELEMED-GW-nqa-hospital-primary]
+source-address ipv4 10.162.121.1
+[TELEMED-GW-nqa-hospital-primary]
+[TELEMED-GW-nqa-hospital-primary]
+frequency 5
+[TELEMED-GW-nqa-hospital-primary]
+[TELEMED-GW-nqa-hospital-primary]
+probe-count 2
+[TELEMED-GW-nqa-hospital-primary]
+[TELEMED-GW-nqa-hospital-primary]
+timeout 1
+[TELEMED-GW-nqa-hospital-primary]
+[TELEMED-GW-nqa-hospital-primary]
+start now
+[TELEMED-GW-nqa-hospital-primary]
+[TELEMED-GW-nqa-hospital-primary]
+quit
+[TELEMED-GW]
+[TELEMED-GW]
+ip route-static 172.20.1.0 24 10.162.105.1 track nqa hospital primar [1Dy
+[TELEMED-GW]
+[TELEMED-GW]
+ip route-static 172.20.1.0 24 198.18.0.1 preference 100
+[TELEMED-GW]
+[TELEMED-GW]
+return
+<TELEMED-GW>
+<TELEMED-GW>

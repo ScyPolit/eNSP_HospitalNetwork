@@ -1,0 +1,166 @@
+system-view
+Enter system view, return user view with Ctrl+Z.
+[Huawei]
+undo info-center enable
+Info: Information center is disabled.
+[Huawei]
+sysname AGG-OFFICE
+[AGG-OFFICE]
+stp mode mstp
+[AGG-OFFICE]
+dhcp enable
+Info: The operation may take a few seconds. Please wait for a moment.done.
+[AGG-OFFICE]
+vlan batch 40 160 1105 1205
+Info: This operation may take a few seconds. Please wait for a moment...done.
+[AGG-OFFICE]
+interface GigabitEthernet0/0/23
+[AGG-OFFICE-GigabitEthernet0/0/23]
+port link-type access
+[AGG-OFFICE-GigabitEthernet0/0/23]
+port default vlan 1105
+[AGG-OFFICE-GigabitEthernet0/0/23]
+quit
+[AGG-OFFICE]
+interface Vlanif1105
+[AGG-OFFICE-Vlanif1105]
+ip address 10.162.99.114 255.255.255.252
+[AGG-OFFICE-Vlanif1105]
+quit
+[AGG-OFFICE]
+interface GigabitEthernet0/0/24
+[AGG-OFFICE-GigabitEthernet0/0/24]
+port link-type access
+[AGG-OFFICE-GigabitEthernet0/0/24]
+port default vlan 1205
+[AGG-OFFICE-GigabitEthernet0/0/24]
+quit
+[AGG-OFFICE]
+interface Vlanif1205
+[AGG-OFFICE-Vlanif1205]
+ip address 10.162.99.142 255.255.255.252
+[AGG-OFFICE-Vlanif1205]
+quit
+[AGG-OFFICE]
+interface Vlanif40
+[AGG-OFFICE-Vlanif40]
+ip address 10.162.104.1 255.255.255.0
+[AGG-OFFICE-Vlanif40]
+quit
+[AGG-OFFICE]
+interface Vlanif40
+[AGG-OFFICE-Vlanif40]
+dhcp select interface
+[AGG-OFFICE-Vlanif40]
+dhcp server excluded-ip-address 10.162.104.2 10.162.104.49
+[AGG-OFFICE-Vlanif40]
+quit
+[AGG-OFFICE]
+interface Vlanif160
+[AGG-OFFICE-Vlanif160]
+ip address 10.162.120.1 255.255.255.0
+[AGG-OFFICE-Vlanif160]
+quit
+[AGG-OFFICE]
+interface Vlanif160
+[AGG-OFFICE-Vlanif160]
+dhcp select interface
+[AGG-OFFICE-Vlanif160]
+dhcp server excluded-ip-address 10.162.120.2 10.162.120.49 [1D
+[AGG-OFFICE-Vlanif160]
+quit
+[AGG-OFFICE]
+interface Eth-Trunk1
+[AGG-OFFICE-Eth-Trunk1]
+mode lacp-static
+[AGG-OFFICE-Eth-Trunk1]
+port link-type trunk
+[AGG-OFFICE-Eth-Trunk1]
+port trunk allow-pass vlan 40
+[AGG-OFFICE-Eth-Trunk1]
+quit
+[AGG-OFFICE]
+interface GigabitEthernet0/0/1
+[AGG-OFFICE-GigabitEthernet0/0/1]
+eth-trunk 1
+Info: This operation may take a few seconds. Please wait for a moment...done.
+[AGG-OFFICE-GigabitEthernet0/0/1]
+quit
+[AGG-OFFICE]
+interface GigabitEthernet0/0/2
+[AGG-OFFICE-GigabitEthernet0/0/2]
+eth-trunk 1
+Info: This operation may take a few seconds. Please wait for a moment...done.
+[AGG-OFFICE-GigabitEthernet0/0/2]
+quit
+[AGG-OFFICE]
+interface Eth-Trunk2
+[AGG-OFFICE-Eth-Trunk2]
+mode lacp-static
+[AGG-OFFICE-Eth-Trunk2]
+port link-type trunk
+[AGG-OFFICE-Eth-Trunk2]
+port trunk allow-pass vlan 40
+[AGG-OFFICE-Eth-Trunk2]
+quit
+[AGG-OFFICE]
+interface GigabitEthernet0/0/3
+[AGG-OFFICE-GigabitEthernet0/0/3]
+eth-trunk 2
+Info: This operation may take a few seconds. Please wait for a moment...done.
+[AGG-OFFICE-GigabitEthernet0/0/3]
+quit
+[AGG-OFFICE]
+interface GigabitEthernet0/0/4
+[AGG-OFFICE-GigabitEthernet0/0/4]
+eth-trunk 2
+Info: This operation may take a few seconds. Please wait for a moment...done.
+[AGG-OFFICE-GigabitEthernet0/0/4]
+quit
+[AGG-OFFICE]
+interface Eth-Trunk3
+[AGG-OFFICE-Eth-Trunk3]
+mode lacp-static
+[AGG-OFFICE-Eth-Trunk3]
+port link-type trunk
+[AGG-OFFICE-Eth-Trunk3]
+port trunk allow-pass vlan 160
+[AGG-OFFICE-Eth-Trunk3]
+quit
+[AGG-OFFICE]
+interface GigabitEthernet0/0/5
+[AGG-OFFICE-GigabitEthernet0/0/5]
+eth-trunk 3
+Info: This operation may take a few seconds. Please wait for a moment...done.
+[AGG-OFFICE-GigabitEthernet0/0/5]
+quit
+[AGG-OFFICE]
+interface GigabitEthernet0/0/6
+[AGG-OFFICE-GigabitEthernet0/0/6]
+eth-trunk 3
+Info: This operation may take a few seconds. Please wait for a moment...done.
+[AGG-OFFICE-GigabitEthernet0/0/6]
+quit
+[AGG-OFFICE]
+ospf 1 router-id 10.255.254.5
+[AGG-OFFICE-ospf-1]
+area 0
+[AGG-OFFICE-ospf-1-area-0.0.0.0]
+network 10.162.99.112 0.0.0.3
+[AGG-OFFICE-ospf-1-area-0.0.0.0]
+network 10.162.99.140 0.0.0.3
+[AGG-OFFICE-ospf-1-area-0.0.0.0]
+quit
+[AGG-OFFICE-ospf-1]
+area 40
+[AGG-OFFICE-ospf-1-area-0.0.0.40]
+network 10.162.104.0 0.0.0.255
+[AGG-OFFICE-ospf-1-area-0.0.0.40]
+network 10.162.120.0 0.0.0.255
+[AGG-OFFICE-ospf-1-area-0.0.0.40]
+quit
+[AGG-OFFICE-ospf-1]
+quit
+[AGG-OFFICE]
+return
+<AGG-OFFICE>

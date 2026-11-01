@@ -1,0 +1,30 @@
+display hrp state
+14:54:51  2026/10/30
+ The firewall's config state is: SLAVE
+
+ Current state of virtual routers configured as slave:
+             GigabitEthernet0/0/5    vrid   6 : slave
+             GigabitEthernet0/0/4    vrid   5 : slave
+             GigabitEthernet0/0/3    vrid   4 : slave
+             GigabitEthernet0/0/2    vrid   3 : slave
+             GigabitEthernet0/0/1    vrid   2 : slave
+             GigabitEthernet0/0/0    vrid   1 : slave
+
+HRP_S<FW-B>
+display vrrp interface GigabitEthernet0/0/2
+14:54:51  2026/10/30
+  GigabitEthernet0/0/2 | Virtual Router 3
+    VRRP Group : Slave 
+    state : Backup 
+    Virtual IP : 192.0.2.1
+    Virtual MAC : 0000-5e00-0103
+    Primary IP : 192.0.2.3
+    PriorityRun : 120
+    PriorityConfig : 100
+    MasterPriority : 120
+    Preempt : YES   Delay Time : 0
+    Advertisement Timer : 1
+    Auth Type : NONE
+    Check TTL : YES
+
+HRP_S<FW-B>

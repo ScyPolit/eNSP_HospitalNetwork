@@ -1,0 +1,12 @@
+>>> system-view
+13:30:39  2026/10/30
+Enter system view, return user view with Ctrl+Z.
+
+>>> firewall zone name medical-extranet
+13:30:40  2026/10/30
+ Error: Illegal zone name.
+
+>>> quit
+13:30:40  2026/10/30
+
+EXCEPTION Timed out waiting for a prompt from 127.0.0.1:2000; last output: "quit\n13:30:40  2026/10/30\n****************************************************************************\n*            Copyright(C) 2010-2013 Huawei Technologies Co., Ltd.            *\n*                          All rights reserved                             *\n*               Without the owner's prior written consent,                 *\n*        no decompiling or reverse-engineering shall be allowed.           *\n****************************************************************************\n\nUser interface con0 is available\n\n\n\nPlease Press ENTER.\n"

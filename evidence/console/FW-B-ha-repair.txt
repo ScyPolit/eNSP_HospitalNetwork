@@ -1,0 +1,44 @@
+system-view
+13:35:41  2026/10/30
+Enter system view, return user view with Ctrl+Z.
+HRP_M[FW-B]
+policy interzone local ha inbound
+13:35:41  2026/10/30
+HRP_M[FW-B-policy-interzone-local-ha-inbound]
+policy 1
+13:35:41  2026/10/30
+HRP_M[FW-B-policy-interzone-local-ha-inbound-1]
+action permit
+13:35:41  2026/10/30
+HRP_M[FW-B-policy-interzone-local-ha-inbound-1]
+quit
+13:35:42  2026/10/30
+HRP_M[FW-B-policy-interzone-local-ha-inbound]
+quit
+13:35:42  2026/10/30
+HRP_M[FW-B]
+policy interzone local ha outbound
+13:35:42  2026/10/30
+HRP_M[FW-B-policy-interzone-local-ha-outbound]
+policy 1
+13:35:42  2026/10/30
+HRP_M[FW-B-policy-interzone-local-ha-outbound-1]
+action permit
+13:35:42  2026/10/30
+HRP_M[FW-B-policy-interzone-local-ha-outbound-1]
+return
+13:35:42  2026/10/30
+HRP_M<FW-B>
+display hrp state
+13:35:42  2026/10/30
+ The firewall's config state is: MASTER
+
+ Current state of virtual routers configured as slave:
+             GigabitEthernet0/0/5    vrid   6 : master
+             GigabitEthernet0/0/4    vrid   5 : master
+             GigabitEthernet0/0/3    vrid   4 : master
+             GigabitEthernet0/0/2    vrid   3 : master
+             GigabitEthernet0/0/1    vrid   2 : master
+             GigabitEthernet0/0/0    vrid   1 : master
+
+HRP_M<FW-B>

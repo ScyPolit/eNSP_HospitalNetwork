@@ -1,0 +1,53 @@
+system-view
+Enter system view, return user view with Ctrl+Z.
+[Huawei]
+undo info-center enable
+Info: Information center is disabled.
+[Huawei]
+sysname ACC-LAB
+[ACC-LAB]
+stp mode mstp
+[ACC-LAB]
+vlan batch 30
+Info: This operation may take a few seconds. Please wait for a moment...done.
+[ACC-LAB]
+interface Eth-Trunk1
+[ACC-LAB-Eth-Trunk1]
+mode lacp-static
+[ACC-LAB-Eth-Trunk1]
+port link-type trunk
+[ACC-LAB-Eth-Trunk1]
+port trunk allow-pass vlan 30
+[ACC-LAB-Eth-Trunk1]
+quit
+[ACC-LAB]
+interface GigabitEthernet0/0/23
+[ACC-LAB-GigabitEthernet0/0/23]
+eth-trunk 1
+Info: This operation may take a few seconds. Please wait for a moment...done.
+[ACC-LAB-GigabitEthernet0/0/23]
+quit
+[ACC-LAB]
+interface GigabitEthernet0/0/24
+[ACC-LAB-GigabitEthernet0/0/24]
+eth-trunk 1
+Info: This operation may take a few seconds. Please wait for a moment...done.
+[ACC-LAB-GigabitEthernet0/0/24]
+quit
+[ACC-LAB]
+interface GigabitEthernet0/0/1
+[ACC-LAB-GigabitEthernet0/0/1]
+port link-type access
+[ACC-LAB-GigabitEthernet0/0/1]
+port default vlan 30
+[ACC-LAB-GigabitEthernet0/0/1]
+quit
+[ACC-LAB]
+interface GigabitEthernet0/0/1
+[ACC-LAB-GigabitEthernet0/0/1]
+stp edged-port enable
+[ACC-LAB-GigabitEthernet0/0/1]
+quit
+[ACC-LAB]
+return
+<ACC-LAB>

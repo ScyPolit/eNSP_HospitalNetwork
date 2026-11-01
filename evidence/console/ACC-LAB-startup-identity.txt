@@ -1,0 +1,3 @@
+display current-configuration | include sysname
+sysname ACC-LAB
+<ACC-LAB>

@@ -1,0 +1,309 @@
+[
+  {
+    "source": "GUEST-PC",
+    "destination": "10.162.106.10",
+    "expected": false,
+    "received": 0,
+    "passed": true,
+    "description": "访客到 HIS",
+    "image": "D:\\Windows\\桌面\\计网实验课程报告\\evidence\\live\\GUEST-PC-ping_10.162.106.10_-c_2.png",
+    "evidence": "D:\\Windows\\桌面\\计网实验课程报告\\evidence\\console\\GUEST-PC-ping_10.162.106.10_-c_2.txt",
+    "verification_phase": "最终重启复核"
+  },
+  {
+    "source": "GUEST-PC",
+    "destination": "10.162.104.10",
+    "expected": false,
+    "received": 0,
+    "passed": true,
+    "description": "访客到办公",
+    "image": "D:\\Windows\\桌面\\计网实验课程报告\\evidence\\live\\GUEST-PC-ping_10.162.104.10_-c_2.png",
+    "evidence": "D:\\Windows\\桌面\\计网实验课程报告\\evidence\\console\\GUEST-PC-ping_10.162.104.10_-c_2.txt"
+  },
+  {
+    "source": "GUEST-PC",
+    "destination": "10.162.120.10",
+    "expected": false,
+    "received": 0,
+    "passed": true,
+    "description": "访客到管理",
+    "image": "D:\\Windows\\桌面\\计网实验课程报告\\evidence\\live\\GUEST-PC-ping_10.162.120.10_-c_2.png",
+    "evidence": "D:\\Windows\\桌面\\计网实验课程报告\\evidence\\console\\GUEST-PC-ping_10.162.120.10_-c_2.txt"
+  },
+  {
+    "source": "GUEST-PC",
+    "destination": "203.0.113.10",
+    "expected": true,
+    "received": 1,
+    "passed": true,
+    "description": "访客经 NAT 上网",
+    "image": "D:\\Windows\\桌面\\计网实验课程报告\\evidence\\live\\GUEST-PC-ping_203.0.113.10_-c_2.png",
+    "evidence": "D:\\Windows\\桌面\\计网实验课程报告\\evidence\\console\\GUEST-PC-ping_203.0.113.10_-c_2.txt",
+    "verification_phase": "最终重启复核"
+  },
+  {
+    "source": "OPD-PC",
+    "destination": "10.162.106.10",
+    "expected": true,
+    "received": 2,
+    "passed": true,
+    "description": "门诊到 HIS",
+    "image": "D:\\Windows\\桌面\\计网实验课程报告\\evidence\\live\\OPD-PC-ping_10.162.106.10_-c_2.png",
+    "evidence": "D:\\Windows\\桌面\\计网实验课程报告\\evidence\\console\\OPD-PC-ping_10.162.106.10_-c_2.txt",
+    "verification_phase": "最终重启复核"
+  },
+  {
+    "source": "OPD-PC",
+    "destination": "10.162.104.10",
+    "expected": false,
+    "received": 0,
+    "passed": true,
+    "description": "门诊到行政",
+    "image": "D:\\Windows\\桌面\\计网实验课程报告\\evidence\\live\\OPD-PC-ping_10.162.104.10_-c_2.png",
+    "evidence": "D:\\Windows\\桌面\\计网实验课程报告\\evidence\\console\\OPD-PC-ping_10.162.104.10_-c_2.txt"
+  },
+  {
+    "source": "OPD-PC",
+    "destination": "10.162.107.10",
+    "expected": false,
+    "received": 0,
+    "passed": true,
+    "description": "普通终端到备份",
+    "image": "D:\\Windows\\桌面\\计网实验课程报告\\evidence\\live\\OPD-PC-ping_10.162.107.10_-c_2.png",
+    "evidence": "D:\\Windows\\桌面\\计网实验课程报告\\evidence\\console\\OPD-PC-ping_10.162.107.10_-c_2.txt"
+  },
+  {
+    "source": "OPD-PC",
+    "destination": "10.162.99.65",
+    "expected": false,
+    "received": 0,
+    "passed": true,
+    "description": "普通终端到设备管理",
+    "image": "D:\\Windows\\桌面\\计网实验课程报告\\evidence\\live\\OPD-PC-ping_10.162.99.65_-c_2.png",
+    "evidence": "D:\\Windows\\桌面\\计网实验课程报告\\evidence\\console\\OPD-PC-ping_10.162.99.65_-c_2.txt"
+  },
+  {
+    "source": "OPD-PC",
+    "destination": "203.0.113.10",
+    "expected": true,
+    "received": 1,
+    "passed": true,
+    "description": "门诊经 NAT 上网",
+    "image": "D:\\Windows\\桌面\\计网实验课程报告\\evidence\\live\\OPD-PC-ping_203.0.113.10_-c_2.png",
+    "evidence": "D:\\Windows\\桌面\\计网实验课程报告\\evidence\\console\\OPD-PC-ping_203.0.113.10_-c_2.txt",
+    "verification_phase": "最终重启复核"
+  },
+  {
+    "source": "OPD-PC",
+    "destination": "203.0.114.10",
+    "expected": true,
+    "received": 1,
+    "passed": true,
+    "description": "门诊经备用 ISP 上网",
+    "image": "D:\\Windows\\桌面\\计网实验课程报告\\evidence\\live\\OPD-PC-ping_203.0.114.10_-c_2.png",
+    "evidence": "D:\\Windows\\桌面\\计网实验课程报告\\evidence\\console\\OPD-PC-ping_203.0.114.10_-c_2.txt"
+  },
+  {
+    "source": "DMZ-WEB",
+    "destination": "10.162.106.10",
+    "expected": false,
+    "received": 0,
+    "passed": true,
+    "description": "DMZ 到 HIS 的非白名单 ICMP",
+    "image": "D:\\Windows\\桌面\\计网实验课程报告\\evidence\\live\\DMZ-WEB-ping_10.162.106.10_-c_2.png",
+    "evidence": "D:\\Windows\\桌面\\计网实验课程报告\\evidence\\console\\DMZ-WEB-ping_10.162.106.10_-c_2.txt"
+  },
+  {
+    "source": "DMZ-WEB",
+    "destination": "10.162.104.10",
+    "expected": false,
+    "received": 0,
+    "passed": true,
+    "description": "DMZ 到普通终端",
+    "image": "D:\\Windows\\桌面\\计网实验课程报告\\evidence\\live\\DMZ-WEB-ping_10.162.104.10_-c_2.png",
+    "evidence": "D:\\Windows\\桌面\\计网实验课程报告\\evidence\\console\\DMZ-WEB-ping_10.162.104.10_-c_2.txt"
+  },
+  {
+    "source": "DMZ-WEB",
+    "destination": "10.162.120.10",
+    "expected": false,
+    "received": 0,
+    "passed": true,
+    "description": "DMZ 到管理",
+    "image": "D:\\Windows\\桌面\\计网实验课程报告\\evidence\\live\\DMZ-WEB-ping_10.162.120.10_-c_2.png",
+    "evidence": "D:\\Windows\\桌面\\计网实验课程报告\\evidence\\console\\DMZ-WEB-ping_10.162.120.10_-c_2.txt"
+  },
+  {
+    "source": "HEALTH-PC",
+    "destination": "10.162.104.10",
+    "expected": false,
+    "received": 0,
+    "passed": true,
+    "description": "医疗专线到办公",
+    "image": "D:\\Windows\\桌面\\计网实验课程报告\\evidence\\live\\HEALTH-PC-ping_10.162.104.10_-c_2.png",
+    "evidence": "D:\\Windows\\桌面\\计网实验课程报告\\evidence\\console\\HEALTH-PC-ping_10.162.104.10_-c_2.txt"
+  },
+  {
+    "source": "HEALTH-PC",
+    "destination": "10.162.111.10",
+    "expected": false,
+    "received": 0,
+    "passed": true,
+    "description": "医疗专线到物联网",
+    "image": "D:\\Windows\\桌面\\计网实验课程报告\\evidence\\live\\HEALTH-PC-ping_10.162.111.10_-c_2.png",
+    "evidence": "D:\\Windows\\桌面\\计网实验课程报告\\evidence\\console\\HEALTH-PC-ping_10.162.111.10_-c_2.txt"
+  },
+  {
+    "source": "HEALTH-PC",
+    "destination": "10.162.120.10",
+    "expected": false,
+    "received": 0,
+    "passed": true,
+    "description": "医疗专线到管理",
+    "image": "D:\\Windows\\桌面\\计网实验课程报告\\evidence\\live\\HEALTH-PC-ping_10.162.120.10_-c_2.png",
+    "evidence": "D:\\Windows\\桌面\\计网实验课程报告\\evidence\\console\\HEALTH-PC-ping_10.162.120.10_-c_2.txt"
+  },
+  {
+    "source": "IOT-PC",
+    "destination": "10.162.106.10",
+    "expected": true,
+    "received": 1,
+    "passed": true,
+    "description": "IoT 到指定平台诊断地址",
+    "image": "D:\\Windows\\桌面\\计网实验课程报告\\evidence\\live\\IOT-PC-ping_10.162.106.10_-c_2.png",
+    "evidence": "D:\\Windows\\桌面\\计网实验课程报告\\evidence\\console\\IOT-PC-ping_10.162.106.10_-c_2.txt"
+  },
+  {
+    "source": "IOT-PC",
+    "destination": "10.162.104.10",
+    "expected": false,
+    "received": 0,
+    "passed": true,
+    "description": "IoT 到办公",
+    "image": "D:\\Windows\\桌面\\计网实验课程报告\\evidence\\live\\IOT-PC-ping_10.162.104.10_-c_2.png",
+    "evidence": "D:\\Windows\\桌面\\计网实验课程报告\\evidence\\console\\IOT-PC-ping_10.162.104.10_-c_2.txt"
+  },
+  {
+    "source": "IOT-PC",
+    "destination": "10.162.120.10",
+    "expected": false,
+    "received": 0,
+    "passed": true,
+    "description": "IoT 到管理",
+    "image": "D:\\Windows\\桌面\\计网实验课程报告\\evidence\\live\\IOT-PC-ping_10.162.120.10_-c_2.png",
+    "evidence": "D:\\Windows\\桌面\\计网实验课程报告\\evidence\\console\\IOT-PC-ping_10.162.120.10_-c_2.txt"
+  },
+  {
+    "source": "CCTV-PC",
+    "destination": "10.162.106.11",
+    "expected": true,
+    "received": 2,
+    "passed": true,
+    "description": "安防到指定 NVR 诊断地址",
+    "image": "D:\\Windows\\桌面\\计网实验课程报告\\evidence\\live\\CCTV-PC-ping_10.162.106.11_-c_2.png",
+    "evidence": "D:\\Windows\\桌面\\计网实验课程报告\\evidence\\console\\CCTV-PC-ping_10.162.106.11_-c_2.txt"
+  },
+  {
+    "source": "CCTV-PC",
+    "destination": "10.162.104.10",
+    "expected": false,
+    "received": 0,
+    "passed": true,
+    "description": "安防到办公",
+    "image": "D:\\Windows\\桌面\\计网实验课程报告\\evidence\\live\\CCTV-PC-ping_10.162.104.10_-c_2.png",
+    "evidence": "D:\\Windows\\桌面\\计网实验课程报告\\evidence\\console\\CCTV-PC-ping_10.162.104.10_-c_2.txt"
+  },
+  {
+    "source": "BRANCH-PC",
+    "destination": "10.162.106.10",
+    "expected": true,
+    "received": 2,
+    "passed": true,
+    "description": "分院到 HIS",
+    "image": "D:\\Windows\\桌面\\计网实验课程报告\\evidence\\live\\BRANCH-PC-ping_10.162.106.10_-c_2.png",
+    "evidence": "D:\\Windows\\桌面\\计网实验课程报告\\evidence\\console\\BRANCH-PC-ping_10.162.106.10_-c_2.txt"
+  },
+  {
+    "source": "BRANCH-PC",
+    "destination": "10.162.104.10",
+    "expected": false,
+    "received": 0,
+    "passed": true,
+    "description": "分院到普通办公",
+    "image": "D:\\Windows\\桌面\\计网实验课程报告\\evidence\\live\\BRANCH-PC-ping_10.162.104.10_-c_2.png",
+    "evidence": "D:\\Windows\\桌面\\计网实验课程报告\\evidence\\console\\BRANCH-PC-ping_10.162.104.10_-c_2.txt"
+  },
+  {
+    "source": "BRANCH-PC",
+    "destination": "203.0.113.10",
+    "expected": false,
+    "received": 0,
+    "passed": true,
+    "description": "分院终端不直连公网",
+    "image": "D:\\Windows\\桌面\\计网实验课程报告\\evidence\\live\\BRANCH-PC-ping_203.0.113.10_-c_2.png",
+    "evidence": "D:\\Windows\\桌面\\计网实验课程报告\\evidence\\console\\BRANCH-PC-ping_203.0.113.10_-c_2.txt"
+  },
+  {
+    "source": "NMS-PC",
+    "destination": "10.162.120.20",
+    "expected": true,
+    "received": 2,
+    "passed": true,
+    "description": "运维终端到堡垒机",
+    "image": "D:\\Windows\\桌面\\计网实验课程报告\\evidence\\live\\NMS-PC-ping_10.162.120.20_-c_2.png",
+    "evidence": "D:\\Windows\\桌面\\计网实验课程报告\\evidence\\console\\NMS-PC-ping_10.162.120.20_-c_2.txt"
+  },
+  {
+    "source": "NMS-PC",
+    "destination": "10.162.99.65",
+    "expected": false,
+    "received": 0,
+    "passed": true,
+    "description": "运维终端不能绕过堡垒机",
+    "image": "D:\\Windows\\桌面\\计网实验课程报告\\evidence\\live\\NMS-PC-ping_10.162.99.65_-c_2.png",
+    "evidence": "D:\\Windows\\桌面\\计网实验课程报告\\evidence\\console\\NMS-PC-ping_10.162.99.65_-c_2.txt"
+  },
+  {
+    "source": "BASTION",
+    "destination": "10.162.99.65",
+    "expected": true,
+    "received": 2,
+    "passed": true,
+    "description": "堡垒机到设备管理诊断地址",
+    "image": "D:\\Windows\\桌面\\计网实验课程报告\\evidence\\live\\BASTION-ping_10.162.99.65_-c_2.png",
+    "evidence": "D:\\Windows\\桌面\\计网实验课程报告\\evidence\\console\\BASTION-ping_10.162.99.65_-c_2.txt",
+    "verification_phase": "最终重启复核"
+  },
+  {
+    "source": "HEALTH-PC",
+    "destination": "10.162.106.10",
+    "expected": true,
+    "received": 2,
+    "passed": true,
+    "description": "医疗专线到前置机诊断地址",
+    "image": "D:\\Windows\\桌面\\计网实验课程报告\\evidence\\live\\HEALTH-PC-ping_10.162.106.10_-c_2.png",
+    "evidence": "D:\\Windows\\桌面\\计网实验课程报告\\evidence\\console\\HEALTH-PC-ping_10.162.106.10_-c_2.txt"
+  },
+  {
+    "source": "HEALTH-PC",
+    "destination": "10.162.121.10",
+    "expected": true,
+    "received": 1,
+    "passed": true,
+    "description": "医疗专线到远程会诊",
+    "image": "D:\\Windows\\桌面\\计网实验课程报告\\evidence\\live\\HEALTH-PC-ping_10.162.121.10_-c_2.png",
+    "evidence": "D:\\Windows\\桌面\\计网实验课程报告\\evidence\\console\\HEALTH-PC-ping_10.162.121.10_-c_2.txt",
+    "verification_phase": "最终重启复核"
+  },
+  {
+    "source": "DMZ-WEB",
+    "destination": "10.162.108.2",
+    "expected": true,
+    "received": 2,
+    "passed": true,
+    "description": "DMZ 实地址网关诊断",
+    "image": "D:\\Windows\\桌面\\计网实验课程报告\\evidence\\live\\DMZ-WEB-ping_10.162.108.2_-c_2.png",
+    "evidence": "D:\\Windows\\桌面\\计网实验课程报告\\evidence\\console\\DMZ-WEB-ping_10.162.108.2_-c_3.txt",
+    "verification_phase": "最终重启复核"
+  }
+]

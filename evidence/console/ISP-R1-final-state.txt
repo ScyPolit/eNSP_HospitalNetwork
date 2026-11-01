@@ -1,0 +1,7 @@
+screen-length 0 temporary
+Error: The type of the included user interface must be VTY.
+<ISP-R1>
+
+<ISP-R1>
+display current-configuration
+[V200R003C00]

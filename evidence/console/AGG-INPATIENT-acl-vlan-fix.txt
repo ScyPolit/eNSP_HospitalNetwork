@@ -1,0 +1,9 @@
+system-view
+Enter system view, return user view with Ctrl+Z.
+[AGG-INPATIENT]
+undo traffic-filter inbound acl 3020
+[AGG-INPATIENT]
+traffic-filter vlan 20 inbound acl 3020
+[AGG-INPATIENT]
+return
+<AGG-INPATIENT>

@@ -1,0 +1,12 @@
+display current-configuration interface GigabitEthernet0/0/1
+#
+interface GigabitEthernet0/0/1
+ port link-type access
+ port default vlan 901
+#
+return
+<WAN-L2>
+display port vlan | include GE0/0
+Port                    Link Type    PVID  Trunk VLAN List
+-------------------------------------------------------------------------------
+<WAN-L2>

@@ -1,0 +1,3 @@
+display current-configuration | include sysname
+sysname CORE-SW2
+<CORE-SW2>

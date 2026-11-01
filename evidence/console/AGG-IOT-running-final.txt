@@ -1,0 +1,202 @@
+display current-configuration
+#
+sysname AGG-IOT
+#
+undo info-center enable
+#
+vlan batch 100 110 120 140 1106 1206
+#
+cluster enable
+ntdp enable
+ndp enable
+#
+drop illegal-mac alarm
+#
+dhcp enable
+#
+diffserv domain default
+#
+acl number 2001
+ rule 5 permit source 10.162.120.20 0
+ rule 10 deny
+#
+acl number 3100
+ rule 5 permit udp source-port eq bootpc destination-port eq bootps
+ rule 10 permit icmp destination 10.162.111.1 0
+ rule 15 permit tcp destination 10.162.106.10 0 destination-port eq 8883
+ rule 20 permit icmp destination 10.162.106.10 0
+ rule 25 deny ip destination 10.0.0.0 0.255.255.255
+ rule 30 deny ip destination 172.16.0.0 0.15.255.255
+ rule 35 deny ip destination 192.168.0.0 0.0.255.255
+ rule 40 deny ip
+acl number 3110
+ rule 5 permit udp source-port eq bootpc destination-port eq bootps
+ rule 10 permit icmp destination 10.162.112.1 0
+ rule 15 permit tcp destination 10.162.106.11 0 destination-port eq 554
+ rule 20 permit icmp destination 10.162.106.11 0
+ rule 25 deny ip destination 10.0.0.0 0.255.255.255
+ rule 30 deny ip destination 172.16.0.0 0.15.255.255
+ rule 35 deny ip destination 192.168.0.0 0.0.255.255
+ rule 40 deny ip
+acl number 3120
+ rule 5 permit udp source-port eq bootpc destination-port eq bootps
+ rule 10 permit icmp destination 10.162.114.1 0
+ rule 15 permit tcp destination 10.162.106.10 0 destination-port eq 443
+ rule 20 permit icmp destination 10.162.106.10 0
+ rule 25 permit tcp destination 10.162.108.10 0 destination-port eq www
+ rule 30 deny ip destination 10.0.0.0 0.255.255.255
+ rule 35 deny ip destination 172.16.0.0 0.15.255.255
+ rule 40 deny ip destination 192.168.0.0 0.0.255.255
+ rule 45 permit ip
+acl number 3140
+ rule 5 permit udp source-port eq bootpc destination-port eq bootps
+ rule 10 permit icmp destination 10.162.116.1 0
+ rule 15 deny ip destination 10.0.0.0 0.255.255.255
+ rule 20 deny ip destination 172.16.0.0 0.15.255.255
+ rule 25 deny ip destination 192.168.0.0 0.0.255.255
+ rule 30 permit ip
+#
+drop-profile default
+#
+aaa
+ authentication-scheme default
+ authorization-scheme default
+ accounting-scheme default
+ domain default
+ domain default_admin
+ local-user admin password simple admin
+ local-user admin service-type http
+#
+interface Vlanif1
+#
+interface Vlanif100
+ ip address 10.162.111.1 255.255.255.0
+ dhcp select interface
+ dhcp server excluded-ip-address 10.162.111.2 10.162.111.49
+#
+interface Vlanif110
+ ip address 10.162.112.1 255.255.255.0
+ dhcp select interface
+ dhcp server excluded-ip-address 10.162.112.2 10.162.112.49
+#
+interface Vlanif120
+ ip address 10.162.114.1 255.255.254.0
+ dhcp select interface
+ dhcp server excluded-ip-address 10.162.114.2 10.162.114.49
+#
+interface Vlanif140
+ ip address 10.162.116.1 255.255.252.0
+ dhcp select interface
+ dhcp server excluded-ip-address 10.162.116.2 10.162.116.49
+#
+interface Vlanif1106
+ ip address 10.162.99.118 255.255.255.252
+#
+interface Vlanif1206
+ ip address 10.162.99.146 255.255.255.252
+#
+interface MEth0/0/1
+#
+interface Eth-Trunk1
+ port link-type trunk
+ port trunk allow-pass vlan 100
+ mode lacp-static
+#
+interface Eth-Trunk2
+ port link-type trunk
+ port trunk allow-pass vlan 110
+ mode lacp-static
+#
+interface Eth-Trunk3
+ port link-type trunk
+ port trunk allow-pass vlan 120 140
+ mode lacp-static
+#
+interface GigabitEthernet0/0/1
+ eth-trunk 1
+#
+interface GigabitEthernet0/0/2
+ eth-trunk 1
+#
+interface GigabitEthernet0/0/3
+ eth-trunk 2
+#
+interface GigabitEthernet0/0/4
+ eth-trunk 2
+#
+interface GigabitEthernet0/0/5
+ eth-trunk 3
+#
+interface GigabitEthernet0/0/6
+ eth-trunk 3
+#
+interface GigabitEthernet0/0/7
+#
+interface GigabitEthernet0/0/8
+#
+interface GigabitEthernet0/0/9
+#
+interface GigabitEthernet0/0/10
+#
+interface GigabitEthernet0/0/11
+#
+interface GigabitEthernet0/0/12
+#
+interface GigabitEthernet0/0/13
+#
+interface GigabitEthernet0/0/14
+#
+interface GigabitEthernet0/0/15
+#
+interface GigabitEthernet0/0/16
+#
+interface GigabitEthernet0/0/17
+#
+interface GigabitEthernet0/0/18
+#
+interface GigabitEthernet0/0/19
+#
+interface GigabitEthernet0/0/20
+#
+interface GigabitEthernet0/0/21
+#
+interface GigabitEthernet0/0/22
+#
+interface GigabitEthernet0/0/23
+ port link-type access
+ port default vlan 1106
+ stp disable
+#
+interface GigabitEthernet0/0/24
+ port link-type access
+ port default vlan 1206
+ stp disable
+#
+interface NULL0
+#
+ospf 1 router-id 10.255.254.6
+ silent-interface Vlanif100
+ silent-interface Vlanif110
+ silent-interface Vlanif120
+ silent-interface Vlanif140
+ area 0.0.0.0
+  network 10.162.99.116 0.0.0.3
+  network 10.162.99.144 0.0.0.3
+ area 0.0.0.40
+  network 10.162.111.0 0.0.0.255
+  network 10.162.112.0 0.0.0.255
+  network 10.162.114.0 0.0.1.255
+  network 10.162.116.0 0.0.3.255
+#
+traffic-filter vlan 100 inbound acl 3100
+traffic-filter vlan 110 inbound acl 3110
+traffic-filter vlan 120 inbound acl 3120
+traffic-filter vlan 140 inbound acl 3140
+#
+user-interface con 0
+ screen-length 0
+user-interface vty 0 4
+ acl 2001 inbound
+#
+return
+<AGG-IOT>

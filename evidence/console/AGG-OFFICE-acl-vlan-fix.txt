@@ -1,0 +1,13 @@
+system-view
+Enter system view, return user view with Ctrl+Z.
+[AGG-OFFICE]
+undo traffic-filter inbound acl 3040
+[AGG-OFFICE]
+traffic-filter vlan 40 inbound acl 3040
+[AGG-OFFICE]
+undo traffic-filter inbound acl 3160
+[AGG-OFFICE]
+traffic-filter vlan 160 inbound acl 3160
+[AGG-OFFICE]
+return
+<AGG-OFFICE>

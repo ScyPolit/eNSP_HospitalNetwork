@@ -1,0 +1,31 @@
+display current-configuration interface Vlanif50
+#
+interface Vlanif50
+ ip address 10.162.105.1 255.255.255.0
+ dhcp select interface
+ dhcp server excluded-ip-address 10.162.105.2 10.162.105.49
+#
+return
+<AGG-BRANCH>
+display ospf peer brief
+
+	 OSPF Process 1 with Router ID 10.255.254.7
+		  Peer Statistic Information
+ ----------------------------------------------------------------------------
+ Area Id          Interface                        Neighbor id      State    
+ 0.0.0.0          Vlanif1107                       10.255.255.11    Full        
+ 0.0.0.0          Vlanif1207                       10.255.255.12    Full        
+ ----------------------------------------------------------------------------
+<AGG-BRANCH>
+display eth-trunk 1 | include Selected
+Eth-Trunk1's state information is:
+Local:
+--------------------------------------------------------------------------------
+ActorPortName          Status   PortType PortPri PortNo PortKey PortState Weight
+GigabitEthernet0/0/1   Selected 1GE      32768   2      305     10111100  1
+GigabitEthernet0/0/2   Selected 1GE      32768   3      305     10111100  1
+
+Partner:
+--------------------------------------------------------------------------------
+ActorPortName          SysPri   SystemID        PortPri PortNo PortKey PortState
+<AGG-BRANCH>

@@ -1,0 +1,17 @@
+system-view
+Enter system view, return user view with Ctrl+Z.
+[ISP-R1]
+acl number 2001
+[ISP-R1-acl-basic-2001]
+rule 5 permit source 10.162.120.20 0
+[ISP-R1-acl-basic-2001]
+rule 10 deny
+[ISP-R1-acl-basic-2001]
+quit
+[ISP-R1]
+user-interface vty 0 4
+[ISP-R1-ui-vty0-4]
+acl 2001 inbound
+[ISP-R1-ui-vty0-4]
+return
+<ISP-R1>

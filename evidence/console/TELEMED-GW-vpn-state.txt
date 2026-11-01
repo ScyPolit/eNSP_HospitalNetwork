@@ -1,0 +1,101 @@
+display nqa results test-instance hospital primary
+ 
+ NQA entry(hospital, primary) :testflag is active ,testtype is icmp 
+  1 . Test 192 result   The test is finished
+   Send operation times: 2              Receive response times: 0          
+   Completion:failed                    RTD OverThresholds number: 0       
+   Attempts number:1                    Drop operation number:0            
+   Disconnect operation number:0        Operation timeout number:2         
+   System busy operation number:0       Connection fail number:0           
+   Operation sequence errors number:0   RTT Status errors number:0         
+   Destination ip address:172.20.1.1                                     
+   Min/Max/Average Completion Time: 0/0/0                                
+   Sum/Square-Sum  Completion Time: 0/0                                  
+   Last Good Probe Time: 0000-00-00 00:00:00.0                           
+   Lost packet ratio: 100 %                                              
+  2 . Test 193 result   The test is finished
+   Send operation times: 2              Receive response times: 0          
+   Completion:failed                    RTD OverThresholds number: 0       
+   Attempts number:1                    Drop operation number:0            
+   Disconnect operation number:0        Operation timeout number:2         
+   System busy operation number:0       Connection fail number:0           
+   Operation sequence errors number:0   RTT Status errors number:0         
+   Destination ip address:172.20.1.1                                     
+   Min/Max/Average Completion Time: 0/0/0                                
+   Sum/Square-Sum  Completion Time: 0/0                                  
+   Last Good Probe Time: 0000-00-00 00:00:00.0                           
+   Lost packet ratio: 100 %                                              
+  3 . Test 194 result   The test is finished
+   Send operation times: 2              Receive response times: 0          
+   Completion:failed                    RTD OverThresholds number: 0       
+   Attempts number:1                    Drop operation number:0            
+   Disconnect operation number:0        Operation timeout number:2         
+   System busy operation number:0       Connection fail number:0           
+   Operation sequence errors number:0   RTT Status errors number:0         
+   Destination ip address:172.20.1.1                                     
+   Min/Max/Average Completion Time: 0/0/0                                
+   Sum/Square-Sum  Completion Time: 0/0                                  
+   Last Good Probe Time: 0000-00-00 00:00:00.0                           
+   Lost packet ratio: 100 %                                              
+  4 . Test 195 result   The test is finished
+   Send operation times: 2              Receive response times: 0          
+   Completion:failed                    RTD OverThresholds number: 0       
+   Attempts number:1                    Drop operation number:0            
+   Disconnect operation number:0        Operation timeout number:2         
+   System busy operation number:0       Connection fail number:0           
+   Operation sequence errors number:0   RTT Status errors number:0         
+   Destination ip address:172.20.1.1                                     
+   Min/Max/Average Completion Time: 0/0/0                                
+   Sum/Square-Sum  Completion Time: 0/0                                  
+   Last Good Probe Time: 0000-00-00 00:00:00.0                           
+   Lost packet ratio: 100 %                                              
+  5 . Test 196 result   The test is finished
+   Send operation times: 2              Receive response times: 0          
+   Completion:failed                    RTD OverThresholds number: 0       
+   Attempts number:1                    Drop operation number:0            
+   Disconnect operation number:0        Operation timeout number:2         
+   System busy operation number:0       Connection fail number:0           
+   Operation sequence errors number:0   RTT Status errors number:0         
+   Destination ip address:172.20.1.1                                     
+   Min/Max/Average Completion Time: 0/0/0                                
+   Sum/Square-Sum  Completion Time: 0/0                                  
+   Last Good Probe Time: 0000-00-00 00:00:00.0                           
+   Lost packet ratio: 100 %                                              
+<TELEMED-GW>
+display ipsec sa
+
+===============================
+Interface: GigabitEthernet0/0/2
+ Path MTU: 1500
+===============================
+
+  -----------------------------
+  IPSec policy name: "HOSP"
+  Sequence number  : 10
+  Acl Group        : 3500
+  Acl rule         : 5
+  Mode             : ISAKMP
+  -----------------------------
+    Connection ID     : 3
+    Encapsulation mode: Tunnel
+    Tunnel local      : 198.18.0.2
+    Tunnel remote     : 198.18.0.1
+    Flow source       : 10.162.121.0/255.255.255.0 0/0
+    Flow destination  : 172.20.1.0/255.255.255.0 0/0
+    Qos pre-classify  : Disable
+
+    [Outbound ESP SAs] 
+      SPI: 3750004586 (0xdf84876a)
+      Proposal: ESP-ENCRYPT-AES-256 ESP-AUTH-SHA1
+      SA remaining key duration (bytes/sec): 1887436800/2622
+      Max sent sequence-number: 0
+      UDP encapsulation used for NAT traversal: N
+
+    [Inbound ESP SAs] 
+      SPI: 1889872794 (0x70a52b9a)
+      Proposal: ESP-ENCRYPT-AES-256 ESP-AUTH-SHA1
+      SA remaining key duration (bytes/sec): 1887436800/2622
+      Max received sequence-number: 0
+      Anti-replay window size: 32
+      UDP encapsulation used for NAT traversal: N
+<TELEMED-GW>

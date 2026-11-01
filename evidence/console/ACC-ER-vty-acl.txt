@@ -1,0 +1,17 @@
+system-view
+Enter system view, return user view with Ctrl+Z.
+[ACC-ER]
+acl number 2001
+[ACC-ER-acl-basic-2001]
+rule 5 permit source 10.162.120.20 0
+[ACC-ER-acl-basic-2001]
+rule 10 deny
+[ACC-ER-acl-basic-2001]
+quit
+[ACC-ER]
+user-interface vty 0 4
+[ACC-ER-ui-vty0-4]
+acl 2001 inbound
+[ACC-ER-ui-vty0-4]
+return
+<ACC-ER>

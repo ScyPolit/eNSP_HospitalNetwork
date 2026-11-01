@@ -1,0 +1,24 @@
+display hrp group
+13:39:45  2026/10/30
+ Master group status:
+   Group enabled:         no
+   State:                 initialize
+   Priority running:      65001
+   Total VRRP members:    0
+   Hello interval(ms):    1000
+   Preempt enabled:       yes
+   Preempt delay(s):      30
+   Peer group available:  0
+   Peer's member same:    yes
+ Slave group status:
+   Group enabled:         yes
+   State:                 master
+   Priority running:      65000
+   Total VRRP members:    6
+   Hello interval(ms):    1000
+   Preempt enabled:       yes
+   Preempt delay(s):      0
+   Peer group available:  0
+   Peer's member same:    yes
+
+HRP_M<FW-B>

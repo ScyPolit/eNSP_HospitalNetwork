@@ -1,0 +1,1464 @@
+{
+  "devices": [
+    {
+      "name": "WAN-L2",
+      "model": "S5700",
+      "x": 1120.0,
+      "y": 235.0,
+      "id": "64BAD0E5-5991-505E-AD1E-530ED94920E7",
+      "port": 2100,
+      "display_name": "外联隔离交换机"
+    },
+    {
+      "name": "ISP-R1",
+      "model": "AR2220",
+      "x": 740.0,
+      "y": 160.0,
+      "id": "AA62F834-615C-516C-A013-A44A5AE1B300",
+      "port": 2101,
+      "display_name": "主运营商路由器"
+    },
+    {
+      "name": "ISP-R2",
+      "model": "AR2220",
+      "x": 1500.0,
+      "y": 160.0,
+      "id": "32BB8748-14C7-533F-BE3A-5772177D3D2F",
+      "port": 2102,
+      "display_name": "备运营商路由器"
+    },
+    {
+      "name": "HEALTH-R",
+      "model": "AR2220",
+      "x": 300.0,
+      "y": 170.0,
+      "id": "C2F25961-1FC5-5055-B0D2-E362FD21A305",
+      "port": 2103,
+      "display_name": "医疗专线路由器"
+    },
+    {
+      "name": "PUBLIC-WEB",
+      "model": "PC",
+      "x": 740.0,
+      "y": 55.0,
+      "id": "26E90CE1-BBBD-51A6-A295-732057F5E83F",
+      "ip": "203.0.113.10",
+      "gw": "203.0.113.1",
+      "display_name": "主公网测试终端"
+    },
+    {
+      "name": "PUBLIC-BACKUP",
+      "model": "PC",
+      "x": 1500.0,
+      "y": 55.0,
+      "id": "73C20A44-BDC0-59C8-A1A9-E93BE025D0B7",
+      "ip": "203.0.114.10",
+      "gw": "203.0.114.1",
+      "display_name": "备公网测试终端"
+    },
+    {
+      "name": "HEALTH-PC",
+      "model": "PC",
+      "x": 70.0,
+      "y": 100.0,
+      "id": "428E4433-AE4F-52A2-AA7F-24E1370DB212",
+      "ip": "172.20.1.10",
+      "gw": "172.20.1.1",
+      "display_name": "医疗专线终端"
+    },
+    {
+      "name": "FW-A",
+      "model": "USG5500",
+      "x": 1000.0,
+      "y": 365.0,
+      "id": "E79D96EB-18CA-54D5-ABC4-EEEE269D16C0",
+      "port": 2104,
+      "display_name": "主防火墙"
+    },
+    {
+      "name": "FW-B",
+      "model": "USG5500",
+      "x": 1420.0,
+      "y": 365.0,
+      "id": "74E0B4A7-B5A9-5DE6-9B8A-F713D37F036D",
+      "port": 2105,
+      "display_name": "备防火墙"
+    },
+    {
+      "name": "CORE-SW1",
+      "model": "S5700",
+      "x": 1050.0,
+      "y": 555.0,
+      "id": "80DF2D3D-F455-5C14-B517-DE3E9BE3D3E5",
+      "port": 2106,
+      "display_name": "核心交换机一"
+    },
+    {
+      "name": "CORE-SW2",
+      "model": "S5700",
+      "x": 1410.0,
+      "y": 555.0,
+      "id": "9E84E1FB-94CF-5756-9D84-599296B4FE30",
+      "port": 2107,
+      "display_name": "核心交换机二"
+    },
+    {
+      "name": "DMZ-SW",
+      "model": "S5700",
+      "x": 2280.0,
+      "y": 400.0,
+      "id": "5C436583-EFE9-5592-BF58-5E8360BC404F",
+      "port": 2108,
+      "display_name": "非军事区交换机"
+    },
+    {
+      "name": "DMZ-WEB",
+      "model": "PC",
+      "x": 2280.0,
+      "y": 100.0,
+      "id": "00E142CE-DD48-504C-9DC5-1FD028CF11DC",
+      "ip": "10.162.108.10",
+      "gw": "10.162.108.2",
+      "display_name": "非军事区服务终端"
+    },
+    {
+      "name": "AGG-CLINIC",
+      "model": "S5700",
+      "x": 535.0,
+      "y": 770.0,
+      "id": "E866FE40-ADA1-53D8-940D-18789B987DFF",
+      "port": 2109,
+      "display_name": "门急诊汇聚"
+    },
+    {
+      "name": "ACC-OPD",
+      "model": "S5700",
+      "x": 410.0,
+      "y": 965.0,
+      "id": "B48A4611-A47D-58B8-B46B-FA29085F51F5",
+      "port": 2110,
+      "display_name": "门诊接入"
+    },
+    {
+      "name": "OPD-PC",
+      "model": "PC",
+      "x": 410.0,
+      "y": 1080.0,
+      "id": "1F14529B-A426-55BC-9BB3-121AC91F52FA",
+      "ip": "10.162.101.10",
+      "gw": "10.162.101.1",
+      "display_name": "门诊终端"
+    },
+    {
+      "name": "ACC-ER",
+      "model": "S5700",
+      "x": 530.0,
+      "y": 965.0,
+      "id": "E447F834-7D97-54E8-849F-6B6749154127",
+      "port": 2111,
+      "display_name": "急诊接入"
+    },
+    {
+      "name": "ER-PC",
+      "model": "PC",
+      "x": 530.0,
+      "y": 1080.0,
+      "id": "6B8BDC16-82B9-5E51-9BAB-16A472E2991C",
+      "ip": "10.162.109.10",
+      "gw": "10.162.109.1",
+      "display_name": "急诊终端"
+    },
+    {
+      "name": "ACC-PHARM",
+      "model": "S5700",
+      "x": 650.0,
+      "y": 965.0,
+      "id": "994B9944-230A-5484-B16E-4014A3713856",
+      "port": 2112,
+      "display_name": "药房接入"
+    },
+    {
+      "name": "PHARM-PC",
+      "model": "PC",
+      "x": 650.0,
+      "y": 1080.0,
+      "id": "33980444-1F8F-57AF-B0D4-CC3AA99181FB",
+      "ip": "10.162.110.10",
+      "gw": "10.162.110.1",
+      "display_name": "药房终端"
+    },
+    {
+      "name": "AGG-INPATIENT",
+      "model": "S5700",
+      "x": 900.0,
+      "y": 770.0,
+      "id": "C00FFD0A-E238-599F-B355-B663E60780F2",
+      "port": 2113,
+      "display_name": "住院部汇聚"
+    },
+    {
+      "name": "ACC-WARD-A",
+      "model": "S5700",
+      "x": 815.0,
+      "y": 965.0,
+      "id": "55C4EBF3-85D3-565B-BE98-6ABB04A090D9",
+      "port": 2114,
+      "display_name": "病区一接入"
+    },
+    {
+      "name": "WARD-A-PC",
+      "model": "PC",
+      "x": 815.0,
+      "y": 1080.0,
+      "id": "90C2750D-786E-56F2-88A5-66D5975C2D1A",
+      "ip": "10.162.102.10",
+      "gw": "10.162.102.1",
+      "display_name": "病区一终端"
+    },
+    {
+      "name": "ACC-WARD-B",
+      "model": "S5700",
+      "x": 990.0,
+      "y": 965.0,
+      "id": "05EE8B9B-AFD4-5F53-B0D1-4AD7A0F80504",
+      "port": 2115,
+      "display_name": "病区二接入"
+    },
+    {
+      "name": "WARD-B-PC",
+      "model": "PC",
+      "x": 990.0,
+      "y": 1080.0,
+      "id": "92B7135D-4FD6-57CE-BC5D-BD12D00DC571",
+      "ip": "10.162.102.11",
+      "gw": "10.162.102.1",
+      "display_name": "病区二终端"
+    },
+    {
+      "name": "AGG-MEDTECH",
+      "model": "S5700",
+      "x": 1265.0,
+      "y": 770.0,
+      "id": "C2088922-7991-5E03-ADB6-8A4987EFFCEE",
+      "port": 2116,
+      "display_name": "医技科汇聚"
+    },
+    {
+      "name": "ACC-PACS",
+      "model": "S5700",
+      "x": 1180.0,
+      "y": 965.0,
+      "id": "3B22925D-405F-50D6-8444-04680D676970",
+      "port": 2117,
+      "display_name": "影像科接入"
+    },
+    {
+      "name": "PACS-PC",
+      "model": "PC",
+      "x": 1180.0,
+      "y": 1080.0,
+      "id": "14DF97F9-EB5B-57F8-9751-908E17760A70",
+      "ip": "10.162.103.10",
+      "gw": "10.162.103.1",
+      "display_name": "影像科终端"
+    },
+    {
+      "name": "ACC-LAB",
+      "model": "S5700",
+      "x": 1355.0,
+      "y": 965.0,
+      "id": "873B4007-EF8A-58DB-8A37-C4C157BF7BFD",
+      "port": 2118,
+      "display_name": "检验科接入"
+    },
+    {
+      "name": "LAB-PC",
+      "model": "PC",
+      "x": 1355.0,
+      "y": 1080.0,
+      "id": "016D02F8-383B-57BD-B15C-D73A9ADDD8E1",
+      "ip": "10.162.103.11",
+      "gw": "10.162.103.1",
+      "display_name": "检验科终端"
+    },
+    {
+      "name": "AGG-DC",
+      "model": "S5700",
+      "x": 1630.0,
+      "y": 770.0,
+      "id": "8DC48204-40C5-57D1-BDFD-8BFF1EC64DAB",
+      "port": 2119,
+      "display_name": "数据中心汇聚"
+    },
+    {
+      "name": "DC-SW-A",
+      "model": "S5700",
+      "x": 1505.0,
+      "y": 965.0,
+      "id": "461D237B-2616-519B-B929-19CE6AAB4D79",
+      "port": 2120,
+      "display_name": "业务服务器接入"
+    },
+    {
+      "name": "HIS-SRV",
+      "model": "PC",
+      "x": 1505.0,
+      "y": 1080.0,
+      "id": "7BE56A11-22E9-544D-AEB2-D27EA943B596",
+      "ip": "10.162.106.10",
+      "gw": "10.162.106.1",
+      "display_name": "医院业务服务终端"
+    },
+    {
+      "name": "DC-SW-B",
+      "model": "S5700",
+      "x": 1625.0,
+      "y": 965.0,
+      "id": "AE5E5B22-5D73-51E4-99F1-075F8120A098",
+      "port": 2121,
+      "display_name": "影像服务器接入"
+    },
+    {
+      "name": "PACS-SRV",
+      "model": "PC",
+      "x": 1625.0,
+      "y": 1080.0,
+      "id": "6DB0B9B1-039F-5387-8A07-0EBBC735DD28",
+      "ip": "10.162.106.11",
+      "gw": "10.162.106.1",
+      "display_name": "影像服务终端"
+    },
+    {
+      "name": "BACKUP-SW",
+      "model": "S5700",
+      "x": 1745.0,
+      "y": 965.0,
+      "id": "C31ACE2D-CD98-5D29-9DEA-EE9ED7CDA43D",
+      "port": 2122,
+      "display_name": "备份服务器接入"
+    },
+    {
+      "name": "BACKUP-SRV",
+      "model": "PC",
+      "x": 1745.0,
+      "y": 1080.0,
+      "id": "88CBB6F8-462F-55AC-9970-31B64B98386B",
+      "ip": "10.162.107.10",
+      "gw": "10.162.107.1",
+      "display_name": "备份服务终端"
+    },
+    {
+      "name": "AGG-OFFICE",
+      "model": "S5700",
+      "x": 1995.0,
+      "y": 770.0,
+      "id": "9DA9B336-6EF2-5520-9900-0904A7DC244A",
+      "port": 2123,
+      "display_name": "办公运维汇聚"
+    },
+    {
+      "name": "ACC-ADMIN",
+      "model": "S5700",
+      "x": 1870.0,
+      "y": 965.0,
+      "id": "61A4C5FD-ADA5-5889-83E3-E58391BB3886",
+      "port": 2124,
+      "display_name": "行政接入"
+    },
+    {
+      "name": "ADMIN-PC",
+      "model": "PC",
+      "x": 1870.0,
+      "y": 1080.0,
+      "id": "70C07EDB-5F4E-5D64-8201-5F61A94D4453",
+      "ip": "10.162.104.10",
+      "gw": "10.162.104.1",
+      "display_name": "行政终端"
+    },
+    {
+      "name": "ACC-FIN",
+      "model": "S5700",
+      "x": 1990.0,
+      "y": 965.0,
+      "id": "3C39AF97-D70F-52D4-B62C-314B18C3E3EA",
+      "port": 2125,
+      "display_name": "财务接入"
+    },
+    {
+      "name": "FIN-PC",
+      "model": "PC",
+      "x": 1990.0,
+      "y": 1080.0,
+      "id": "676CB853-A131-59F5-98DA-FD61432BF6CA",
+      "ip": "10.162.104.11",
+      "gw": "10.162.104.1",
+      "display_name": "财务终端"
+    },
+    {
+      "name": "NMS-SW",
+      "model": "S5700",
+      "x": 2110.0,
+      "y": 965.0,
+      "id": "A38CEEF2-90D4-5062-9820-46D02971F11B",
+      "port": 2126,
+      "display_name": "运维接入"
+    },
+    {
+      "name": "NMS-PC",
+      "model": "PC",
+      "x": 2110.0,
+      "y": 1080.0,
+      "id": "4CA1F2BC-8D45-565B-B6CC-D8E3564CECE8",
+      "ip": "10.162.120.10",
+      "gw": "10.162.120.1",
+      "display_name": "网管终端"
+    },
+    {
+      "name": "BASTION",
+      "model": "PC",
+      "x": 2032.0,
+      "y": 1171.0,
+      "id": "C47836F5-1AAE-50C5-8854-044B2A4748FD",
+      "ip": "10.162.120.20",
+      "gw": "10.162.120.1",
+      "display_name": "运维堡垒机"
+    },
+    {
+      "name": "AGG-IOT",
+      "model": "S5700",
+      "x": 2360.0,
+      "y": 770.0,
+      "id": "9B0E6181-D340-5145-9997-BE680C48D9E4",
+      "port": 2127,
+      "display_name": "物联无线汇聚"
+    },
+    {
+      "name": "ACC-IOT",
+      "model": "S5700",
+      "x": 2235.0,
+      "y": 965.0,
+      "id": "AB0C68EE-7C24-580A-B1ED-CF6D0376A3E5",
+      "port": 2128,
+      "display_name": "医疗物联接入"
+    },
+    {
+      "name": "IOT-PC",
+      "model": "PC",
+      "x": 2235.0,
+      "y": 1080.0,
+      "id": "E7C957CC-0C13-55FB-A173-3EE582A3094F",
+      "ip": "10.162.111.10",
+      "gw": "10.162.111.1",
+      "display_name": "医疗物联终端"
+    },
+    {
+      "name": "ACC-CCTV",
+      "model": "S5700",
+      "x": 2355.0,
+      "y": 965.0,
+      "id": "41196B37-6D98-5D10-BB9A-74462D22F9F1",
+      "port": 2129,
+      "display_name": "视频监控接入"
+    },
+    {
+      "name": "CCTV-PC",
+      "model": "PC",
+      "x": 2355.0,
+      "y": 1080.0,
+      "id": "160E60BB-741B-511F-8AA3-699A49C8D74F",
+      "ip": "10.162.112.10",
+      "gw": "10.162.112.1",
+      "display_name": "视频监控终端"
+    },
+    {
+      "name": "ACC-WLAN",
+      "model": "S5700",
+      "x": 2475.0,
+      "y": 965.0,
+      "id": "56473B2B-6662-58ED-84EF-0777296C3AB9",
+      "port": 2130,
+      "display_name": "无线网络接入"
+    },
+    {
+      "name": "STAFF-PC",
+      "model": "PC",
+      "x": 2475.0,
+      "y": 1080.0,
+      "id": "75DAE83F-8173-5403-A19C-9A097E66F078",
+      "ip": "10.162.114.10",
+      "gw": "10.162.114.1",
+      "display_name": "员工无线终端"
+    },
+    {
+      "name": "GUEST-PC",
+      "model": "PC",
+      "x": 2397.0,
+      "y": 1171.0,
+      "id": "383F53F3-165C-5C08-8589-0347AC4AF8FD",
+      "ip": "10.162.116.10",
+      "gw": "10.162.116.1",
+      "display_name": "访客无线终端"
+    },
+    {
+      "name": "AGG-BRANCH",
+      "model": "S5700",
+      "x": 170.0,
+      "y": 770.0,
+      "id": "5F97D330-BD2B-5AB6-BEA2-CCA83A108AEF",
+      "port": 2131,
+      "display_name": "分院汇聚"
+    },
+    {
+      "name": "BRANCH-SW",
+      "model": "S5700",
+      "x": 85.0,
+      "y": 965.0,
+      "id": "E15133A2-C455-53AA-A48B-D789FB3E0963",
+      "port": 2132,
+      "display_name": "分院接入"
+    },
+    {
+      "name": "BRANCH-PC",
+      "model": "PC",
+      "x": 85.0,
+      "y": 1080.0,
+      "id": "61B738E5-54F2-5819-81EF-251DA46215A2",
+      "ip": "10.162.105.10",
+      "gw": "10.162.105.1",
+      "display_name": "分院终端"
+    },
+    {
+      "name": "TELEMED-GW",
+      "model": "AR2220",
+      "x": 285.0,
+      "y": 965.0,
+      "id": "9538E912-A5C3-5226-8368-FF9EFC82C4EB",
+      "port": 2133,
+      "display_name": "远程医疗网关"
+    },
+    {
+      "name": "TELEMED-PC",
+      "model": "PC",
+      "x": 285.0,
+      "y": 1180.0,
+      "id": "8C4C47B7-B417-5527-913B-28A100083864",
+      "ip": "10.162.121.10",
+      "gw": "10.162.121.1",
+      "display_name": "远程会诊终端"
+    }
+  ],
+  "links": [
+    {
+      "a": "ISP-R1",
+      "ai": 1,
+      "b": "PUBLIC-WEB",
+      "bi": 0,
+      "role": "Public HTTP/ICMP"
+    },
+    {
+      "a": "ISP-R2",
+      "ai": 1,
+      "b": "PUBLIC-BACKUP",
+      "bi": 0,
+      "role": "Backup public"
+    },
+    {
+      "a": "HEALTH-R",
+      "ai": 1,
+      "b": "HEALTH-PC",
+      "bi": 0,
+      "role": "Medical external"
+    },
+    {
+      "a": "ISP-R1",
+      "ai": 0,
+      "b": "WAN-L2",
+      "bi": 0,
+      "role": "WAN VLAN 901"
+    },
+    {
+      "a": "ISP-R2",
+      "ai": 0,
+      "b": "WAN-L2",
+      "bi": 1,
+      "role": "WAN VLAN 902"
+    },
+    {
+      "a": "HEALTH-R",
+      "ai": 0,
+      "b": "WAN-L2",
+      "bi": 2,
+      "role": "WAN VLAN 903"
+    },
+    {
+      "a": "FW-A",
+      "ai": 0,
+      "b": "WAN-L2",
+      "bi": 3,
+      "role": "WAN 901"
+    },
+    {
+      "a": "FW-A",
+      "ai": 1,
+      "b": "WAN-L2",
+      "bi": 4,
+      "role": "WAN 902"
+    },
+    {
+      "a": "FW-A",
+      "ai": 2,
+      "b": "WAN-L2",
+      "bi": 5,
+      "role": "WAN 903"
+    },
+    {
+      "a": "FW-B",
+      "ai": 0,
+      "b": "WAN-L2",
+      "bi": 6,
+      "role": "WAN 901"
+    },
+    {
+      "a": "FW-B",
+      "ai": 1,
+      "b": "WAN-L2",
+      "bi": 7,
+      "role": "WAN 902"
+    },
+    {
+      "a": "FW-B",
+      "ai": 2,
+      "b": "WAN-L2",
+      "bi": 8,
+      "role": "WAN 903"
+    },
+    {
+      "a": "FW-A",
+      "ai": 6,
+      "b": "FW-B",
+      "bi": 6,
+      "role": "HRP heartbeat"
+    },
+    {
+      "a": "FW-A",
+      "ai": 3,
+      "b": "CORE-SW1",
+      "bi": 0,
+      "role": "Trust VLAN 900"
+    },
+    {
+      "a": "FW-B",
+      "ai": 3,
+      "b": "CORE-SW2",
+      "bi": 0,
+      "role": "Trust VLAN 900"
+    },
+    {
+      "a": "FW-A",
+      "ai": 4,
+      "b": "CORE-SW2",
+      "bi": 1,
+      "role": "Trust VLAN 901"
+    },
+    {
+      "a": "FW-B",
+      "ai": 4,
+      "b": "CORE-SW1",
+      "bi": 1,
+      "role": "Trust VLAN 901"
+    },
+    {
+      "a": "CORE-SW1",
+      "ai": 22,
+      "b": "CORE-SW2",
+      "bi": 22,
+      "role": "LACP member 1"
+    },
+    {
+      "a": "CORE-SW1",
+      "ai": 23,
+      "b": "CORE-SW2",
+      "bi": 23,
+      "role": "LACP member 2"
+    },
+    {
+      "a": "FW-A",
+      "ai": 5,
+      "b": "DMZ-SW",
+      "bi": 22,
+      "role": "DMZ VLAN 70"
+    },
+    {
+      "a": "FW-B",
+      "ai": 5,
+      "b": "DMZ-SW",
+      "bi": 23,
+      "role": "DMZ standby"
+    },
+    {
+      "a": "DMZ-SW",
+      "ai": 0,
+      "b": "DMZ-WEB",
+      "bi": 0,
+      "role": "Published DMZ service"
+    },
+    {
+      "a": "CORE-SW1",
+      "ai": 2,
+      "b": "AGG-CLINIC",
+      "bi": 22,
+      "role": "Area0 P2P VLAN 1101"
+    },
+    {
+      "a": "CORE-SW2",
+      "ai": 2,
+      "b": "AGG-CLINIC",
+      "bi": 23,
+      "role": "Area0 P2P VLAN 1201"
+    },
+    {
+      "a": "AGG-CLINIC",
+      "ai": 0,
+      "b": "ACC-OPD",
+      "bi": 22,
+      "role": "LACP 10 member1"
+    },
+    {
+      "a": "AGG-CLINIC",
+      "ai": 1,
+      "b": "ACC-OPD",
+      "bi": 23,
+      "role": "LACP 10 member2"
+    },
+    {
+      "a": "ACC-OPD",
+      "ai": 0,
+      "b": "OPD-PC",
+      "bi": 0,
+      "role": "Access VLAN 10"
+    },
+    {
+      "a": "AGG-CLINIC",
+      "ai": 2,
+      "b": "ACC-ER",
+      "bi": 22,
+      "role": "LACP 80 member1"
+    },
+    {
+      "a": "AGG-CLINIC",
+      "ai": 3,
+      "b": "ACC-ER",
+      "bi": 23,
+      "role": "LACP 80 member2"
+    },
+    {
+      "a": "ACC-ER",
+      "ai": 0,
+      "b": "ER-PC",
+      "bi": 0,
+      "role": "Access VLAN 80"
+    },
+    {
+      "a": "AGG-CLINIC",
+      "ai": 4,
+      "b": "ACC-PHARM",
+      "bi": 22,
+      "role": "LACP 90 member1"
+    },
+    {
+      "a": "AGG-CLINIC",
+      "ai": 5,
+      "b": "ACC-PHARM",
+      "bi": 23,
+      "role": "LACP 90 member2"
+    },
+    {
+      "a": "ACC-PHARM",
+      "ai": 0,
+      "b": "PHARM-PC",
+      "bi": 0,
+      "role": "Access VLAN 90"
+    },
+    {
+      "a": "CORE-SW1",
+      "ai": 3,
+      "b": "AGG-INPATIENT",
+      "bi": 22,
+      "role": "Area0 P2P VLAN 1102"
+    },
+    {
+      "a": "CORE-SW2",
+      "ai": 3,
+      "b": "AGG-INPATIENT",
+      "bi": 23,
+      "role": "Area0 P2P VLAN 1202"
+    },
+    {
+      "a": "AGG-INPATIENT",
+      "ai": 0,
+      "b": "ACC-WARD-A",
+      "bi": 22,
+      "role": "LACP 20 member1"
+    },
+    {
+      "a": "AGG-INPATIENT",
+      "ai": 1,
+      "b": "ACC-WARD-A",
+      "bi": 23,
+      "role": "LACP 20 member2"
+    },
+    {
+      "a": "ACC-WARD-A",
+      "ai": 0,
+      "b": "WARD-A-PC",
+      "bi": 0,
+      "role": "Access VLAN 20"
+    },
+    {
+      "a": "AGG-INPATIENT",
+      "ai": 2,
+      "b": "ACC-WARD-B",
+      "bi": 22,
+      "role": "LACP 20 member1"
+    },
+    {
+      "a": "AGG-INPATIENT",
+      "ai": 3,
+      "b": "ACC-WARD-B",
+      "bi": 23,
+      "role": "LACP 20 member2"
+    },
+    {
+      "a": "ACC-WARD-B",
+      "ai": 0,
+      "b": "WARD-B-PC",
+      "bi": 0,
+      "role": "Access VLAN 20"
+    },
+    {
+      "a": "CORE-SW1",
+      "ai": 4,
+      "b": "AGG-MEDTECH",
+      "bi": 22,
+      "role": "Area0 P2P VLAN 1103"
+    },
+    {
+      "a": "CORE-SW2",
+      "ai": 4,
+      "b": "AGG-MEDTECH",
+      "bi": 23,
+      "role": "Area0 P2P VLAN 1203"
+    },
+    {
+      "a": "AGG-MEDTECH",
+      "ai": 0,
+      "b": "ACC-PACS",
+      "bi": 22,
+      "role": "LACP 30 member1"
+    },
+    {
+      "a": "AGG-MEDTECH",
+      "ai": 1,
+      "b": "ACC-PACS",
+      "bi": 23,
+      "role": "LACP 30 member2"
+    },
+    {
+      "a": "ACC-PACS",
+      "ai": 0,
+      "b": "PACS-PC",
+      "bi": 0,
+      "role": "Access VLAN 30"
+    },
+    {
+      "a": "AGG-MEDTECH",
+      "ai": 2,
+      "b": "ACC-LAB",
+      "bi": 22,
+      "role": "LACP 30 member1"
+    },
+    {
+      "a": "AGG-MEDTECH",
+      "ai": 3,
+      "b": "ACC-LAB",
+      "bi": 23,
+      "role": "LACP 30 member2"
+    },
+    {
+      "a": "ACC-LAB",
+      "ai": 0,
+      "b": "LAB-PC",
+      "bi": 0,
+      "role": "Access VLAN 30"
+    },
+    {
+      "a": "CORE-SW1",
+      "ai": 5,
+      "b": "AGG-DC",
+      "bi": 22,
+      "role": "Area0 P2P VLAN 1104"
+    },
+    {
+      "a": "CORE-SW2",
+      "ai": 5,
+      "b": "AGG-DC",
+      "bi": 23,
+      "role": "Area0 P2P VLAN 1204"
+    },
+    {
+      "a": "AGG-DC",
+      "ai": 0,
+      "b": "DC-SW-A",
+      "bi": 22,
+      "role": "LACP 60 member1"
+    },
+    {
+      "a": "AGG-DC",
+      "ai": 1,
+      "b": "DC-SW-A",
+      "bi": 23,
+      "role": "LACP 60 member2"
+    },
+    {
+      "a": "DC-SW-A",
+      "ai": 0,
+      "b": "HIS-SRV",
+      "bi": 0,
+      "role": "Access VLAN 60"
+    },
+    {
+      "a": "AGG-DC",
+      "ai": 2,
+      "b": "DC-SW-B",
+      "bi": 22,
+      "role": "LACP 60 member1"
+    },
+    {
+      "a": "AGG-DC",
+      "ai": 3,
+      "b": "DC-SW-B",
+      "bi": 23,
+      "role": "LACP 60 member2"
+    },
+    {
+      "a": "DC-SW-B",
+      "ai": 0,
+      "b": "PACS-SRV",
+      "bi": 0,
+      "role": "Access VLAN 60"
+    },
+    {
+      "a": "AGG-DC",
+      "ai": 4,
+      "b": "BACKUP-SW",
+      "bi": 22,
+      "role": "LACP 61 member1"
+    },
+    {
+      "a": "AGG-DC",
+      "ai": 5,
+      "b": "BACKUP-SW",
+      "bi": 23,
+      "role": "LACP 61 member2"
+    },
+    {
+      "a": "BACKUP-SW",
+      "ai": 0,
+      "b": "BACKUP-SRV",
+      "bi": 0,
+      "role": "Access VLAN 61"
+    },
+    {
+      "a": "CORE-SW1",
+      "ai": 6,
+      "b": "AGG-OFFICE",
+      "bi": 22,
+      "role": "Area0 P2P VLAN 1105"
+    },
+    {
+      "a": "CORE-SW2",
+      "ai": 6,
+      "b": "AGG-OFFICE",
+      "bi": 23,
+      "role": "Area0 P2P VLAN 1205"
+    },
+    {
+      "a": "AGG-OFFICE",
+      "ai": 0,
+      "b": "ACC-ADMIN",
+      "bi": 22,
+      "role": "LACP 40 member1"
+    },
+    {
+      "a": "AGG-OFFICE",
+      "ai": 1,
+      "b": "ACC-ADMIN",
+      "bi": 23,
+      "role": "LACP 40 member2"
+    },
+    {
+      "a": "ACC-ADMIN",
+      "ai": 0,
+      "b": "ADMIN-PC",
+      "bi": 0,
+      "role": "Access VLAN 40"
+    },
+    {
+      "a": "AGG-OFFICE",
+      "ai": 2,
+      "b": "ACC-FIN",
+      "bi": 22,
+      "role": "LACP 40 member1"
+    },
+    {
+      "a": "AGG-OFFICE",
+      "ai": 3,
+      "b": "ACC-FIN",
+      "bi": 23,
+      "role": "LACP 40 member2"
+    },
+    {
+      "a": "ACC-FIN",
+      "ai": 0,
+      "b": "FIN-PC",
+      "bi": 0,
+      "role": "Access VLAN 40"
+    },
+    {
+      "a": "AGG-OFFICE",
+      "ai": 4,
+      "b": "NMS-SW",
+      "bi": 22,
+      "role": "LACP 160 member1"
+    },
+    {
+      "a": "AGG-OFFICE",
+      "ai": 5,
+      "b": "NMS-SW",
+      "bi": 23,
+      "role": "LACP 160 member2"
+    },
+    {
+      "a": "NMS-SW",
+      "ai": 0,
+      "b": "NMS-PC",
+      "bi": 0,
+      "role": "Access VLAN 160"
+    },
+    {
+      "a": "NMS-SW",
+      "ai": 1,
+      "b": "BASTION",
+      "bi": 0,
+      "role": "Management bastion"
+    },
+    {
+      "a": "CORE-SW1",
+      "ai": 7,
+      "b": "AGG-IOT",
+      "bi": 22,
+      "role": "Area0 P2P VLAN 1106"
+    },
+    {
+      "a": "CORE-SW2",
+      "ai": 7,
+      "b": "AGG-IOT",
+      "bi": 23,
+      "role": "Area0 P2P VLAN 1206"
+    },
+    {
+      "a": "AGG-IOT",
+      "ai": 0,
+      "b": "ACC-IOT",
+      "bi": 22,
+      "role": "LACP 100 member1"
+    },
+    {
+      "a": "AGG-IOT",
+      "ai": 1,
+      "b": "ACC-IOT",
+      "bi": 23,
+      "role": "LACP 100 member2"
+    },
+    {
+      "a": "ACC-IOT",
+      "ai": 0,
+      "b": "IOT-PC",
+      "bi": 0,
+      "role": "Access VLAN 100"
+    },
+    {
+      "a": "AGG-IOT",
+      "ai": 2,
+      "b": "ACC-CCTV",
+      "bi": 22,
+      "role": "LACP 110 member1"
+    },
+    {
+      "a": "AGG-IOT",
+      "ai": 3,
+      "b": "ACC-CCTV",
+      "bi": 23,
+      "role": "LACP 110 member2"
+    },
+    {
+      "a": "ACC-CCTV",
+      "ai": 0,
+      "b": "CCTV-PC",
+      "bi": 0,
+      "role": "Access VLAN 110"
+    },
+    {
+      "a": "AGG-IOT",
+      "ai": 4,
+      "b": "ACC-WLAN",
+      "bi": 22,
+      "role": "LACP 120 member1"
+    },
+    {
+      "a": "AGG-IOT",
+      "ai": 5,
+      "b": "ACC-WLAN",
+      "bi": 23,
+      "role": "LACP 120 member2"
+    },
+    {
+      "a": "ACC-WLAN",
+      "ai": 0,
+      "b": "STAFF-PC",
+      "bi": 0,
+      "role": "Access VLAN 120"
+    },
+    {
+      "a": "ACC-WLAN",
+      "ai": 1,
+      "b": "GUEST-PC",
+      "bi": 0,
+      "role": "Guest VLAN 140"
+    },
+    {
+      "a": "CORE-SW1",
+      "ai": 8,
+      "b": "AGG-BRANCH",
+      "bi": 22,
+      "role": "Area0 P2P VLAN 1107"
+    },
+    {
+      "a": "CORE-SW2",
+      "ai": 8,
+      "b": "AGG-BRANCH",
+      "bi": 23,
+      "role": "Area0 P2P VLAN 1207"
+    },
+    {
+      "a": "AGG-BRANCH",
+      "ai": 0,
+      "b": "BRANCH-SW",
+      "bi": 22,
+      "role": "LACP 50 member1"
+    },
+    {
+      "a": "AGG-BRANCH",
+      "ai": 1,
+      "b": "BRANCH-SW",
+      "bi": 23,
+      "role": "LACP 50 member2"
+    },
+    {
+      "a": "BRANCH-SW",
+      "ai": 0,
+      "b": "BRANCH-PC",
+      "bi": 0,
+      "role": "Access VLAN 50"
+    },
+    {
+      "a": "AGG-BRANCH",
+      "ai": 2,
+      "b": "TELEMED-GW",
+      "bi": 0,
+      "role": "Telemed inside VLAN50"
+    },
+    {
+      "a": "TELEMED-GW",
+      "ai": 1,
+      "b": "TELEMED-PC",
+      "bi": 0,
+      "role": "Telemedicine LAN"
+    },
+    {
+      "a": "HEALTH-R",
+      "ai": 2,
+      "b": "TELEMED-GW",
+      "bi": 2,
+      "role": "IPsec underlay 198.18.0.0/30"
+    }
+  ],
+  "ports": {
+    "WAN-L2": 2100,
+    "ISP-R1": 2101,
+    "ISP-R2": 2102,
+    "HEALTH-R": 2103,
+    "FW-A": 2104,
+    "FW-B": 2105,
+    "CORE-SW1": 2106,
+    "CORE-SW2": 2107,
+    "DMZ-SW": 2108,
+    "AGG-CLINIC": 2109,
+    "ACC-OPD": 2110,
+    "ACC-ER": 2111,
+    "ACC-PHARM": 2112,
+    "AGG-INPATIENT": 2113,
+    "ACC-WARD-A": 2114,
+    "ACC-WARD-B": 2115,
+    "AGG-MEDTECH": 2116,
+    "ACC-PACS": 2117,
+    "ACC-LAB": 2118,
+    "AGG-DC": 2119,
+    "DC-SW-A": 2120,
+    "DC-SW-B": 2121,
+    "BACKUP-SW": 2122,
+    "AGG-OFFICE": 2123,
+    "ACC-ADMIN": 2124,
+    "ACC-FIN": 2125,
+    "NMS-SW": 2126,
+    "AGG-IOT": 2127,
+    "ACC-IOT": 2128,
+    "ACC-CCTV": 2129,
+    "ACC-WLAN": 2130,
+    "AGG-BRANCH": 2131,
+    "BRANCH-SW": 2132,
+    "TELEMED-GW": 2133
+  },
+  "vlans": {
+    "10": {
+      "sub": 101,
+      "area": 10,
+      "agg": "AGG-CLINIC",
+      "mask": "255.255.255.0"
+    },
+    "80": {
+      "sub": 109,
+      "area": 10,
+      "agg": "AGG-CLINIC",
+      "mask": "255.255.255.0"
+    },
+    "90": {
+      "sub": 110,
+      "area": 10,
+      "agg": "AGG-CLINIC",
+      "mask": "255.255.255.0"
+    },
+    "20": {
+      "sub": 102,
+      "area": 20,
+      "agg": "AGG-INPATIENT",
+      "mask": "255.255.255.0"
+    },
+    "30": {
+      "sub": 103,
+      "area": 20,
+      "agg": "AGG-MEDTECH",
+      "mask": "255.255.255.0"
+    },
+    "60": {
+      "sub": 106,
+      "area": 30,
+      "agg": "AGG-DC",
+      "mask": "255.255.255.0"
+    },
+    "61": {
+      "sub": 107,
+      "area": 30,
+      "agg": "AGG-DC",
+      "mask": "255.255.255.0"
+    },
+    "40": {
+      "sub": 104,
+      "area": 40,
+      "agg": "AGG-OFFICE",
+      "mask": "255.255.255.0"
+    },
+    "160": {
+      "sub": 120,
+      "area": 40,
+      "agg": "AGG-OFFICE",
+      "mask": "255.255.255.0"
+    },
+    "100": {
+      "sub": 111,
+      "area": 40,
+      "agg": "AGG-IOT",
+      "mask": "255.255.255.0"
+    },
+    "110": {
+      "sub": 112,
+      "area": 40,
+      "agg": "AGG-IOT",
+      "mask": "255.255.255.0"
+    },
+    "120": {
+      "sub": 114,
+      "area": 40,
+      "agg": "AGG-IOT",
+      "mask": "255.255.254.0"
+    },
+    "140": {
+      "sub": 116,
+      "area": 40,
+      "agg": "AGG-IOT",
+      "mask": "255.255.252.0"
+    },
+    "50": {
+      "sub": 105,
+      "area": 50,
+      "agg": "AGG-BRANCH",
+      "mask": "255.255.255.0"
+    }
+  },
+  "groups": [
+    [
+      "AGG-CLINIC",
+      10,
+      [
+        [
+          "ACC-OPD",
+          10,
+          101,
+          "OPD-PC"
+        ],
+        [
+          "ACC-ER",
+          80,
+          109,
+          "ER-PC"
+        ],
+        [
+          "ACC-PHARM",
+          90,
+          110,
+          "PHARM-PC"
+        ]
+      ]
+    ],
+    [
+      "AGG-INPATIENT",
+      20,
+      [
+        [
+          "ACC-WARD-A",
+          20,
+          102,
+          "WARD-A-PC"
+        ],
+        [
+          "ACC-WARD-B",
+          20,
+          102,
+          "WARD-B-PC"
+        ]
+      ]
+    ],
+    [
+      "AGG-MEDTECH",
+      20,
+      [
+        [
+          "ACC-PACS",
+          30,
+          103,
+          "PACS-PC"
+        ],
+        [
+          "ACC-LAB",
+          30,
+          103,
+          "LAB-PC"
+        ]
+      ]
+    ],
+    [
+      "AGG-DC",
+      30,
+      [
+        [
+          "DC-SW-A",
+          60,
+          106,
+          "HIS-SRV"
+        ],
+        [
+          "DC-SW-B",
+          60,
+          106,
+          "PACS-SRV"
+        ],
+        [
+          "BACKUP-SW",
+          61,
+          107,
+          "BACKUP-SRV"
+        ]
+      ]
+    ],
+    [
+      "AGG-OFFICE",
+      40,
+      [
+        [
+          "ACC-ADMIN",
+          40,
+          104,
+          "ADMIN-PC"
+        ],
+        [
+          "ACC-FIN",
+          40,
+          104,
+          "FIN-PC"
+        ],
+        [
+          "NMS-SW",
+          160,
+          120,
+          "NMS-PC"
+        ]
+      ]
+    ],
+    [
+      "AGG-IOT",
+      40,
+      [
+        [
+          "ACC-IOT",
+          100,
+          111,
+          "IOT-PC"
+        ],
+        [
+          "ACC-CCTV",
+          110,
+          112,
+          "CCTV-PC"
+        ],
+        [
+          "ACC-WLAN",
+          120,
+          114,
+          "STAFF-PC"
+        ]
+      ]
+    ],
+    [
+      "AGG-BRANCH",
+      50,
+      [
+        [
+          "BRANCH-SW",
+          50,
+          105,
+          "BRANCH-PC"
+        ]
+      ]
+    ]
+  ]
+}

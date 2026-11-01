@@ -1,13 +1,10 @@
-# Historical deliverables and the final aggregate archive
+# Historical deliverables and aggregate delivery archives.
 /output/历史版本/
-/output/13-2-01-宋长宇.zip
+/output/*.zip
 
-# AI tooling, automation, and intermediate evidence
-/.opencode/
-/.作业核查/
-/__pycache__/
-/evidence/
-/*.py
-/lab_inventory.json
-/output/report-generated.docx
+# Local AI tooling and review caches (also ignore nested copies).
+.opencode/
+.作业核查/
+__pycache__/
+*.py[cod]
 

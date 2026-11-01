@@ -1,0 +1,20 @@
+system-view
+Enter system view, return user view with Ctrl+Z.
+[AGG-CLINIC]
+undo traffic-filter inbound acl 3010
+[AGG-CLINIC]
+traffic-filter vlan 10 inbound acl 3010
+Error: Sacl doesn't support config the same acl or rule repeatedly.
+[AGG-CLINIC]
+undo traffic-filter inbound acl 3080
+[AGG-CLINIC]
+traffic-filter vlan 80 inbound acl 3080
+Error: Sacl doesn't support config the same acl or rule repeatedly.
+[AGG-CLINIC]
+undo traffic-filter inbound acl 3090
+[AGG-CLINIC]
+traffic-filter vlan 90 inbound acl 3090
+Error: Sacl doesn't support config the same acl or rule repeatedly.
+[AGG-CLINIC]
+return
+<AGG-CLINIC>

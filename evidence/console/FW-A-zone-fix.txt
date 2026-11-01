@@ -1,0 +1,25 @@
+system-view
+13:48:23  2026/10/30
+Enter system view, return user view with Ctrl+Z.
+HRP_M[FW-A]
+firewall zone trust
+13:48:23  2026/10/30
+HRP_M[FW-A-zone-trust]
+undo add interface GigabitEthernet0/0/0
+13:48:24  2026/10/30
+HRP_M[FW-A-zone-trust]
+quit
+13:48:24  2026/10/30
+HRP_M[FW-A]
+firewall zone untrust
+13:48:24  2026/10/30
+HRP_M[FW-A-zone-untrust]
+add interface GigabitEthernet0/0/0
+13:48:24  2026/10/30
+HRP_M[FW-A-zone-untrust]
+quit
+13:48:24  2026/10/30
+HRP_M[FW-A]
+return
+13:48:24  2026/10/30
+HRP_M<FW-A>

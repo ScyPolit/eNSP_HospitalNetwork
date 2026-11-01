@@ -1,0 +1,19 @@
+display nat address-group
+13:50:11  2026/10/30
+NAT address-group information:
+ number        : 1                       name          : ---                    
+ startaddr     : 12.1.1.10               endaddr       : 12.1.1.30              
+ reference     : 1                       vrrp          : ---                    
+ vpninstance   : public                 
+
+ number        : 2                       name          : ---                    
+ startaddr     : 13.1.1.10               endaddr       : 13.1.1.30              
+ reference     : 1                       vrrp          : ---                    
+ vpninstance   : public                 
+
+  Total   2 address-groups
+HRP_M<FW-A>
+display firewall session table verbose
+13:50:11  2026/10/30
+ Current Total Sessions : 0
+HRP_M<FW-A>

@@ -1,0 +1,17 @@
+system-view
+Enter system view, return user view with Ctrl+Z.
+[AGG-INPATIENT]
+interface GigabitEthernet0/0/23
+[AGG-INPATIENT-GigabitEthernet0/0/23]
+stp disable
+[AGG-INPATIENT-GigabitEthernet0/0/23]
+quit
+[AGG-INPATIENT]
+interface GigabitEthernet0/0/24
+[AGG-INPATIENT-GigabitEthernet0/0/24]
+stp disable
+[AGG-INPATIENT-GigabitEthernet0/0/24]
+quit
+[AGG-INPATIENT]
+return
+<AGG-INPATIENT>

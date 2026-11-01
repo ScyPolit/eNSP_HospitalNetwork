@@ -1,0 +1,17 @@
+system-view
+Enter system view, return user view with Ctrl+Z.
+[ACC-WARD-B]
+acl number 2001
+[ACC-WARD-B-acl-basic-2001]
+rule 5 permit source 10.162.120.20 0
+[ACC-WARD-B-acl-basic-2001]
+rule 10 deny
+[ACC-WARD-B-acl-basic-2001]
+quit
+[ACC-WARD-B]
+user-interface vty 0 4
+[ACC-WARD-B-ui-vty0-4]
+acl 2001 inbound
+[ACC-WARD-B-ui-vty0-4]
+return
+<ACC-WARD-B>

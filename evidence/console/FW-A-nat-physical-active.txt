@@ -1,0 +1,28 @@
+display firewall session table verbose
+13:56:19  2026/10/30
+ Current Total Sessions : 4
+  icmp  VPN:public --> public
+  Zone: trust--> untrust  TTL: 00:00:20  Left: 00:00:07
+  Interface: GigabitEthernet0/0/0  NextHop: 12.1.1.254  MAC: 00-e0-fc-a2-03-3b
+  <--packets:0 bytes:0   -->packets:1 bytes:60
+  10.162.101.10:36657[12.1.1.20:2070]-->203.0.113.10:2048
+
+  icmp  VPN:public --> public
+  Zone: trust--> untrust  TTL: 00:00:20  Left: 00:00:09
+  Interface: GigabitEthernet0/0/0  NextHop: 12.1.1.254  MAC: 00-e0-fc-a2-03-3b
+  <--packets:0 bytes:0   -->packets:1 bytes:60
+  10.162.101.10:37169[12.1.1.20:2071]-->203.0.113.10:2048
+
+  icmp  VPN:public --> public
+  Zone: trust--> untrust  TTL: 00:00:20  Left: 00:00:11
+  Interface: GigabitEthernet0/0/0  NextHop: 12.1.1.254  MAC: 00-e0-fc-a2-03-3b
+  <--packets:1 bytes:60   -->packets:1 bytes:60
+  10.162.101.10:37681[12.1.1.20:2072]-->203.0.113.10:2048
+
+  icmp  VPN:public --> public
+  Zone: trust--> untrust  TTL: 00:00:20  Left: 00:00:12
+  Interface: GigabitEthernet0/0/0  NextHop: 12.1.1.254  MAC: 00-e0-fc-a2-03-3b
+  <--packets:1 bytes:60   -->packets:1 bytes:60
+  10.162.101.10:37937[12.1.1.20:2073]-->203.0.113.10:2048
+
+HRP_M<FW-A>

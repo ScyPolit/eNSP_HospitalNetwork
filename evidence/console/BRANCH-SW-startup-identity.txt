@@ -1,0 +1,3 @@
+display current-configuration | include sysname
+sysname BRANCH-SW
+<BRANCH-SW>

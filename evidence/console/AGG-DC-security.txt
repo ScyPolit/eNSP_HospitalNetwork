@@ -1,0 +1,5 @@
+system-view
+Enter system view, return user view with Ctrl+Z.
+[AGG-DC]
+return
+<AGG-DC>

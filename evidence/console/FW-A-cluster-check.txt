@@ -1,0 +1,28 @@
+display hrp state
+14:14:14  2026/10/30
+ The firewall's config state is: MASTER
+
+ Current state of virtual routers configured as master:
+             GigabitEthernet0/0/5    vrid   6 : master
+             GigabitEthernet0/0/4    vrid   5 : master
+             GigabitEthernet0/0/3    vrid   4 : master
+             GigabitEthernet0/0/2    vrid   3 : master
+             GigabitEthernet0/0/1    vrid   2 : master
+             GigabitEthernet0/0/0    vrid   1 : master
+
+HRP_M<FW-A>
+display nat address-group
+14:14:14  2026/10/30
+NAT address-group information:
+ number        : 1                       name          : ---                    
+ startaddr     : 12.1.1.10               endaddr       : 12.1.1.19              
+ reference     : 1                       vrrp          : ---                    
+ vpninstance   : public                 
+
+ number        : 2                       name          : ---                    
+ startaddr     : 13.1.1.10               endaddr       : 13.1.1.19              
+ reference     : 1                       vrrp          : ---                    
+ vpninstance   : public                 
+
+  Total   2 address-groups
+HRP_M<FW-A>

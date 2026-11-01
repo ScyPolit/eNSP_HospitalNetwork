@@ -1,0 +1,212 @@
+system-view
+Enter system view, return user view with Ctrl+Z.
+[Huawei]
+undo info-center enable
+Info: Information center is disabled.
+[Huawei]
+sysname CORE-SW1
+[CORE-SW1]
+stp mode mstp
+[CORE-SW1]
+vlan batch 900 901 4094 
+Info: This operation may take a few seconds. Please wait for a moment...done.
+[CORE-SW1]
+vlan batch 1101 1102 1103 1104 1105 1106 1107
+Info: This operation may take a few seconds. Please wait for a moment...done.
+[CORE-SW1]
+interface GigabitEthernet0/0/1
+[CORE-SW1-GigabitEthernet0/0/1]
+port link-type access
+[CORE-SW1-GigabitEthernet0/0/1]
+port default vlan 900
+[CORE-SW1-GigabitEthernet0/0/1]
+quit
+[CORE-SW1]
+interface GigabitEthernet0/0/2
+[CORE-SW1-GigabitEthernet0/0/2]
+port link-type access
+[CORE-SW1-GigabitEthernet0/0/2]
+port default vlan 901
+[CORE-SW1-GigabitEthernet0/0/2]
+quit
+[CORE-SW1]
+interface Eth-Trunk1
+[CORE-SW1-Eth-Trunk1]
+mode lacp-static
+[CORE-SW1-Eth-Trunk1]
+port link-type trunk
+[CORE-SW1-Eth-Trunk1]
+port trunk allow-pass vlan 900 901 4094
+[CORE-SW1-Eth-Trunk1]
+quit
+[CORE-SW1]
+interface GigabitEthernet0/0/23
+[CORE-SW1-GigabitEthernet0/0/23]
+eth-trunk 1
+Info: This operation may take a few seconds. Please wait for a moment...done.
+[CORE-SW1-GigabitEthernet0/0/23]
+quit
+[CORE-SW1]
+interface GigabitEthernet0/0/24
+[CORE-SW1-GigabitEthernet0/0/24]
+eth-trunk 1
+Info: This operation may take a few seconds. Please wait for a moment...done.
+[CORE-SW1-GigabitEthernet0/0/24]
+quit
+[CORE-SW1]
+interface Vlanif900
+[CORE-SW1-Vlanif900]
+ip address 10.162.99.4 255.255.255.224
+[CORE-SW1-Vlanif900]
+quit
+[CORE-SW1]
+interface Vlanif901
+[CORE-SW1-Vlanif901]
+ip address 10.162.99.36 255.255.255.224
+[CORE-SW1-Vlanif901]
+quit
+[CORE-SW1]
+interface Vlanif4094
+[CORE-SW1-Vlanif4094]
+ip address 10.162.99.66 255.255.255.224
+[CORE-SW1-Vlanif4094]
+quit
+[CORE-SW1]
+interface Vlanif4094
+[CORE-SW1-Vlanif4094]
+vrrp vrid 1 virtual-ip 10.162.99.65
+[CORE-SW1-Vlanif4094]
+vrrp vrid 1 priority 120
+[CORE-SW1-Vlanif4094]
+quit
+[CORE-SW1]
+stp instance 0 root primary
+[CORE-SW1]
+interface GigabitEthernet0/0/3
+[CORE-SW1-GigabitEthernet0/0/3]
+port link-type access
+[CORE-SW1-GigabitEthernet0/0/3]
+port default vlan 1101
+[CORE-SW1-GigabitEthernet0/0/3]
+quit
+[CORE-SW1]
+interface Vlanif1101
+[CORE-SW1-Vlanif1101]
+ip address 10.162.99.97 255.255.255.252
+[CORE-SW1-Vlanif1101]
+quit
+[CORE-SW1]
+interface GigabitEthernet0/0/4
+[CORE-SW1-GigabitEthernet0/0/4]
+port link-type access
+[CORE-SW1-GigabitEthernet0/0/4]
+port default vlan 1102
+[CORE-SW1-GigabitEthernet0/0/4]
+quit
+[CORE-SW1]
+interface Vlanif1102
+[CORE-SW1-Vlanif1102]
+ip address 10.162.99.101 255.255.255.252
+[CORE-SW1-Vlanif1102]
+quit
+[CORE-SW1]
+interface GigabitEthernet0/0/5
+[CORE-SW1-GigabitEthernet0/0/5]
+port link-type access
+[CORE-SW1-GigabitEthernet0/0/5]
+port default vlan 1103
+[CORE-SW1-GigabitEthernet0/0/5]
+quit
+[CORE-SW1]
+interface Vlanif1103
+[CORE-SW1-Vlanif1103]
+ip address 10.162.99.105 255.255.255.252
+[CORE-SW1-Vlanif1103]
+quit
+[CORE-SW1]
+interface GigabitEthernet0/0/6
+[CORE-SW1-GigabitEthernet0/0/6]
+port link-type access
+[CORE-SW1-GigabitEthernet0/0/6]
+port default vlan 1104
+[CORE-SW1-GigabitEthernet0/0/6]
+quit
+[CORE-SW1]
+interface Vlanif1104
+[CORE-SW1-Vlanif1104]
+ip address 10.162.99.109 255.255.255.252
+[CORE-SW1-Vlanif1104]
+quit
+[CORE-SW1]
+interface GigabitEthernet0/0/7
+[CORE-SW1-GigabitEthernet0/0/7]
+port link-type access
+[CORE-SW1-GigabitEthernet0/0/7]
+port default vlan 1105
+[CORE-SW1-GigabitEthernet0/0/7]
+quit
+[CORE-SW1]
+interface Vlanif1105
+[CORE-SW1-Vlanif1105]
+ip address 10.162.99.113 255.255.255.252
+[CORE-SW1-Vlanif1105]
+quit
+[CORE-SW1]
+interface GigabitEthernet0/0/8
+[CORE-SW1-GigabitEthernet0/0/8]
+port link-type access
+[CORE-SW1-GigabitEthernet0/0/8]
+port default vlan 1106
+[CORE-SW1-GigabitEthernet0/0/8]
+quit
+[CORE-SW1]
+interface Vlanif1106
+[CORE-SW1-Vlanif1106]
+ip address 10.162.99.117 255.255.255.252
+[CORE-SW1-Vlanif1106]
+quit
+[CORE-SW1]
+interface GigabitEthernet0/0/9
+[CORE-SW1-GigabitEthernet0/0/9]
+port link-type access
+[CORE-SW1-GigabitEthernet0/0/9]
+port default vlan 1107
+[CORE-SW1-GigabitEthernet0/0/9]
+quit
+[CORE-SW1]
+interface Vlanif1107
+[CORE-SW1-Vlanif1107]
+ip address 10.162.99.121 255.255.255.252
+[CORE-SW1-Vlanif1107]
+quit
+[CORE-SW1]
+ospf 1 router-id 10.255.255.11
+[CORE-SW1-ospf-1]
+area 0
+[CORE-SW1-ospf-1-area-0.0.0.0]
+network 10.162.99.0 0.0.0.31
+[CORE-SW1-ospf-1-area-0.0.0.0]
+network 10.162.99.32 0.0.0.31
+[CORE-SW1-ospf-1-area-0.0.0.0]
+network 10.162.99.64 0.0.0.31
+[CORE-SW1-ospf-1-area-0.0.0.0]
+network 10.162.99.96 0.0.0.3
+[CORE-SW1-ospf-1-area-0.0.0.0]
+network 10.162.99.100 0.0.0.3
+[CORE-SW1-ospf-1-area-0.0.0.0]
+network 10.162.99.104 0.0.0.3
+[CORE-SW1-ospf-1-area-0.0.0.0]
+network 10.162.99.108 0.0.0.3
+[CORE-SW1-ospf-1-area-0.0.0.0]
+network 10.162.99.112 0.0.0.3
+[CORE-SW1-ospf-1-area-0.0.0.0]
+network 10.162.99.116 0.0.0.3
+[CORE-SW1-ospf-1-area-0.0.0.0]
+network 10.162.99.120 0.0.0.3
+[CORE-SW1-ospf-1-area-0.0.0.0]
+quit
+[CORE-SW1-ospf-1]
+quit
+[CORE-SW1]
+return
+<CORE-SW1>

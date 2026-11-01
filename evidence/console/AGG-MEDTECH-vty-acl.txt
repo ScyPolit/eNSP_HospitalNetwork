@@ -1,0 +1,17 @@
+system-view
+Enter system view, return user view with Ctrl+Z.
+[AGG-MEDTECH]
+acl number 2001
+[AGG-MEDTECH-acl-basic-2001]
+rule 5 permit source 10.162.120.20 0
+[AGG-MEDTECH-acl-basic-2001]
+rule 10 deny
+[AGG-MEDTECH-acl-basic-2001]
+quit
+[AGG-MEDTECH]
+user-interface vty 0 4
+[AGG-MEDTECH-ui-vty0-4]
+acl 2001 inbound
+[AGG-MEDTECH-ui-vty0-4]
+return
+<AGG-MEDTECH>

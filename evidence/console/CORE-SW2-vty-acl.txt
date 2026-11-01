@@ -1,0 +1,17 @@
+system-view
+Enter system view, return user view with Ctrl+Z.
+[CORE-SW2]
+acl number 2001
+[CORE-SW2-acl-basic-2001]
+rule 5 permit source 10.162.120.20 0
+[CORE-SW2-acl-basic-2001]
+rule 10 deny
+[CORE-SW2-acl-basic-2001]
+quit
+[CORE-SW2]
+user-interface vty 0 4
+[CORE-SW2-ui-vty0-4]
+acl 2001 inbound
+[CORE-SW2-ui-vty0-4]
+return
+<CORE-SW2>

@@ -1,0 +1,47 @@
+system-view
+Enter system view, return user view with Ctrl+Z.
+[CORE-SW2]
+interface GigabitEthernet0/0/3
+[CORE-SW2-GigabitEthernet0/0/3]
+stp disable
+[CORE-SW2-GigabitEthernet0/0/3]
+quit
+[CORE-SW2]
+interface GigabitEthernet0/0/4
+[CORE-SW2-GigabitEthernet0/0/4]
+stp disable
+[CORE-SW2-GigabitEthernet0/0/4]
+quit
+[CORE-SW2]
+interface GigabitEthernet0/0/5
+[CORE-SW2-GigabitEthernet0/0/5]
+stp disable
+[CORE-SW2-GigabitEthernet0/0/5]
+quit
+[CORE-SW2]
+interface GigabitEthernet0/0/6
+[CORE-SW2-GigabitEthernet0/0/6]
+stp disable
+[CORE-SW2-GigabitEthernet0/0/6]
+quit
+[CORE-SW2]
+interface GigabitEthernet0/0/7
+[CORE-SW2-GigabitEthernet0/0/7]
+stp disable
+[CORE-SW2-GigabitEthernet0/0/7]
+quit
+[CORE-SW2]
+interface GigabitEthernet0/0/8
+[CORE-SW2-GigabitEthernet0/0/8]
+stp disable
+[CORE-SW2-GigabitEthernet0/0/8]
+quit
+[CORE-SW2]
+interface GigabitEthernet0/0/9
+[CORE-SW2-GigabitEthernet0/0/9]
+stp disable
+[CORE-SW2-GigabitEthernet0/0/9]
+quit
+[CORE-SW2]
+return
+<CORE-SW2>

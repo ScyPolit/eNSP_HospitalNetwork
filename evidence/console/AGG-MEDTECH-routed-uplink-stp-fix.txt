@@ -1,0 +1,17 @@
+system-view
+Enter system view, return user view with Ctrl+Z.
+[AGG-MEDTECH]
+interface GigabitEthernet0/0/23
+[AGG-MEDTECH-GigabitEthernet0/0/23]
+stp disable
+[AGG-MEDTECH-GigabitEthernet0/0/23]
+quit
+[AGG-MEDTECH]
+interface GigabitEthernet0/0/24
+[AGG-MEDTECH-GigabitEthernet0/0/24]
+stp disable
+[AGG-MEDTECH-GigabitEthernet0/0/24]
+quit
+[AGG-MEDTECH]
+return
+<AGG-MEDTECH>

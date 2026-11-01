@@ -1,0 +1,13 @@
+display hrp state
+15:32:37  2026/10/30
+ The firewall's config state is: MASTER
+
+ Current state of virtual routers configured as master:
+             GigabitEthernet0/0/5    vrid   6 : master
+             GigabitEthernet0/0/4    vrid   5 : master
+             GigabitEthernet0/0/3    vrid   4 : master
+             GigabitEthernet0/0/2    vrid   3 : master
+             GigabitEthernet0/0/1    vrid   2 : master
+             GigabitEthernet0/0/0    vrid   1 : master
+
+HRP_M<FW-A>

@@ -1,0 +1,11 @@
+display mac-address 0000-5e00-0103
+MAC address table of slot 0:
+-------------------------------------------------------------------------------
+MAC Address    VLAN/       PEVLAN CEVLAN Port            Type      LSP/LSR-ID  
+               VSI/SI                                              MAC-Tunnel  
+-------------------------------------------------------------------------------
+0000-5e00-0103 903         -      -      GE0/0/6         dynamic   0/-         
+-------------------------------------------------------------------------------
+Total matching items on slot 0 displayed = 1 
+
+<WAN-L2>

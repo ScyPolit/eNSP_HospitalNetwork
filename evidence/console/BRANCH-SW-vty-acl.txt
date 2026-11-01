@@ -1,0 +1,17 @@
+system-view
+Enter system view, return user view with Ctrl+Z.
+[BRANCH-SW]
+acl number 2001
+[BRANCH-SW-acl-basic-2001]
+rule 5 permit source 10.162.120.20 0
+[BRANCH-SW-acl-basic-2001]
+rule 10 deny
+[BRANCH-SW-acl-basic-2001]
+quit
+[BRANCH-SW]
+user-interface vty 0 4
+[BRANCH-SW-ui-vty0-4]
+acl 2001 inbound
+[BRANCH-SW-ui-vty0-4]
+return
+<BRANCH-SW>

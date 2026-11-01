@@ -1,0 +1,32 @@
+system-view
+Enter system view, return user view with Ctrl+Z.
+[Huawei]
+[Huawei]
+undo info-center enable
+Info: Information center is disabled.
+[Huawei]
+[Huawei]
+sysname ISP-R1
+[ISP-R1]
+[ISP-R1]
+interface GigabitEthernet0/0/0
+[ISP-R1-GigabitEthernet0/0/0]
+[ISP-R1-GigabitEthernet0/0/0]
+ip address 12.1.1.254 255.255.255.0
+[ISP-R1-GigabitEthernet0/0/0]
+[ISP-R1-GigabitEthernet0/0/0]
+quit
+[ISP-R1]
+[ISP-R1]
+interface GigabitEthernet0/0/1
+[ISP-R1-GigabitEthernet0/0/1]
+[ISP-R1-GigabitEthernet0/0/1]
+ip address 203.0.113.1 255.255.255.0
+[ISP-R1-GigabitEthernet0/0/1]
+[ISP-R1-GigabitEthernet0/0/1]
+quit
+[ISP-R1]
+[ISP-R1]
+return
+<ISP-R1>
+<ISP-R1>

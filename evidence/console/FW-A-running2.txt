@@ -1,0 +1,48 @@
+EXCEPTION                                   [42D  policy source 172.20.1.10 0
+  policy destination 10.162.106.10 0
+
+ policy 3
+  action permit
+  policy source 172.20.1.10 0
+  policy destination 10.162.121.10 0
+#
+policy interzone trust medical outbound
+ policy 1
+  action permit
+  policy source 10.162.121.0 0.0.0.255
+  policy destination 172.20.1.0 0.0.0.255
+#
+policy interzone trust isp2 outbound
+ policy 1
+  action permit
+  policy source 10.162.0.0 0.0.255.255
+#
+policy interzone dmz untrust inbound
+ policy 1
+  action permit
+  policy service service-set http
+  ---- More ----[42D                                          [42D  policy destination 10.162.108.10 0
+#
+policy interzone dmz untrust outbound
+ policy 1
+  action permit
+  policy service service-set dns
+  policy source 10.162.108.10 0
+#
+nat-policy interzone trust untrust outbound
+ policy 1
+  action source-nat
+  policy source 10.162.0.0 0.0.255.255
+  address-group 1
+
+ policy 3
+#
+nat-policy interzone trust isp2 outbound
+ policy 1
+  action source-nat
+  policy source 10.162.0.0 0.0.255.255
+  address-group 2
+#
+return
+  ---- More ----[42D                                          [42D
+HRP_M<FW-A>  

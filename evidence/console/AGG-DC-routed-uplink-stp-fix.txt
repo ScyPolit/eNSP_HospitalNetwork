@@ -1,0 +1,17 @@
+system-view
+Enter system view, return user view with Ctrl+Z.
+[AGG-DC]
+interface GigabitEthernet0/0/23
+[AGG-DC-GigabitEthernet0/0/23]
+stp disable
+[AGG-DC-GigabitEthernet0/0/23]
+quit
+[AGG-DC]
+interface GigabitEthernet0/0/24
+[AGG-DC-GigabitEthernet0/0/24]
+stp disable
+[AGG-DC-GigabitEthernet0/0/24]
+quit
+[AGG-DC]
+return
+<AGG-DC>
