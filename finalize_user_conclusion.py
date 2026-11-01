@@ -2,7 +2,7 @@ from pathlib import Path
 import json,zipfile,hashlib,shutil
 from lxml import etree as E
 import pymupdf
-R=Path(__file__).parent;P=R/'output/13-2-01-宋长宇';name='13-2-01-宋长宇'
+R=Path(__file__).parent;P=R/'output/hospital-network';name='report'
 src=P/(name+'.docx');old=R/'output/历史版本/用户微调版修改结论之前'/(name+'.docx')
 ns={'w':'http://schemas.openxmlformats.org/wordprocessingml/2006/main'};w='{'+ns['w']+'}'
 with zipfile.ZipFile(old) as a,zipfile.ZipFile(src) as b:

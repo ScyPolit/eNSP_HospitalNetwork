@@ -3,7 +3,7 @@ import json,re,zipfile
 from docx import Document
 from PIL import Image,ImageDraw
 import pymupdf
-R=Path(__file__).parent;P=R/'output/13-2-01-宋长宇';name='13-2-01-宋长宇'
+R=Path(__file__).parent;P=R/'output/hospital-network';name='report'
 d=Document(P/(name+'.docx'));pdf=pymupdf.open(R/'evidence/render-real-topology'/(name+'.pdf'))
 baseline=pymupdf.open(R/'evidence/render-user-before-conclusion'/(name+'.pdf'))
 for i in range(2):assert pdf[i].get_pixmap().samples==baseline[i].get_pixmap().samples

@@ -11,11 +11,11 @@ Hospital Campus Network · Huawei eNSP
 ![eNSP](https://img.shields.io/badge/eNSP-1.3.00.100-c62828.svg)
 ![Topology](https://img.shields.io/badge/Topology-58_devices_%2F_92_links-0f766e.svg)
 
-[查看报告](output/13-2-01-宋长宇/01-2-01-宋长宇.pdf) · [打开工程目录](output/13-2-01-宋长宇/工程/) · [浏览设备配置](output/13-2-01-宋长宇/配置/) · [核对测试结果](output/13-2-01-宋长宇/测试结果.csv)
+[查看报告](output/hospital-network/report.pdf) · [打开工程目录](output/hospital-network/工程/) · [浏览设备配置](output/hospital-network/配置/) · [核对测试结果](output/hospital-network/测试结果.csv)
 
 </div>
 
-![医院园区网高清真实拓扑](output/13-2-01-宋长宇/拓扑图/医院园区网-高清真实拓扑.png)
+![医院园区网高清真实拓扑](output/hospital-network/拓扑图/医院园区网-高清真实拓扑.png)
 
 > 围绕门急诊、住院、医技、数据中心、行政运维、医疗物联及分院互联，实践多区域 OSPF、VLAN 隔离、LACP、VRRP、HRP、NAT 和 IPsec。仓库同时保留构建与取证脚本，方便追溯实验过程。
 
@@ -47,7 +47,7 @@ git clone https://github.com/ScyPolit/eNSP_HospitalNetwork.git
 cd eNSP_HospitalNetwork
 ```
 
-只阅读方案时，直接打开 [PDF 报告](output/13-2-01-宋长宇/01-2-01-宋长宇.pdf) 和 [高清拓扑](output/13-2-01-宋长宇/拓扑图/医院园区网-高清真实拓扑.png) 即可。
+只阅读方案时，直接打开 [PDF 报告](output/hospital-network/report.pdf) 和 [高清拓扑](output/hospital-network/拓扑图/医院园区网-高清真实拓扑.png) 即可。
 
 ### 2. 准备仿真环境
 
@@ -66,18 +66,18 @@ cd eNSP_HospitalNetwork
 在 eNSP 中打开：
 
 ```text
-output/13-2-01-宋长宇/工程/13-2-01-宋长宇.topo
+output/hospital-network/工程/hospital-network.topo
 ```
 
 **请完整保留 `.topo` 同级的 34 个设备编号目录。** 其中的 `flash.efz`、`vrpcfg.zip` 是恢复启动配置所需的工程文件，复制单个 `.topo` 无法完整恢复实验。
 
-启动设备后，等待 OSPF、HRP 与链路聚合收敛。图中中文显示名与 CLI 系统名的对应关系见 [设备清单](output/13-2-01-宋长宇/设备清单.csv)，接口连接见 [链路清单](output/13-2-01-宋长宇/链路清单.csv)。如果画布显示不全，可用工具栏缩小视图。
+启动设备后，等待 OSPF、HRP 与链路聚合收敛。图中中文显示名与 CLI 系统名的对应关系见 [设备清单](output/hospital-network/设备清单.csv)，接口连接见 [链路清单](output/hospital-network/链路清单.csv)。如果画布显示不全，可用工具栏缩小视图。
 
 修改配置后，先在设备中执行 `save`，再在 eNSP 中保存工程，以保留设备启动配置。
 
 ### 4. 复核连通性与隔离
 
-按 [30 项测试矩阵](output/13-2-01-宋长宇/测试结果.csv) 逐项检查。例如：
+按 [30 项测试矩阵](output/hospital-network/测试结果.csv) 逐项检查。例如：
 
 | 源终端 | 目的地址 | 预期 |
 | :--- | :--- | :--- |
@@ -111,11 +111,11 @@ output/13-2-01-宋长宇/工程/13-2-01-宋长宇.topo
 <details>
 <summary><strong>展开查看核心与门急诊分区截图</strong></summary>
 
-![边界防火墙与双核心区](output/13-2-01-宋长宇/拓扑图/真实截图/边界防火墙与双核心区.png)
+![边界防火墙与双核心区](output/hospital-network/拓扑图/真实截图/边界防火墙与双核心区.png)
 
-![门急诊与药房区](output/13-2-01-宋长宇/拓扑图/真实截图/门急诊与药房区.png)
+![门急诊与药房区](output/hospital-network/拓扑图/真实截图/门急诊与药房区.png)
 
-图像取自 eNSP 界面。更多区域截图、原始屏幕截图与来源记录见 [真实截图目录](output/13-2-01-宋长宇/拓扑图/真实截图/)。
+图像取自 eNSP 界面。更多区域截图与来源记录见 [真实截图目录](output/hospital-network/拓扑图/真实截图/)。原始全屏截图可能含个人窗口标题，仅留在本地；来源记录保留了原始取图方法。
 
 </details>
 
@@ -127,13 +127,13 @@ output/13-2-01-宋长宇/工程/13-2-01-宋长宇.topo
 
 | 检查项目 | 已记录结果 | 依据 |
 | :--- | :--- | :--- |
-| 业务连通与隔离 | 30 / 30 项通过 | [测试结果](output/13-2-01-宋长宇/测试结果.csv) |
-| 重启后连通与隔离复核 | 7 / 7 项通过 | [最终验证记录](output/13-2-01-宋长宇/验收记录/final-validation.json) |
-| 网络设备启动身份 | 34 / 34 台核对通过 | [最终验证记录](output/13-2-01-宋长宇/验收记录/final-validation.json) |
-| 故障切换 | 记录核心 VRRP、LACP 单成员故障、HRP、切换后新建 NAT 会话、IPsec 备用路径与汇聚备用上联 | [故障实验记录](output/13-2-01-宋长宇/验收记录/failover-results.json) |
-| 完整配置收录 | 34 台设备、2,793 行有效配置 | [完整性核对记录](output/13-2-01-宋长宇/验收记录/full-config-completeness.json) |
+| 业务连通与隔离 | 30 / 30 项通过 | [测试结果](output/hospital-network/测试结果.csv) |
+| 重启后连通与隔离复核 | 7 / 7 项通过 | [最终验证记录](output/hospital-network/验收记录/final-validation.json) |
+| 网络设备启动身份 | 34 / 34 台核对通过 | [最终验证记录](output/hospital-network/验收记录/final-validation.json) |
+| 故障切换 | 记录核心 VRRP、LACP 单成员故障、HRP、切换后新建 NAT 会话、IPsec 备用路径与汇聚备用上联 | [故障实验记录](output/hospital-network/验收记录/failover-results.json) |
+| 完整配置收录 | 34 台设备、2,793 行有效配置 | [完整性核对记录](output/hospital-network/验收记录/full-config-completeness.json) |
 
-可结合 [最终设备配置](output/13-2-01-宋长宇/配置/)、[原始抓包](output/13-2-01-宋长宇/证据/原始抓包/) 和 [原始控制台记录](output/13-2-01-宋长宇/证据/原始控制台记录/) 交叉核对。
+可结合 [最终设备配置](output/hospital-network/配置/)、[原始抓包](output/hospital-network/证据/原始抓包/) 和 [原始控制台记录](output/hospital-network/证据/原始控制台记录/) 交叉核对。
 
 ### 验证范围与已知限制
 
@@ -151,25 +151,25 @@ output/13-2-01-宋长宇/工程/13-2-01-宋长宇.topo
 .
 ├── README.md                     # 项目介绍与复现入口
 ├── LICENSE                       # MIT 许可证
-├── 01-2-01-宋长宇.docx            # 原始课程报告模板
+├── report-template.docx            # 去除个人信息的报告模板
 ├── lab_inventory.json            # 设备、链路、控制台端口与 VLAN 清单
 ├── *.py                          # 构建、配置、截图、报告与验证脚本
 ├── evidence/                     # 过程证据、抓包、渲染和核对记录
 └── output/
-    ├── 13-2-01-宋长宇/            # 推荐使用的完整交付目录
+    └── hospital-network/         # 唯一公开交付目录
     │   ├── 工程/                 # .topo 与设备启动配置
     │   ├── 配置/                 # 最终运行配置
     │   ├── 拓扑图/               # 总览与分区真实截图
     │   ├── 证据/                 # 控制台、抓包与验证截图
     │   ├── 验收记录/             # 结构化验证结果
-    │   ├── 01-2-01-宋长宇.pdf     # 可直接阅读的报告
-    │   ├── 01-2-01-宋长宇.docx    # 可编辑报告
+    │   ├── report.pdf     # 可直接阅读的报告
+    │   ├── report.docx            # 可编辑报告
     │   └── *.csv / SHA256SUMS.txt # 设备、链路、测试与文件校验清单
-    ├── 医院园区网/               # 构建与配置阶段的工作工程
-    └── *.docx                    # 报告生成过程文件
 ```
 
 Git 排除 `output/历史版本/`、`output/` 直属的汇总 ZIP，以及 `.opencode/`、`.作业核查/`、`__pycache__/` 和 Python 字节码。设备目录内的 `vrpcfg.zip` 正常保留。
+
+公开版只保留上述一套报告与工程。报告已移除课程封面、评分页以及姓名、学号、班级信息，文件名使用通用名称；原始提交副本、全屏桌面截图、旧报告渲染与核对缩略图仅保留在本地，不纳入 Git。
 
 <a id="scripts"></a>
 
@@ -209,6 +209,6 @@ python -m pip install python-docx lxml PyMuPDF Pillow pyautogui pywinauto pywin3
 
 ## 📄 开源许可
 
-作者：**宋长宇 / [ScyPolit](https://github.com/ScyPolit)**。
+作者：**[ScyPolit](https://github.com/ScyPolit)**。
 
 本项目原创代码与原创文档内容采用 [MIT License](LICENSE)，使用、修改或分发时请保留版权及许可声明。课程模板及其中的第三方内容、厂商商标、软件与设备镜像的权利归各自权利人所有，不因本项目的 MIT 许可而改变。

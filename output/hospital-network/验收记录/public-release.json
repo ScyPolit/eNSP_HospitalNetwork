@@ -1,0 +1,15 @@
+{
+  "report_pdf": "report.pdf",
+  "report_docx": "report.docx",
+  "topology": "工程/hospital-network.topo",
+  "pages": 119,
+  "removed_front_pages": 2,
+  "personal_fields_removed": [
+    "name",
+    "student_id",
+    "class"
+  ],
+  "retained_original_body_pages_pixel_identical": 118,
+  "note": "Historical audit files describe the original course submission and may use its original pagination. This public edition removes the course front matter.",
+  "raw_desktop_screenshots": "Excluded from the public index because original project window titles contain personal information."
+}

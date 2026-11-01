@@ -11,7 +11,7 @@ def render(src,out):
         doc.Repaginate();pages=doc.ComputeStatistics(2)
         pdf=out/(src.stem+'.pdf');doc.ExportAsFixedFormat(str(pdf),17)
         positions=[]
-        if src.name=='01-2-01-宋长宇.docx':
+        if src.name=='report-template.docx':
             for i in range(1,doc.Paragraphs.Count+1):
                 p=doc.Paragraphs(i);positions.append(dict(i=i,page=p.Range.Information(3),text=p.Range.Text[:100]))
             (out/'template-positions.json').write_text(json.dumps(positions,ensure_ascii=False,indent=2),encoding='utf-8')

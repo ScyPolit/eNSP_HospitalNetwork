@@ -8,3 +8,20 @@
 __pycache__/
 *.py[cod]
 
+# Original course submissions and duplicate working deliverables stay local.
+/*-*-*.docx
+/output/[0-9]*/
+/output/[0-9]*.docx
+/output/医院园区网/
+/output/report-generated.docx
+/output/report.docx
+/evidence/render-*/
+/evidence/template-render/
+/evidence/full-code-qa/
+/evidence/student-voice-qa/
+
+# Raw desktop captures can expose the original project title and personal data.
+/evidence/live/
+原始屏幕截图/
+eNSP完整窗口.png
+

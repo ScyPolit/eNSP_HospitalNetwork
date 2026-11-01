@@ -79,7 +79,7 @@ for l in L:
 ET.SubElement(root,'shapes');tips=ET.SubElement(root,'txttips')
 for i,(agg,area,_) in enumerate(groups):ET.SubElement(tips,'txttip',left='240',top=str(820+i*300+130),right='750',bottom=str(820+i*300+150),content=f'{agg} | Area {area} | dual uplinks + LACP access',fontname='Consolas',fontstyle='0',editsize='100',txtcolor='-16777216',txtbkcolor='-1',charset='1')
 ET.indent(root)
-(OUT/'医院园区网-2-01-宋长宇.topo').write_text('<?xml version="1.0" encoding="UNICODE" ?>\n'+ET.tostring(root,encoding='unicode'),encoding='utf-8')
+(OUT/'hospital-network.topo').write_text('<?xml version="1.0" encoding="UNICODE" ?>\n'+ET.tostring(root,encoding='unicode'),encoding='utf-8')
 (ROOT/'lab_inventory.json').write_text(json.dumps(dict(devices=D,links=L,ports=ports,vlans=vlans,groups=groups),ensure_ascii=False,indent=2),encoding='utf-8')
 with (OUT/'设备链路与接口.csv').open('w',newline='',encoding='utf-8-sig') as f:
     w=csv.writer(f);w.writerow(['序号','设备A','接口A','设备B','接口B','用途'])

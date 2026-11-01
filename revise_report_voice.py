@@ -2,7 +2,7 @@ from pathlib import Path
 from copy import deepcopy
 import zipfile,shutil,json,re
 from lxml import etree as E
-R=Path(__file__).parent;P=R/'output/13-2-01-宋长宇';src=P/'13-2-01-宋长宇.docx'
+R=Path(__file__).parent;P=R/'output/hospital-network';src=P/'report.docx'
 B=R/'output/历史版本/修改学生报告语言之前';B.mkdir(parents=True,exist_ok=True)
 for f in [src,src.with_suffix('.pdf')]:
  if f.exists():shutil.copy2(f,B/f.name)
@@ -112,7 +112,7 @@ for i,p in enumerate(paras):
 updated=E.tostring(root,encoding='UTF-8',xml_declaration=True,standalone=True);tmp=src.with_name('报告语言修改临时.docx')
 with zipfile.ZipFile(tmp,'w',zipfile.ZIP_DEFLATED) as z:
  for info in infos:z.writestr(info,updated if info.filename=='word/document.xml' else parts[info.filename])
-tmp.replace(src);shutil.copy2(src,R/'output/13-2-01-宋长宇.docx')
+tmp.replace(src);shutil.copy2(src,R/'output/hospital-network.docx')
 original=E.fromstring(parts['word/document.xml'])
 assert [E.tostring(t) for t in original.findall('.//w:tbl',ns)]==[E.tostring(t) for t in root.findall('.//w:tbl',ns)]
 assert [E.tostring(p) for p in original.find(w+'body').findall(w+'p')[:75]]==[E.tostring(p) for p in paras[:75]]

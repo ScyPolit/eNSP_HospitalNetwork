@@ -1,13 +1,13 @@
 from pathlib import Path
 import json,shutil,csv,zipfile,hashlib,re
 import pymupdf
-R=Path(__file__).parent;P=R/'output/13-2-01-宋长宇';P.mkdir(exist_ok=True)
+R=Path(__file__).parent;P=R/'output/hospital-network';P.mkdir(exist_ok=True)
 j=json.loads((R/'lab_inventory.json').read_text(encoding='utf-8'));D={d['name']:d for d in j['devices']}
 build_info=json.loads((R/'evidence/report-build.json').read_text(encoding='utf8'))
 def copy(src,dst):
  dst=Path(dst);dst.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(src,dst)
-copy(R/'output/13-2-01-宋长宇.docx',P/'13-2-01-宋长宇.docx')
-pdf=pymupdf.open(R/'evidence/render-real-topology/13-2-01-宋长宇.pdf');pdf.xref_set_key(pdf.pdf_catalog(),'OpenAction',f'[{pdf.page_xref(0)} 0 R /XYZ null null 1.2]');pdf.save(P/'13-2-01-宋长宇.pdf',garbage=4,deflate=True);pages=len(pdf);pdf.close()
+copy(R/'output/hospital-network.docx',P/'report.docx')
+pdf=pymupdf.open(R/'evidence/render-real-topology/report.pdf');pdf.xref_set_key(pdf.pdf_catalog(),'OpenAction',f'[{pdf.page_xref(0)} 0 R /XYZ null null 1.2]');pdf.save(P/'report.pdf',garbage=4,deflate=True);pages=len(pdf);pdf.close()
 for f in (R/'output/医院园区网/配置').glob('*-running.cfg'):copy(f,P/'配置'/f.name)
 for f in (R/'evidence/screenshots').glob('*.png'):copy(f,P/'证据/控制台与抓包界面'/f.name)
 for f in (R/'evidence/diagrams').glob('*.png'):
@@ -52,7 +52,7 @@ csvout('测试结果.csv',['序号','场景','源终端','目的地址','预期'
 readme=f'''医院园区网 eNSP 实验交付说明
 
 一、打开工程
-打开“工程\\13-2-01-宋长宇.topo”。必须保留旁边的 34 个设备编号文件夹，不能只复制 .topo 文件。
+打开“工程\\hospital-network.topo”。必须保留旁边的 34 个设备编号文件夹，不能只复制 .topo 文件。
 平台为经典 eNSP 1.3.00.100、VirtualBox 5.2.26；使用本机已注册的 S5700、AR2220、USG5500 镜像。
 工程中 58 台设备、92 条铜缆链路；设备中文显示名与 CLI 的英文系统标识对应关系见“设备清单.csv”。
 当前电脑已按一屏总览调整。若重新打开后缩放被客户端重置，请点击工具栏“缩小”约五次；总览图同时提供全尺寸 PNG。
@@ -85,7 +85,7 @@ files=[]
 for f in sorted(P.rglob('*')):
  if f.is_file() and f.name!='SHA256SUMS.txt':files.append(f'{hashlib.sha256(f.read_bytes()).hexdigest()}  {f.relative_to(P).as_posix()}')
 (P/'SHA256SUMS.txt').write_text('\n'.join(files)+'\n',encoding='utf-8')
-z=R/'output/13-2-01-宋长宇.zip'
+z=R/'output/hospital-network.zip'
 with zipfile.ZipFile(z,'w',zipfile.ZIP_DEFLATED) as q:
  for f in P.rglob('*'):
   if f.is_file():q.write(f,Path(P.name)/f.relative_to(P))

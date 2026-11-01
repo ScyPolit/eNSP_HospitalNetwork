@@ -7,7 +7,7 @@ from docx.enum.text import WD_ALIGN_PARAGRAPH
 from docx.enum.table import WD_TABLE_ALIGNMENT,WD_CELL_VERTICAL_ALIGNMENT
 from docx.oxml import OxmlElement
 from docx.oxml.ns import qn
-ROOT=Path(__file__).parent;OUT=ROOT/'output';SRC=ROOT/'01-2-01-宋长宇.docx';INV=json.loads((ROOT/'lab_inventory.json').read_text(encoding='utf-8'))
+ROOT=Path(__file__).parent;OUT=ROOT/'output';SRC=ROOT/'report-template.docx';INV=json.loads((ROOT/'lab_inventory.json').read_text(encoding='utf-8'))
 doc=Document(SRC);old=doc.paragraphs[-1];old._element.getparent().remove(old._element)
 settings=doc.settings.element
 if settings.find(qn('w:doNotAutoCompressPictures')) is None:settings.append(OxmlElement('w:doNotAutoCompressPictures'))
@@ -92,7 +92,7 @@ para('一、项目目标与实验环境','h1')
 para('本项目面向医院园区，搭建覆盖门诊、住院、医技、数据中心、行政办公、医疗物联网、访客无线及分院远程医疗的分层网络。实验在经典 eNSP 中部署双公网出口、医保卫健专线、HRP 双防火墙、双核心及七个业务汇聚，通过真实终端流量验证路由、冗余和访问隔离。')
 para('依据实验指导书第 13 项“园区网设计与实战”，综合应用 VLAN、VLANIF、Trunk、OSPF、Eth-Trunk、MSTP、VRRP、NAT、DHCP、ACL 与 IPsec。所有配置、控制台截图及抓包均以本次运行的工程为对象。')
 table('实验环境与规模',['项目','实测环境或规模'],[
- ['仿真平台','eNSP V1.3.00.100；VirtualBox 5.2.26'],['设备镜像','S5700、AR2220、USG5500'],['抓包工具','Wireshark/TShark 4.6.4'],['设备数量','58 台：34 台网络设备与 24 个终端节点'],['网络设备','28 台交换机、4 台路由器、2 台防火墙'],['物理连接','92 条实际铜缆链路；接入及核心互联采用双成员 LACP'],['学生地址标识','物联网 24-2 班，班内小号 01；10.162.(101+n).0 网段']])
+ ['仿真平台','eNSP V1.3.00.100；VirtualBox 5.2.26'],['设备镜像','S5700、AR2220、USG5500'],['抓包工具','Wireshark/TShark 4.6.4'],['设备数量','58 台：34 台网络设备与 24 个终端节点'],['网络设备','28 台交换机、4 台路由器、2 台防火墙'],['物理连接','92 条实际铜缆链路；接入及核心互联采用双成员 LACP'],['实验地址规划','实验地址：10.162.(101+n).0 网段']])
 para('二、业务需求与访问边界','h1')
 para('（一）业务与可靠性要求','h2')
 para('临床终端访问指定业务服务器，普通科室之间默认隔离；医保卫健专线只访问前置业务及远程会诊；访客通过 NAT 访问公网，不能进入院内网。数据中心、备份、设备管理与普通终端分区部署，网络设备管理入口限制至堡垒机。')
@@ -244,7 +244,7 @@ para('本项目将医院园区业务映射到双边界、双核心、七汇聚�
 para('完整配置清单、92 条设备链路表、原始控制台输出与 pcapng 随工程一并归档。拓扑中的所有物理链路采用仿真铜缆，不把线条加粗误标为实际光纤；LACP 成员关系和 IPsec 逻辑保护关系均单独说明。')
 OUT.mkdir(exist_ok=True);tmp=OUT/'report-generated.docx';doc.save(tmp)
 # Preserve all original package parts except the edited document and image relationships.
-final=OUT/'13-2-01-宋长宇.docx'
+final=OUT/'report.docx'
 with zipfile.ZipFile(SRC) as zin,zipfile.ZipFile(tmp) as gen,zipfile.ZipFile(final,'w',zipfile.ZIP_DEFLATED) as z:
     replace={'word/document.xml','word/_rels/document.xml.rels','word/settings.xml','[Content_Types].xml'}
     for item in zin.infolist():z.writestr(item,gen.read(item.filename) if item.filename in replace else zin.read(item.filename))

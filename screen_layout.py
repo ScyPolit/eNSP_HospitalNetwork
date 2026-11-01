@@ -2,7 +2,7 @@ from pathlib import Path
 import json,re,xml.etree.ElementTree as E
 R=Path(__file__).parent
 j=json.loads((R/'lab_inventory.json').read_text(encoding='utf-8'));D={d['name']:d for d in j['devices']}
-p=R/'output/13-2-01-宋长宇/工程/13-2-01-宋长宇.topo'
+p=R/'output/hospital-network/工程/hospital-network.topo'
 s=(R/'evidence/layout-utf8-backup.topo').read_text(encoding='utf-8-sig');s=re.sub('encoding="[^"]+"','encoding="utf-8"',s,count=1);root=E.fromstring(s)
 names={'WAN-L2':'外联隔离交换机','ISP-R1':'主运营商路由器','ISP-R2':'备运营商路由器','HEALTH-R':'医疗专线路由器','PUBLIC-WEB':'主公网测试终端','PUBLIC-BACKUP':'备公网测试终端','HEALTH-PC':'医疗专线终端','FW-A':'主防火墙','FW-B':'备防火墙','CORE-SW1':'核心交换机一','CORE-SW2':'核心交换机二','DMZ-SW':'非军事区交换机','DMZ-WEB':'非军事区服务终端','AGG-CLINIC':'门急诊汇聚','ACC-OPD':'门诊接入','OPD-PC':'门诊终端','ACC-ER':'急诊接入','ER-PC':'急诊终端','ACC-PHARM':'药房接入','PHARM-PC':'药房终端','AGG-INPATIENT':'住院部汇聚','ACC-WARD-A':'病区一接入','WARD-A-PC':'病区一终端','ACC-WARD-B':'病区二接入','WARD-B-PC':'病区二终端','AGG-MEDTECH':'医技科汇聚','ACC-PACS':'影像科接入','PACS-PC':'影像科终端','ACC-LAB':'检验科接入','LAB-PC':'检验科终端','AGG-DC':'数据中心汇聚','DC-SW-A':'业务服务器接入','DC-SW-B':'影像服务器接入','BACKUP-SW':'备份服务器接入','HIS-SRV':'医院业务服务终端','PACS-SRV':'影像服务终端','BACKUP-SRV':'备份服务终端','AGG-OFFICE':'办公运维汇聚','ACC-ADMIN':'行政接入','ADMIN-PC':'行政终端','ACC-FIN':'财务接入','FIN-PC':'财务终端','NMS-SW':'运维接入','NMS-PC':'网管终端','BASTION':'运维堡垒机','AGG-IOT':'物联无线汇聚','ACC-IOT':'医疗物联接入','IOT-PC':'医疗物联终端','ACC-CCTV':'视频监控接入','CCTV-PC':'视频监控终端','ACC-WLAN':'无线网络接入','STAFF-PC':'员工无线终端','GUEST-PC':'访客无线终端','AGG-BRANCH':'分院汇聚','BRANCH-SW':'分院接入','BRANCH-PC':'分院终端','TELEMED-GW':'远程医疗网关','TELEMED-PC':'远程会诊终端'}
 def pos(n,x,y):D[n].update(x=x,y=y,display_name=names[n])

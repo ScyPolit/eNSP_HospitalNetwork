@@ -3,7 +3,7 @@ from copy import deepcopy
 import zipfile,shutil,json,hashlib
 from lxml import etree as E
 R=Path(__file__).parent
-src=R/'output/13-2-01-宋长宇/13-2-01-宋长宇.docx'
+src=R/'output/hospital-network/report.docx'
 backup=R/'output/历史版本/用户微调版修改结论之前';backup.mkdir(parents=True,exist_ok=True)
 shutil.copy2(src,backup/src.name)
 pdf=src.with_suffix('.pdf')
@@ -35,7 +35,7 @@ with zipfile.ZipFile(src) as z:
 assert changed==['word/document.xml']
 baseline=E.fromstring(original['word/document.xml']);bp=baseline.find(w+'body');hp=next(p for p in bp.findall(w+'p') if ''.join(p.itertext()).replace(' ','')=='八、实验结论')
 assert [E.tostring(n) for n in list(bp)[:list(bp).index(hp)+1]]==[E.tostring(n) for n in list(body)[:list(body).index(head)+1]]
-shutil.copy2(src,R/'output/13-2-01-宋长宇.docx')
+shutil.copy2(src,R/'output/hospital-network.docx')
 audit=dict(source=str(src),backup=str(backup/src.name),changed_parts=changed,preceding_body_unchanged=True,all_other_package_parts_unchanged=True,conclusion=text)
 (R/'evidence/user-conclusion-edit.json').write_text(json.dumps(audit,ensure_ascii=False,indent=2),encoding='utf8')
 print('Only two conclusion paragraphs replaced with one summary paragraph; all other package parts and preceding content unchanged.')

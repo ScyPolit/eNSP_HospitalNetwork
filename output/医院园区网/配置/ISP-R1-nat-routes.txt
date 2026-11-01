@@ -1,8 +1,0 @@
-system-view
-undo ip route-static 12.1.1.8 29 12.1.1.1
-ip route-static 12.1.1.8 29 GigabitEthernet0/0/0 12.1.1.1
-undo ip route-static 12.1.1.16 28 12.1.1.1
-ip route-static 12.1.1.16 28 GigabitEthernet0/0/0 12.1.1.1
-undo ip route-static 12.1.1.100 32 12.1.1.1
-ip route-static 12.1.1.100 32 GigabitEthernet0/0/0 12.1.1.1
-return

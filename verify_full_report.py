@@ -6,8 +6,8 @@ import pymupdf
 R=Path(__file__).parent
 audit=json.loads((R/'evidence/full-config-report-audit.json').read_text(encoding='utf8'))
 inv=json.loads((R/'lab_inventory.json').read_text(encoding='utf8'))
-doc=Document(R/'output/13-2-01-宋长宇.docx')
-pdf=pymupdf.open(R/'evidence/render-real-topology/13-2-01-宋长宇.pdf')
+doc=Document(R/'output/hospital-network.docx')
+pdf=pymupdf.open(R/'evidence/render-real-topology/report.pdf')
 records=[]
 for x in audit:
     tables=[t for t in doc.tables if t.cell(0,0).text==x['title']]
@@ -18,7 +18,7 @@ for x in audit:
     compact_source='\n'.join(line for line in source.splitlines() if line.strip() and set(line.strip())!={'#'})
     assert code==compact_source,x['name']
     device=next(d for d in inv['devices'] if d['name']==x['name'])
-    folder=R/'output/13-2-01-宋长宇/工程'/device['id']
+    folder=R/'output/hospital-network/工程'/device['id']
     f=next(iter(folder.glob('vrpcfg.zip')),None) or next(folder.glob('flash.efz'))
     if zipfile.is_zipfile(f):
         with zipfile.ZipFile(f) as z:saved=z.read(next(n for n in z.namelist() if n.endswith('vrpcfg.cfg'))).decode('utf8',errors='replace')
@@ -32,9 +32,9 @@ for x in audit:
     compact=lambda s:re.sub(r'\s+','',s)
     assert compact(compact_source) in compact(rendered),x['name']
     records.append(dict(name=x['name'],lines=x['lines'],original_lines=x['original_lines'],removed_separator_or_blank_lines=x['removed_separator_or_blank_lines'],docx_matches_source_without_separators=True,pdf_complete_in_order=True,startup_command_match=True,pages=pages))
-template=pymupdf.open(R/'evidence/template-render/01-2-01-宋长宇.pdf')
+template=pymupdf.open(R/'evidence/template-render/report.pdf')
 for i in range(2):assert pdf[i].get_pixmap().samples==template[i].get_pixmap().samples
-with zipfile.ZipFile(R/'01-2-01-宋长宇.docx') as a,zipfile.ZipFile(R/'output/13-2-01-宋长宇.docx') as b:assert a.read('word/styles.xml')==b.read('word/styles.xml')
+with zipfile.ZipFile(R/'report-template.docx') as a,zipfile.ZipFile(R/'output/hospital-network.docx') as b:assert a.read('word/styles.xml')==b.read('word/styles.xml')
 O=R/'evidence/full-code-qa';O.mkdir(exist_ok=True)
 for start in range(0,len(pdf),20):
     sheet=Image.new('RGB',(1500,5*450),'#ccc');draw=ImageDraw.Draw(sheet)

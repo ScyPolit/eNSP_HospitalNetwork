@@ -1,0 +1,16 @@
+{
+  "source": "D:\\Windows\\桌面\\计网实验课程报告\\output\\report\\report.docx",
+  "backup": "D:\\Windows\\桌面\\计网实验课程报告\\output\\历史版本\\用户微调版修改结论之前\\report.docx",
+  "changed_parts": [
+    "word/document.xml"
+  ],
+  "preceding_body_unchanged": true,
+  "all_other_package_parts_unchanged": true,
+  "conclusion": "通过本次医院园区网实验，我完成了由双出口、双防火墙、双核心、七台汇聚及十八台接入交换机构成的网络部署，将 58 台设备和 92 条物理链路组织为层次清晰、业务分区明确的园区网络。实验综合运用 VLAN、OSPF、链路聚合、VRRP、HRP、DHCP、ACL、NAT 与 IPsec，实现了业务互通、分区访问控制及部分故障场景下的备用路径转发。30 项连通性与隔离测试及重启后的 7 项复核均符合预期，并通过真实控制台输出和 Wireshark 抓包相互印证。在排查接口映射、生成树阻塞、ACL 生效范围和虚拟 MAC 兼容性等问题的过程中，我进一步理解了二层交换、三层路由与安全策略之间的关系，掌握了按链路、地址、路由和策略逐层定位故障的方法。本次实验完成了医院园区网的规划、设备配置、连通性与安全验证及实验资料整理，达到了网络分层部署、业务分区管理和冗余链路验证的实验目标，也提升了我综合运用网络知识解决实际问题的能力。",
+  "user_edited_version_preserved": true,
+  "tables_unchanged": true,
+  "pdf_changed_pages": [
+    122
+  ],
+  "pages": 122
+}
