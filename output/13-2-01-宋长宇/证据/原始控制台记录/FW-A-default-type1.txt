@@ -1,0 +1,13 @@
+system-view
+13:42:02  2026/10/30
+Enter system view, return user view with Ctrl+Z.
+HRP_M[FW-A]
+ospf 1
+13:42:02  2026/10/30
+HRP_M[FW-A-ospf-1]
+default-route-advertise type 1
+13:42:02  2026/10/30
+HRP_M[FW-A-ospf-1]
+return
+13:42:02  2026/10/30
+HRP_M<FW-A>

@@ -1,0 +1,49 @@
+Welcome to use PC Simulator!
+
+PC>ping 10.162.106.10 -c 2
+
+Ping 10.162.106.10: 32 data bytes, Press Ctrl_C to break
+Request timeout!
+Request timeout!
+
+--- 10.162.106.10 ping statistics ---
+  2 packet(s) transmitted
+  0 packet(s) received
+  100.00% packet loss
+
+PC>ping 10.162.106.10 -c 2
+
+Ping 10.162.106.10: 32 data bytes, Press Ctrl_C to break
+Request timeout!
+Request timeout!
+
+--- 10.162.106.10 ping statistics ---
+  2 packet(s) transmitted
+  0 packet(s) received
+  100.00% packet loss
+
+PC>ping 203.0.113.10 -c 2
+
+Ping 203.0.113.10: 32 data bytes, Press Ctrl_C to break
+Request timeout!
+Request timeout!
+
+--- 203.0.113.10 ping statistics ---
+  2 packet(s) transmitted
+  0 packet(s) received
+  100.00% packet loss
+
+PC>ping 203.0.113.10 -c 3
+
+Ping 203.0.113.10: 32 data bytes, Press Ctrl_C to break
+From 203.0.113.10: bytes=32 seq=1 ttl=124 time=172 ms
+From 203.0.113.10: bytes=32 seq=2 ttl=124 time=109 ms
+From 203.0.113.10: bytes=32 seq=3 ttl=124 time=203 ms
+
+--- 203.0.113.10 ping statistics ---
+  3 packet(s) transmitted
+  3 packet(s) received
+  0.00% packet loss
+  round-trip min/avg/max = 109/161/203 ms
+
+PC>

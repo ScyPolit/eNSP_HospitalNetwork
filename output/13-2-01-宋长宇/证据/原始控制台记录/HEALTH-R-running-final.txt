@@ -1,0 +1,92 @@
+[V200R003C00]
+#
+ sysname HEALTH-R
+#
+ snmp-agent local-engineid 800007DB03000000000000
+ snmp-agent
+#
+ clock timezone China-Standard-Time minus 08:00:00
+#
+portal local-server load portalpage.zip
+#
+ drop illegal-mac alarm
+#
+ undo info-center enable
+#
+ set cpu-usage threshold 80 restore 75
+#
+acl number 2001
+ rule 5 permit source 10.162.120.20 0
+ rule 10 deny
+#
+acl number 3500
+ rule 5 permit ip source 172.20.1.0 0.0.0.255 destination 10.162.121.0 0.0.0.255
+#
+ipsec proposal HOSP
+ esp authentication-algorithm sha1
+ esp encryption-algorithm aes-256
+#
+ike proposal 10
+ encryption-algorithm aes-cbc-256
+ dh group14
+#
+ike peer HOSP v1
+ pre-shared-key cipher %$%$0McQ=RipWJd{U3VIOLO7,.2nx7m\*8FxZ+:X0"To,2I'.2q,%$%$
+ ike-proposal 10
+ remote-address 198.18.0.2
+#
+ipsec policy HOSP 10 isakmp
+ security acl 3500
+ ike-peer HOSP
+ proposal HOSP
+#
+aaa
+ authentication-scheme default
+ authorization-scheme default
+ accounting-scheme default
+ domain default
+ domain default_admin
+ local-user admin password cipher %$%$K8m.Nt84DZ}e#<0`8bmE3Uw}%$%$
+ local-user admin service-type http
+#
+firewall zone Local
+ priority 15
+#
+interface GigabitEthernet0/0/0
+ ip address 192.0.2.254 255.255.255.0
+#
+interface GigabitEthernet0/0/1
+ ip address 172.20.1.1 255.255.255.0
+#
+interface GigabitEthernet0/0/2
+ ip address 198.18.0.1 255.255.255.252
+ ipsec policy HOSP
+#
+interface NULL0
+#
+ip route-static 10.162.106.0 255.255.255.0 GigabitEthernet0/0/0 192.0.2.2 track nqa hospital fwa
+ip route-static 10.162.106.0 255.255.255.0 GigabitEthernet0/0/0 192.0.2.3 preference 80
+ip route-static 10.162.121.0 255.255.255.0 198.18.0.2 preference 100
+ip route-static 10.162.121.0 255.255.255.0 GigabitEthernet0/0/0 192.0.2.2 track nqa hospital fwa
+ip route-static 10.162.121.0 255.255.255.0 GigabitEthernet0/0/0 192.0.2.3 preference 80
+ip route-static 192.0.2.1 255.255.255.255 GigabitEthernet0/0/0 192.0.2.2
+#
+nqa test-instance hospital fwa
+ test-type icmp
+ destination-address ipv4 192.0.2.1
+ source-address ipv4 192.0.2.254
+ frequency 5
+ timeout 1
+ probe-count 2
+ start now
+#
+user-interface con 0
+ authentication-mode password
+ screen-length 0
+user-interface vty 0 4
+ acl 2001 inbound
+user-interface vty 16 20
+#
+wlan ac
+#
+return

@@ -1,0 +1,118 @@
+system-view
+Enter system view, return user view with Ctrl+Z.
+[Huawei]
+undo info-center enable
+Info: Information center is disabled.
+[Huawei]
+sysname AGG-BRANCH
+[AGG-BRANCH]
+stp mode mstp
+[AGG-BRANCH]
+dhcp enable
+Info: The operation may take a few seconds. Please wait for a moment.done.
+[AGG-BRANCH]
+vlan batch 50 1107 1207
+Info: This operation may take a few seconds. Please wait for a moment...done.
+[AGG-BRANCH]
+interface GigabitEthernet0/0/23
+[AGG-BRANCH-GigabitEthernet0/0/23]
+port link-type access
+[AGG-BRANCH-GigabitEthernet0/0/23]
+port default vlan 1107
+[AGG-BRANCH-GigabitEthernet0/0/23]
+quit
+[AGG-BRANCH]
+interface Vlanif1107
+[AGG-BRANCH-Vlanif1107]
+ip address 10.162.99.122 255.255.255.252
+[AGG-BRANCH-Vlanif1107]
+quit
+[AGG-BRANCH]
+interface GigabitEthernet0/0/24
+[AGG-BRANCH-GigabitEthernet0/0/24]
+port link-type access
+[AGG-BRANCH-GigabitEthernet0/0/24]
+port default vlan 1207
+[AGG-BRANCH-GigabitEthernet0/0/24]
+quit
+[AGG-BRANCH]
+interface Vlanif1207
+[AGG-BRANCH-Vlanif1207]
+ip address 10.162.99.150 255.255.255.252
+[AGG-BRANCH-Vlanif1207]
+quit
+[AGG-BRANCH]
+interface Vlanif50
+[AGG-BRANCH-Vlanif50]
+ip address 10.162.105.1 255.255.255.0
+[AGG-BRANCH-Vlanif50]
+quit
+[AGG-BRANCH]
+interface Vlanif50
+[AGG-BRANCH-Vlanif50]
+dhcp select interface
+[AGG-BRANCH-Vlanif50]
+dhcp server excluded-ip-address 10.162.105.2 10.162.105.49
+[AGG-BRANCH-Vlanif50]
+quit
+[AGG-BRANCH]
+interface Eth-Trunk1
+[AGG-BRANCH-Eth-Trunk1]
+mode lacp-static
+[AGG-BRANCH-Eth-Trunk1]
+port link-type trunk
+[AGG-BRANCH-Eth-Trunk1]
+port trunk allow-pass vlan 50
+[AGG-BRANCH-Eth-Trunk1]
+quit
+[AGG-BRANCH]
+interface GigabitEthernet0/0/1
+[AGG-BRANCH-GigabitEthernet0/0/1]
+eth-trunk 1
+Info: This operation may take a few seconds. Please wait for a moment...done.
+[AGG-BRANCH-GigabitEthernet0/0/1]
+quit
+[AGG-BRANCH]
+interface GigabitEthernet0/0/2
+[AGG-BRANCH-GigabitEthernet0/0/2]
+eth-trunk 1
+Info: This operation may take a few seconds. Please wait for a moment...done.
+[AGG-BRANCH-GigabitEthernet0/0/2]
+quit
+[AGG-BRANCH]
+interface GigabitEthernet0/0/3
+[AGG-BRANCH-GigabitEthernet0/0/3]
+port link-type access
+[AGG-BRANCH-GigabitEthernet0/0/3]
+port default vlan 50
+[AGG-BRANCH-GigabitEthernet0/0/3]
+quit
+[AGG-BRANCH]
+ip route-static 10.162.121.0 24 10.162.105.20
+[AGG-BRANCH]
+ospf 1 router-id 10.255.254.7
+[AGG-BRANCH-ospf-1]
+area 0
+[AGG-BRANCH-ospf-1-area-0.0.0.0]
+network 10.162.99.120 0.0.0.3
+[AGG-BRANCH-ospf-1-area-0.0.0.0]
+network 10.162.99.148 0.0.0.3
+[AGG-BRANCH-ospf-1-area-0.0.0.0]
+quit
+[AGG-BRANCH-ospf-1]
+area 50
+[AGG-BRANCH-ospf-1-area-0.0.0.50]
+network 10.162.105.0 0.0.0.255
+[AGG-BRANCH-ospf-1-area-0.0.0.50]
+quit
+[AGG-BRANCH-ospf-1]
+quit
+[AGG-BRANCH]
+ospf 1
+[AGG-BRANCH-ospf-1]
+import-route static
+[AGG-BRANCH-ospf-1]
+quit
+[AGG-BRANCH]
+return
+<AGG-BRANCH>

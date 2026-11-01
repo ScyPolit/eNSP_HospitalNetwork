@@ -1,0 +1,15 @@
+system-view
+13:33:32  2026/10/30
+Enter system view, return user view with Ctrl+Z.
+[FW-A]
+hrp interface GigabitEthernet0/0/6 remote 172.31.255.2
+13:33:32  2026/10/30
+[FW-A]
+return
+13:33:33  2026/10/30
+<FW-A>
+display hrp state
+13:33:33  2026/10/30
+The firewall hasn't enable HRP function!
+
+<FW-A>

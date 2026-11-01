@@ -1,0 +1,37 @@
+system-view
+Enter system view, return user view with Ctrl+Z.
+[HEALTH-R]
+ip route-static 192.0.2.1 32 GigabitEthernet0/0/0 192.0.2.2
+[HEALTH-R]
+nqa test-instance hospital fwa
+[HEALTH-R-nqa-hospital-fwa]
+test-type icmp
+[HEALTH-R-nqa-hospital-fwa]
+destination-address ipv4 192.0.2.1
+[HEALTH-R-nqa-hospital-fwa]
+source-address ipv4 192.0.2.254
+[HEALTH-R-nqa-hospital-fwa]
+frequency 5
+[HEALTH-R-nqa-hospital-fwa]
+probe-count 2
+[HEALTH-R-nqa-hospital-fwa]
+timeout 1
+[HEALTH-R-nqa-hospital-fwa]
+start now
+[HEALTH-R-nqa-hospital-fwa]
+quit
+[HEALTH-R]
+undo ip route-static 10.162.106.0 24 192.0.2.1
+[HEALTH-R]
+ip route-static 10.162.106.0 24 GigabitEthernet0/0/0 192.0.2.2 track n [1Dqa hospital fwa
+[HEALTH-R]
+ip route-static 10.162.106.0 24 GigabitEthernet0/0/0 192.0.2.3 prefere [1Dnce 80
+[HEALTH-R]
+undo ip route-static 10.162.121.0 24 192.0.2.1
+[HEALTH-R]
+ip route-static 10.162.121.0 24 GigabitEthernet0/0/0 192.0.2.2 track n [1Dqa hospital fwa
+[HEALTH-R]
+ip route-static 10.162.121.0 24 GigabitEthernet0/0/0 192.0.2.3 prefere [1Dnce 80
+[HEALTH-R]
+return
+<HEALTH-R>

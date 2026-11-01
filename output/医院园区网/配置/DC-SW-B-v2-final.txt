@@ -1,0 +1,24 @@
+system-view
+undo info-center enable
+sysname DC-SW-B
+stp mode mstp
+vlan batch 60
+interface Eth-Trunk1
+mode lacp-static
+port link-type trunk
+port trunk allow-pass vlan 60
+quit
+interface GigabitEthernet0/0/23
+eth-trunk 1
+quit
+interface GigabitEthernet0/0/24
+eth-trunk 1
+quit
+interface GigabitEthernet0/0/1
+port link-type access
+port default vlan 60
+quit
+interface GigabitEthernet0/0/1
+stp edged-port enable
+quit
+return

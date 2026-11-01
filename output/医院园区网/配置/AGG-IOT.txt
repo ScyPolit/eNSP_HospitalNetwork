@@ -1,0 +1,94 @@
+system-view
+undo info-center enable
+sysname AGG-IOT
+stp mode mstp
+dhcp enable
+vlan batch 100 110 120 140 1106 1206
+interface GigabitEthernet0/0/23
+port link-type access
+port default vlan 1106
+quit
+interface Vlanif1106
+ip address 10.162.99.118 255.255.255.252
+quit
+interface GigabitEthernet0/0/24
+port link-type access
+port default vlan 1206
+quit
+interface Vlanif1206
+ip address 10.162.99.146 255.255.255.252
+quit
+interface Vlanif100
+ip address 10.162.111.1 255.255.255.0
+quit
+interface Vlanif100
+dhcp select interface
+dhcp server excluded-ip-address 10.162.111.2 10.162.111.49
+quit
+interface Vlanif110
+ip address 10.162.112.1 255.255.255.0
+quit
+interface Vlanif110
+dhcp select interface
+dhcp server excluded-ip-address 10.162.112.2 10.162.112.49
+quit
+interface Vlanif120
+ip address 10.162.114.1 255.255.254.0
+quit
+interface Vlanif120
+dhcp select interface
+dhcp server excluded-ip-address 10.162.114.2 10.162.114.49
+quit
+interface Vlanif140
+ip address 10.162.116.1 255.255.252.0
+quit
+interface Vlanif140
+dhcp select interface
+dhcp server excluded-ip-address 10.162.116.2 10.162.116.49
+quit
+interface Eth-Trunk1
+mode lacp-static
+port link-type trunk
+port trunk allow-pass vlan 100
+quit
+interface GigabitEthernet0/0/1
+eth-trunk 1
+quit
+interface GigabitEthernet0/0/2
+eth-trunk 1
+quit
+interface Eth-Trunk2
+mode lacp-static
+port link-type trunk
+port trunk allow-pass vlan 110
+quit
+interface GigabitEthernet0/0/3
+eth-trunk 2
+quit
+interface GigabitEthernet0/0/4
+eth-trunk 2
+quit
+interface Eth-Trunk3
+mode lacp-static
+port link-type trunk
+port trunk allow-pass vlan 120 140
+quit
+interface GigabitEthernet0/0/5
+eth-trunk 3
+quit
+interface GigabitEthernet0/0/6
+eth-trunk 3
+quit
+ospf 1 router-id 10.255.254.6
+area 0
+network 10.162.99.116 0.0.0.3
+network 10.162.99.144 0.0.0.3
+quit
+area 40
+network 10.162.111.0 0.0.0.255
+network 10.162.112.0 0.0.0.255
+network 10.162.114.0 0.0.1.255
+network 10.162.116.0 0.0.3.255
+quit
+quit
+return

@@ -1,0 +1,47 @@
+display ipsec sa
+
+===============================
+Interface: GigabitEthernet0/0/2
+ Path MTU: 1500
+===============================
+
+  -----------------------------
+  IPSec policy name: "HOSP"
+  Sequence number  : 10
+  Acl Group        : 3500
+  Acl rule         : 5
+  Mode             : ISAKMP
+  -----------------------------
+    Connection ID     : 4
+    Encapsulation mode: Tunnel
+    Tunnel local      : 198.18.0.2
+    Tunnel remote     : 198.18.0.1
+    Flow source       : 10.162.121.0/255.255.255.0 0/0
+    Flow destination  : 172.20.1.0/255.255.255.0 0/0
+    Qos pre-classify  : Disable
+
+    [Outbound ESP SAs] 
+      SPI: 1558784402 (0x5ce92992)
+      Proposal: ESP-ENCRYPT-AES-256 ESP-AUTH-SHA1
+      SA remaining key duration (bytes/sec): 1887406080/2395
+      Max sent sequence-number: 2
+      UDP encapsulation used for NAT traversal: N
+
+    [Inbound ESP SAs] 
+      SPI: 935947625 (0x37c96d69)
+      Proposal: ESP-ENCRYPT-AES-256 ESP-AUTH-SHA1
+      SA remaining key duration (bytes/sec): 1887436620/2395
+      Max received sequence-number: 3
+      Anti-replay window size: 32
+      UDP encapsulation used for NAT traversal: N
+<TELEMED-GW>
+display ip routing-table 172.20.1.10
+Route Flags: R - relay, D - download to fib
+------------------------------------------------------------------------------
+Routing Table : Public
+Summary Count : 1
+Destination/Mask    Proto   Pre  Cost      Flags NextHop         Interface
+
+     172.20.1.0/24  Static  100  0          RD   198.18.0.1      GigabitEthernet0/0/2
+
+<TELEMED-GW>

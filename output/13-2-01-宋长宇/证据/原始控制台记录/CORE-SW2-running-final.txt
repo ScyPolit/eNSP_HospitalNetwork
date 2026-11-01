@@ -1,0 +1,170 @@
+display current-configuration
+#
+sysname CORE-SW2
+#
+undo info-center enable
+#
+vlan batch 900 to 901 1201 to 1207 4094
+#
+stp instance 0 root secondary
+#
+cluster enable
+ntdp enable
+ndp enable
+#
+drop illegal-mac alarm
+#
+diffserv domain default
+#
+acl number 2001
+ rule 5 permit source 10.162.120.20 0
+ rule 10 deny
+#
+drop-profile default
+#
+aaa
+ authentication-scheme default
+ authorization-scheme default
+ accounting-scheme default
+ domain default
+ domain default_admin
+ local-user admin password simple admin
+ local-user admin service-type http
+#
+interface Vlanif1
+#
+interface Vlanif900
+ ip address 10.162.99.5 255.255.255.224
+#
+interface Vlanif901
+ ip address 10.162.99.37 255.255.255.224
+#
+interface Vlanif1201
+ ip address 10.162.99.125 255.255.255.252
+#
+interface Vlanif1202
+ ip address 10.162.99.129 255.255.255.252
+#
+interface Vlanif1203
+ ip address 10.162.99.133 255.255.255.252
+#
+interface Vlanif1204
+ ip address 10.162.99.137 255.255.255.252
+#
+interface Vlanif1205
+ ip address 10.162.99.141 255.255.255.252
+#
+interface Vlanif1206
+ ip address 10.162.99.145 255.255.255.252
+#
+interface Vlanif1207
+ ip address 10.162.99.149 255.255.255.252
+#
+interface Vlanif4094
+ ip address 10.162.99.67 255.255.255.224
+ vrrp vrid 1 virtual-ip 10.162.99.65
+#
+interface MEth0/0/1
+#
+interface Eth-Trunk1
+ port link-type trunk
+ port trunk allow-pass vlan 900 to 901 4094
+ mode lacp-static
+#
+interface GigabitEthernet0/0/1
+ port link-type access
+ port default vlan 900
+#
+interface GigabitEthernet0/0/2
+ port link-type access
+ port default vlan 901
+#
+interface GigabitEthernet0/0/3
+ port link-type access
+ port default vlan 1201
+ stp disable
+#
+interface GigabitEthernet0/0/4
+ port link-type access
+ port default vlan 1202
+ stp disable
+#
+interface GigabitEthernet0/0/5
+ port link-type access
+ port default vlan 1203
+ stp disable
+#
+interface GigabitEthernet0/0/6
+ port link-type access
+ port default vlan 1204
+ stp disable
+#
+interface GigabitEthernet0/0/7
+ port link-type access
+ port default vlan 1205
+ stp disable
+#
+interface GigabitEthernet0/0/8
+ port link-type access
+ port default vlan 1206
+ stp disable
+#
+interface GigabitEthernet0/0/9
+ port link-type access
+ port default vlan 1207
+ stp disable
+#
+interface GigabitEthernet0/0/10
+#
+interface GigabitEthernet0/0/11
+#
+interface GigabitEthernet0/0/12
+#
+interface GigabitEthernet0/0/13
+#
+interface GigabitEthernet0/0/14
+#
+interface GigabitEthernet0/0/15
+#
+interface GigabitEthernet0/0/16
+#
+interface GigabitEthernet0/0/17
+#
+interface GigabitEthernet0/0/18
+#
+interface GigabitEthernet0/0/19
+#
+interface GigabitEthernet0/0/20
+#
+interface GigabitEthernet0/0/21
+#
+interface GigabitEthernet0/0/22
+#
+interface GigabitEthernet0/0/23
+ eth-trunk 1
+#
+interface GigabitEthernet0/0/24
+ eth-trunk 1
+#
+interface NULL0
+#
+ospf 1 router-id 10.255.255.12
+ area 0.0.0.0
+  network 10.162.99.0 0.0.0.31
+  network 10.162.99.32 0.0.0.31
+  network 10.162.99.64 0.0.0.31
+  network 10.162.99.124 0.0.0.3
+  network 10.162.99.128 0.0.0.3
+  network 10.162.99.132 0.0.0.3
+  network 10.162.99.136 0.0.0.3
+  network 10.162.99.140 0.0.0.3
+  network 10.162.99.144 0.0.0.3
+  network 10.162.99.148 0.0.0.3
+#
+user-interface con 0
+ screen-length 0
+user-interface vty 0 4
+ acl 2001 inbound
+#
+return
+<CORE-SW2>

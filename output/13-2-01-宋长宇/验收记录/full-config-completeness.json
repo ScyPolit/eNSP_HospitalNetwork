@@ -1,0 +1,468 @@
+{
+  "pages": 122,
+  "full_devices": 34,
+  "full_lines": 2793,
+  "first_two_pages_pixel_match": true,
+  "template_styles_unchanged": true,
+  "devices": [
+    {
+      "name": "WAN-L2",
+      "lines": 70,
+      "original_lines": 108,
+      "removed_separator_or_blank_lines": 38,
+      "docx_matches_source_without_separators": true,
+      "pdf_complete_in_order": true,
+      "startup_command_match": true,
+      "pages": [
+        19,
+        20
+      ]
+    },
+    {
+      "name": "ISP-R1",
+      "lines": 36,
+      "original_lines": 53,
+      "removed_separator_or_blank_lines": 17,
+      "docx_matches_source_without_separators": true,
+      "pdf_complete_in_order": true,
+      "startup_command_match": true,
+      "pages": [
+        21,
+        22
+      ]
+    },
+    {
+      "name": "ISP-R2",
+      "lines": 36,
+      "original_lines": 53,
+      "removed_separator_or_blank_lines": 17,
+      "docx_matches_source_without_separators": true,
+      "pdf_complete_in_order": true,
+      "startup_command_match": true,
+      "pages": [
+        22,
+        23
+      ]
+    },
+    {
+      "name": "HEALTH-R",
+      "lines": 68,
+      "original_lines": 92,
+      "removed_separator_or_blank_lines": 24,
+      "docx_matches_source_without_separators": true,
+      "pdf_complete_in_order": true,
+      "startup_command_match": true,
+      "pages": [
+        24,
+        25
+      ]
+    },
+    {
+      "name": "FW-A",
+      "lines": 198,
+      "original_lines": 265,
+      "removed_separator_or_blank_lines": 67,
+      "docx_matches_source_without_separators": true,
+      "pdf_complete_in_order": true,
+      "startup_command_match": true,
+      "pages": [
+        26,
+        27,
+        28,
+        29
+      ]
+    },
+    {
+      "name": "FW-B",
+      "lines": 193,
+      "original_lines": 259,
+      "removed_separator_or_blank_lines": 66,
+      "docx_matches_source_without_separators": true,
+      "pdf_complete_in_order": true,
+      "startup_command_match": true,
+      "pages": [
+        30,
+        31,
+        32,
+        33,
+        34
+      ]
+    },
+    {
+      "name": "CORE-SW1",
+      "lines": 118,
+      "original_lines": 169,
+      "removed_separator_or_blank_lines": 51,
+      "docx_matches_source_without_separators": true,
+      "pdf_complete_in_order": true,
+      "startup_command_match": true,
+      "pages": [
+        34,
+        35,
+        36
+      ]
+    },
+    {
+      "name": "CORE-SW2",
+      "lines": 117,
+      "original_lines": 168,
+      "removed_separator_or_blank_lines": 51,
+      "docx_matches_source_without_separators": true,
+      "pdf_complete_in_order": true,
+      "startup_command_match": true,
+      "pages": [
+        37,
+        38,
+        39
+      ]
+    },
+    {
+      "name": "DMZ-SW",
+      "lines": 58,
+      "original_lines": 96,
+      "removed_separator_or_blank_lines": 38,
+      "docx_matches_source_without_separators": true,
+      "pdf_complete_in_order": true,
+      "startup_command_match": true,
+      "pages": [
+        40,
+        41
+      ]
+    },
+    {
+      "name": "AGG-CLINIC",
+      "lines": 137,
+      "original_lines": 187,
+      "removed_separator_or_blank_lines": 50,
+      "docx_matches_source_without_separators": true,
+      "pdf_complete_in_order": true,
+      "startup_command_match": true,
+      "pages": [
+        42,
+        43,
+        44
+      ]
+    },
+    {
+      "name": "ACC-OPD",
+      "lines": 61,
+      "original_lines": 100,
+      "removed_separator_or_blank_lines": 39,
+      "docx_matches_source_without_separators": true,
+      "pdf_complete_in_order": true,
+      "startup_command_match": true,
+      "pages": [
+        45,
+        46
+      ]
+    },
+    {
+      "name": "ACC-ER",
+      "lines": 61,
+      "original_lines": 100,
+      "removed_separator_or_blank_lines": 39,
+      "docx_matches_source_without_separators": true,
+      "pdf_complete_in_order": true,
+      "startup_command_match": true,
+      "pages": [
+        47,
+        48
+      ]
+    },
+    {
+      "name": "ACC-PHARM",
+      "lines": 61,
+      "original_lines": 100,
+      "removed_separator_or_blank_lines": 39,
+      "docx_matches_source_without_separators": true,
+      "pdf_complete_in_order": true,
+      "startup_command_match": true,
+      "pages": [
+        49,
+        50
+      ]
+    },
+    {
+      "name": "AGG-INPATIENT",
+      "lines": 97,
+      "original_lines": 144,
+      "removed_separator_or_blank_lines": 47,
+      "docx_matches_source_without_separators": true,
+      "pdf_complete_in_order": true,
+      "startup_command_match": true,
+      "pages": [
+        51,
+        52,
+        53
+      ]
+    },
+    {
+      "name": "ACC-WARD-A",
+      "lines": 61,
+      "original_lines": 100,
+      "removed_separator_or_blank_lines": 39,
+      "docx_matches_source_without_separators": true,
+      "pdf_complete_in_order": true,
+      "startup_command_match": true,
+      "pages": [
+        54,
+        55
+      ]
+    },
+    {
+      "name": "ACC-WARD-B",
+      "lines": 61,
+      "original_lines": 100,
+      "removed_separator_or_blank_lines": 39,
+      "docx_matches_source_without_separators": true,
+      "pdf_complete_in_order": true,
+      "startup_command_match": true,
+      "pages": [
+        56,
+        57
+      ]
+    },
+    {
+      "name": "AGG-MEDTECH",
+      "lines": 97,
+      "original_lines": 144,
+      "removed_separator_or_blank_lines": 47,
+      "docx_matches_source_without_separators": true,
+      "pdf_complete_in_order": true,
+      "startup_command_match": true,
+      "pages": [
+        57,
+        58,
+        59
+      ]
+    },
+    {
+      "name": "ACC-PACS",
+      "lines": 61,
+      "original_lines": 100,
+      "removed_separator_or_blank_lines": 39,
+      "docx_matches_source_without_separators": true,
+      "pdf_complete_in_order": true,
+      "startup_command_match": true,
+      "pages": [
+        60,
+        61
+      ]
+    },
+    {
+      "name": "ACC-LAB",
+      "lines": 61,
+      "original_lines": 100,
+      "removed_separator_or_blank_lines": 39,
+      "docx_matches_source_without_separators": true,
+      "pdf_complete_in_order": true,
+      "startup_command_match": true,
+      "pages": [
+        62,
+        63
+      ]
+    },
+    {
+      "name": "AGG-DC",
+      "lines": 96,
+      "original_lines": 143,
+      "removed_separator_or_blank_lines": 47,
+      "docx_matches_source_without_separators": true,
+      "pdf_complete_in_order": true,
+      "startup_command_match": true,
+      "pages": [
+        64,
+        65,
+        66
+      ]
+    },
+    {
+      "name": "DC-SW-A",
+      "lines": 61,
+      "original_lines": 100,
+      "removed_separator_or_blank_lines": 39,
+      "docx_matches_source_without_separators": true,
+      "pdf_complete_in_order": true,
+      "startup_command_match": true,
+      "pages": [
+        67,
+        68
+      ]
+    },
+    {
+      "name": "DC-SW-B",
+      "lines": 61,
+      "original_lines": 100,
+      "removed_separator_or_blank_lines": 39,
+      "docx_matches_source_without_separators": true,
+      "pdf_complete_in_order": true,
+      "startup_command_match": true,
+      "pages": [
+        69,
+        70
+      ]
+    },
+    {
+      "name": "BACKUP-SW",
+      "lines": 61,
+      "original_lines": 100,
+      "removed_separator_or_blank_lines": 39,
+      "docx_matches_source_without_separators": true,
+      "pdf_complete_in_order": true,
+      "startup_command_match": true,
+      "pages": [
+        70,
+        71,
+        72
+      ]
+    },
+    {
+      "name": "AGG-OFFICE",
+      "lines": 119,
+      "original_lines": 168,
+      "removed_separator_or_blank_lines": 49,
+      "docx_matches_source_without_separators": true,
+      "pdf_complete_in_order": true,
+      "startup_command_match": true,
+      "pages": [
+        72,
+        73,
+        74
+      ]
+    },
+    {
+      "name": "ACC-ADMIN",
+      "lines": 61,
+      "original_lines": 100,
+      "removed_separator_or_blank_lines": 39,
+      "docx_matches_source_without_separators": true,
+      "pdf_complete_in_order": true,
+      "startup_command_match": true,
+      "pages": [
+        75,
+        76
+      ]
+    },
+    {
+      "name": "ACC-FIN",
+      "lines": 61,
+      "original_lines": 100,
+      "removed_separator_or_blank_lines": 39,
+      "docx_matches_source_without_separators": true,
+      "pdf_complete_in_order": true,
+      "startup_command_match": true,
+      "pages": [
+        77,
+        78
+      ]
+    },
+    {
+      "name": "NMS-SW",
+      "lines": 63,
+      "original_lines": 102,
+      "removed_separator_or_blank_lines": 39,
+      "docx_matches_source_without_separators": true,
+      "pdf_complete_in_order": true,
+      "startup_command_match": true,
+      "pages": [
+        79,
+        80
+      ]
+    },
+    {
+      "name": "AGG-IOT",
+      "lines": 149,
+      "original_lines": 200,
+      "removed_separator_or_blank_lines": 51,
+      "docx_matches_source_without_separators": true,
+      "pdf_complete_in_order": true,
+      "startup_command_match": true,
+      "pages": [
+        81,
+        82,
+        83,
+        84
+      ]
+    },
+    {
+      "name": "ACC-IOT",
+      "lines": 61,
+      "original_lines": 100,
+      "removed_separator_or_blank_lines": 39,
+      "docx_matches_source_without_separators": true,
+      "pdf_complete_in_order": true,
+      "startup_command_match": true,
+      "pages": [
+        85,
+        86
+      ]
+    },
+    {
+      "name": "ACC-CCTV",
+      "lines": 61,
+      "original_lines": 100,
+      "removed_separator_or_blank_lines": 39,
+      "docx_matches_source_without_separators": true,
+      "pdf_complete_in_order": true,
+      "startup_command_match": true,
+      "pages": [
+        86,
+        87,
+        88
+      ]
+    },
+    {
+      "name": "ACC-WLAN",
+      "lines": 63,
+      "original_lines": 102,
+      "removed_separator_or_blank_lines": 39,
+      "docx_matches_source_without_separators": true,
+      "pdf_complete_in_order": true,
+      "startup_command_match": true,
+      "pages": [
+        88,
+        89
+      ]
+    },
+    {
+      "name": "AGG-BRANCH",
+      "lines": 97,
+      "original_lines": 144,
+      "removed_separator_or_blank_lines": 47,
+      "docx_matches_source_without_separators": true,
+      "pdf_complete_in_order": true,
+      "startup_command_match": true,
+      "pages": [
+        90,
+        91,
+        92
+      ]
+    },
+    {
+      "name": "BRANCH-SW",
+      "lines": 61,
+      "original_lines": 100,
+      "removed_separator_or_blank_lines": 39,
+      "docx_matches_source_without_separators": true,
+      "pdf_complete_in_order": true,
+      "startup_command_match": true,
+      "pages": [
+        93,
+        94
+      ]
+    },
+    {
+      "name": "TELEMED-GW",
+      "lines": 66,
+      "original_lines": 90,
+      "removed_separator_or_blank_lines": 24,
+      "docx_matches_source_without_separators": true,
+      "pdf_complete_in_order": true,
+      "startup_command_match": true,
+      "pages": [
+        95,
+        96
+      ]
+    }
+  ]
+}

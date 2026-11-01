@@ -1,0 +1,606 @@
+display current-configuration
+13:43:14  2026/10/30
+#
+stp region-configuration
+ region-name 70546a15f0b4
+ active region-configuration
+#
+interface GigabitEthernet0/0/0
+ alias GE0/MGMT
+ ip address 12.1.1.2 255.255.255.0
+ vrrp vrid 1 virtual-ip 12.1.1.1 master
+#
+interface GigabitEthernet0/0/1
+ ip address 13.1.1.2 255.255.255.0
+ vrrp vrid 2 virtual-ip 13.1.1.1 master
+#
+interface GigabitEthernet0/0/2
+ ip address 192.0.2.2 255.255.255.0
+ vrrp vrid 3 virtual-ip 192.0.2.1 master
+#
+interface GigabitEthernet0/0/3
+ ip address 10.162.99.2 255.255.255.224
+ vrrp vrid 4 virtual-ip 10.162.99.1 master
+#
+interface GigabitEthernet0/0/4
+  ---- More ----[42D                                          [42D ip address 10.162.99.34 255.255.255.224
+ vrrp vrid 5 virtual-ip 10.162.99.33 master
+#
+interface GigabitEthernet0/0/5
+ ip address 10.162.108.2 255.255.255.0
+ vrrp vrid 6 virtual-ip 10.162.108.1 master
+#
+interface GigabitEthernet0/0/6
+ ip address 172.31.255.1 255.255.255.252
+#
+interface GigabitEthernet0/0/7
+#
+interface GigabitEthernet0/0/8
+#
+interface NULL0
+ alias NULL0
+#
+firewall zone local
+ set priority 100
+#
+firewall zone trust
+ set priority 85
+ add interface GigabitEthernet0/0/0
+  ---- More ----[42D                                          [42D add interface GigabitEthernet0/0/3
+ add interface GigabitEthernet0/0/4
+#
+firewall zone untrust
+ set priority 5
+#
+firewall zone dmz
+ set priority 50
+ add interface GigabitEthernet0/0/5
+#
+firewall zone name medical
+ set priority 40
+ add interface GigabitEthernet0/0/2
+#
+firewall zone name ha
+ set priority 90
+ add interface GigabitEthernet0/0/6
+#
+firewall zone name isp2
+ set priority 10
+ add interface GigabitEthernet0/0/1
+#
+aaa
+  ---- More ----[42D                                          [42D local-user admin password cipher %$%$5*2T.}~=[.6=:{EZu6X&Q&zq%$%$
+ local-user admin service-type web terminal telnet
+ local-user admin level 15
+ authentication-scheme default
+ #
+ authorization-scheme default
+ #
+ accounting-scheme default
+ #
+ domain default
+ #
+#
+ospf 1 router-id 10.255.255.1
+ default-route-advertise type 1
+ import-route static
+ area 0.0.0.0
+  network 10.162.99.0 0.0.0.63
+  network 10.162.108.0 0.0.0.255
+#
+nqa-jitter tag-version 1
+
+#
+ ip route-static 0.0.0.0 0.0.0.0 12.1.1.254
+  ---- More ----[42D                                          [42D ip route-static 0.0.0.0 0.0.0.0 13.1.1.254 preference 100
+ ip route-static 172.20.1.0 255.255.255.0 192.0.2.254
+ ip route-static 203.0.114.0 255.255.255.0 13.1.1.254
+#
+ banner enable
+#
+user-interface con 0
+ authentication-mode none
+user-interface vty 0 4
+ authentication-mode none
+ protocol inbound all
+#
+ip service-set ospf type object
+ service 0 protocol 89
+#
+ slb
+#
+right-manager server-group
+#
+ sysname FW-A
+#
+ l2tp domain suffix-separator @
+#
+  ---- More ----[42D                                          [42D undo info-center enable
+#
+ hrp mirror session enable
+ hrp enable
+ hrp ospf-cost adjust-enable
+ hrp interface GigabitEthernet0/0/6
+#
+ firewall packet-filter default permit interzone local trust direction inbound
+ firewall packet-filter default permit interzone local trust direction outbound
+ firewall packet-filter default permit interzone local untrust direction outbound
+ firewall packet-filter default permit interzone local dmz direction outbound
+ firewall packet-filter default permit interzone local medical direction outbound
+ firewall packet-filter default permit interzone local ha direction outbound
+ firewall packet-filter default permit interzone local isp2 direction outbound
+#
+ nat address-group 1 12.1.1.10 12.1.1.30
+ nat address-group 2 13.1.1.10 13.1.1.30
+ nat server 1 protocol tcp global 12.1.1.100 www inside 10.162.108.10 www
+#
+ ip df-unreachables enable
+#
+ firewall ipv6 session link-state check
+ firewall ipv6 statistic system enable
+  ---- More ----[42D                                          [42D#
+ dns resolve
+#
+ firewall statistic system enable
+#
+ pki ocsp response cache refresh interval 0
+ pki ocsp response cache number 0
+#
+ undo dns proxy
+#
+ license-server domain lic.huawei.com
+#
+ web-manager enable
+#
+policy interzone local trust inbound
+ policy 1
+  action permit
+  policy service service-set ospf
+
+ policy 2
+  action permit
+  policy service service-set icmp
+#
+  ---- More ----[42D                                          [42Dpolicy interzone local trust outbound
+ policy 1
+  action permit
+  policy service service-set ospf
+
+ policy 2
+  action permit
+  policy service service-set icmp
+#
+policy interzone local ha inbound
+ policy 1
+  action permit
+#
+policy interzone local ha outbound
+ policy 1
+  action permit
+#
+policy interzone trust untrust outbound
+ policy 1
+  action permit
+  policy source 10.162.0.0 0.0.255.255
+#
+policy interzone trust dmz inbound
+  ---- More ----[42D                                          [42D policy 1
+  action permit
+  policy service service-set https
+  policy source 10.162.108.10 0
+  policy destination 10.162.106.10 0
+#
+policy interzone trust dmz outbound
+ policy 1
+  action permit
+  policy service service-set http
+  policy source 10.162.0.0 0.0.255.255
+  policy destination 10.162.108.10 0
+#
+policy interzone trust medical inbound
+ policy 1
+  action permit
+  policy service service-set https
+  policy source 172.20.1.10 0
+  policy destination 10.162.106.10 0
+
+ policy 2
+  action permit
+  policy service service-set icmp
+  ---- More ----[42D                                          [42D  policy source 172.20.1.10 0
+  policy destination 10.162.106.10 0
+
+ policy 3
+  action permit
+  policy source 172.20.1.10 0
+  policy destination 10.162.121.10 0
+#
+policy interzone trust medical outbound
+ policy 1
+  action permit
+  policy source 10.162.121.0 0.0.0.255
+  policy destination 172.20.1.0 0.0.0.255
+#
+policy interzone trust isp2 outbound
+ policy 1
+  action permit
+  policy source 10.162.0.0 0.0.255.255
+#
+policy interzone dmz untrust inbound
+ policy 1
+  action permit
+  policy service service-set http
+  ---- More ----[42D                                          [42D  policy destination 10.162.108.10 0
+#
+policy interzone dmz untrust outbound
+ policy 1
+  action permit
+  policy service service-set dns
+  policy source 10.162.108.10 0
+#
+nat-policy interzone trust untrust outbound
+ policy 1
+  action source-nat
+  policy source 10.162.0.0 0.0.255.255
+  address-group 1
+
+ policy 3
+#
+nat-policy interzone trust isp2 outbound
+ policy 1
+  action source-nat
+  policy source 10.162.0.0 0.0.255.255
+  address-group 2
+#
+return
+  ---- More ----[42D                                          [42D
+HRP_M<FW-A> 
+ display interface brief
+13:43:14  2026/10/30
+PHY: Physical
+*down: administratively down
+^down: standby down
+(s): spoofing
+InUti/OutUti: input utility/output utility
+Interface                   PHY   Protocol InUti OutUti   inErrors  outErrors
+GigabitEthernet0/0/0        up    up          0%     0%          0          0
+GigabitEthernet0/0/1        up    up          0%     0%          0          0
+GigabitEthernet0/0/2        up    up          0%     0%          0          0
+GigabitEthernet0/0/3        up    up          0%     0%          0          0
+GigabitEthernet0/0/4        up    up          0%     0%          0          0
+GigabitEthernet0/0/5        up    up          0%     0%          0          0
+GigabitEthernet0/0/6        up    up          0%     0%          0          0
+GigabitEthernet0/0/7        down  down        0%     0%          0          0
+GigabitEthernet0/0/8        down  down        0%     0%          0          0
+NULL0                       up    up(s)       0%     0%          0          0
+HRP_M<FW-A>
+display ip routing-table
+13:43:14  2026/10/30
+Route Flags: R - relay, D - download to fib
+------------------------------------------------------------------------------
+Routing Tables: Public
+	Destinations : 56	Routes : 89
+
+Destination/Mask    Proto  Pre  Cost     Flags NextHop         Interface
+
+        0.0.0.0/0   Static 60   0          RD  12.1.1.254      GigabitEthernet0/0/0
+    10.162.99.0/27  Direct 0    0           D  10.162.99.2     GigabitEthernet0/0/3
+    10.162.99.1/32  Direct 0    0           D  127.0.0.1       InLoopBack0
+    10.162.99.2/32  Direct 0    0           D  127.0.0.1       InLoopBack0
+   10.162.99.32/27  Direct 0    0           D  10.162.99.34    GigabitEthernet0/0/4
+   10.162.99.33/32  Direct 0    0           D  127.0.0.1       InLoopBack0
+   10.162.99.34/32  Direct 0    0           D  127.0.0.1       InLoopBack0
+   10.162.99.64/27  OSPF   10   2           D  10.162.99.4     GigabitEthernet0/0/3
+                    OSPF   10   2           D  10.162.99.36    GigabitEthernet0/0/4
+                    OSPF   10   2           D  10.162.99.5     GigabitEthernet0/0/3
+                    OSPF   10   2           D  10.162.99.37    GigabitEthernet0/0/4
+   10.162.99.65/32  OSPF   10   2           D  10.162.99.4     GigabitEthernet0/0/3
+                    OSPF   10   2           D  10.162.99.36    GigabitEthernet0/0/4
+   10.162.99.96/30  OSPF   10   2           D  10.162.99.4     GigabitEthernet0/0/3
+                    OSPF   10   2           D  10.162.99.36    GigabitEthernet0/0/4
+  10.162.99.100/30  OSPF   10   2           D  10.162.99.4     GigabitEthernet0/0/3
+  ---- More ----[42D                                          [42D                    OSPF   10   2           D  10.162.99.36    GigabitEthernet0/0/4
+  10.162.99.104/30  OSPF   10   2           D  10.162.99.4     GigabitEthernet0/0/3
+                    OSPF   10   2           D  10.162.99.36    GigabitEthernet0/0/4
+  10.162.99.108/30  OSPF   10   2           D  10.162.99.4     GigabitEthernet0/0/3
+                    OSPF   10   2           D  10.162.99.36    GigabitEthernet0/0/4
+  10.162.99.112/30  OSPF   10   2           D  10.162.99.4     GigabitEthernet0/0/3
+                    OSPF   10   2           D  10.162.99.36    GigabitEthernet0/0/4
+  10.162.99.116/30  OSPF   10   2           D  10.162.99.4     GigabitEthernet0/0/3
+                    OSPF   10   2           D  10.162.99.36    GigabitEthernet0/0/4
+  10.162.99.120/30  OSPF   10   2           D  10.162.99.4     GigabitEthernet0/0/3
+                    OSPF   10   2           D  10.162.99.36    GigabitEthernet0/0/4
+  10.162.99.124/30  OSPF   10   2           D  10.162.99.5     GigabitEthernet0/0/3
+                    OSPF   10   2           D  10.162.99.37    GigabitEthernet0/0/4
+  10.162.99.128/30  OSPF   10   2           D  10.162.99.5     GigabitEthernet0/0/3
+                    OSPF   10   2           D  10.162.99.37    GigabitEthernet0/0/4
+  10.162.99.132/30  OSPF   10   2           D  10.162.99.5     GigabitEthernet0/0/3
+                    OSPF   10   2           D  10.162.99.37    GigabitEthernet0/0/4
+  10.162.99.136/30  OSPF   10   2           D  10.162.99.5     GigabitEthernet0/0/3
+                    OSPF   10   2           D  10.162.99.37    GigabitEthernet0/0/4
+  10.162.99.140/30  OSPF   10   2           D  10.162.99.5     GigabitEthernet0/0/3
+                    OSPF   10   2           D  10.162.99.37    GigabitEthernet0/0/4
+  10.162.99.144/30  OSPF   10   2           D  10.162.99.5     GigabitEthernet0/0/3
+                    OSPF   10   2           D  10.162.99.37    GigabitEthernet0/0/4
+  ---- More ----[42D                                          [42D  10.162.99.148/30  OSPF   10   2           D  10.162.99.5     GigabitEthernet0/0/3
+                    OSPF   10   2           D  10.162.99.37    GigabitEthernet0/0/4
+   10.162.101.0/24  OSPF   10   3           D  10.162.99.4     GigabitEthernet0/0/3
+                    OSPF   10   3           D  10.162.99.36    GigabitEthernet0/0/4
+   10.162.102.0/24  OSPF   10   3           D  10.162.99.4     GigabitEthernet0/0/3
+                    OSPF   10   3           D  10.162.99.36    GigabitEthernet0/0/4
+   10.162.103.0/24  OSPF   10   3           D  10.162.99.4     GigabitEthernet0/0/3
+                    OSPF   10   3           D  10.162.99.36    GigabitEthernet0/0/4
+   10.162.104.0/24  OSPF   10   3           D  10.162.99.4     GigabitEthernet0/0/3
+                    OSPF   10   3           D  10.162.99.36    GigabitEthernet0/0/4
+   10.162.105.0/24  OSPF   10   3           D  10.162.99.4     GigabitEthernet0/0/3
+                    OSPF   10   3           D  10.162.99.36    GigabitEthernet0/0/4
+   10.162.106.0/24  OSPF   10   3           D  10.162.99.4     GigabitEthernet0/0/3
+                    OSPF   10   3           D  10.162.99.36    GigabitEthernet0/0/4
+   10.162.107.0/24  OSPF   10   3           D  10.162.99.4     GigabitEthernet0/0/3
+                    OSPF   10   3           D  10.162.99.36    GigabitEthernet0/0/4
+   10.162.108.0/24  Direct 0    0           D  10.162.108.2    GigabitEthernet0/0/5
+   10.162.108.1/32  Direct 0    0           D  127.0.0.1       InLoopBack0
+   10.162.108.2/32  Direct 0    0           D  127.0.0.1       InLoopBack0
+   10.162.109.0/24  OSPF   10   3           D  10.162.99.4     GigabitEthernet0/0/3
+                    OSPF   10   3           D  10.162.99.36    GigabitEthernet0/0/4
+   10.162.110.0/24  OSPF   10   3           D  10.162.99.4     GigabitEthernet0/0/3
+                    OSPF   10   3           D  10.162.99.36    GigabitEthernet0/0/4
+  ---- More ----[42D                                          [42D   10.162.111.0/24  OSPF   10   3           D  10.162.99.4     GigabitEthernet0/0/3
+                    OSPF   10   3           D  10.162.99.36    GigabitEthernet0/0/4
+   10.162.112.0/24  OSPF   10   3           D  10.162.99.4     GigabitEthernet0/0/3
+                    OSPF   10   3           D  10.162.99.36    GigabitEthernet0/0/4
+   10.162.114.0/23  OSPF   10   3           D  10.162.99.4     GigabitEthernet0/0/3
+                    OSPF   10   3           D  10.162.99.36    GigabitEthernet0/0/4
+   10.162.116.0/22  OSPF   10   3           D  10.162.99.4     GigabitEthernet0/0/3
+                    OSPF   10   3           D  10.162.99.36    GigabitEthernet0/0/4
+   10.162.120.0/24  OSPF   10   3           D  10.162.99.4     GigabitEthernet0/0/3
+                    OSPF   10   3           D  10.162.99.36    GigabitEthernet0/0/4
+   10.162.121.0/24  O_ASE  150  1           D  10.162.99.4     GigabitEthernet0/0/3
+                    O_ASE  150  1           D  10.162.99.36    GigabitEthernet0/0/4
+       12.1.1.0/24  Direct 0    0           D  12.1.1.2        GigabitEthernet0/0/0
+       12.1.1.1/32  Direct 0    0           D  127.0.0.1       InLoopBack0
+       12.1.1.2/32  Direct 0    0           D  127.0.0.1       InLoopBack0
+       13.1.1.0/24  Direct 0    0           D  13.1.1.2        GigabitEthernet0/0/1
+       13.1.1.1/32  Direct 0    0           D  127.0.0.1       InLoopBack0
+       13.1.1.2/32  Direct 0    0           D  127.0.0.1       InLoopBack0
+      127.0.0.0/8   Direct 0    0           D  127.0.0.1       InLoopBack0
+      127.0.0.1/32  Direct 0    0           D  127.0.0.1       InLoopBack0
+     172.20.1.0/24  Static 60   0          RD  192.0.2.254     GigabitEthernet0/0/2
+   172.31.255.0/30  Direct 0    0           D  172.31.255.1    GigabitEthernet0/0/6
+   172.31.255.1/32  Direct 0    0           D  127.0.0.1       InLoopBack0
+  ---- More ----[42D                                          [42D      192.0.2.0/24  Direct 0    0           D  192.0.2.2       GigabitEthernet0/0/2
+      192.0.2.1/32  Direct 0    0           D  127.0.0.1       InLoopBack0
+      192.0.2.2/32  Direct 0    0           D  127.0.0.1       InLoopBack0
+    203.0.114.0/24  Static 60   0          RD  13.1.1.254      GigabitEthernet0/0/1
+
+HRP_M<FW-A> 
+display hrp state
+13:43:14  2026/10/30
+ The firewall's config state is: MASTER
+
+ Current state of virtual routers configured as master:
+             GigabitEthernet0/0/5    vrid   6 : master
+             GigabitEthernet0/0/4    vrid   5 : master
+             GigabitEthernet0/0/3    vrid   4 : master
+             GigabitEthernet0/0/2    vrid   3 : master
+             GigabitEthernet0/0/1    vrid   2 : master
+             GigabitEthernet0/0/0    vrid   1 : master
+
+HRP_M<FW-A>
+display hrp interface
+13:43:14  2026/10/30
+             GigabitEthernet0/0/6 : running
+
+HRP_M<FW-A>
+display hrp group
+13:43:14  2026/10/30
+ Master group status:
+   Group enabled:         yes
+   State:                 master
+   Priority running:      65001
+   Total VRRP members:    6
+   Hello interval(ms):    1000
+   Preempt enabled:       yes
+   Preempt delay(s):      30
+   Peer group available:  1
+   Peer's member same:    yes
+ Slave group status:
+   Group enabled:         no
+   State:                 initialize
+   Priority running:      65000
+   Total VRRP members:    0
+   Hello interval(ms):    1000
+   Preempt enabled:       yes
+   Preempt delay(s):      0
+   Peer group available:  0
+   Peer's member same:    yes
+
+HRP_M<FW-A>
+display ospf peer
+13:43:14  2026/10/30
+
+	 OSPF Process 1 with Router ID 10.255.255.1
+		 Neighbors 
+
+ Area 0.0.0.0 interface 10.162.99.2(GigabitEthernet0/0/3)'s neighbors
+ Router ID: 10.255.255.2     Address: 10.162.99.3      GR State: Normal     
+   State: 2-Way  Mode:Nbr is  Master  Priority: 1
+   DR: 10.162.99.5  BDR: 10.162.99.4  MTU: 0    
+   Dead timer due in 39  sec 
+   Neighbor is up for 00:00:00     
+   Authentication Sequence: [ 0 ] 
+
+ Router ID: 10.255.255.11    Address: 10.162.99.4      GR State: Normal     
+   State: Full  Mode:Nbr is  Master  Priority: 1
+   DR: 10.162.99.5  BDR: 10.162.99.4  MTU: 0    
+   Dead timer due in 34  sec 
+   Neighbor is up for 00:01:07     
+   Authentication Sequence: [ 0 ] 
+
+ Router ID: 10.255.255.12    Address: 10.162.99.5      GR State: Normal     
+   State: Full  Mode:Nbr is  Master  Priority: 1
+   DR: 10.162.99.5  BDR: 10.162.99.4  MTU: 0    
+   Dead timer due in 29  sec 
+   Neighbor is up for 00:09:11     
+   Authentication Sequence: [ 0 ] 
+
+		 Neighbors 
+
+ Area 0.0.0.0 interface 10.162.99.34(GigabitEthernet0/0/4)'s neighbors
+  ---- More ----[42D                                          [42D Router ID: 10.255.255.2     Address: 10.162.99.35     GR State: Normal     
+   State: 2-Way  Mode:Nbr is  Master  Priority: 1
+   DR: 10.162.99.37  BDR: 10.162.99.36  MTU: 0    
+   Dead timer due in 37  sec 
+   Neighbor is up for 00:00:00     
+   Authentication Sequence: [ 0 ] 
+
+ Router ID: 10.255.255.11    Address: 10.162.99.36     GR State: Normal     
+   State: Full  Mode:Nbr is  Master  Priority: 1
+   DR: 10.162.99.37  BDR: 10.162.99.36  MTU: 0    
+   Dead timer due in 30  sec 
+   Neighbor is up for 00:01:07     
+   Authentication Sequence: [ 0 ] 
+
+ Router ID: 10.255.255.12    Address: 10.162.99.37     GR State: Normal     
+   State: Full  Mode:Nbr is  Master  Priority: 1
+   DR: 10.162.99.37  BDR: 10.162.99.36  MTU: 0    
+   Dead timer due in 37  sec 
+   Neighbor is up for 00:09:06     
+   Authentication Sequence: [ 0 ] 
+
+		 Neighbors 
+
+ Area 0.0.0.0 interface 10.162.108.2(GigabitEthernet0/0/5)'s neighbors
+ Router ID: 10.255.255.2     Address: 10.162.108.3     GR State: Normal     
+   State: Full  Mode:Nbr is  Master  Priority: 1
+  ---- More ----[42D                                          [42D   DR: 10.162.108.3  BDR: 10.162.108.2  MTU: 0    
+   Dead timer due in 30  sec 
+   Neighbor is up for 00:09:09     
+   Authentication Sequence: [ 0 ] 
+
+HRP_M<FW-A>
+display firewall session table verbose
+13:43:14  2026/10/30
+ Current Total Sessions : 0
+HRP_M<FW-A>
+display nat-policy all
+13:43:14  2026/10/30
+nat-policy zone local
+#
+nat-policy zone trust
+#
+nat-policy zone untrust
+#
+nat-policy zone dmz
+#
+nat-policy zone medical
+#
+nat-policy zone ha
+#
+nat-policy zone isp2
+#
+nat-policy interzone local trust inbound
+#
+nat-policy interzone local trust outbound
+#
+nat-policy interzone local untrust inbound
+#
+nat-policy interzone local untrust outbound
+#
+nat-policy interzone local dmz inbound
+  ---- More ----[42D                                          [42D#
+nat-policy interzone local dmz outbound
+#
+nat-policy interzone local medical inbound
+#
+nat-policy interzone local medical outbound
+#
+nat-policy interzone local ha inbound
+#
+nat-policy interzone local ha outbound
+#
+nat-policy interzone local isp2 inbound
+#
+nat-policy interzone local isp2 outbound
+#
+nat-policy interzone trust untrust inbound
+#
+nat-policy interzone trust untrust outbound
+ policy 1 (0 times matched)
+  action source-nat 
+  policy service service-set ip
+  policy source 10.162.0.0 0.0.255.255
+  policy destination any
+  ---- More ----[42D                                          [42D  address-group 1
+
+ policy 3 (0 times matched)
+  action has not specified yet!!!
+  policy service service-set ip
+  policy source any
+  policy destination any
+
+#
+nat-policy interzone trust dmz inbound
+#
+nat-policy interzone trust dmz outbound
+#
+nat-policy interzone trust medical inbound
+#
+nat-policy interzone trust medical outbound
+#
+nat-policy interzone ha trust inbound
+#
+nat-policy interzone ha trust outbound
+#
+nat-policy interzone trust isp2 inbound
+#
+  ---- More ----[42D                                          [42Dnat-policy interzone trust isp2 outbound
+ policy 1 (0 times matched)
+  action source-nat 
+  policy service service-set ip
+  policy source 10.162.0.0 0.0.255.255
+  policy destination any
+  address-group 2
+
+#
+nat-policy interzone dmz untrust inbound
+#
+nat-policy interzone dmz untrust outbound
+#
+nat-policy interzone medical untrust inbound
+#
+nat-policy interzone medical untrust outbound
+#
+nat-policy interzone ha untrust inbound
+#
+nat-policy interzone ha untrust outbound
+#
+nat-policy interzone isp2 untrust inbound
+#
+  ---- More ----[42D                                          [42Dnat-policy interzone isp2 untrust outbound
+#
+nat-policy interzone dmz medical inbound
+#
+nat-policy interzone dmz medical outbound
+#
+nat-policy interzone ha dmz inbound
+#
+nat-policy interzone ha dmz outbound
+#
+nat-policy interzone dmz isp2 inbound
+#
+nat-policy interzone dmz isp2 outbound
+#
+nat-policy interzone ha medical inbound
+#
+nat-policy interzone ha medical outbound
+#
+nat-policy interzone medical isp2 inbound
+#
+nat-policy interzone medical isp2 outbound
+#
+nat-policy interzone ha isp2 inbound
+  ---- More ----[42D                                          [42D#
+nat-policy interzone ha isp2 outbound
+#
+HRP_M<FW-A>

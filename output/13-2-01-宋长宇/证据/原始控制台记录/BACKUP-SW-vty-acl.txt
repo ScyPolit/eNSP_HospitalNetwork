@@ -1,0 +1,17 @@
+system-view
+Enter system view, return user view with Ctrl+Z.
+[BACKUP-SW]
+acl number 2001
+[BACKUP-SW-acl-basic-2001]
+rule 5 permit source 10.162.120.20 0
+[BACKUP-SW-acl-basic-2001]
+rule 10 deny
+[BACKUP-SW-acl-basic-2001]
+quit
+[BACKUP-SW]
+user-interface vty 0 4
+[BACKUP-SW-ui-vty0-4]
+acl 2001 inbound
+[BACKUP-SW-ui-vty0-4]
+return
+<BACKUP-SW>

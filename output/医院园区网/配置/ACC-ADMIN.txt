@@ -1,0 +1,24 @@
+system-view
+undo info-center enable
+sysname ACC-ADMIN
+stp mode mstp
+vlan batch 40
+interface Eth-Trunk1
+mode lacp-static
+port link-type trunk
+port trunk allow-pass vlan 40
+quit
+interface GigabitEthernet0/0/23
+eth-trunk 1
+quit
+interface GigabitEthernet0/0/24
+eth-trunk 1
+quit
+interface GigabitEthernet0/0/1
+port link-type access
+port default vlan 40
+quit
+interface GigabitEthernet0/0/1
+stp edged-port enable
+quit
+return

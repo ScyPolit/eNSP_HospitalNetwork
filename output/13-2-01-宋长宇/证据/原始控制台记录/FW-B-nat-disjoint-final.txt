@@ -1,0 +1,77 @@
+system-view
+14:02:12  2026/10/30
+Enter system view, return user view with Ctrl+Z.
+HRP_S[FW-B]
+nat-policy interzone trust untrust outbound
+14:02:12  2026/10/30
+HRP_S[FW-B-nat-policy-interzone-trust-untrust-outbound]
+undo policy 1
+14:02:12  2026/10/30
+HRP_S[FW-B-nat-policy-interzone-trust-untrust-outbound]
+undo policy 3
+14:02:12  2026/10/30
+ Error: The policy does not exist.
+HRP_S[FW-B-nat-policy-interzone-trust-untrust-outbound]
+quit
+14:02:12  2026/10/30
+HRP_S[FW-B]
+nat-policy interzone trust isp2 outbound
+14:02:12  2026/10/30
+HRP_S[FW-B-nat-policy-interzone-trust-isp2-outbound]
+undo policy 1
+14:02:12  2026/10/30
+HRP_S[FW-B-nat-policy-interzone-trust-isp2-outbound]
+quit
+14:02:12  2026/10/30
+HRP_S[FW-B]
+nat address-group 1 12.1.1.20 12.1.1.30
+14:02:12  2026/10/30
+HRP_S[FW-B]
+nat address-group 2 13.1.1.20 13.1.1.30
+14:02:12  2026/10/30
+HRP_S[FW-B]
+nat-policy interzone trust untrust outbound
+14:02:12  2026/10/30
+HRP_S[FW-B-nat-policy-interzone-trust-untrust-outbound]
+policy 1
+14:02:12  2026/10/30
+HRP_S[FW-B-nat-policy-interzone-trust-untrust-outbound-1]
+policy source 10.162.0. [1D0 0.0.255.255
+14:02:12  2026/10/30
+HRP_S[FW-B-nat-policy-interzone-trust-untrust-outbound-1]
+action source-nat
+14:02:12  2026/10/30
+HRP_S[FW-B-nat-policy-interzone-trust-untrust-outbound-1]
+address-group 1
+14:02:12  2026/10/30
+HRP_S[FW-B-nat-policy-interzone-trust-untrust-outbound-1]
+quit
+14:02:12  2026/10/30
+HRP_S[FW-B-nat-policy-interzone-trust-untrust-outbound]
+quit
+14:02:13  2026/10/30
+HRP_S[FW-B]
+nat-policy interzone trust isp2 outbound
+14:02:13  2026/10/30
+HRP_S[FW-B-nat-policy-interzone-trust-isp2-outbound]
+policy 1
+14:02:13  2026/10/30
+HRP_S[FW-B-nat-policy-interzone-trust-isp2-outbound-1]
+policy source 10.162.0.0 0 [1D.0.255.255
+14:02:13  2026/10/30
+HRP_S[FW-B-nat-policy-interzone-trust-isp2-outbound-1]
+action source-nat
+14:02:13  2026/10/30
+HRP_S[FW-B-nat-policy-interzone-trust-isp2-outbound-1]
+address-group 2
+14:02:13  2026/10/30
+HRP_S[FW-B-nat-policy-interzone-trust-isp2-outbound-1]
+quit
+14:02:13  2026/10/30
+HRP_S[FW-B-nat-policy-interzone-trust-isp2-outbound]
+quit
+14:02:13  2026/10/30
+HRP_S[FW-B]
+return
+14:02:13  2026/10/30
+HRP_S<FW-B>

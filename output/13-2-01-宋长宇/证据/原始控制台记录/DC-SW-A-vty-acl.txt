@@ -1,0 +1,17 @@
+system-view
+Enter system view, return user view with Ctrl+Z.
+[DC-SW-A]
+acl number 2001
+[DC-SW-A-acl-basic-2001]
+rule 5 permit source 10.162.120.20 0
+[DC-SW-A-acl-basic-2001]
+rule 10 deny
+[DC-SW-A-acl-basic-2001]
+quit
+[DC-SW-A]
+user-interface vty 0 4
+[DC-SW-A-ui-vty0-4]
+acl 2001 inbound
+[DC-SW-A-ui-vty0-4]
+return
+<DC-SW-A>

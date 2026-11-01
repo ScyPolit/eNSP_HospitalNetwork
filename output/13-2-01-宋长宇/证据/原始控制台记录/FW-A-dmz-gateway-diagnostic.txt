@@ -1,0 +1,25 @@
+system-view
+15:44:12  2026/10/30
+Enter system view, return user view with Ctrl+Z.
+HRP_M[FW-A]
+policy interzone local dmz inbound
+15:44:12  2026/10/30
+HRP_M[FW-A-policy-interzone-local-dmz-inbound]
+policy 1
+15:44:12  2026/10/30
+HRP_M[FW-A-policy-interzone-local-dmz-inbound-1]
+policy source 10.162.108.10 0
+15:44:12  2026/10/30
+HRP_M[FW-A-policy-interzone-local-dmz-inbound-1]
+policy destination 10.162.108.2  [1D0
+15:44:12  2026/10/30
+HRP_M[FW-A-policy-interzone-local-dmz-inbound-1]
+policy service service-set icmp
+15:44:12  2026/10/30
+HRP_M[FW-A-policy-interzone-local-dmz-inbound-1]
+action permit
+15:44:12  2026/10/30
+HRP_M[FW-A-policy-interzone-local-dmz-inbound-1]
+return
+15:44:12  2026/10/30
+HRP_M<FW-A>

@@ -1,0 +1,10 @@
+system-view
+15:07:31  2026/10/30
+Enter system view, return user view with Ctrl+Z.
+HRP_S[FW-B]
+vrrp virtual-ip ping enable
+15:07:31  2026/10/30
+HRP_S[FW-B]
+return
+15:07:31  2026/10/30
+HRP_S<FW-B>

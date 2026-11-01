@@ -1,0 +1,39 @@
+system-view
+Enter system view, return user view with Ctrl+Z.
+[ISP-R1]
+[ISP-R1]
+undo ip route-static 12.1.1.16 28 12.1.1.1
+[ISP-R1]
+[ISP-R1]
+ip route-static 12.1.1.16 28 GigabitEthernet0/0/0 12.1.1.1
+[ISP-R1]
+[ISP-R1]
+undo arp static 12.1.1.20
+[ISP-R1]
+[ISP-R1]
+return
+<ISP-R1>
+<ISP-R1>
+display ip routing-table protocol static
+Route Flags: R - relay, D - download to fib
+------------------------------------------------------------------------------
+Public routing table : Static
+         Destinations : 3        Routes : 3        Configured Routes : 3
+
+Static routing table status : <Active>
+         Destinations : 1        Routes : 1
+
+Destination/Mask    Proto   Pre  Cost      Flags NextHop         Interface
+
+      12.1.1.16/28  Static  60   0           D   12.1.1.1        GigabitEthernet0/0/0
+
+Static routing table status : <Inactive>
+         Destinations : 2        Routes : 2
+
+Destination/Mask    Proto   Pre  Cost      Flags NextHop         Interface
+
+       12.1.1.8/29  Static  60   0          R    12.1.1.1        GigabitEthernet0/0/0
+     12.1.1.100/32  Static  60   0          R    12.1.1.1        GigabitEthernet0/0/0
+
+<ISP-R1>
+<ISP-R1>

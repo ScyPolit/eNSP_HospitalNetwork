@@ -1,0 +1,15 @@
+system-view
+Enter system view, return user view with Ctrl+Z.
+[AGG-BRANCH]
+undo traffic-filter vlan 50 inbound acl 3050
+[AGG-BRANCH]
+acl 3050
+[AGG-BRANCH-acl-adv-3050]
+rule 8 permit ip source 10.162.121.0 0.0.0.255 destinat [1Dion 172.20.1.0 0.0.0.255
+[AGG-BRANCH-acl-adv-3050]
+quit
+[AGG-BRANCH]
+traffic-filter vlan 50 inbound acl 3050
+[AGG-BRANCH]
+return
+<AGG-BRANCH>

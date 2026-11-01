@@ -1,0 +1,17 @@
+system-view
+Enter system view, return user view with Ctrl+Z.
+[AGG-IOT]
+acl number 2001
+[AGG-IOT-acl-basic-2001]
+rule 5 permit source 10.162.120.20 0
+[AGG-IOT-acl-basic-2001]
+rule 10 deny
+[AGG-IOT-acl-basic-2001]
+quit
+[AGG-IOT]
+user-interface vty 0 4
+[AGG-IOT-ui-vty0-4]
+acl 2001 inbound
+[AGG-IOT-ui-vty0-4]
+return
+<AGG-IOT>

@@ -1,0 +1,31 @@
+system-view
+15:09:57  2026/10/30
+Enter system view, return user view with Ctrl+Z.
+HRP_M[FW-A]
+policy interzone local medical inbound
+15:09:57  2026/10/30
+HRP_M[FW-A-policy-interzone-local-medical-inbound]
+policy 1
+15:09:57  2026/10/30
+HRP_M[FW-A-policy-interzone-local-medical-inbound-1]
+policy source 192.0.2.254 0
+15:09:57  2026/10/30
+HRP_M[FW-A-policy-interzone-local-medical-inbound-1]
+policy destination 192.0.2.1 [1D 0
+15:09:57  2026/10/30
+HRP_M[FW-A-policy-interzone-local-medical-inbound-1]
+policy service service-set i [1Dcmp
+15:09:57  2026/10/30
+HRP_M[FW-A-policy-interzone-local-medical-inbound-1]
+action permit
+15:09:57  2026/10/30
+HRP_M[FW-A-policy-interzone-local-medical-inbound-1]
+quit
+15:09:57  2026/10/30
+HRP_M[FW-A-policy-interzone-local-medical-inbound]
+quit
+15:09:57  2026/10/30
+HRP_M[FW-A]
+return
+15:09:57  2026/10/30
+HRP_M<FW-A>

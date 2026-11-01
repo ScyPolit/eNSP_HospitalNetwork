@@ -1,0 +1,38 @@
+system-view
+Enter system view, return user view with Ctrl+Z.
+[Huawei]
+undo info-center enable
+Info: Information center is disabled.
+[Huawei]
+sysname DMZ-SW
+[DMZ-SW]
+stp mode mstp
+[DMZ-SW]
+vlan 70
+[DMZ-SW-vlan70]
+interface GigabitEthernet0/0/1
+[DMZ-SW-GigabitEthernet0/0/1]
+port link-type access
+[DMZ-SW-GigabitEthernet0/0/1]
+port default vlan 70
+[DMZ-SW-GigabitEthernet0/0/1]
+quit
+[DMZ-SW]
+interface GigabitEthernet0/0/23
+[DMZ-SW-GigabitEthernet0/0/23]
+port link-type access
+[DMZ-SW-GigabitEthernet0/0/23]
+port default vlan 70
+[DMZ-SW-GigabitEthernet0/0/23]
+quit
+[DMZ-SW]
+interface GigabitEthernet0/0/24
+[DMZ-SW-GigabitEthernet0/0/24]
+port link-type access
+[DMZ-SW-GigabitEthernet0/0/24]
+port default vlan 70
+[DMZ-SW-GigabitEthernet0/0/24]
+quit
+[DMZ-SW]
+return
+<DMZ-SW>

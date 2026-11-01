@@ -1,0 +1,11 @@
+system-view
+14:01:40  2026/10/30
+Enter system view, return user view with Ctrl+Z.
+HRP_M[FW-A]
+hrp slave config
+                            ^
+Error: Incomplete command found at '^' position.
+HRP_M[FW-A]
+return
+14:01:41  2026/10/30
+HRP_M<FW-A>

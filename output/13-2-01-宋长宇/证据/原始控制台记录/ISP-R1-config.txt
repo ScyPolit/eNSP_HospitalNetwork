@@ -1,0 +1,23 @@
+screen-length 0 temporary
+Error: The type of the included user interface must be VTY.
+<Huawei>
+
+<Huawei>
+system-view
+Enter system view, return user view with Ctrl+Z.
+[Huawei]
+
+[Huawei]
+undo info-center enable
+Info: Information center is disabled.
+[Huawei]
+
+[Huawei]
+sysname ISP-R1
+[ISP-R1]
+
+[ISP-R1]
+interface GigabitEthernet0/0/0
+[ISP-R1-GigabitEthernet0/0/0]
+
+[ISP-R1-GigabitEthernet0/0/0]

@@ -1,0 +1,56 @@
+system-view
+undo info-center enable
+sysname AGG-BRANCH
+stp mode mstp
+dhcp enable
+vlan batch 50 1107 1207
+interface GigabitEthernet0/0/23
+port link-type access
+port default vlan 1107
+quit
+interface Vlanif1107
+ip address 10.162.99.122 255.255.255.252
+quit
+interface GigabitEthernet0/0/24
+port link-type access
+port default vlan 1207
+quit
+interface Vlanif1207
+ip address 10.162.99.150 255.255.255.252
+quit
+interface Vlanif50
+ip address 10.162.105.1 255.255.255.0
+quit
+interface Vlanif50
+dhcp select interface
+dhcp server excluded-ip-address 10.162.105.2 10.162.105.49
+quit
+interface Eth-Trunk1
+mode lacp-static
+port link-type trunk
+port trunk allow-pass vlan 50
+quit
+interface GigabitEthernet0/0/1
+eth-trunk 1
+quit
+interface GigabitEthernet0/0/2
+eth-trunk 1
+quit
+interface GigabitEthernet0/0/3
+port link-type access
+port default vlan 50
+quit
+ip route-static 10.162.121.0 24 10.162.105.20
+ospf 1 router-id 10.255.254.7
+area 0
+network 10.162.99.120 0.0.0.3
+network 10.162.99.148 0.0.0.3
+quit
+area 50
+network 10.162.105.0 0.0.0.255
+quit
+quit
+ospf 1
+import-route static
+quit
+return

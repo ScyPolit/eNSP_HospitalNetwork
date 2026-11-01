@@ -1,0 +1,93 @@
+﻿序号,源设备,源系统标识,源接口,目的设备,目的系统标识,目的接口,链路用途
+1,主运营商路由器,ISP-R1,GE0/0/1,主公网测试终端,PUBLIC-WEB,GE0/0/1,主公网测试
+2,备运营商路由器,ISP-R2,GE0/0/1,备公网测试终端,PUBLIC-BACKUP,GE0/0/1,备用公网测试
+3,医疗专线路由器,HEALTH-R,GE0/0/1,医疗专线终端,HEALTH-PC,GE0/0/1,医疗专线外部网络
+4,主运营商路由器,ISP-R1,GE0/0/0,外联隔离交换机,WAN-L2,GE0/0/1,外联 VLAN 901
+5,备运营商路由器,ISP-R2,GE0/0/0,外联隔离交换机,WAN-L2,GE0/0/2,外联 VLAN 902
+6,医疗专线路由器,HEALTH-R,GE0/0/0,外联隔离交换机,WAN-L2,GE0/0/3,外联 VLAN 903
+7,主防火墙,FW-A,GE0/0/0,外联隔离交换机,WAN-L2,GE0/0/4,外联 901
+8,主防火墙,FW-A,GE0/0/1,外联隔离交换机,WAN-L2,GE0/0/5,外联 902
+9,主防火墙,FW-A,GE0/0/2,外联隔离交换机,WAN-L2,GE0/0/6,外联 903
+10,备防火墙,FW-B,GE0/0/0,外联隔离交换机,WAN-L2,GE0/0/7,外联 901
+11,备防火墙,FW-B,GE0/0/1,外联隔离交换机,WAN-L2,GE0/0/8,外联 902
+12,备防火墙,FW-B,GE0/0/2,外联隔离交换机,WAN-L2,GE0/0/9,外联 903
+13,主防火墙,FW-A,GE0/0/6,备防火墙,FW-B,GE0/0/6,双机热备心跳
+14,主防火墙,FW-A,GE0/0/3,核心交换机一,CORE-SW1,GE0/0/1,信任区 VLAN 900
+15,备防火墙,FW-B,GE0/0/3,核心交换机二,CORE-SW2,GE0/0/1,信任区 VLAN 900
+16,主防火墙,FW-A,GE0/0/4,核心交换机二,CORE-SW2,GE0/0/2,信任区 VLAN 901
+17,备防火墙,FW-B,GE0/0/4,核心交换机一,CORE-SW1,GE0/0/2,信任区 VLAN 901
+18,核心交换机一,CORE-SW1,GE0/0/23,核心交换机二,CORE-SW2,GE0/0/23,链路聚合 成员 1
+19,核心交换机一,CORE-SW1,GE0/0/24,核心交换机二,CORE-SW2,GE0/0/24,链路聚合 成员 2
+20,主防火墙,FW-A,GE0/0/5,非军事区交换机,DMZ-SW,GE0/0/23,非军事区 VLAN 70
+21,备防火墙,FW-B,GE0/0/5,非军事区交换机,DMZ-SW,GE0/0/24,非军事区备用接入
+22,非军事区交换机,DMZ-SW,GE0/0/1,非军事区服务终端,DMZ-WEB,GE0/0/1,非军事区服务终端
+23,核心交换机一,CORE-SW1,GE0/0/3,门急诊汇聚,AGG-CLINIC,GE0/0/23,区域零点到点 VLAN 1101
+24,核心交换机二,CORE-SW2,GE0/0/3,门急诊汇聚,AGG-CLINIC,GE0/0/24,区域零点到点 VLAN 1201
+25,门急诊汇聚,AGG-CLINIC,GE0/0/1,门诊接入,ACC-OPD,GE0/0/23,链路聚合 10 成员1
+26,门急诊汇聚,AGG-CLINIC,GE0/0/2,门诊接入,ACC-OPD,GE0/0/24,链路聚合 10 成员2
+27,门诊接入,ACC-OPD,GE0/0/1,门诊终端,OPD-PC,GE0/0/1,业务接入 VLAN 10
+28,门急诊汇聚,AGG-CLINIC,GE0/0/3,急诊接入,ACC-ER,GE0/0/23,链路聚合 80 成员1
+29,门急诊汇聚,AGG-CLINIC,GE0/0/4,急诊接入,ACC-ER,GE0/0/24,链路聚合 80 成员2
+30,急诊接入,ACC-ER,GE0/0/1,急诊终端,ER-PC,GE0/0/1,业务接入 VLAN 80
+31,门急诊汇聚,AGG-CLINIC,GE0/0/5,药房接入,ACC-PHARM,GE0/0/23,链路聚合 90 成员1
+32,门急诊汇聚,AGG-CLINIC,GE0/0/6,药房接入,ACC-PHARM,GE0/0/24,链路聚合 90 成员2
+33,药房接入,ACC-PHARM,GE0/0/1,药房终端,PHARM-PC,GE0/0/1,业务接入 VLAN 90
+34,核心交换机一,CORE-SW1,GE0/0/4,住院部汇聚,AGG-INPATIENT,GE0/0/23,区域零点到点 VLAN 1102
+35,核心交换机二,CORE-SW2,GE0/0/4,住院部汇聚,AGG-INPATIENT,GE0/0/24,区域零点到点 VLAN 1202
+36,住院部汇聚,AGG-INPATIENT,GE0/0/1,病区一接入,ACC-WARD-A,GE0/0/23,链路聚合 20 成员1
+37,住院部汇聚,AGG-INPATIENT,GE0/0/2,病区一接入,ACC-WARD-A,GE0/0/24,链路聚合 20 成员2
+38,病区一接入,ACC-WARD-A,GE0/0/1,病区一终端,WARD-A-PC,GE0/0/1,业务接入 VLAN 20
+39,住院部汇聚,AGG-INPATIENT,GE0/0/3,病区二接入,ACC-WARD-B,GE0/0/23,链路聚合 20 成员1
+40,住院部汇聚,AGG-INPATIENT,GE0/0/4,病区二接入,ACC-WARD-B,GE0/0/24,链路聚合 20 成员2
+41,病区二接入,ACC-WARD-B,GE0/0/1,病区二终端,WARD-B-PC,GE0/0/1,业务接入 VLAN 20
+42,核心交换机一,CORE-SW1,GE0/0/5,医技科汇聚,AGG-MEDTECH,GE0/0/23,区域零点到点 VLAN 1103
+43,核心交换机二,CORE-SW2,GE0/0/5,医技科汇聚,AGG-MEDTECH,GE0/0/24,区域零点到点 VLAN 1203
+44,医技科汇聚,AGG-MEDTECH,GE0/0/1,影像科接入,ACC-PACS,GE0/0/23,链路聚合 30 成员1
+45,医技科汇聚,AGG-MEDTECH,GE0/0/2,影像科接入,ACC-PACS,GE0/0/24,链路聚合 30 成员2
+46,影像科接入,ACC-PACS,GE0/0/1,影像科终端,PACS-PC,GE0/0/1,业务接入 VLAN 30
+47,医技科汇聚,AGG-MEDTECH,GE0/0/3,检验科接入,ACC-LAB,GE0/0/23,链路聚合 30 成员1
+48,医技科汇聚,AGG-MEDTECH,GE0/0/4,检验科接入,ACC-LAB,GE0/0/24,链路聚合 30 成员2
+49,检验科接入,ACC-LAB,GE0/0/1,检验科终端,LAB-PC,GE0/0/1,业务接入 VLAN 30
+50,核心交换机一,CORE-SW1,GE0/0/6,数据中心汇聚,AGG-DC,GE0/0/23,区域零点到点 VLAN 1104
+51,核心交换机二,CORE-SW2,GE0/0/6,数据中心汇聚,AGG-DC,GE0/0/24,区域零点到点 VLAN 1204
+52,数据中心汇聚,AGG-DC,GE0/0/1,业务服务器接入,DC-SW-A,GE0/0/23,链路聚合 60 成员1
+53,数据中心汇聚,AGG-DC,GE0/0/2,业务服务器接入,DC-SW-A,GE0/0/24,链路聚合 60 成员2
+54,业务服务器接入,DC-SW-A,GE0/0/1,医院业务服务终端,HIS-SRV,GE0/0/1,业务接入 VLAN 60
+55,数据中心汇聚,AGG-DC,GE0/0/3,影像服务器接入,DC-SW-B,GE0/0/23,链路聚合 60 成员1
+56,数据中心汇聚,AGG-DC,GE0/0/4,影像服务器接入,DC-SW-B,GE0/0/24,链路聚合 60 成员2
+57,影像服务器接入,DC-SW-B,GE0/0/1,影像服务终端,PACS-SRV,GE0/0/1,业务接入 VLAN 60
+58,数据中心汇聚,AGG-DC,GE0/0/5,备份服务器接入,BACKUP-SW,GE0/0/23,链路聚合 61 成员1
+59,数据中心汇聚,AGG-DC,GE0/0/6,备份服务器接入,BACKUP-SW,GE0/0/24,链路聚合 61 成员2
+60,备份服务器接入,BACKUP-SW,GE0/0/1,备份服务终端,BACKUP-SRV,GE0/0/1,业务接入 VLAN 61
+61,核心交换机一,CORE-SW1,GE0/0/7,办公运维汇聚,AGG-OFFICE,GE0/0/23,区域零点到点 VLAN 1105
+62,核心交换机二,CORE-SW2,GE0/0/7,办公运维汇聚,AGG-OFFICE,GE0/0/24,区域零点到点 VLAN 1205
+63,办公运维汇聚,AGG-OFFICE,GE0/0/1,行政接入,ACC-ADMIN,GE0/0/23,链路聚合 40 成员1
+64,办公运维汇聚,AGG-OFFICE,GE0/0/2,行政接入,ACC-ADMIN,GE0/0/24,链路聚合 40 成员2
+65,行政接入,ACC-ADMIN,GE0/0/1,行政终端,ADMIN-PC,GE0/0/1,业务接入 VLAN 40
+66,办公运维汇聚,AGG-OFFICE,GE0/0/3,财务接入,ACC-FIN,GE0/0/23,链路聚合 40 成员1
+67,办公运维汇聚,AGG-OFFICE,GE0/0/4,财务接入,ACC-FIN,GE0/0/24,链路聚合 40 成员2
+68,财务接入,ACC-FIN,GE0/0/1,财务终端,FIN-PC,GE0/0/1,业务接入 VLAN 40
+69,办公运维汇聚,AGG-OFFICE,GE0/0/5,运维接入,NMS-SW,GE0/0/23,链路聚合 160 成员1
+70,办公运维汇聚,AGG-OFFICE,GE0/0/6,运维接入,NMS-SW,GE0/0/24,链路聚合 160 成员2
+71,运维接入,NMS-SW,GE0/0/1,网管终端,NMS-PC,GE0/0/1,业务接入 VLAN 160
+72,运维接入,NMS-SW,GE0/0/2,运维堡垒机,BASTION,GE0/0/1,运维堡垒机接入
+73,核心交换机一,CORE-SW1,GE0/0/8,物联无线汇聚,AGG-IOT,GE0/0/23,区域零点到点 VLAN 1106
+74,核心交换机二,CORE-SW2,GE0/0/8,物联无线汇聚,AGG-IOT,GE0/0/24,区域零点到点 VLAN 1206
+75,物联无线汇聚,AGG-IOT,GE0/0/1,医疗物联接入,ACC-IOT,GE0/0/23,链路聚合 100 成员1
+76,物联无线汇聚,AGG-IOT,GE0/0/2,医疗物联接入,ACC-IOT,GE0/0/24,链路聚合 100 成员2
+77,医疗物联接入,ACC-IOT,GE0/0/1,医疗物联终端,IOT-PC,GE0/0/1,业务接入 VLAN 100
+78,物联无线汇聚,AGG-IOT,GE0/0/3,视频监控接入,ACC-CCTV,GE0/0/23,链路聚合 110 成员1
+79,物联无线汇聚,AGG-IOT,GE0/0/4,视频监控接入,ACC-CCTV,GE0/0/24,链路聚合 110 成员2
+80,视频监控接入,ACC-CCTV,GE0/0/1,视频监控终端,CCTV-PC,GE0/0/1,业务接入 VLAN 110
+81,物联无线汇聚,AGG-IOT,GE0/0/5,无线网络接入,ACC-WLAN,GE0/0/23,链路聚合 120 成员1
+82,物联无线汇聚,AGG-IOT,GE0/0/6,无线网络接入,ACC-WLAN,GE0/0/24,链路聚合 120 成员2
+83,无线网络接入,ACC-WLAN,GE0/0/1,员工无线终端,STAFF-PC,GE0/0/1,业务接入 VLAN 120
+84,无线网络接入,ACC-WLAN,GE0/0/2,访客无线终端,GUEST-PC,GE0/0/1,访客接入 VLAN 140
+85,核心交换机一,CORE-SW1,GE0/0/9,分院汇聚,AGG-BRANCH,GE0/0/23,区域零点到点 VLAN 1107
+86,核心交换机二,CORE-SW2,GE0/0/9,分院汇聚,AGG-BRANCH,GE0/0/24,区域零点到点 VLAN 1207
+87,分院汇聚,AGG-BRANCH,GE0/0/1,分院接入,BRANCH-SW,GE0/0/23,链路聚合 50 成员1
+88,分院汇聚,AGG-BRANCH,GE0/0/2,分院接入,BRANCH-SW,GE0/0/24,链路聚合 50 成员2
+89,分院接入,BRANCH-SW,GE0/0/1,分院终端,BRANCH-PC,GE0/0/1,业务接入 VLAN 50
+90,分院汇聚,AGG-BRANCH,GE0/0/3,远程医疗网关,TELEMED-GW,GE0/0/0,远程医疗院内侧 VLAN50
+91,远程医疗网关,TELEMED-GW,GE0/0/1,远程会诊终端,TELEMED-PC,GE0/0/1,远程会诊局域网
+92,医疗专线路由器,HEALTH-R,GE0/0/2,远程医疗网关,TELEMED-GW,GE0/0/2,加密通道底层 198.18.0.0/30

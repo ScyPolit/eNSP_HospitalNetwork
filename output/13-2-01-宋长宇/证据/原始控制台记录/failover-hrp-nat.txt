@@ -1,0 +1,95 @@
+display hrp state
+15:28:26  2026/10/30
+ The firewall's config state is: MASTER
+
+ Current state of virtual routers configured as slave:
+             GigabitEthernet0/0/5    vrid   6 : master
+             GigabitEthernet0/0/4    vrid   5 : master
+             GigabitEthernet0/0/3    vrid   4 : master (peer down)
+             GigabitEthernet0/0/2    vrid   3 : master
+             GigabitEthernet0/0/1    vrid   2 : master
+             GigabitEthernet0/0/0    vrid   1 : master
+
+HRP_M<FW-B>
+display firewall session table verbose
+15:28:26  2026/10/30
+ Current Total Sessions : 13
+  icmp  VPN:public --> public
+  Zone: trust--> medical  TTL: 00:00:20  Left: 00:00:00
+  Interface: GigabitEthernet0/0/2  NextHop: 192.0.2.254  MAC: 00-e0-fc-37-24-b4
+  <--packets:1 bytes:48   -->packets:2 bytes:96
+  10.162.121.1:3247-->172.20.1.1:2048
+
+  icmp  VPN:public --> public
+  Zone: trust--> medical  TTL: 00:00:20  Left: 00:00:03
+  Interface: GigabitEthernet0/0/2  NextHop: 192.0.2.254  MAC: 00-e0-fc-37-24-b4
+  <--packets:2 bytes:96   -->packets:2 bytes:96
+  10.162.121.1:3503-->172.20.1.1:2048
+
+  icmp  VPN:public --> public
+  Zone: trust--> untrust  TTL: 00:00:20  Left: 00:00:02
+  Interface: GigabitEthernet0/0/0  NextHop: 12.1.1.254  MAC: 00-e0-fc-a2-03-3b
+  <--packets:0 bytes:0   -->packets:1 bytes:60
+  10.162.101.10:2375[12.1.1.21:2051]-->203.0.113.10:2048
+
+  icmp  VPN:public --> public
+  Zone: trust--> medical  TTL: 00:00:20  Left: 00:00:08
+  Interface: GigabitEthernet0/0/2  NextHop: 192.0.2.254  MAC: 00-e0-fc-37-24-b4
+  <--packets:2 bytes:96   -->packets:2 bytes:96
+  10.162.121.1:3759-->172.20.1.1:2048
+
+  icmp  VPN:public --> public
+  Zone: trust--> untrust  TTL: 00:00:20  Left: 00:00:04
+  Interface: GigabitEthernet0/0/0  NextHop: 12.1.1.254  MAC: 00-e0-fc-a2-03-3b
+  <--packets:1 bytes:60   -->packets:1 bytes:60
+  10.162.101.10:2887[12.1.1.21:2052]-->203.0.113.10:2048
+
+  icmp  VPN:public --> public
+  Zone: trust--> untrust  TTL: 00:00:20  Left: 00:00:05
+  Interface: GigabitEthernet0/0/0  NextHop: 12.1.1.254  MAC: 00-e0-fc-a2-03-3b
+  <--packets:1 bytes:60   -->packets:1 bytes:60
+  10.162.101.10:3143[12.1.1.21:2053]-->203.0.113.10:2048
+
+  icmp  VPN:public --> public
+  Zone: trust--> untrust  TTL: 00:00:20  Left: 00:00:06
+  Interface: GigabitEthernet0/0/0  NextHop: 12.1.1.254  MAC: 00-e0-fc-a2-03-3b
+  <--packets:1 bytes:60   -->packets:1 bytes:60
+  10.162.101.10:3399[12.1.1.21:2054]-->203.0.113.10:2048
+
+  icmp  VPN:public --> public
+  Zone: trust--> untrust  TTL: 00:00:20  Left: 00:00:07
+  Interface: GigabitEthernet0/0/0  NextHop: 12.1.1.254  MAC: 00-e0-fc-a2-03-3b
+  <--packets:1 bytes:60   -->packets:1 bytes:60
+  10.162.101.10:3655[12.1.1.21:2055]-->203.0.113.10:2048
+
+  icmp  VPN:public --> public
+  Zone: trust--> medical  TTL: 00:00:20  Left: 00:00:13
+  Interface: GigabitEthernet0/0/2  NextHop: 192.0.2.254  MAC: 00-e0-fc-37-24-b4
+  <--packets:2 bytes:96   -->packets:2 bytes:96
+  10.162.121.1:4015-->172.20.1.1:2048
+
+  icmp  VPN:public --> public
+  Zone: trust--> medical  TTL: 00:00:20  Left: 00:00:18
+  Interface: GigabitEthernet0/0/2  NextHop: 192.0.2.254  MAC: 00-e0-fc-37-24-b4
+  <--packets:2 bytes:96   -->packets:2 bytes:96
+  10.162.121.1:4271-->172.20.1.1:2048
+
+  icmp  VPN:public --> public
+  Zone: trust--> untrust  TTL: 00:00:20  Left: 00:00:14
+  Interface: GigabitEthernet0/0/0  NextHop: 12.1.1.254  MAC: 00-e0-fc-a2-03-3b
+  <--packets:1 bytes:60   -->packets:1 bytes:60
+  10.162.101.10:5447[12.1.1.21:2056]-->203.0.113.10:2048
+
+  icmp  VPN:public --> public
+  Zone: trust--> untrust  TTL: 00:00:20  Left: 00:00:15
+  Interface: GigabitEthernet0/0/0  NextHop: 12.1.1.254  MAC: 00-e0-fc-a2-03-3b
+  <--packets:1 bytes:60   -->packets:1 bytes:60
+  10.162.101.10:5703[12.1.1.21:2057]-->203.0.113.10:2048
+
+  icmp  VPN:public --> public
+  Zone: trust--> medical  TTL: 00:00:20  Left: 00:00:19
+  Interface: GigabitEthernet0/0/2  NextHop: 192.0.2.254  MAC: 00-e0-fc-37-24-b4
+  <--packets:1 bytes:48   -->packets:1 bytes:48
+  10.162.121.1:4527-->172.20.1.1:2048
+
+HRP_M<FW-B>

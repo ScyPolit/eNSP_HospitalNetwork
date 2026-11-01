@@ -1,0 +1,33 @@
+screen-length 0 temporary
+Error: The type of the included user interface must be VTY.
+<Huawei>
+
+<Huawei>
+system-view
+Enter system view, return user view with Ctrl+Z.
+[Huawei]
+
+[Huawei]
+undo info-center enable
+Info: Information center is disabled.
+[Huawei]
+
+[Huawei]
+sysname HEALTH-R
+[HEALTH-R]
+
+[HEALTH-R]
+interface GigabitEthernet0/0/0
+[HEALTH-R-GigabitEthernet0/0/0]
+
+[HEALTH-R-GigabitEthernet0/0/0]
+ip address 192.0.2.254 255.255.255.0
+[HEALTH-R-GigabitEthernet0/0/0]
+
+[HEALTH-R-GigabitEthernet0/0/0]
+quit
+[HEALTH-R]
+
+[HEALTH-R]
+interface GigabitEthernet0/0/1
+[HEALTH-R-GigabitEthernet0/0/1]

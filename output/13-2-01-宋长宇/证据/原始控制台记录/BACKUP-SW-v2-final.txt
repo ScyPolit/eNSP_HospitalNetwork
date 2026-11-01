@@ -1,0 +1,53 @@
+system-view
+Enter system view, return user view with Ctrl+Z.
+[Huawei]
+undo info-center enable
+Info: Information center is disabled.
+[Huawei]
+sysname BACKUP-SW
+[BACKUP-SW]
+stp mode mstp
+[BACKUP-SW]
+vlan batch 61
+Info: This operation may take a few seconds. Please wait for a moment...done.
+[BACKUP-SW]
+interface Eth-Trunk1
+[BACKUP-SW-Eth-Trunk1]
+mode lacp-static
+[BACKUP-SW-Eth-Trunk1]
+port link-type trunk
+[BACKUP-SW-Eth-Trunk1]
+port trunk allow-pass vlan 61
+[BACKUP-SW-Eth-Trunk1]
+quit
+[BACKUP-SW]
+interface GigabitEthernet0/0/23
+[BACKUP-SW-GigabitEthernet0/0/23]
+eth-trunk 1
+Info: This operation may take a few seconds. Please wait for a moment...done.
+[BACKUP-SW-GigabitEthernet0/0/23]
+quit
+[BACKUP-SW]
+interface GigabitEthernet0/0/24
+[BACKUP-SW-GigabitEthernet0/0/24]
+eth-trunk 1
+Info: This operation may take a few seconds. Please wait for a moment...done.
+[BACKUP-SW-GigabitEthernet0/0/24]
+quit
+[BACKUP-SW]
+interface GigabitEthernet0/0/1
+[BACKUP-SW-GigabitEthernet0/0/1]
+port link-type access
+[BACKUP-SW-GigabitEthernet0/0/1]
+port default vlan 61
+[BACKUP-SW-GigabitEthernet0/0/1]
+quit
+[BACKUP-SW]
+interface GigabitEthernet0/0/1
+[BACKUP-SW-GigabitEthernet0/0/1]
+stp edged-port enable
+[BACKUP-SW-GigabitEthernet0/0/1]
+quit
+[BACKUP-SW]
+return
+<BACKUP-SW>

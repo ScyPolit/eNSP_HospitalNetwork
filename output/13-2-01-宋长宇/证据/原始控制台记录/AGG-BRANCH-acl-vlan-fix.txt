@@ -1,0 +1,9 @@
+system-view
+Enter system view, return user view with Ctrl+Z.
+[AGG-BRANCH]
+undo traffic-filter inbound acl 3050
+[AGG-BRANCH]
+traffic-filter vlan 50 inbound acl 3050
+[AGG-BRANCH]
+return
+<AGG-BRANCH>

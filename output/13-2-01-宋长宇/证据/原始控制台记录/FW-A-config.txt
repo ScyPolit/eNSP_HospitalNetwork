@@ -1,0 +1,230 @@
+system-view
+13:33:31  2026/10/30
+Enter system view, return user view with Ctrl+Z.
+[FW-A]
+undo info-center enable
+13:33:31  2026/10/30
+Info: Information center is disabled
+
+[FW-A]
+sysname FW-A
+13:33:31  2026/10/30
+[FW-A]
+interface GigabitEthernet0/0/0
+13:33:31  2026/10/30
+[FW-A-GigabitEthernet0/0/0]
+ip address 12.1.1.2 255.255.255.0
+13:33:31  2026/10/30
+Warning: Address already exists!
+
+[FW-A-GigabitEthernet0/0/0]
+undo shutdown
+13:33:31  2026/10/30
+Info: Interface GigabitEthernet0/0/0 is not shutdown.
+[FW-A-GigabitEthernet0/0/0]
+quit
+13:33:31  2026/10/30
+[FW-A]
+interface GigabitEthernet0/0/1
+13:33:31  2026/10/30
+[FW-A-GigabitEthernet0/0/1]
+ip address 13.1.1.2 255.255.255.0
+13:33:31  2026/10/30
+Warning: Address already exists!
+
+[FW-A-GigabitEthernet0/0/1]
+undo shutdown
+13:33:31  2026/10/30
+Info: Interface GigabitEthernet0/0/1 is not shutdown.
+[FW-A-GigabitEthernet0/0/1]
+quit
+13:33:31  2026/10/30
+[FW-A]
+interface GigabitEthernet0/0/2
+13:33:31  2026/10/30
+[FW-A-GigabitEthernet0/0/2]
+ip address 192.0.2.2 255.255.255.0
+13:33:31  2026/10/30
+Warning: Address already exists!
+
+[FW-A-GigabitEthernet0/0/2]
+undo shutdown
+13:33:31  2026/10/30
+Info: Interface GigabitEthernet0/0/2 is not shutdown.
+[FW-A-GigabitEthernet0/0/2]
+quit
+13:33:31  2026/10/30
+[FW-A]
+interface GigabitEthernet0/0/3
+13:33:31  2026/10/30
+[FW-A-GigabitEthernet0/0/3]
+ip address 10.162.99.2 255.255.255.224
+13:33:31  2026/10/30
+Warning: Address already exists!
+
+[FW-A-GigabitEthernet0/0/3]
+undo shutdown
+13:33:31  2026/10/30
+Info: Interface GigabitEthernet0/0/3 is not shutdown.
+[FW-A-GigabitEthernet0/0/3]
+quit
+13:33:31  2026/10/30
+[FW-A]
+interface GigabitEthernet0/0/4
+13:33:31  2026/10/30
+[FW-A-GigabitEthernet0/0/4]
+ip address 10.162.99.34 255.255.255.224
+13:33:31  2026/10/30
+Warning: Address already exists!
+
+[FW-A-GigabitEthernet0/0/4]
+undo shutdown
+13:33:31  2026/10/30
+Info: Interface GigabitEthernet0/0/4 is not shutdown.
+[FW-A-GigabitEthernet0/0/4]
+quit
+13:33:31  2026/10/30
+[FW-A]
+interface GigabitEthernet0/0/5
+13:33:31  2026/10/30
+[FW-A-GigabitEthernet0/0/5]
+ip address 10.162.108.2 255.255.255.0
+13:33:31  2026/10/30
+Warning: Address already exists!
+
+[FW-A-GigabitEthernet0/0/5]
+undo shutdown
+13:33:31  2026/10/30
+Info: Interface GigabitEthernet0/0/5 is not shutdown.
+[FW-A-GigabitEthernet0/0/5]
+quit
+13:33:31  2026/10/30
+[FW-A]
+interface GigabitEthernet0/0/6
+13:33:31  2026/10/30
+[FW-A-GigabitEthernet0/0/6]
+ip address 172.31.255.1 255.255.255.252
+13:33:31  2026/10/30
+Warning: Address already exists!
+
+[FW-A-GigabitEthernet0/0/6]
+undo shutdown
+13:33:31  2026/10/30
+Info: Interface GigabitEthernet0/0/6 is not shutdown.
+[FW-A-GigabitEthernet0/0/6]
+quit
+13:33:31  2026/10/30
+[FW-A]
+firewall zone trust
+13:33:31  2026/10/30
+[FW-A-zone-trust]
+add interface GigabitEthernet0/0/3
+13:33:31  2026/10/30
+ Info: The interface has been added to trust security zone.
+[FW-A-zone-trust]
+add interface GigabitEthernet0/0/4
+13:33:31  2026/10/30
+ Info: The interface has been added to trust security zone.
+[FW-A-zone-trust]
+quit
+13:33:32  2026/10/30
+[FW-A]
+firewall zone untrust
+13:33:32  2026/10/30
+[FW-A-zone-untrust]
+add interface GigabitEthernet0/0/0
+13:33:32  2026/10/30
+ Info: The interface has been added to trust security zone.
+[FW-A-zone-untrust]
+add interface GigabitEthernet0/0/1
+13:33:32  2026/10/30
+ Info: The interface has been added to untrust security zone.
+[FW-A-zone-untrust]
+quit
+13:33:32  2026/10/30
+[FW-A]
+firewall zone dmz
+13:33:32  2026/10/30
+[FW-A-zone-dmz]
+add interface GigabitEthernet0/0/5
+13:33:32  2026/10/30
+ Info: The interface has been added to dmz security zone.
+[FW-A-zone-dmz]
+quit
+13:33:32  2026/10/30
+[FW-A]
+firewall zone name medical
+13:33:32  2026/10/30
+[FW-A-zone-medical]
+set priority 40
+13:33:32  2026/10/30
+ Error: The priority of zone has been set , please do not change it.
+[FW-A-zone-medical]
+add interface GigabitEthernet0/0/2
+13:33:32  2026/10/30
+ Info: The interface has been added to medical security zone.
+[FW-A-zone-medical]
+quit
+13:33:32  2026/10/30
+[FW-A]
+firewall zone name ha
+13:33:32  2026/10/30
+[FW-A-zone-ha]
+set priority 90
+13:33:32  2026/10/30
+ Error: The priority of zone has been set , please do not change it.
+[FW-A-zone-ha]
+add interface GigabitEthernet0/0/6
+13:33:32  2026/10/30
+ Info: The interface has been added to ha security zone.
+[FW-A-zone-ha]
+quit
+13:33:32  2026/10/30
+[FW-A]
+ip route-static 0.0.0.0 0.0.0.0 12.1.1.254
+13:33:32  2026/10/30
+Warning: Route already exists
+[FW-A]
+ip route-static 0.0.0.0 0.0.0.0 13.1.1.254 preference 100
+13:33:32  2026/10/30
+Warning: Route already exists
+[FW-A]
+ip route-static 172.20.1.0 24 192.0.2.254
+13:33:32  2026/10/30
+Warning: Route already exists
+[FW-A]
+ospf 1 router-id 10.255.255.1
+13:33:32  2026/10/30
+[FW-A-ospf-1]
+area 0
+13:33:32  2026/10/30
+[FW-A-ospf-1-area-0.0.0.0]
+network 10.162.99.0 0.0.0.63
+13:33:32  2026/10/30
+Warning: OSPF 1 Network has already been occupied by some process.
+[FW-A-ospf-1-area-0.0.0.0]
+network 10.162.108.0 0.0.0.255
+13:33:32  2026/10/30
+Warning: OSPF 1 Network has already been occupied by some process.
+[FW-A-ospf-1-area-0.0.0.0]
+quit
+13:33:32  2026/10/30
+[FW-A-ospf-1]
+quit
+13:33:32  2026/10/30
+[FW-A]
+ospf 1
+13:33:32  2026/10/30
+[FW-A-ospf-1]
+default-route-advertise
+13:33:32  2026/10/30
+[FW-A-ospf-1]
+import-route static
+13:33:32  2026/10/30
+[FW-A-ospf-1]
+quit
+13:33:32  2026/10/30
+[FW-A]
+return
+13:33:32  2026/10/30
+<FW-A>

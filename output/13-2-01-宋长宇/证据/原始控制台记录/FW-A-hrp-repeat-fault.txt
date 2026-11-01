@@ -1,0 +1,13 @@
+system-view
+15:27:52  2026/10/30
+Enter system view, return user view with Ctrl+Z.
+HRP_M[FW-A]
+interface GigabitEthernet0/0/3
+15:27:52  2026/10/30
+HRP_M[FW-A-GigabitEthernet0/0/3]
+shutdown
+15:27:52  2026/10/30
+HRP_M[FW-A-GigabitEthernet0/0/3]
+return
+15:27:52  2026/10/30
+HRP_M<FW-A>

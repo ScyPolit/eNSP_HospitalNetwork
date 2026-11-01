@@ -1,0 +1,25 @@
+system-view
+15:03:00  2026/10/30
+Enter system view, return user view with Ctrl+Z.
+HRP_S[FW-B]
+acl number 2001
+15:03:01  2026/10/30
+HRP_S[FW-B-acl-basic-2001]
+rule 5 permit source 10.162.120.20 0
+15:03:01  2026/10/30
+HRP_S[FW-B-acl-basic-2001]
+rule 10 deny
+15:03:01  2026/10/30
+HRP_S[FW-B-acl-basic-2001]
+quit
+15:03:01  2026/10/30
+HRP_S[FW-B]
+user-interface vty 0 4
+15:03:01  2026/10/30
+HRP_S[FW-B-ui-vty0-4]
+acl 2001 inbound
+15:03:01  2026/10/30
+HRP_S[FW-B-ui-vty0-4]
+return
+15:03:01  2026/10/30
+HRP_S<FW-B>

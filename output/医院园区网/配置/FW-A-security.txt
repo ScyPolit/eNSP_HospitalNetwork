@@ -1,0 +1,130 @@
+system-view
+policy interzone trust untrust outbound
+policy 1
+policy source 10.162.0.0 0.0.255.255
+action permit
+quit
+quit
+policy interzone dmz untrust inbound
+policy 1
+policy destination 10.162.108.10 0
+policy service service-set http
+action permit
+quit
+quit
+policy interzone dmz untrust outbound
+policy 1
+policy source 10.162.108.10 0
+policy service service-set dns
+action permit
+quit
+quit
+policy interzone trust medical outbound
+policy 1
+policy source 10.162.121.0 0.0.0.255
+policy destination 172.20.1.0 0.0.0.255
+action permit
+quit
+quit
+policy interzone trust medical inbound
+policy 1
+policy source 172.20.1.10 0
+policy destination 10.162.106.10 0
+policy service service-set https
+action permit
+quit
+quit
+policy interzone trust medical inbound
+policy 2
+policy source 172.20.1.10 0
+policy destination 10.162.106.10 0
+policy service service-set icmp
+action permit
+quit
+quit
+policy interzone trust medical inbound
+policy 3
+policy source 172.20.1.10 0
+policy destination 10.162.121.10 0
+action permit
+quit
+quit
+policy interzone trust dmz inbound
+policy 1
+policy source 10.162.108.10 0
+policy destination 10.162.106.10 0
+policy service service-set https
+action permit
+quit
+quit
+policy interzone trust dmz outbound
+policy 1
+policy source 10.162.0.0 0.0.255.255
+policy destination 10.162.108.10 0
+policy service service-set http
+action permit
+quit
+quit
+policy interzone local trust inbound
+policy 1
+policy service service-set ospf
+action permit
+quit
+quit
+policy interzone local trust inbound
+policy 2
+policy service service-set icmp
+action permit
+quit
+quit
+policy interzone local trust outbound
+policy 1
+policy service service-set ospf
+action permit
+quit
+quit
+policy interzone local trust outbound
+policy 2
+policy service service-set icmp
+action permit
+quit
+quit
+nat address-group 1 12.1.1.10 12.1.1.30
+nat address-group 2 13.1.1.10 13.1.1.30
+nat-policy interzone trust untrust outbound
+policy 1
+policy source 10.162.0.0 0.0.255.255
+policy egress-interface GigabitEthernet0/0/0
+action source-nat
+address-group 1
+quit
+policy 2
+policy source 10.162.0.0 0.0.255.255
+policy egress-interface GigabitEthernet0/0/1
+action source-nat
+address-group 2
+quit
+quit
+nat server 1 protocol tcp global 12.1.1.100 80 inside 10.162.108.10 80
+nat server 2 protocol tcp global 13.1.1.100 80 inside 10.162.108.10 80
+interface GigabitEthernet0/0/0
+vrrp vrid 1 virtual-ip 12.1.1.1 master
+quit
+interface GigabitEthernet0/0/1
+vrrp vrid 2 virtual-ip 13.1.1.1 master
+quit
+interface GigabitEthernet0/0/2
+vrrp vrid 3 virtual-ip 192.0.2.1 master
+quit
+interface GigabitEthernet0/0/3
+vrrp vrid 4 virtual-ip 10.162.99.1 master
+quit
+interface GigabitEthernet0/0/4
+vrrp vrid 5 virtual-ip 10.162.99.33 master
+quit
+interface GigabitEthernet0/0/5
+vrrp vrid 6 virtual-ip 10.162.108.1 master
+quit
+hrp interface GigabitEthernet0/0/6 remote 172.31.255.2
+hrp enable
+return

@@ -1,0 +1,126 @@
+system-view
+Enter system view, return user view with Ctrl+Z.
+[Huawei]
+undo info-center enable
+Info: Information center is disabled.
+[Huawei]
+sysname AGG-MEDTECH
+[AGG-MEDTECH]
+stp mode mstp
+[AGG-MEDTECH]
+dhcp enable
+Info: The operation may take a few seconds. Please wait for a moment.done.
+[AGG-MEDTECH]
+vlan batch 30 1103 1203
+Info: This operation may take a few seconds. Please wait for a moment...done.
+[AGG-MEDTECH]
+interface GigabitEthernet0/0/23
+[AGG-MEDTECH-GigabitEthernet0/0/23]
+port link-type access
+[AGG-MEDTECH-GigabitEthernet0/0/23]
+port default vlan 1103
+[AGG-MEDTECH-GigabitEthernet0/0/23]
+quit
+[AGG-MEDTECH]
+interface Vlanif1103
+[AGG-MEDTECH-Vlanif1103]
+ip address 10.162.99.106 255.255.255.252
+[AGG-MEDTECH-Vlanif1103]
+quit
+[AGG-MEDTECH]
+interface GigabitEthernet0/0/24
+[AGG-MEDTECH-GigabitEthernet0/0/24]
+port link-type access
+[AGG-MEDTECH-GigabitEthernet0/0/24]
+port default vlan 1203
+[AGG-MEDTECH-GigabitEthernet0/0/24]
+quit
+[AGG-MEDTECH]
+interface Vlanif1203
+[AGG-MEDTECH-Vlanif1203]
+ip address 10.162.99.134 255.255.255.252
+[AGG-MEDTECH-Vlanif1203]
+quit
+[AGG-MEDTECH]
+interface Vlanif30
+[AGG-MEDTECH-Vlanif30]
+ip address 10.162.103.1 255.255.255.0
+[AGG-MEDTECH-Vlanif30]
+quit
+[AGG-MEDTECH]
+interface Vlanif30
+[AGG-MEDTECH-Vlanif30]
+dhcp select interface
+[AGG-MEDTECH-Vlanif30]
+dhcp server excluded-ip-address 10.162.103.2 10.162.103.49 [1D
+[AGG-MEDTECH-Vlanif30]
+quit
+[AGG-MEDTECH]
+interface Eth-Trunk1
+[AGG-MEDTECH-Eth-Trunk1]
+mode lacp-static
+[AGG-MEDTECH-Eth-Trunk1]
+port link-type trunk
+[AGG-MEDTECH-Eth-Trunk1]
+port trunk allow-pass vlan 30
+[AGG-MEDTECH-Eth-Trunk1]
+quit
+[AGG-MEDTECH]
+interface GigabitEthernet0/0/1
+[AGG-MEDTECH-GigabitEthernet0/0/1]
+eth-trunk 1
+Info: This operation may take a few seconds. Please wait for a moment...done.
+[AGG-MEDTECH-GigabitEthernet0/0/1]
+quit
+[AGG-MEDTECH]
+interface GigabitEthernet0/0/2
+[AGG-MEDTECH-GigabitEthernet0/0/2]
+eth-trunk 1
+Info: This operation may take a few seconds. Please wait for a moment...done.
+[AGG-MEDTECH-GigabitEthernet0/0/2]
+quit
+[AGG-MEDTECH]
+interface Eth-Trunk2
+[AGG-MEDTECH-Eth-Trunk2]
+mode lacp-static
+[AGG-MEDTECH-Eth-Trunk2]
+port link-type trunk
+[AGG-MEDTECH-Eth-Trunk2]
+port trunk allow-pass vlan 30
+[AGG-MEDTECH-Eth-Trunk2]
+quit
+[AGG-MEDTECH]
+interface GigabitEthernet0/0/3
+[AGG-MEDTECH-GigabitEthernet0/0/3]
+eth-trunk 2
+Info: This operation may take a few seconds. Please wait for a moment...done.
+[AGG-MEDTECH-GigabitEthernet0/0/3]
+quit
+[AGG-MEDTECH]
+interface GigabitEthernet0/0/4
+[AGG-MEDTECH-GigabitEthernet0/0/4]
+eth-trunk 2
+Info: This operation may take a few seconds. Please wait for a moment...done.
+[AGG-MEDTECH-GigabitEthernet0/0/4]
+quit
+[AGG-MEDTECH]
+ospf 1 router-id 10.255.254.3
+[AGG-MEDTECH-ospf-1]
+area 0
+[AGG-MEDTECH-ospf-1-area-0.0.0.0]
+network 10.162.99.104 0.0.0.3
+[AGG-MEDTECH-ospf-1-area-0.0.0.0]
+network 10.162.99.132 0.0.0.3
+[AGG-MEDTECH-ospf-1-area-0.0.0.0]
+quit
+[AGG-MEDTECH-ospf-1]
+area 20
+[AGG-MEDTECH-ospf-1-area-0.0.0.20]
+network 10.162.103.0 0.0.0.255
+[AGG-MEDTECH-ospf-1-area-0.0.0.20]
+quit
+[AGG-MEDTECH-ospf-1]
+quit
+[AGG-MEDTECH]
+return
+<AGG-MEDTECH>

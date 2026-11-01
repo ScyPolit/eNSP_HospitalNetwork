@@ -1,0 +1,119 @@
+[
+  {
+    "name": "全网拓扑",
+    "page": 5,
+    "pixels": [
+      4704,
+      2471
+    ],
+    "lossless_pixel_match": true
+  },
+  {
+    "name": "医疗专线区",
+    "page": 6,
+    "pixels": [
+      952,
+      586
+    ],
+    "lossless_pixel_match": true
+  },
+  {
+    "name": "主公网与外联交换区",
+    "page": 6,
+    "pixels": [
+      1318,
+      586
+    ],
+    "lossless_pixel_match": true
+  },
+  {
+    "name": "备用公网区",
+    "page": 7,
+    "pixels": [
+      970,
+      586
+    ],
+    "lossless_pixel_match": true
+  },
+  {
+    "name": "边界防火墙与双核心区",
+    "page": 7,
+    "pixels": [
+      1317,
+      640
+    ],
+    "lossless_pixel_match": true
+  },
+  {
+    "name": "非军事区",
+    "page": 8,
+    "pixels": [
+      851,
+      1171
+    ],
+    "lossless_pixel_match": true
+  },
+  {
+    "name": "门急诊与药房区",
+    "page": 12,
+    "pixels": [
+      668,
+      1172
+    ],
+    "lossless_pixel_match": true
+  },
+  {
+    "name": "住院病区",
+    "page": 13,
+    "pixels": [
+      668,
+      1172
+    ],
+    "lossless_pixel_match": true
+  },
+  {
+    "name": "医技影像检验区",
+    "page": 14,
+    "pixels": [
+      668,
+      1172
+    ],
+    "lossless_pixel_match": true
+  },
+  {
+    "name": "数据中心与备份区",
+    "page": 15,
+    "pixels": [
+      668,
+      1172
+    ],
+    "lossless_pixel_match": true
+  },
+  {
+    "name": "行政财务与运维区",
+    "page": 16,
+    "pixels": [
+      668,
+      1172
+    ],
+    "lossless_pixel_match": true
+  },
+  {
+    "name": "医疗物联与无线区",
+    "page": 17,
+    "pixels": [
+      668,
+      1172
+    ],
+    "lossless_pixel_match": true
+  },
+  {
+    "name": "分院与远程医疗区",
+    "page": 18,
+    "pixels": [
+      668,
+      1172
+    ],
+    "lossless_pixel_match": true
+  }
+]

@@ -1,0 +1,11 @@
+display ip routing-table 0.0.0.0
+Route Flags: R - relay, D - download to fib
+------------------------------------------------------------------------------
+Routing Table : Public
+Summary Count : 2
+Destination/Mask    Proto   Pre  Cost      Flags NextHop         Interface
+
+        0.0.0.0/0   O_ASE   150  2           D   10.162.99.34    Vlanif901
+                    O_ASE   150  2           D   10.162.99.2     Vlanif900
+
+<CORE-SW1>

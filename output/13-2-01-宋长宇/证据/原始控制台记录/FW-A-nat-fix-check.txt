@@ -1,0 +1,23 @@
+reset firewall session table
+13:48:45  2026/10/30
+Warning:Reseting session table will affect the system's normal service.
+Continue? [Y/N]:
+y
+HRP_M<FW-A>
+display nat-policy interzone trust untrust outbound
+13:48:45  2026/10/30
+nat-policy interzone trust untrust outbound
+ policy 1 (4 times matched)
+  action source-nat 
+  policy service service-set ip
+  policy source 10.162.0.0 0.0.255.255
+  policy destination any
+  address-group 1
+
+ policy 3 (0 times matched)
+  action has not specified yet!!!
+  policy service service-set ip
+  policy source any
+  policy destination any
+
+HRP_M<FW-A>

@@ -1,0 +1,50 @@
+ping -c 2 10.162.99.98
+  PING 10.162.99.98: 56  data bytes, press CTRL_C to break
+    Request time out
+    Request time out
+
+  --- 10.162.99.98 ping statistics ---
+    2 packet(s) transmitted
+    0 packet(s) received
+    100.00% packet loss
+
+<CORE-SW1>
+ping -c 2 10.162.106.10
+  PING 10.162.106.10: 56  data bytes, press CTRL_C to break
+    Reply from 10.162.106.10: bytes=56 Sequence=1 ttl=127 time=100 ms
+    Reply from 10.162.106.10: bytes=56 Sequence=2 ttl=127 time=90 ms
+
+  --- 10.162.106.10 ping statistics ---
+    2 packet(s) transmitted
+    2 packet(s) received
+    0.00% packet loss
+    round-trip min/avg/max = 90/95/100 ms
+
+<CORE-SW1>
+display eth-trunk 1
+Eth-Trunk1's state information is:
+Local:
+LAG ID: 1                   WorkingMode: STATIC                               
+Preempt Delay: Disabled     Hash arithmetic: According to SIP-XOR-DIP         
+System Priority: 32768      System ID: 4c1f-cc50-3e43                         
+Least Active-linknumber: 1  Max Active-linknumber: 8                          
+Operate status: up          Number Of Up Port In Trunk: 2                     
+--------------------------------------------------------------------------------
+ActorPortName          Status   PortType PortPri PortNo PortKey PortState Weight
+GigabitEthernet0/0/23  Selected 1GE      32768   24     305     10111100  1     
+GigabitEthernet0/0/24  Selected 1GE      32768   25     305     10111100  1     
+
+Partner:
+--------------------------------------------------------------------------------
+ActorPortName          SysPri   SystemID        PortPri PortNo PortKey PortState
+GigabitEthernet0/0/23  32768    4c1f-ccb4-5e41  32768   24     305     10111100
+GigabitEthernet0/0/24  32768    4c1f-ccb4-5e41  32768   25     305     10111100
+    
+<CORE-SW1>
+display vrrp brief
+VRID  State        Interface                Type     Virtual IP     
+----------------------------------------------------------------
+1     Master       Vlanif4094               Normal   10.162.99.65   
+----------------------------------------------------------------
+Total:1     Master:1     Backup:0     Non-active:0     
+<CORE-SW1>

@@ -1,0 +1,9 @@
+system-view
+Enter system view, return user view with Ctrl+Z.
+[CORE-SW1]
+interface Vlanif4094
+[CORE-SW1-Vlanif4094]
+undo shutdown
+[CORE-SW1-Vlanif4094]
+return
+<CORE-SW1>

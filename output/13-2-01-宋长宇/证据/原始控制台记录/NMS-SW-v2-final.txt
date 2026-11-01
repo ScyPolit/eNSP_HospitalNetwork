@@ -1,0 +1,61 @@
+system-view
+Enter system view, return user view with Ctrl+Z.
+[Huawei]
+undo info-center enable
+Info: Information center is disabled.
+[Huawei]
+sysname NMS-SW
+[NMS-SW]
+stp mode mstp
+[NMS-SW]
+vlan batch 160
+Info: This operation may take a few seconds. Please wait for a moment...done.
+[NMS-SW]
+interface Eth-Trunk1
+[NMS-SW-Eth-Trunk1]
+mode lacp-static
+[NMS-SW-Eth-Trunk1]
+port link-type trunk
+[NMS-SW-Eth-Trunk1]
+port trunk allow-pass vlan 160
+[NMS-SW-Eth-Trunk1]
+quit
+[NMS-SW]
+interface GigabitEthernet0/0/23
+[NMS-SW-GigabitEthernet0/0/23]
+eth-trunk 1
+Info: This operation may take a few seconds. Please wait for a moment...done.
+[NMS-SW-GigabitEthernet0/0/23]
+quit
+[NMS-SW]
+interface GigabitEthernet0/0/24
+[NMS-SW-GigabitEthernet0/0/24]
+eth-trunk 1
+Info: This operation may take a few seconds. Please wait for a moment...done.
+[NMS-SW-GigabitEthernet0/0/24]
+quit
+[NMS-SW]
+interface GigabitEthernet0/0/1
+[NMS-SW-GigabitEthernet0/0/1]
+port link-type access
+[NMS-SW-GigabitEthernet0/0/1]
+port default vlan 160
+[NMS-SW-GigabitEthernet0/0/1]
+quit
+[NMS-SW]
+interface GigabitEthernet0/0/1
+[NMS-SW-GigabitEthernet0/0/1]
+stp edged-port enable
+[NMS-SW-GigabitEthernet0/0/1]
+quit
+[NMS-SW]
+interface GigabitEthernet0/0/2
+[NMS-SW-GigabitEthernet0/0/2]
+port link-type access
+[NMS-SW-GigabitEthernet0/0/2]
+port default vlan 160
+[NMS-SW-GigabitEthernet0/0/2]
+quit
+[NMS-SW]
+return
+<NMS-SW>

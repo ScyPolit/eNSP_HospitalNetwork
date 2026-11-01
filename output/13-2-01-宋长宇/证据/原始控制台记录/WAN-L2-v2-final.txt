@@ -1,0 +1,87 @@
+system-view
+Enter system view, return user view with Ctrl+Z.
+[Huawei]
+undo info-center enable
+Info: Information center is disabled.
+[Huawei]
+sysname WAN-L2
+[WAN-L2]
+stp mode mstp
+[WAN-L2]
+vlan batch 901 902 903
+Info: This operation may take a few seconds. Please wait for a moment...done.
+[WAN-L2]
+interface GigabitEthernet0/0/1
+[WAN-L2-GigabitEthernet0/0/1]
+port link-type access
+[WAN-L2-GigabitEthernet0/0/1]
+port default vlan 901
+[WAN-L2-GigabitEthernet0/0/1]
+quit
+[WAN-L2]
+interface GigabitEthernet0/0/2
+[WAN-L2-GigabitEthernet0/0/2]
+port link-type access
+[WAN-L2-GigabitEthernet0/0/2]
+port default vlan 902
+[WAN-L2-GigabitEthernet0/0/2]
+quit
+[WAN-L2]
+interface GigabitEthernet0/0/3
+[WAN-L2-GigabitEthernet0/0/3]
+port link-type access
+[WAN-L2-GigabitEthernet0/0/3]
+port default vlan 903
+[WAN-L2-GigabitEthernet0/0/3]
+quit
+[WAN-L2]
+interface GigabitEthernet0/0/4
+[WAN-L2-GigabitEthernet0/0/4]
+port link-type access
+[WAN-L2-GigabitEthernet0/0/4]
+port default vlan 901
+[WAN-L2-GigabitEthernet0/0/4]
+quit
+[WAN-L2]
+interface GigabitEthernet0/0/5
+[WAN-L2-GigabitEthernet0/0/5]
+port link-type access
+[WAN-L2-GigabitEthernet0/0/5]
+port default vlan 902
+[WAN-L2-GigabitEthernet0/0/5]
+quit
+[WAN-L2]
+interface GigabitEthernet0/0/6
+[WAN-L2-GigabitEthernet0/0/6]
+port link-type access
+[WAN-L2-GigabitEthernet0/0/6]
+port default vlan 903
+[WAN-L2-GigabitEthernet0/0/6]
+quit
+[WAN-L2]
+interface GigabitEthernet0/0/7
+[WAN-L2-GigabitEthernet0/0/7]
+port link-type access
+[WAN-L2-GigabitEthernet0/0/7]
+port default vlan 901
+[WAN-L2-GigabitEthernet0/0/7]
+quit
+[WAN-L2]
+interface GigabitEthernet0/0/8
+[WAN-L2-GigabitEthernet0/0/8]
+port link-type access
+[WAN-L2-GigabitEthernet0/0/8]
+port default vlan 902
+[WAN-L2-GigabitEthernet0/0/8]
+quit
+[WAN-L2]
+interface GigabitEthernet0/0/9
+[WAN-L2-GigabitEthernet0/0/9]
+port link-type access
+[WAN-L2-GigabitEthernet0/0/9]
+port default vlan 903
+[WAN-L2-GigabitEthernet0/0/9]
+quit
+[WAN-L2]
+return
+<WAN-L2>

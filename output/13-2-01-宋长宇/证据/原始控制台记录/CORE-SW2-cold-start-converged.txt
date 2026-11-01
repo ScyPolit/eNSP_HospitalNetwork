@@ -1,0 +1,15 @@
+display ospf peer brief
+
+	 OSPF Process 1 with Router ID 10.255.255.12
+		  Peer Statistic Information
+ ----------------------------------------------------------------------------
+ Area Id          Interface                        Neighbor id      State    
+ 0.0.0.0          Vlanif900                        10.255.255.1     Full        
+ 0.0.0.0          Vlanif900                        10.255.255.2     Full        
+ 0.0.0.0          Vlanif900                        10.255.255.11    Full        
+ 0.0.0.0          Vlanif901                        10.255.255.1     Full        
+ 0.0.0.0          Vlanif901                        10.255.255.2     Full        
+ 0.0.0.0          Vlanif901                        10.255.255.11    Full        
+ 0.0.0.0          Vlanif4094                       10.255.255.11    Full        
+ ----------------------------------------------------------------------------
+<CORE-SW2>

@@ -1,0 +1,20 @@
+system-view
+13:39:56  2026/10/30
+Enter system view, return user view with Ctrl+Z.
+HRP_S[FW-B]
+undo hrp interface GigabitEthernet0/0/6
+13:39:56  2026/10/30
+ Info: All hrp interfaces have been removed.
+[FW-B]
+hrp interface GigabitEthernet0/0/6
+13:39:56  2026/10/30
+HRP_S[FW-B]
+hrp auto-sync config
+13:39:56  2026/10/30
+HRP_S[FW-B]
+hrp mirror session enable
+13:39:56  2026/10/30
+HRP_S[FW-B]
+return
+13:39:56  2026/10/30
+HRP_S<FW-B>

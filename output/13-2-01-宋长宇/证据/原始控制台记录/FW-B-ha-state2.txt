@@ -1,0 +1,18 @@
+display hrp state
+13:37:16  2026/10/30
+ The firewall's config state is: MASTER
+
+ Current state of virtual routers configured as slave:
+             GigabitEthernet0/0/5    vrid   6 : master
+             GigabitEthernet0/0/4    vrid   5 : master
+             GigabitEthernet0/0/3    vrid   4 : master
+             GigabitEthernet0/0/2    vrid   3 : master
+             GigabitEthernet0/0/1    vrid   2 : master
+             GigabitEthernet0/0/0    vrid   1 : master
+
+HRP_M<FW-B>
+display hrp interface
+13:37:16  2026/10/30
+             GigabitEthernet0/0/6 : 172.31.255.1 peerdown
+
+HRP_M<FW-B>

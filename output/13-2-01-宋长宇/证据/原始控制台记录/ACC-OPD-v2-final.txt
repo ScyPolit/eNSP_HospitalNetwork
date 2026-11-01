@@ -1,0 +1,53 @@
+system-view
+Enter system view, return user view with Ctrl+Z.
+[Huawei]
+undo info-center enable
+Info: Information center is disabled.
+[Huawei]
+sysname ACC-OPD
+[ACC-OPD]
+stp mode mstp
+[ACC-OPD]
+vlan batch 10
+Info: This operation may take a few seconds. Please wait for a moment...done.
+[ACC-OPD]
+interface Eth-Trunk1
+[ACC-OPD-Eth-Trunk1]
+mode lacp-static
+[ACC-OPD-Eth-Trunk1]
+port link-type trunk
+[ACC-OPD-Eth-Trunk1]
+port trunk allow-pass vlan 10
+[ACC-OPD-Eth-Trunk1]
+quit
+[ACC-OPD]
+interface GigabitEthernet0/0/23
+[ACC-OPD-GigabitEthernet0/0/23]
+eth-trunk 1
+Info: This operation may take a few seconds. Please wait for a moment...done.
+[ACC-OPD-GigabitEthernet0/0/23]
+quit
+[ACC-OPD]
+interface GigabitEthernet0/0/24
+[ACC-OPD-GigabitEthernet0/0/24]
+eth-trunk 1
+Info: This operation may take a few seconds. Please wait for a moment...done.
+[ACC-OPD-GigabitEthernet0/0/24]
+quit
+[ACC-OPD]
+interface GigabitEthernet0/0/1
+[ACC-OPD-GigabitEthernet0/0/1]
+port link-type access
+[ACC-OPD-GigabitEthernet0/0/1]
+port default vlan 10
+[ACC-OPD-GigabitEthernet0/0/1]
+quit
+[ACC-OPD]
+interface GigabitEthernet0/0/1
+[ACC-OPD-GigabitEthernet0/0/1]
+stp edged-port enable
+[ACC-OPD-GigabitEthernet0/0/1]
+quit
+[ACC-OPD]
+return
+<ACC-OPD>

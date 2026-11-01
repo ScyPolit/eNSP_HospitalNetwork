@@ -1,0 +1,10 @@
+system-view
+Enter system view, return user view with Ctrl+Z.
+[ISP-R1]
+[ISP-R1]
+arp static 12.1.1.20 0000-5e00-0101
+[ISP-R1]
+[ISP-R1]
+return
+<ISP-R1>
+<ISP-R1>

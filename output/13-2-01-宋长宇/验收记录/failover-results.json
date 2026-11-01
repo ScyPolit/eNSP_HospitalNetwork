@@ -1,0 +1,32 @@
+[
+  {
+    "description": "关闭 CORE-SW1 的 Vlanif4094 后，检查 CORE-SW2 的 VRRP 状态与服务器诊断连通性；随后恢复接口。",
+    "title": "核心 VRRP 切换",
+    "image": "证据/控制台与抓包界面/failover-core-vrrp.png"
+  },
+  {
+    "description": "关闭核心互联的 GE0/0/23，保留 GE0/0/24。检查 Eth-Trunk 仍为 up、活动成员降为一条，并从 Vlanif4094 跨聚合链路测试对端地址。",
+    "title": "单成员故障时的 LACP 连通性",
+    "image": "证据/控制台与抓包界面/failover-lacp.png"
+  },
+  {
+    "description": "关闭 FW-A 的一个受 VRRP 组监控的 Trust 接口，等待 VGMP/HRP 重新选举。截图记录 FW-B 的角色；新建终端会话另行验证，不据主备状态推断旧会话无损延续。",
+    "title": "防火墙 HRP 主备切换",
+    "image": "证据/控制台与抓包界面/failover-hrp.png"
+  },
+  {
+    "description": "切换后从门诊新建公网 ICMP 会话，并在 FW-B 检查实际 NAT 会话和返回计数。",
+    "title": "备用防火墙的新建 NAT 会话",
+    "image": "证据/控制台与抓包界面/failover-hrp-nat.png"
+  },
+  {
+    "description": "关闭 HEALTH-R 的医疗专线主接口后，远程会诊流量切换到 GE0/0/2 的 IPsec 通道。实测会诊终端回复，备用静态路由 preference 100 生效，ESP 入出方向序列计数均增加；测试后恢复主接口。",
+    "title": "IPsec 备用路径、SA 与路由",
+    "image": "证据/控制台与抓包界面/failover-ipsec.png"
+  },
+  {
+    "description": "关闭门诊汇聚 GE0/0/23 后，路由表显示 HIS 网段经 Vlanif1201、下一跳 10.162.99.125（第二核心）；门诊终端三包全部收到回复。验证后恢复主上联。",
+    "title": "汇聚主上联故障时经第二核心转发",
+    "image": "证据/控制台与抓包界面/failover-backup-core-ping.png"
+  }
+]

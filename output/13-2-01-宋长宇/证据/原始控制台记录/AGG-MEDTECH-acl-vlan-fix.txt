@@ -1,0 +1,9 @@
+system-view
+Enter system view, return user view with Ctrl+Z.
+[AGG-MEDTECH]
+undo traffic-filter inbound acl 3030
+[AGG-MEDTECH]
+traffic-filter vlan 30 inbound acl 3030
+[AGG-MEDTECH]
+return
+<AGG-MEDTECH>

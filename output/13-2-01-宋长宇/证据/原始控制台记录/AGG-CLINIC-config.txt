@@ -1,0 +1,192 @@
+system-view
+Enter system view, return user view with Ctrl+Z.
+[AGG-CLINIC]
+undo info-center enable
+Info: Information center is disabled.
+[AGG-CLINIC]
+sysname AGG-CLINIC
+[AGG-CLINIC]
+stp mode mstp
+[AGG-CLINIC]
+dhcp enable
+[AGG-CLINIC]
+vlan batch 10 80 90 1101 1201
+Info: This operation may take a few seconds. Please wait for a moment...done.
+[AGG-CLINIC]
+interface GigabitEthernet0/0/23
+[AGG-CLINIC-GigabitEthernet0/0/23]
+port link-type access
+[AGG-CLINIC-GigabitEthernet0/0/23]
+port default vlan 1101
+[AGG-CLINIC-GigabitEthernet0/0/23]
+quit
+[AGG-CLINIC]
+interface Vlanif1101
+[AGG-CLINIC-Vlanif1101]
+ip address 10.162.99.98 255.255.255.252
+Error: The address already exists.
+[AGG-CLINIC-Vlanif1101]
+quit
+[AGG-CLINIC]
+interface GigabitEthernet0/0/24
+[AGG-CLINIC-GigabitEthernet0/0/24]
+port link-type access
+[AGG-CLINIC-GigabitEthernet0/0/24]
+port default vlan 1201
+[AGG-CLINIC-GigabitEthernet0/0/24]
+quit
+[AGG-CLINIC]
+interface Vlanif1201
+[AGG-CLINIC-Vlanif1201]
+ip address 10.162.99.126 255.255.255.252
+Error: The address already exists.
+[AGG-CLINIC-Vlanif1201]
+quit
+[AGG-CLINIC]
+interface Vlanif10
+[AGG-CLINIC-Vlanif10]
+ip address 10.162.101.1 255.255.255.0
+Error: The address already exists.
+[AGG-CLINIC-Vlanif10]
+quit
+[AGG-CLINIC]
+interface Vlanif10
+[AGG-CLINIC-Vlanif10]
+dhcp select interface
+[AGG-CLINIC-Vlanif10]
+dhcp server excluded-ip-address 10.162.101.2 10.162.101.49
+[AGG-CLINIC-Vlanif10]
+quit
+[AGG-CLINIC]
+interface Vlanif80
+[AGG-CLINIC-Vlanif80]
+ip address 10.162.109.1 255.255.255.0
+Error: The address already exists.
+[AGG-CLINIC-Vlanif80]
+quit
+[AGG-CLINIC]
+interface Vlanif80
+[AGG-CLINIC-Vlanif80]
+dhcp select interface
+[AGG-CLINIC-Vlanif80]
+dhcp server excluded-ip-address 10.162.109.2 10.162.109.49
+[AGG-CLINIC-Vlanif80]
+quit
+[AGG-CLINIC]
+interface Vlanif90
+[AGG-CLINIC-Vlanif90]
+ip address 10.162.110.1 255.255.255.0
+Error: The address already exists.
+[AGG-CLINIC-Vlanif90]
+quit
+[AGG-CLINIC]
+interface Vlanif90
+[AGG-CLINIC-Vlanif90]
+dhcp select interface
+[AGG-CLINIC-Vlanif90]
+dhcp server excluded-ip-address 10.162.110.2 10.162.110.49
+[AGG-CLINIC-Vlanif90]
+quit
+[AGG-CLINIC]
+interface Eth-Trunk1
+[AGG-CLINIC-Eth-Trunk1]
+mode lacp-static
+[AGG-CLINIC-Eth-Trunk1]
+port link-type trunk
+[AGG-CLINIC-Eth-Trunk1]
+port trunk allow-pass vlan 10
+[AGG-CLINIC-Eth-Trunk1]
+quit
+[AGG-CLINIC]
+interface GigabitEthernet0/0/1
+[AGG-CLINIC-GigabitEthernet0/0/1]
+eth-trunk 1
+Info: This operation may take a few seconds. Please wait for a moment...
+Error: Failed to add the port into the trunk because the port has been a member of the trunk.
+[AGG-CLINIC-GigabitEthernet0/0/1]
+quit
+[AGG-CLINIC]
+interface GigabitEthernet0/0/2
+[AGG-CLINIC-GigabitEthernet0/0/2]
+eth-trunk 1
+Info: This operation may take a few seconds. Please wait for a moment...
+Error: Failed to add the port into the trunk because the port has been a member of the trunk.
+[AGG-CLINIC-GigabitEthernet0/0/2]
+quit
+[AGG-CLINIC]
+interface Eth-Trunk2
+[AGG-CLINIC-Eth-Trunk2]
+mode lacp-static
+[AGG-CLINIC-Eth-Trunk2]
+port link-type trunk
+[AGG-CLINIC-Eth-Trunk2]
+port trunk allow-pass vlan 80
+[AGG-CLINIC-Eth-Trunk2]
+quit
+[AGG-CLINIC]
+interface GigabitEthernet0/0/3
+[AGG-CLINIC-GigabitEthernet0/0/3]
+eth-trunk 2
+Info: This operation may take a few seconds. Please wait for a moment...
+Error: Failed to add the port into the trunk because the port has been a member of the trunk.
+[AGG-CLINIC-GigabitEthernet0/0/3]
+quit
+[AGG-CLINIC]
+interface GigabitEthernet0/0/4
+[AGG-CLINIC-GigabitEthernet0/0/4]
+eth-trunk 2
+Info: This operation may take a few seconds. Please wait for a moment...
+Error: Failed to add the port into the trunk because the port has been a member of the trunk.
+[AGG-CLINIC-GigabitEthernet0/0/4]
+quit
+[AGG-CLINIC]
+interface Eth-Trunk3
+[AGG-CLINIC-Eth-Trunk3]
+mode lacp-static
+[AGG-CLINIC-Eth-Trunk3]
+port link-type trunk
+[AGG-CLINIC-Eth-Trunk3]
+port trunk allow-pass vlan 90
+[AGG-CLINIC-Eth-Trunk3]
+quit
+[AGG-CLINIC]
+interface GigabitEthernet0/0/5
+[AGG-CLINIC-GigabitEthernet0/0/5]
+eth-trunk 3
+Info: This operation may take a few seconds. Please wait for a moment...
+Error: Failed to add the port into the trunk because the port has been a member of the trunk.
+[AGG-CLINIC-GigabitEthernet0/0/5]
+quit
+[AGG-CLINIC]
+interface GigabitEthernet0/0/6
+[AGG-CLINIC-GigabitEthernet0/0/6]
+eth-trunk 3
+Info: This operation may take a few seconds. Please wait for a moment...
+Error: Failed to add the port into the trunk because the port has been a member of the trunk.
+[AGG-CLINIC-GigabitEthernet0/0/6]
+quit
+[AGG-CLINIC]
+ospf 1 router-id 10.255.254.1
+[AGG-CLINIC-ospf-1]
+area 0
+[AGG-CLINIC-ospf-1-area-0.0.0.0]
+network 10.162.99.96 0.0.0.3
+[AGG-CLINIC-ospf-1-area-0.0.0.0]
+network 10.162.99.124 0.0.0.3
+[AGG-CLINIC-ospf-1-area-0.0.0.0]
+quit
+[AGG-CLINIC-ospf-1]
+area 10
+[AGG-CLINIC-ospf-1-area-0.0.0.10]
+network 10.162.101.0 0.0.0.255
+[AGG-CLINIC-ospf-1-area-0.0.0.10]
+network 10.162.109.0 0.0.0.255
+[AGG-CLINIC-ospf-1-area-0.0.0.10]
+network 10.162.110.0 0.0.0.255
+[AGG-CLINIC-ospf-1-area-0.0.0.10]
+quit
+[AGG-CLINIC-ospf-1]
+quit
+[AGG-CLINIC]
+return
+<AGG-CLINIC>

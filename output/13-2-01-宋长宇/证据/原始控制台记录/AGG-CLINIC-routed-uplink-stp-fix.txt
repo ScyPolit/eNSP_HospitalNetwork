@@ -1,0 +1,17 @@
+system-view
+Enter system view, return user view with Ctrl+Z.
+[AGG-CLINIC]
+interface GigabitEthernet0/0/23
+[AGG-CLINIC-GigabitEthernet0/0/23]
+stp disable
+[AGG-CLINIC-GigabitEthernet0/0/23]
+quit
+[AGG-CLINIC]
+interface GigabitEthernet0/0/24
+[AGG-CLINIC-GigabitEthernet0/0/24]
+stp disable
+[AGG-CLINIC-GigabitEthernet0/0/24]
+quit
+[AGG-CLINIC]
+return
+<AGG-CLINIC>

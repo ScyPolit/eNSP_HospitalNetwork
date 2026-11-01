@@ -1,0 +1,9 @@
+display ospf peer brief
+
+	 OSPF Process 1 with Router ID 10.255.254.1
+		  Peer Statistic Information
+ ----------------------------------------------------------------------------
+ Area Id          Interface                        Neighbor id      State    
+ 0.0.0.0          Vlanif1101                       10.255.255.11    Full        
+ ----------------------------------------------------------------------------
+<AGG-CLINIC>

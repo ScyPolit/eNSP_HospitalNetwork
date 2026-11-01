@@ -1,0 +1,13 @@
+display hrp state
+17:12:37  2026/10/30
+ The firewall's config state is: SLAVE
+
+ Current state of virtual routers configured as slave:
+             GigabitEthernet0/0/5    vrid   6 : slave
+             GigabitEthernet0/0/4    vrid   5 : slave
+             GigabitEthernet0/0/3    vrid   4 : slave
+             GigabitEthernet0/0/2    vrid   3 : slave
+             GigabitEthernet0/0/1    vrid   2 : slave
+             GigabitEthernet0/0/0    vrid   1 : slave
+
+HRP_S<FW-B>

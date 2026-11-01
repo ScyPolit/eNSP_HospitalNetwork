@@ -1,0 +1,37 @@
+display ip routing-table protocol static
+Route Flags: R - relay, D - download to fib
+------------------------------------------------------------------------------
+Public routing table : Static
+         Destinations : 2        Routes : 3        Configured Routes : 3
+
+Static routing table status : <Active>
+         Destinations : 2        Routes : 2
+
+Destination/Mask    Proto   Pre  Cost      Flags NextHop         Interface
+
+   10.162.106.0/24  Static  60   0          RD   192.0.2.1       GigabitEthernet0/0/0
+   10.162.121.0/24  Static  60   0          RD   192.0.2.1       GigabitEthernet0/0/0
+
+Static routing table status : <Inactive>
+         Destinations : 1        Routes : 1
+
+Destination/Mask    Proto   Pre  Cost      Flags NextHop         Interface
+
+   10.162.121.0/24  Static  100  0          R    198.18.0.2      GigabitEthernet0/0/2
+
+<HEALTH-R>
+display arp
+IP ADDRESS      MAC ADDRESS     EXPIRE(M) TYPE        INTERFACE   VPN-INSTANCE 
+                                          VLAN/CEVLAN PVC                      
+------------------------------------------------------------------------------
+192.0.2.254     00e0-fc37-24b4            I -         GE0/0/0
+192.0.2.2       0000-001c-7802  6         D-0         GE0/0/0
+192.0.2.1       0000-5e00-0103  17        D-0         GE0/0/0
+192.0.2.3       0000-0079-0402  9         D-0         GE0/0/0
+172.20.1.1      00e0-fc37-24b5            I -         GE0/0/1
+172.20.1.10     5489-9826-0610  17        D-0         GE0/0/1
+198.18.0.1      00e0-fc37-24b6            I -         GE0/0/2
+198.18.0.2      00e0-fc0b-45ad  9         D-0         GE0/0/2
+------------------------------------------------------------------------------
+Total:8         Dynamic:5       Static:0     Interface:3    
+<HEALTH-R>

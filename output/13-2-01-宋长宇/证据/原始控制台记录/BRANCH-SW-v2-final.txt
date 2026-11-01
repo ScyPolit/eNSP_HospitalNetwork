@@ -1,0 +1,53 @@
+system-view
+Enter system view, return user view with Ctrl+Z.
+[Huawei]
+undo info-center enable
+Info: Information center is disabled.
+[Huawei]
+sysname BRANCH-SW
+[BRANCH-SW]
+stp mode mstp
+[BRANCH-SW]
+vlan batch 50
+Info: This operation may take a few seconds. Please wait for a moment...done.
+[BRANCH-SW]
+interface Eth-Trunk1
+[BRANCH-SW-Eth-Trunk1]
+mode lacp-static
+[BRANCH-SW-Eth-Trunk1]
+port link-type trunk
+[BRANCH-SW-Eth-Trunk1]
+port trunk allow-pass vlan 50
+[BRANCH-SW-Eth-Trunk1]
+quit
+[BRANCH-SW]
+interface GigabitEthernet0/0/23
+[BRANCH-SW-GigabitEthernet0/0/23]
+eth-trunk 1
+Info: This operation may take a few seconds. Please wait for a moment...done.
+[BRANCH-SW-GigabitEthernet0/0/23]
+quit
+[BRANCH-SW]
+interface GigabitEthernet0/0/24
+[BRANCH-SW-GigabitEthernet0/0/24]
+eth-trunk 1
+Info: This operation may take a few seconds. Please wait for a moment...done.
+[BRANCH-SW-GigabitEthernet0/0/24]
+quit
+[BRANCH-SW]
+interface GigabitEthernet0/0/1
+[BRANCH-SW-GigabitEthernet0/0/1]
+port link-type access
+[BRANCH-SW-GigabitEthernet0/0/1]
+port default vlan 50
+[BRANCH-SW-GigabitEthernet0/0/1]
+quit
+[BRANCH-SW]
+interface GigabitEthernet0/0/1
+[BRANCH-SW-GigabitEthernet0/0/1]
+stp edged-port enable
+[BRANCH-SW-GigabitEthernet0/0/1]
+quit
+[BRANCH-SW]
+return
+<BRANCH-SW>

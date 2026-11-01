@@ -1,0 +1,24 @@
+display current-configuration interface GigabitEthernet0/0/0
+[V200R003C00]
+#
+
+interface GigabitEthernet0/0/0
+ ip address 10.162.105.20 255.255.255.0 
+#
+return
+<TELEMED-GW>display ip interface brief
+*down: administratively down
+^down: standby
+(l): loopback
+(s): spoofing
+The number of interface that is UP in Physical is 4
+The number of interface that is DOWN in Physical is 0
+The number of interface that is UP in Protocol is 4
+The number of interface that is DOWN in Protocol is 0
+
+Interface                         IP Address/Mask      Physical   Protocol  
+GigabitEthernet0/0/0              10.162.105.20/24     up         up        
+GigabitEthernet0/0/1              10.162.121.1/24      up         up        
+GigabitEthernet0/0/2              198.18.0.2/30        up         up        
+NULL0                             unassigned           up         up(s)     
+<TELEMED-GW>

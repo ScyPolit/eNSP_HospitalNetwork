@@ -1,0 +1,25 @@
+system-view
+Enter system view, return user view with Ctrl+Z.
+[ISP-R2]
+[ISP-R2]
+undo ip route-static 13.1.1.8 29 13.1.1.1
+[ISP-R2]
+[ISP-R2]
+ip route-static 13.1.1.8 29 GigabitEthernet0/0/0 13.1.1.1
+[ISP-R2]
+[ISP-R2]
+undo ip route-static 13.1.1.16 28 13.1.1.1
+[ISP-R2]
+[ISP-R2]
+ip route-static 13.1.1.16 28 GigabitEthernet0/0/0 13.1.1.1
+[ISP-R2]
+[ISP-R2]
+undo ip route-static 13.1.1.100 32 13.1.1.1
+[ISP-R2]
+[ISP-R2]
+ip route-static 13.1.1.100 32 GigabitEthernet0/0/0 13.1.1.1
+[ISP-R2]
+[ISP-R2]
+return
+<ISP-R2>
+<ISP-R2>

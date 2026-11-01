@@ -1,0 +1,42 @@
+system-view
+undo info-center enable
+sysname WAN-L2
+stp mode mstp
+vlan batch 901 902 903
+interface GigabitEthernet0/0/1
+port link-type access
+port default vlan 901
+quit
+interface GigabitEthernet0/0/2
+port link-type access
+port default vlan 902
+quit
+interface GigabitEthernet0/0/3
+port link-type access
+port default vlan 903
+quit
+interface GigabitEthernet0/0/4
+port link-type access
+port default vlan 901
+quit
+interface GigabitEthernet0/0/5
+port link-type access
+port default vlan 902
+quit
+interface GigabitEthernet0/0/6
+port link-type access
+port default vlan 903
+quit
+interface GigabitEthernet0/0/7
+port link-type access
+port default vlan 901
+quit
+interface GigabitEthernet0/0/8
+port link-type access
+port default vlan 902
+quit
+interface GigabitEthernet0/0/9
+port link-type access
+port default vlan 903
+quit
+return

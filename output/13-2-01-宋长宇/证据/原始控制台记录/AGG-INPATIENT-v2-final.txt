@@ -1,0 +1,61 @@
+system-view
+Enter system view, return user view with Ctrl+Z.
+[AGG-INPATIENT]
+undo traffic-filter inbound acl 3020
+[AGG-INPATIENT]
+undo traffic-filter vlan 20 inbound acl 3020
+[AGG-INPATIENT]
+undo acl 3020
+Error: No such an acl.
+[AGG-INPATIENT]
+return
+<AGG-INPATIENT>
+system-view
+Enter system view, return user view with Ctrl+Z.
+[AGG-INPATIENT]
+return
+<AGG-INPATIENT>
+system-view
+Enter system view, return user view with Ctrl+Z.
+[AGG-INPATIENT]
+acl number 3020
+[AGG-INPATIENT-acl-adv-3020]
+rule 5 permit udp source-port eq bootpc destination- [1Dport eq bootps
+[AGG-INPATIENT-acl-adv-3020]
+rule 10 permit icmp destination 10.162.102.1 0
+[AGG-INPATIENT-acl-adv-3020]
+rule 15 permit tcp destination 10.162.106.10 0 desti [1Dnation-port eq 443
+[AGG-INPATIENT-acl-adv-3020]
+rule 20 permit icmp destination 10.162.106.10 0
+[AGG-INPATIENT-acl-adv-3020]
+rule 25 permit tcp destination 10.162.108.10 0 desti [1Dnation-port eq 80
+[AGG-INPATIENT-acl-adv-3020]
+rule 30 deny ip destination 10.0.0.0 0.255.255.255
+[AGG-INPATIENT-acl-adv-3020]
+rule 35 deny ip destination 172.16.0.0 0.15.255.255
+[AGG-INPATIENT-acl-adv-3020]
+rule 40 deny ip destination 192.168.0.0 0.0.255.255
+[AGG-INPATIENT-acl-adv-3020]
+rule 45 permit ip
+[AGG-INPATIENT-acl-adv-3020]
+quit
+[AGG-INPATIENT]
+interface Vlanif20
+[AGG-INPATIENT-Vlanif20]
+quit
+[AGG-INPATIENT]
+traffic-filter vlan 20 inbound acl 3020
+[AGG-INPATIENT]
+return
+<AGG-INPATIENT>
+system-view
+Enter system view, return user view with Ctrl+Z.
+[AGG-INPATIENT]
+ospf 1
+[AGG-INPATIENT-ospf-1]
+silent-interface Vlanif20
+[AGG-INPATIENT-ospf-1]
+quit
+[AGG-INPATIENT]
+return
+<AGG-INPATIENT>

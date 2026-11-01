@@ -1,0 +1,203 @@
+display hrp state
+13:34:28  2026/10/30
+ The firewall's config state is: MASTER
+
+ Current state of virtual routers configured as master:
+             GigabitEthernet0/0/5    vrid   6 : master
+             GigabitEthernet0/0/4    vrid   5 : master
+             GigabitEthernet0/0/3    vrid   4 : master
+             GigabitEthernet0/0/2    vrid   3 : master
+             GigabitEthernet0/0/1    vrid   2 : master
+             GigabitEthernet0/0/0    vrid   1 : master
+
+HRP_M<FW-A>
+display vrrp
+13:34:28  2026/10/30
+  GigabitEthernet0/0/5 | Virtual Router 6
+    VRRP Group : Master 
+    state : Master 
+    Virtual IP : 10.162.108.1
+    Virtual MAC : 0000-5e00-0106
+    Primary IP : 10.162.108.2
+    PriorityRun : 120
+    PriorityConfig : 100
+    MasterPriority : 120
+    Preempt : YES   Delay Time : 0
+    Advertisement Timer : 1
+    Auth Type : NONE
+    Check TTL : YES
+
+  GigabitEthernet0/0/4 | Virtual Router 5
+    VRRP Group : Master 
+    state : Master 
+    Virtual IP : 10.162.99.33
+    Virtual MAC : 0000-5e00-0105
+    Primary IP : 10.162.99.34
+    PriorityRun : 120
+    PriorityConfig : 100
+    MasterPriority : 120
+  ---- More ----[42D                                          [42D    Preempt : YES   Delay Time : 0
+    Advertisement Timer : 1
+    Auth Type : NONE
+    Check TTL : YES
+
+  GigabitEthernet0/0/3 | Virtual Router 4
+    VRRP Group : Master 
+    state : Master 
+    Virtual IP : 10.162.99.1
+    Virtual MAC : 0000-5e00-0104
+    Primary IP : 10.162.99.2
+    PriorityRun : 120
+    PriorityConfig : 100
+    MasterPriority : 120
+    Preempt : YES   Delay Time : 0
+    Advertisement Timer : 1
+    Auth Type : NONE
+    Check TTL : YES
+
+  GigabitEthernet0/0/2 | Virtual Router 3
+    VRRP Group : Master 
+    state : Master 
+    Virtual IP : 192.0.2.1
+  ---- More ----[42D                                          [42D    Virtual MAC : 0000-5e00-0103
+    Primary IP : 192.0.2.2
+    PriorityRun : 120
+    PriorityConfig : 100
+    MasterPriority : 120
+    Preempt : YES   Delay Time : 0
+    Advertisement Timer : 1
+    Auth Type : NONE
+    Check TTL : YES
+
+  GigabitEthernet0/0/1 | Virtual Router 2
+    VRRP Group : Master 
+    state : Master 
+    Virtual IP : 13.1.1.1
+    Virtual MAC : 0000-5e00-0102
+    Primary IP : 13.1.1.2
+    PriorityRun : 120
+    PriorityConfig : 100
+    MasterPriority : 120
+    Preempt : YES   Delay Time : 0
+    Advertisement Timer : 1
+    Auth Type : NONE
+    Check TTL : YES
+  ---- More ----[42D                                          [42D
+  GigabitEthernet0/0/0 | Virtual Router 1
+    VRRP Group : Master 
+    state : Master 
+    Virtual IP : 12.1.1.1
+    Virtual MAC : 0000-5e00-0101
+    Primary IP : 12.1.1.2
+    PriorityRun : 120
+    PriorityConfig : 100
+    MasterPriority : 120
+    Preempt : YES   Delay Time : 0
+    Advertisement Timer : 1
+    Auth Type : NONE
+    Check TTL : YES
+
+HRP_M<FW-A>  
+ display ospf peer brief
+                                ^
+Error: Wrong parameter found at '^' position.
+HRP_M<FW-A>
+display ip routing-table
+13:34:28  2026/10/30
+Route Flags: R - relay, D - download to fib
+------------------------------------------------------------------------------
+Routing Tables: Public
+	Destinations : 55	Routes : 88
+
+Destination/Mask    Proto  Pre  Cost     Flags NextHop         Interface
+
+        0.0.0.0/0   Static 60   0          RD  12.1.1.254      GigabitEthernet0/0/0
+    10.162.99.0/27  Direct 0    0           D  10.162.99.2     GigabitEthernet0/0/3
+    10.162.99.1/32  Direct 0    0           D  127.0.0.1       InLoopBack0
+    10.162.99.2/32  Direct 0    0           D  127.0.0.1       InLoopBack0
+   10.162.99.32/27  Direct 0    0           D  10.162.99.34    GigabitEthernet0/0/4
+   10.162.99.33/32  Direct 0    0           D  127.0.0.1       InLoopBack0
+   10.162.99.34/32  Direct 0    0           D  127.0.0.1       InLoopBack0
+   10.162.99.64/27  OSPF   10   2           D  10.162.99.4     GigabitEthernet0/0/3
+                    OSPF   10   2           D  10.162.99.36    GigabitEthernet0/0/4
+                    OSPF   10   2           D  10.162.99.5     GigabitEthernet0/0/3
+                    OSPF   10   2           D  10.162.99.37    GigabitEthernet0/0/4
+   10.162.99.65/32  OSPF   10   2           D  10.162.99.4     GigabitEthernet0/0/3
+                    OSPF   10   2           D  10.162.99.36    GigabitEthernet0/0/4
+   10.162.99.96/30  OSPF   10   2           D  10.162.99.4     GigabitEthernet0/0/3
+                    OSPF   10   2           D  10.162.99.36    GigabitEthernet0/0/4
+  10.162.99.100/30  OSPF   10   2           D  10.162.99.4     GigabitEthernet0/0/3
+  ---- More ----[42D                                          [42D                    OSPF   10   2           D  10.162.99.36    GigabitEthernet0/0/4
+  10.162.99.104/30  OSPF   10   2           D  10.162.99.4     GigabitEthernet0/0/3
+                    OSPF   10   2           D  10.162.99.36    GigabitEthernet0/0/4
+  10.162.99.108/30  OSPF   10   2           D  10.162.99.4     GigabitEthernet0/0/3
+                    OSPF   10   2           D  10.162.99.36    GigabitEthernet0/0/4
+  10.162.99.112/30  OSPF   10   2           D  10.162.99.4     GigabitEthernet0/0/3
+                    OSPF   10   2           D  10.162.99.36    GigabitEthernet0/0/4
+  10.162.99.116/30  OSPF   10   2           D  10.162.99.4     GigabitEthernet0/0/3
+                    OSPF   10   2           D  10.162.99.36    GigabitEthernet0/0/4
+  10.162.99.120/30  OSPF   10   2           D  10.162.99.4     GigabitEthernet0/0/3
+                    OSPF   10   2           D  10.162.99.36    GigabitEthernet0/0/4
+  10.162.99.124/30  OSPF   10   2           D  10.162.99.5     GigabitEthernet0/0/3
+                    OSPF   10   2           D  10.162.99.37    GigabitEthernet0/0/4
+  10.162.99.128/30  OSPF   10   2           D  10.162.99.5     GigabitEthernet0/0/3
+                    OSPF   10   2           D  10.162.99.37    GigabitEthernet0/0/4
+  10.162.99.132/30  OSPF   10   2           D  10.162.99.5     GigabitEthernet0/0/3
+                    OSPF   10   2           D  10.162.99.37    GigabitEthernet0/0/4
+  10.162.99.136/30  OSPF   10   2           D  10.162.99.5     GigabitEthernet0/0/3
+                    OSPF   10   2           D  10.162.99.37    GigabitEthernet0/0/4
+  10.162.99.140/30  OSPF   10   2           D  10.162.99.5     GigabitEthernet0/0/3
+                    OSPF   10   2           D  10.162.99.37    GigabitEthernet0/0/4
+  10.162.99.144/30  OSPF   10   2           D  10.162.99.5     GigabitEthernet0/0/3
+                    OSPF   10   2           D  10.162.99.37    GigabitEthernet0/0/4
+  ---- More ----[42D                                          [42D  10.162.99.148/30  OSPF   10   2           D  10.162.99.5     GigabitEthernet0/0/3
+                    OSPF   10   2           D  10.162.99.37    GigabitEthernet0/0/4
+   10.162.101.0/24  OSPF   10   3           D  10.162.99.4     GigabitEthernet0/0/3
+                    OSPF   10   3           D  10.162.99.36    GigabitEthernet0/0/4
+   10.162.102.0/24  OSPF   10   3           D  10.162.99.4     GigabitEthernet0/0/3
+                    OSPF   10   3           D  10.162.99.36    GigabitEthernet0/0/4
+   10.162.103.0/24  OSPF   10   3           D  10.162.99.4     GigabitEthernet0/0/3
+                    OSPF   10   3           D  10.162.99.36    GigabitEthernet0/0/4
+   10.162.104.0/24  OSPF   10   3           D  10.162.99.4     GigabitEthernet0/0/3
+                    OSPF   10   3           D  10.162.99.36    GigabitEthernet0/0/4
+   10.162.105.0/24  OSPF   10   3           D  10.162.99.4     GigabitEthernet0/0/3
+                    OSPF   10   3           D  10.162.99.36    GigabitEthernet0/0/4
+   10.162.106.0/24  OSPF   10   3           D  10.162.99.4     GigabitEthernet0/0/3
+                    OSPF   10   3           D  10.162.99.36    GigabitEthernet0/0/4
+   10.162.107.0/24  OSPF   10   3           D  10.162.99.4     GigabitEthernet0/0/3
+                    OSPF   10   3           D  10.162.99.36    GigabitEthernet0/0/4
+   10.162.108.0/24  Direct 0    0           D  10.162.108.2    GigabitEthernet0/0/5
+   10.162.108.1/32  Direct 0    0           D  127.0.0.1       InLoopBack0
+   10.162.108.2/32  Direct 0    0           D  127.0.0.1       InLoopBack0
+   10.162.109.0/24  OSPF   10   3           D  10.162.99.4     GigabitEthernet0/0/3
+                    OSPF   10   3           D  10.162.99.36    GigabitEthernet0/0/4
+   10.162.110.0/24  OSPF   10   3           D  10.162.99.4     GigabitEthernet0/0/3
+                    OSPF   10   3           D  10.162.99.36    GigabitEthernet0/0/4
+  ---- More ----[42D                                          [42D   10.162.111.0/24  OSPF   10   3           D  10.162.99.4     GigabitEthernet0/0/3
+                    OSPF   10   3           D  10.162.99.36    GigabitEthernet0/0/4
+   10.162.112.0/24  OSPF   10   3           D  10.162.99.4     GigabitEthernet0/0/3
+                    OSPF   10   3           D  10.162.99.36    GigabitEthernet0/0/4
+   10.162.114.0/23  OSPF   10   3           D  10.162.99.4     GigabitEthernet0/0/3
+                    OSPF   10   3           D  10.162.99.36    GigabitEthernet0/0/4
+   10.162.116.0/22  OSPF   10   3           D  10.162.99.4     GigabitEthernet0/0/3
+                    OSPF   10   3           D  10.162.99.36    GigabitEthernet0/0/4
+   10.162.120.0/24  OSPF   10   3           D  10.162.99.4     GigabitEthernet0/0/3
+                    OSPF   10   3           D  10.162.99.36    GigabitEthernet0/0/4
+   10.162.121.0/24  O_ASE  150  1           D  10.162.99.4     GigabitEthernet0/0/3
+                    O_ASE  150  1           D  10.162.99.36    GigabitEthernet0/0/4
+       12.1.1.0/24  Direct 0    0           D  12.1.1.2        GigabitEthernet0/0/0
+       12.1.1.1/32  Direct 0    0           D  127.0.0.1       InLoopBack0
+       12.1.1.2/32  Direct 0    0           D  127.0.0.1       InLoopBack0
+       13.1.1.0/24  Direct 0    0           D  13.1.1.2        GigabitEthernet0/0/1
+       13.1.1.1/32  Direct 0    0           D  127.0.0.1       InLoopBack0
+       13.1.1.2/32  Direct 0    0           D  127.0.0.1       InLoopBack0
+      127.0.0.0/8   Direct 0    0           D  127.0.0.1       InLoopBack0
+      127.0.0.1/32  Direct 0    0           D  127.0.0.1       InLoopBack0
+     172.20.1.0/24  Static 60   0          RD  192.0.2.254     GigabitEthernet0/0/2
+   172.31.255.0/30  Direct 0    0           D  172.31.255.1    GigabitEthernet0/0/6
+   172.31.255.1/32  Direct 0    0           D  127.0.0.1       InLoopBack0
+  ---- More ----[42D                                          [42D      192.0.2.0/24  Direct 0    0           D  192.0.2.2       GigabitEthernet0/0/2
+      192.0.2.1/32  Direct 0    0           D  127.0.0.1       InLoopBack0
+      192.0.2.2/32  Direct 0    0           D  127.0.0.1       InLoopBack0
+
+HRP_M<FW-A>

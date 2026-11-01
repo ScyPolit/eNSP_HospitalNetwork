@@ -1,0 +1,28 @@
+display current-configuration interface Eth-Trunk1
+#
+interface Eth-Trunk1
+ port link-type trunk
+ port trunk allow-pass vlan 900 to 901 4094
+ mode lacp-static
+#
+return
+<CORE-SW2>
+display vrrp brief
+VRID  State        Interface                Type     Virtual IP     
+----------------------------------------------------------------
+1     Backup       Vlanif4094               Normal   10.162.99.65   
+----------------------------------------------------------------
+Total:1     Master:0     Backup:1     Non-active:0     
+<CORE-SW2>
+display eth-trunk 1 | include Selected
+Eth-Trunk1's state information is:
+Local:
+--------------------------------------------------------------------------------
+ActorPortName          Status   PortType PortPri PortNo PortKey PortState Weight
+GigabitEthernet0/0/23  Selected 1GE      32768   24     305     10111100  1
+GigabitEthernet0/0/24  Selected 1GE      32768   25     305     10111100  1
+
+Partner:
+--------------------------------------------------------------------------------
+ActorPortName          SysPri   SystemID        PortPri PortNo PortKey PortState
+<CORE-SW2>

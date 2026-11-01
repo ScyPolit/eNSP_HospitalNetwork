@@ -1,0 +1,17 @@
+system-view
+Enter system view, return user view with Ctrl+Z.
+[NMS-SW]
+acl number 2001
+[NMS-SW-acl-basic-2001]
+rule 5 permit source 10.162.120.20 0
+[NMS-SW-acl-basic-2001]
+rule 10 deny
+[NMS-SW-acl-basic-2001]
+quit
+[NMS-SW]
+user-interface vty 0 4
+[NMS-SW-ui-vty0-4]
+acl 2001 inbound
+[NMS-SW-ui-vty0-4]
+return
+<NMS-SW>

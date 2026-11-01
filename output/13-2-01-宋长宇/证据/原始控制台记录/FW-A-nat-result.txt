@@ -1,0 +1,4 @@
+display firewall session table verbose
+13:52:21  2026/10/30
+ Current Total Sessions : 0
+HRP_M<FW-A>

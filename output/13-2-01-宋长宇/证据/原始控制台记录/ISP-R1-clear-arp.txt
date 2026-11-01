@@ -1,0 +1,3 @@
+reset arp dynamic
+<ISP-R1>
+<ISP-R1>

@@ -1,0 +1,61 @@
+system-view
+Enter system view, return user view with Ctrl+Z.
+[Huawei]
+undo info-center enable
+Info: Information center is disabled.
+[Huawei]
+sysname ACC-WLAN
+[ACC-WLAN]
+stp mode mstp
+[ACC-WLAN]
+vlan batch 120 140
+Info: This operation may take a few seconds. Please wait for a moment...done.
+[ACC-WLAN]
+interface Eth-Trunk1
+[ACC-WLAN-Eth-Trunk1]
+mode lacp-static
+[ACC-WLAN-Eth-Trunk1]
+port link-type trunk
+[ACC-WLAN-Eth-Trunk1]
+port trunk allow-pass vlan 120 140
+[ACC-WLAN-Eth-Trunk1]
+quit
+[ACC-WLAN]
+interface GigabitEthernet0/0/23
+[ACC-WLAN-GigabitEthernet0/0/23]
+eth-trunk 1
+Info: This operation may take a few seconds. Please wait for a moment...done.
+[ACC-WLAN-GigabitEthernet0/0/23]
+quit
+[ACC-WLAN]
+interface GigabitEthernet0/0/24
+[ACC-WLAN-GigabitEthernet0/0/24]
+eth-trunk 1
+Info: This operation may take a few seconds. Please wait for a moment...done.
+[ACC-WLAN-GigabitEthernet0/0/24]
+quit
+[ACC-WLAN]
+interface GigabitEthernet0/0/1
+[ACC-WLAN-GigabitEthernet0/0/1]
+port link-type access
+[ACC-WLAN-GigabitEthernet0/0/1]
+port default vlan 120
+[ACC-WLAN-GigabitEthernet0/0/1]
+quit
+[ACC-WLAN]
+interface GigabitEthernet0/0/1
+[ACC-WLAN-GigabitEthernet0/0/1]
+stp edged-port enable
+[ACC-WLAN-GigabitEthernet0/0/1]
+quit
+[ACC-WLAN]
+interface GigabitEthernet0/0/2
+[ACC-WLAN-GigabitEthernet0/0/2]
+port link-type access
+[ACC-WLAN-GigabitEthernet0/0/2]
+port default vlan 140
+[ACC-WLAN-GigabitEthernet0/0/2]
+quit
+[ACC-WLAN]
+return
+<ACC-WLAN>

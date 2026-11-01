@@ -1,0 +1,9 @@
+system-view
+Enter system view, return user view with Ctrl+Z.
+[CORE-SW1]
+interface GigabitEthernet0/0/23
+[CORE-SW1-GigabitEthernet0/0/23]
+shutdown
+[CORE-SW1-GigabitEthernet0/0/23]
+return
+<CORE-SW1>

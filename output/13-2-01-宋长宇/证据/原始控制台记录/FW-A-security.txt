@@ -1,0 +1,397 @@
+system-view
+13:34:11  2026/10/30
+Enter system view, return user view with Ctrl+Z.
+[FW-A]
+policy interzone trust untrust outbound
+13:34:11  2026/10/30
+[FW-A-policy-interzone-trust-untrust-outbound]
+policy 1
+13:34:11  2026/10/30
+[FW-A-policy-interzone-trust-untrust-outbound-1]
+policy source 10.162.0.0 0.0.255 [1D.255
+13:34:11  2026/10/30
+[FW-A-policy-interzone-trust-untrust-outbound-1]
+action permit
+13:34:11  2026/10/30
+[FW-A-policy-interzone-trust-untrust-outbound-1]
+quit
+13:34:11  2026/10/30
+[FW-A-policy-interzone-trust-untrust-outbound]
+quit
+13:34:12  2026/10/30
+[FW-A]
+policy interzone dmz untrust inbound
+13:34:12  2026/10/30
+[FW-A-policy-interzone-dmz-untrust-inbound]
+policy 1
+13:34:12  2026/10/30
+[FW-A-policy-interzone-dmz-untrust-inbound-1]
+policy destination 10.162.108.10 0
+13:34:12  2026/10/30
+[FW-A-policy-interzone-dmz-untrust-inbound-1]
+policy service service-set http
+13:34:12  2026/10/30
+[FW-A-policy-interzone-dmz-untrust-inbound-1]
+action permit
+13:34:12  2026/10/30
+[FW-A-policy-interzone-dmz-untrust-inbound-1]
+quit
+13:34:12  2026/10/30
+[FW-A-policy-interzone-dmz-untrust-inbound]
+quit
+13:34:12  2026/10/30
+[FW-A]
+policy interzone dmz untrust outbound
+13:34:12  2026/10/30
+[FW-A-policy-interzone-dmz-untrust-outbound]
+policy 1
+13:34:12  2026/10/30
+[FW-A-policy-interzone-dmz-untrust-outbound-1]
+policy source 10.162.108.10 0
+13:34:12  2026/10/30
+[FW-A-policy-interzone-dmz-untrust-outbound-1]
+policy service service-set dns
+13:34:12  2026/10/30
+[FW-A-policy-interzone-dmz-untrust-outbound-1]
+action permit
+13:34:12  2026/10/30
+[FW-A-policy-interzone-dmz-untrust-outbound-1]
+quit
+13:34:12  2026/10/30
+[FW-A-policy-interzone-dmz-untrust-outbound]
+quit
+13:34:12  2026/10/30
+[FW-A]
+policy interzone trust medical outbound
+13:34:12  2026/10/30
+[FW-A-policy-interzone-trust-medical-outbound]
+policy 1
+13:34:12  2026/10/30
+[FW-A-policy-interzone-trust-medical-outbound-1]
+policy source 10.162.121.0 0.0.0 [1D.255
+13:34:12  2026/10/30
+[FW-A-policy-interzone-trust-medical-outbound-1]
+policy destination 172.20.1.0 0. [1D0.0.255
+13:34:12  2026/10/30
+[FW-A-policy-interzone-trust-medical-outbound-1]
+action permit
+13:34:12  2026/10/30
+[FW-A-policy-interzone-trust-medical-outbound-1]
+quit
+13:34:12  2026/10/30
+[FW-A-policy-interzone-trust-medical-outbound]
+quit
+13:34:12  2026/10/30
+[FW-A]
+policy interzone trust medical inbound
+13:34:12  2026/10/30
+[FW-A-policy-interzone-trust-medical-inbound]
+policy 1
+13:34:12  2026/10/30
+[FW-A-policy-interzone-trust-medical-inbound-1]
+policy source 172.20.1.10 0
+13:34:12  2026/10/30
+[FW-A-policy-interzone-trust-medical-inbound-1]
+policy destination 10.162.106.10  [1D0
+13:34:12  2026/10/30
+[FW-A-policy-interzone-trust-medical-inbound-1]
+policy service service-set https
+13:34:12  2026/10/30
+[FW-A-policy-interzone-trust-medical-inbound-1]
+action permit
+13:34:12  2026/10/30
+[FW-A-policy-interzone-trust-medical-inbound-1]
+quit
+13:34:12  2026/10/30
+[FW-A-policy-interzone-trust-medical-inbound]
+quit
+13:34:12  2026/10/30
+[FW-A]
+policy interzone trust medical inbound
+13:34:12  2026/10/30
+[FW-A-policy-interzone-trust-medical-inbound]
+policy 2
+13:34:12  2026/10/30
+[FW-A-policy-interzone-trust-medical-inbound-2]
+policy source 172.20.1.10 0
+13:34:12  2026/10/30
+[FW-A-policy-interzone-trust-medical-inbound-2]
+policy destination 10.162.106.10  [1D0
+13:34:12  2026/10/30
+[FW-A-policy-interzone-trust-medical-inbound-2]
+policy service service-set icmp
+13:34:12  2026/10/30
+[FW-A-policy-interzone-trust-medical-inbound-2]
+action permit
+13:34:12  2026/10/30
+[FW-A-policy-interzone-trust-medical-inbound-2]
+quit
+13:34:12  2026/10/30
+[FW-A-policy-interzone-trust-medical-inbound]
+quit
+13:34:12  2026/10/30
+[FW-A]
+policy interzone trust medical inbound
+13:34:12  2026/10/30
+[FW-A-policy-interzone-trust-medical-inbound]
+policy 3
+13:34:12  2026/10/30
+[FW-A-policy-interzone-trust-medical-inbound-3]
+policy source 172.20.1.10 0
+13:34:12  2026/10/30
+[FW-A-policy-interzone-trust-medical-inbound-3]
+policy destination 10.162.121.10  [1D0
+13:34:12  2026/10/30
+[FW-A-policy-interzone-trust-medical-inbound-3]
+action permit
+13:34:12  2026/10/30
+[FW-A-policy-interzone-trust-medical-inbound-3]
+quit
+13:34:12  2026/10/30
+[FW-A-policy-interzone-trust-medical-inbound]
+quit
+13:34:12  2026/10/30
+[FW-A]
+policy interzone trust dmz inbound
+13:34:12  2026/10/30
+[FW-A-policy-interzone-trust-dmz-inbound]
+policy 1
+13:34:12  2026/10/30
+[FW-A-policy-interzone-trust-dmz-inbound-1]
+policy source 10.162.108.10 0
+13:34:12  2026/10/30
+[FW-A-policy-interzone-trust-dmz-inbound-1]
+policy destination 10.162.106.10 0
+13:34:12  2026/10/30
+[FW-A-policy-interzone-trust-dmz-inbound-1]
+policy service service-set https
+13:34:12  2026/10/30
+[FW-A-policy-interzone-trust-dmz-inbound-1]
+action permit
+13:34:12  2026/10/30
+[FW-A-policy-interzone-trust-dmz-inbound-1]
+quit
+13:34:12  2026/10/30
+[FW-A-policy-interzone-trust-dmz-inbound]
+quit
+13:34:12  2026/10/30
+[FW-A]
+policy interzone trust dmz outbound
+13:34:12  2026/10/30
+[FW-A-policy-interzone-trust-dmz-outbound]
+policy 1
+13:34:12  2026/10/30
+[FW-A-policy-interzone-trust-dmz-outbound-1]
+policy source 10.162.0.0 0.0.255.255 [1D
+13:34:12  2026/10/30
+[FW-A-policy-interzone-trust-dmz-outbound-1]
+policy destination 10.162.108.10 0
+13:34:12  2026/10/30
+[FW-A-policy-interzone-trust-dmz-outbound-1]
+policy service service-set http
+13:34:12  2026/10/30
+[FW-A-policy-interzone-trust-dmz-outbound-1]
+action permit
+13:34:12  2026/10/30
+[FW-A-policy-interzone-trust-dmz-outbound-1]
+quit
+13:34:12  2026/10/30
+[FW-A-policy-interzone-trust-dmz-outbound]
+quit
+13:34:12  2026/10/30
+[FW-A]
+policy interzone local trust inbound
+13:34:12  2026/10/30
+[FW-A-policy-interzone-local-trust-inbound]
+policy 1
+13:34:12  2026/10/30
+[FW-A-policy-interzone-local-trust-inbound-1]
+policy service service-set ospf
+                                                                        ^
+Error: Wrong parameter found at '^' position.
+[FW-A-policy-interzone-local-trust-inbound-1]
+action permit
+13:34:12  2026/10/30
+[FW-A-policy-interzone-local-trust-inbound-1]
+quit
+13:34:12  2026/10/30
+[FW-A-policy-interzone-local-trust-inbound]
+quit
+13:34:12  2026/10/30
+[FW-A]
+policy interzone local trust inbound
+13:34:12  2026/10/30
+[FW-A-policy-interzone-local-trust-inbound]
+policy 2
+13:34:12  2026/10/30
+[FW-A-policy-interzone-local-trust-inbound-2]
+policy service service-set icmp
+13:34:12  2026/10/30
+[FW-A-policy-interzone-local-trust-inbound-2]
+action permit
+13:34:12  2026/10/30
+[FW-A-policy-interzone-local-trust-inbound-2]
+quit
+13:34:12  2026/10/30
+[FW-A-policy-interzone-local-trust-inbound]
+quit
+13:34:12  2026/10/30
+[FW-A]
+policy interzone local trust outbound
+13:34:12  2026/10/30
+[FW-A-policy-interzone-local-trust-outbound]
+policy 1
+13:34:12  2026/10/30
+[FW-A-policy-interzone-local-trust-outbound-1]
+policy service service-set ospf
+                                                                         ^
+Error: Wrong parameter found at '^' position.
+[FW-A-policy-interzone-local-trust-outbound-1]
+action permit
+13:34:12  2026/10/30
+[FW-A-policy-interzone-local-trust-outbound-1]
+quit
+13:34:12  2026/10/30
+[FW-A-policy-interzone-local-trust-outbound]
+quit
+13:34:12  2026/10/30
+[FW-A]
+policy interzone local trust outbound
+13:34:12  2026/10/30
+[FW-A-policy-interzone-local-trust-outbound]
+policy 2
+13:34:12  2026/10/30
+[FW-A-policy-interzone-local-trust-outbound-2]
+policy service service-set icmp
+13:34:12  2026/10/30
+[FW-A-policy-interzone-local-trust-outbound-2]
+action permit
+13:34:12  2026/10/30
+[FW-A-policy-interzone-local-trust-outbound-2]
+quit
+13:34:12  2026/10/30
+[FW-A-policy-interzone-local-trust-outbound]
+quit
+13:34:12  2026/10/30
+[FW-A]
+nat address-group 1 12.1.1.10 12.1.1.30
+13:34:12  2026/10/30
+[FW-A]
+nat address-group 2 13.1.1.10 13.1.1.30
+13:34:12  2026/10/30
+[FW-A]
+nat-policy interzone trust untrust outbound
+13:34:12  2026/10/30
+[FW-A-nat-policy-interzone-trust-untrust-outbound]
+policy 1
+13:34:12  2026/10/30
+[FW-A-nat-policy-interzone-trust-untrust-outbound-1]
+policy source 10.162.0.0 0.0 [1D.255.255
+13:34:12  2026/10/30
+[FW-A-nat-policy-interzone-trust-untrust-outbound-1]
+policy egress-interface Giga [1DbitEthernet0/0/0
+                                                           ^
+Error: Wrong parameter found at '^' position.
+[FW-A-nat-policy-interzone-trust-untrust-outbound-1]
+action source-nat
+13:34:12  2026/10/30
+[FW-A-nat-policy-interzone-trust-untrust-outbound-1]
+address-group 1
+13:34:12  2026/10/30
+[FW-A-nat-policy-interzone-trust-untrust-outbound-1]
+quit
+13:34:13  2026/10/30
+[FW-A-nat-policy-interzone-trust-untrust-outbound]
+policy 2
+13:34:13  2026/10/30
+[FW-A-nat-policy-interzone-trust-untrust-outbound-2]
+policy source 10.162.0.0 0.0 [1D.255.255
+13:34:13  2026/10/30
+[FW-A-nat-policy-interzone-trust-untrust-outbound-2]
+policy egress-interface Giga [1DbitEthernet0/0/1
+                                                           ^
+Error: Wrong parameter found at '^' position.
+[FW-A-nat-policy-interzone-trust-untrust-outbound-2]
+action source-nat
+13:34:13  2026/10/30
+[FW-A-nat-policy-interzone-trust-untrust-outbound-2]
+address-group 2
+13:34:13  2026/10/30
+[FW-A-nat-policy-interzone-trust-untrust-outbound-2]
+quit
+13:34:13  2026/10/30
+[FW-A-nat-policy-interzone-trust-untrust-outbound]
+quit
+13:34:13  2026/10/30
+[FW-A]
+nat server 1 protocol tcp global 12.1.1.100 80 inside 10.162.108.10 80
+13:34:13  2026/10/30
+[FW-A]
+nat server 2 protocol tcp global 13.1.1.100 80 inside 10.162.108.10 80
+13:34:13  2026/10/30
+  Error: This inside address has been used!
+
+[FW-A]
+interface GigabitEthernet0/0/0
+13:34:13  2026/10/30
+[FW-A-GigabitEthernet0/0/0]
+vrrp vrid 1 virtual-ip 12.1.1.1 master
+13:34:13  2026/10/30
+[FW-A-GigabitEthernet0/0/0]
+quit
+13:34:13  2026/10/30
+[FW-A]
+interface GigabitEthernet0/0/1
+13:34:13  2026/10/30
+[FW-A-GigabitEthernet0/0/1]
+vrrp vrid 2 virtual-ip 13.1.1.1 master
+13:34:13  2026/10/30
+[FW-A-GigabitEthernet0/0/1]
+quit
+13:34:13  2026/10/30
+[FW-A]
+interface GigabitEthernet0/0/2
+13:34:13  2026/10/30
+[FW-A-GigabitEthernet0/0/2]
+vrrp vrid 3 virtual-ip 192.0.2.1 master
+13:34:13  2026/10/30
+[FW-A-GigabitEthernet0/0/2]
+quit
+13:34:13  2026/10/30
+[FW-A]
+interface GigabitEthernet0/0/3
+13:34:13  2026/10/30
+[FW-A-GigabitEthernet0/0/3]
+vrrp vrid 4 virtual-ip 10.162.99.1 master
+13:34:13  2026/10/30
+[FW-A-GigabitEthernet0/0/3]
+quit
+13:34:13  2026/10/30
+[FW-A]
+interface GigabitEthernet0/0/4
+13:34:13  2026/10/30
+[FW-A-GigabitEthernet0/0/4]
+vrrp vrid 5 virtual-ip 10.162.99.33 master
+13:34:13  2026/10/30
+[FW-A-GigabitEthernet0/0/4]
+quit
+13:34:13  2026/10/30
+[FW-A]
+interface GigabitEthernet0/0/5
+13:34:13  2026/10/30
+[FW-A-GigabitEthernet0/0/5]
+vrrp vrid 6 virtual-ip 10.162.108.1 master
+13:34:13  2026/10/30
+[FW-A-GigabitEthernet0/0/5]
+quit
+13:34:13  2026/10/30
+[FW-A]
+hrp interface GigabitEthernet0/0/6 remote 172.31.255.2
+13:34:13  2026/10/30
+[FW-A]
+hrp enable
+13:34:13  2026/10/30
+HRP_S[FW-A]
+return
+13:34:13  2026/10/30
+HRP_S<FW-A>

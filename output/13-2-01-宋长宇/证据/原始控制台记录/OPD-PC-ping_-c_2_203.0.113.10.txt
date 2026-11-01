@@ -1,0 +1,6 @@
+Welcome to use PC Simulator!
+
+PC>ping -c 2 203.0.113.10
+Bad argument: 2
+
+PC>

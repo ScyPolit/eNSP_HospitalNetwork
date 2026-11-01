@@ -1,0 +1,9 @@
+system-view
+Enter system view, return user view with Ctrl+Z.
+[AGG-CLINIC]
+user-interface console 0
+[AGG-CLINIC-ui-console0]
+screen-length 0
+[AGG-CLINIC-ui-console0]
+return
+<AGG-CLINIC>

@@ -1,0 +1,10 @@
+system-view
+Enter system view, return user view with Ctrl+Z.
+[CORE-SW1]
+interface GigabitEthernet0/0/23
+[CORE-SW1-GigabitEthernet0/0/23]
+undo shutdown
+Error: The interval between shutdown and undo shutdown command must be longer than 15 seconds, and 10 seconds remain.
+[CORE-SW1-GigabitEthernet0/0/23]
+return
+<CORE-SW1>

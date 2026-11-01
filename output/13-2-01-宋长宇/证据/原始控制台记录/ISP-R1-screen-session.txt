@@ -1,0 +1,24 @@
+display current-configuration interface GigabitEthernet0/0/0
+[V200R003C00]
+#
+
+interface GigabitEthernet0/0/0
+ ip address 12.1.1.254 255.255.255.0 
+#
+return
+<ISP-R1>display ip interface brief
+*down: administratively down
+^down: standby
+(l): loopback
+(s): spoofing
+The number of interface that is UP in Physical is 3
+The number of interface that is DOWN in Physical is 1
+The number of interface that is UP in Protocol is 3
+The number of interface that is DOWN in Protocol is 1
+
+Interface                         IP Address/Mask      Physical   Protocol  
+GigabitEthernet0/0/0              12.1.1.254/24        up         up        
+GigabitEthernet0/0/1              203.0.113.1/24       up         up        
+GigabitEthernet0/0/2              unassigned           down       down      
+NULL0                             unassigned           up         up(s)     
+<ISP-R1>

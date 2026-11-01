@@ -1,0 +1,63 @@
+system-view
+Enter system view, return user view with Ctrl+Z.
+[AGG-BRANCH]
+undo traffic-filter inbound acl 3050
+[AGG-BRANCH]
+undo traffic-filter vlan 50 inbound acl 3050
+[AGG-BRANCH]
+undo acl 3050
+Error: No such an acl.
+[AGG-BRANCH]
+return
+<AGG-BRANCH>
+system-view
+Enter system view, return user view with Ctrl+Z.
+[AGG-BRANCH]
+return
+<AGG-BRANCH>
+system-view
+Enter system view, return user view with Ctrl+Z.
+[AGG-BRANCH]
+acl number 3050
+[AGG-BRANCH-acl-adv-3050]
+rule 5 permit udp source-port eq bootpc destination-por [1Dt eq bootps
+[AGG-BRANCH-acl-adv-3050]
+rule 10 permit icmp destination 10.162.105.1 0
+[AGG-BRANCH-acl-adv-3050]
+rule 15 permit tcp destination 10.162.106.10 0 destinat [1Dion-port eq 443
+[AGG-BRANCH-acl-adv-3050]
+rule 20 permit icmp destination 10.162.106.10 0
+[AGG-BRANCH-acl-adv-3050]
+rule 25 permit ip destination 172.20.1.0 0.0.0.255 sour [1Dce 10.162.105.20 0
+[AGG-BRANCH-acl-adv-3050]
+rule 30 permit tcp destination 10.162.108.10 0 destinat [1Dion-port eq 80
+[AGG-BRANCH-acl-adv-3050]
+rule 35 deny ip destination 10.0.0.0 0.255.255.255
+[AGG-BRANCH-acl-adv-3050]
+rule 40 deny ip destination 172.16.0.0 0.15.255.255
+[AGG-BRANCH-acl-adv-3050]
+rule 45 deny ip destination 192.168.0.0 0.0.255.255
+[AGG-BRANCH-acl-adv-3050]
+rule 50 deny ip
+[AGG-BRANCH-acl-adv-3050]
+quit
+[AGG-BRANCH]
+interface Vlanif50
+[AGG-BRANCH-Vlanif50]
+quit
+[AGG-BRANCH]
+traffic-filter vlan 50 inbound acl 3050
+[AGG-BRANCH]
+return
+<AGG-BRANCH>
+system-view
+Enter system view, return user view with Ctrl+Z.
+[AGG-BRANCH]
+ospf 1
+[AGG-BRANCH-ospf-1]
+silent-interface Vlanif50
+[AGG-BRANCH-ospf-1]
+quit
+[AGG-BRANCH]
+return
+<AGG-BRANCH>

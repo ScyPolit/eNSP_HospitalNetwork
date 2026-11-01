@@ -1,0 +1,16 @@
+display stp brief
+ MSTID  Port                        Role  STP State     Protection
+   0    Eth-Trunk1                  DESI  FORWARDING      NONE
+   0    Eth-Trunk2                  ROOT  FORWARDING      NONE
+   0    Eth-Trunk3                  DESI  FORWARDING      NONE
+<AGG-CLINIC>
+display ospf peer brief
+
+	 OSPF Process 1 with Router ID 10.255.254.1
+		  Peer Statistic Information
+ ----------------------------------------------------------------------------
+ Area Id          Interface                        Neighbor id      State    
+ 0.0.0.0          Vlanif1101                       10.255.255.11    Full        
+ 0.0.0.0          Vlanif1201                       10.255.255.12    Full        
+ ----------------------------------------------------------------------------
+<AGG-CLINIC>

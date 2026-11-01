@@ -1,0 +1,14 @@
+ping -c 3 -a 172.31.255.1 172.31.255.2
+13:39:28  2026/10/30
+  PING 172.31.255.2: 56  data bytes, press CTRL_C to break
+    Reply from 172.31.255.2: bytes=56 Sequence=1 ttl=255 time=110 ms
+    Reply from 172.31.255.2: bytes=56 Sequence=2 ttl=255 time=250 ms
+    Reply from 172.31.255.2: bytes=56 Sequence=3 ttl=255 time=90 ms
+
+  --- 172.31.255.2 ping statistics ---
+    3 packet(s) transmitted
+    3 packet(s) received
+    0.00% packet loss
+    round-trip min/avg/max = 90/150/250 ms
+
+HRP_M<FW-A>

@@ -1,0 +1,1 @@
+EXCEPTION b'\r\n<SRG>\r\n2026-10-30 14:09:53 SRG %%01SHELL/4/LOGIN(l): vrf:public user:Console login from con0'

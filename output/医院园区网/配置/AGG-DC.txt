@@ -1,0 +1,78 @@
+system-view
+undo info-center enable
+sysname AGG-DC
+stp mode mstp
+dhcp enable
+vlan batch 60 61 1104 1204
+interface GigabitEthernet0/0/23
+port link-type access
+port default vlan 1104
+quit
+interface Vlanif1104
+ip address 10.162.99.110 255.255.255.252
+quit
+interface GigabitEthernet0/0/24
+port link-type access
+port default vlan 1204
+quit
+interface Vlanif1204
+ip address 10.162.99.138 255.255.255.252
+quit
+interface Vlanif60
+ip address 10.162.106.1 255.255.255.0
+quit
+interface Vlanif60
+dhcp select interface
+dhcp server excluded-ip-address 10.162.106.2 10.162.106.49
+quit
+interface Vlanif61
+ip address 10.162.107.1 255.255.255.0
+quit
+interface Vlanif61
+dhcp select interface
+dhcp server excluded-ip-address 10.162.107.2 10.162.107.49
+quit
+interface Eth-Trunk1
+mode lacp-static
+port link-type trunk
+port trunk allow-pass vlan 60
+quit
+interface GigabitEthernet0/0/1
+eth-trunk 1
+quit
+interface GigabitEthernet0/0/2
+eth-trunk 1
+quit
+interface Eth-Trunk2
+mode lacp-static
+port link-type trunk
+port trunk allow-pass vlan 60
+quit
+interface GigabitEthernet0/0/3
+eth-trunk 2
+quit
+interface GigabitEthernet0/0/4
+eth-trunk 2
+quit
+interface Eth-Trunk3
+mode lacp-static
+port link-type trunk
+port trunk allow-pass vlan 61
+quit
+interface GigabitEthernet0/0/5
+eth-trunk 3
+quit
+interface GigabitEthernet0/0/6
+eth-trunk 3
+quit
+ospf 1 router-id 10.255.254.4
+area 0
+network 10.162.99.108 0.0.0.3
+network 10.162.99.136 0.0.0.3
+quit
+area 30
+network 10.162.106.0 0.0.0.255
+network 10.162.107.0 0.0.0.255
+quit
+quit
+return

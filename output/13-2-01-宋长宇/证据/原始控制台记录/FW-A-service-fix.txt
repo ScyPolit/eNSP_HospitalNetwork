@@ -1,0 +1,17 @@
+system-view
+13:35:13  2026/10/30
+Enter system view, return user view with Ctrl+Z.
+HRP_M[FW-A]
+policy interzone local trust inbound
+13:35:13  2026/10/30
+HRP_M[FW-A-policy-interzone-local-trust-inbound]
+policy 1
+13:35:13  2026/10/30
+HRP_M[FW-A-policy-interzone-local-trust-inbound-1]
+policy service protocol 89
+                                                                 ^
+Error: Wrong parameter found at '^' position.
+HRP_M[FW-A-policy-interzone-local-trust-inbound-1]
+return
+13:35:13  2026/10/30
+HRP_M<FW-A>

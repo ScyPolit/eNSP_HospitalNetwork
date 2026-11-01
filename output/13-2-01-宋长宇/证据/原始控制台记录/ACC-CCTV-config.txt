@@ -1,0 +1,53 @@
+system-view
+Enter system view, return user view with Ctrl+Z.
+[Huawei]
+undo info-center enable
+Info: Information center is disabled.
+[Huawei]
+sysname ACC-CCTV
+[ACC-CCTV]
+stp mode mstp
+[ACC-CCTV]
+vlan batch 110
+Info: This operation may take a few seconds. Please wait for a moment...done.
+[ACC-CCTV]
+interface Eth-Trunk1
+[ACC-CCTV-Eth-Trunk1]
+mode lacp-static
+[ACC-CCTV-Eth-Trunk1]
+port link-type trunk
+[ACC-CCTV-Eth-Trunk1]
+port trunk allow-pass vlan 110
+[ACC-CCTV-Eth-Trunk1]
+quit
+[ACC-CCTV]
+interface GigabitEthernet0/0/23
+[ACC-CCTV-GigabitEthernet0/0/23]
+eth-trunk 1
+Info: This operation may take a few seconds. Please wait for a moment...done.
+[ACC-CCTV-GigabitEthernet0/0/23]
+quit
+[ACC-CCTV]
+interface GigabitEthernet0/0/24
+[ACC-CCTV-GigabitEthernet0/0/24]
+eth-trunk 1
+Info: This operation may take a few seconds. Please wait for a moment...done.
+[ACC-CCTV-GigabitEthernet0/0/24]
+quit
+[ACC-CCTV]
+interface GigabitEthernet0/0/1
+[ACC-CCTV-GigabitEthernet0/0/1]
+port link-type access
+[ACC-CCTV-GigabitEthernet0/0/1]
+port default vlan 110
+[ACC-CCTV-GigabitEthernet0/0/1]
+quit
+[ACC-CCTV]
+interface GigabitEthernet0/0/1
+[ACC-CCTV-GigabitEthernet0/0/1]
+stp edged-port enable
+[ACC-CCTV-GigabitEthernet0/0/1]
+quit
+[ACC-CCTV]
+return
+<ACC-CCTV>

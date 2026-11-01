@@ -1,0 +1,53 @@
+system-view
+Enter system view, return user view with Ctrl+Z.
+[Huawei]
+undo info-center enable
+Info: Information center is disabled.
+[Huawei]
+sysname ACC-FIN
+[ACC-FIN]
+stp mode mstp
+[ACC-FIN]
+vlan batch 40
+Info: This operation may take a few seconds. Please wait for a moment...done.
+[ACC-FIN]
+interface Eth-Trunk1
+[ACC-FIN-Eth-Trunk1]
+mode lacp-static
+[ACC-FIN-Eth-Trunk1]
+port link-type trunk
+[ACC-FIN-Eth-Trunk1]
+port trunk allow-pass vlan 40
+[ACC-FIN-Eth-Trunk1]
+quit
+[ACC-FIN]
+interface GigabitEthernet0/0/23
+[ACC-FIN-GigabitEthernet0/0/23]
+eth-trunk 1
+Info: This operation may take a few seconds. Please wait for a moment...done.
+[ACC-FIN-GigabitEthernet0/0/23]
+quit
+[ACC-FIN]
+interface GigabitEthernet0/0/24
+[ACC-FIN-GigabitEthernet0/0/24]
+eth-trunk 1
+Info: This operation may take a few seconds. Please wait for a moment...done.
+[ACC-FIN-GigabitEthernet0/0/24]
+quit
+[ACC-FIN]
+interface GigabitEthernet0/0/1
+[ACC-FIN-GigabitEthernet0/0/1]
+port link-type access
+[ACC-FIN-GigabitEthernet0/0/1]
+port default vlan 40
+[ACC-FIN-GigabitEthernet0/0/1]
+quit
+[ACC-FIN]
+interface GigabitEthernet0/0/1
+[ACC-FIN-GigabitEthernet0/0/1]
+stp edged-port enable
+[ACC-FIN-GigabitEthernet0/0/1]
+quit
+[ACC-FIN]
+return
+<ACC-FIN>

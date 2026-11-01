@@ -1,0 +1,10 @@
+system-view
+Enter system view, return user view with Ctrl+Z.
+[HEALTH-R]
+interface GigabitEthernet0/0/0
+[HEALTH-R-GigabitEthernet0/0/0]
+undo shutdown
+Info: Interface GigabitEthernet0/0/0 is not shutdown.
+[HEALTH-R-GigabitEthernet0/0/0]
+return
+<HEALTH-R>

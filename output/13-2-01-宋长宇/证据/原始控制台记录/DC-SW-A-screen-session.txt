@@ -1,0 +1,30 @@
+display current-configuration interface Eth-Trunk1
+#
+interface Eth-Trunk1
+ port link-type trunk
+ port trunk allow-pass vlan 60
+ mode lacp-static
+#
+return
+<DC-SW-A>
+display eth-trunk 1 | include Selected
+Eth-Trunk1's state information is:
+Local:
+--------------------------------------------------------------------------------
+ActorPortName          Status   PortType PortPri PortNo PortKey PortState Weight
+GigabitEthernet0/0/23  Selected 1GE      32768   24     305     10111100  1
+GigabitEthernet0/0/24  Selected 1GE      32768   25     305     10111100  1
+
+Partner:
+--------------------------------------------------------------------------------
+ActorPortName          SysPri   SystemID        PortPri PortNo PortKey PortState
+<DC-SW-A>
+display current-configuration interface GigabitEthernet0/0/1
+#
+interface GigabitEthernet0/0/1
+ port link-type access
+ port default vlan 60
+ stp edged-port enable
+#
+return
+<DC-SW-A>

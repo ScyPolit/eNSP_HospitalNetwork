@@ -1,0 +1,62 @@
+system-view
+return
+system-view
+acl number 3010
+rule 5 permit udp source-port eq bootpc destination-port eq bootps
+rule 10 permit icmp destination 10.162.101.1 0
+rule 15 permit tcp destination 10.162.106.10 0 destination-port eq 443
+rule 20 permit icmp destination 10.162.106.10 0
+rule 25 permit tcp destination 10.162.108.10 0 destination-port eq 80
+rule 30 deny ip destination 10.0.0.0 0.255.255.255
+rule 35 deny ip destination 172.16.0.0 0.15.255.255
+rule 40 deny ip destination 192.168.0.0 0.0.255.255
+rule 45 permit ip
+quit
+interface Vlanif10
+traffic-filter inbound acl 3010
+return
+system-view
+ospf 1
+silent-interface Vlanif10
+quit
+return
+system-view
+acl number 3080
+rule 5 permit udp source-port eq bootpc destination-port eq bootps
+rule 10 permit icmp destination 10.162.109.1 0
+rule 15 permit tcp destination 10.162.106.10 0 destination-port eq 443
+rule 20 permit icmp destination 10.162.106.10 0
+rule 25 permit tcp destination 10.162.108.10 0 destination-port eq 80
+rule 30 deny ip destination 10.0.0.0 0.255.255.255
+rule 35 deny ip destination 172.16.0.0 0.15.255.255
+rule 40 deny ip destination 192.168.0.0 0.0.255.255
+rule 45 permit ip
+quit
+interface Vlanif80
+traffic-filter inbound acl 3080
+return
+system-view
+ospf 1
+silent-interface Vlanif80
+quit
+return
+system-view
+acl number 3090
+rule 5 permit udp source-port eq bootpc destination-port eq bootps
+rule 10 permit icmp destination 10.162.110.1 0
+rule 15 permit tcp destination 10.162.106.10 0 destination-port eq 443
+rule 20 permit icmp destination 10.162.106.10 0
+rule 25 permit tcp destination 10.162.108.10 0 destination-port eq 80
+rule 30 deny ip destination 10.0.0.0 0.255.255.255
+rule 35 deny ip destination 172.16.0.0 0.15.255.255
+rule 40 deny ip destination 192.168.0.0 0.0.255.255
+rule 45 permit ip
+quit
+interface Vlanif90
+traffic-filter inbound acl 3090
+return
+system-view
+ospf 1
+silent-interface Vlanif90
+quit
+return

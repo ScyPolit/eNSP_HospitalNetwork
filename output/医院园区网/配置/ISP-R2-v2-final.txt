@@ -1,0 +1,10 @@
+system-view
+undo info-center enable
+sysname ISP-R2
+interface GigabitEthernet0/0/0
+ip address 13.1.1.254 255.255.255.0
+quit
+interface GigabitEthernet0/0/1
+ip address 203.0.114.1 255.255.255.0
+quit
+return

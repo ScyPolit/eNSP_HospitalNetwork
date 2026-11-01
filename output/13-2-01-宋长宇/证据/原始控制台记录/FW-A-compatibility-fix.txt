@@ -1,0 +1,121 @@
+system-view
+13:40:21  2026/10/30
+Enter system view, return user view with Ctrl+Z.
+HRP_M[FW-A]
+ip service-set OSPF type object
+13:40:21  2026/10/30
+HRP_M[FW-A-object-service-set-ospf]
+service protocol 89
+13:40:21  2026/10/30
+HRP_M[FW-A-object-service-set-ospf]
+quit
+13:40:21  2026/10/30
+HRP_M[FW-A]
+policy interzone local trust inbound
+13:40:21  2026/10/30
+HRP_M[FW-A-policy-interzone-local-trust-inbound]
+policy 1
+13:40:21  2026/10/30
+HRP_M[FW-A-policy-interzone-local-trust-inbound-1]
+policy service service-set OSP [1DF
+13:40:21  2026/10/30
+HRP_M[FW-A-policy-interzone-local-trust-inbound-1]
+quit
+13:40:21  2026/10/30
+HRP_M[FW-A-policy-interzone-local-trust-inbound]
+quit
+13:40:21  2026/10/30
+HRP_M[FW-A]
+policy interzone local trust outbound
+13:40:21  2026/10/30
+HRP_M[FW-A-policy-interzone-local-trust-outbound]
+policy 1
+13:40:21  2026/10/30
+HRP_M[FW-A-policy-interzone-local-trust-outbound-1]
+policy service service-set OS [1DPF
+13:40:21  2026/10/30
+HRP_M[FW-A-policy-interzone-local-trust-outbound-1]
+quit
+13:40:21  2026/10/30
+HRP_M[FW-A-policy-interzone-local-trust-outbound]
+quit
+13:40:21  2026/10/30
+HRP_M[FW-A]
+nat-policy interzone trust untrust outbound
+13:40:21  2026/10/30
+HRP_M[FW-A-nat-policy-interzone-trust-untrust-outbound]
+undo policy 2
+13:40:21  2026/10/30
+HRP_M[FW-A-nat-policy-interzone-trust-untrust-outbound]
+quit
+13:40:21  2026/10/30
+HRP_M[FW-A]
+firewall zone untrust
+13:40:21  2026/10/30
+HRP_M[FW-A-zone-untrust]
+undo add interface GigabitEthernet0/0/1
+13:40:21  2026/10/30
+HRP_M[FW-A-zone-untrust]
+quit
+13:40:21  2026/10/30
+HRP_M[FW-A]
+firewall zone name isp2
+13:40:21  2026/10/30
+HRP_M[FW-A-zone-isp2]
+set priority 10
+13:40:22  2026/10/30
+HRP_M[FW-A-zone-isp2]
+add interface GigabitEthernet0/0/1
+13:40:22  2026/10/30
+HRP_M[FW-A-zone-isp2]
+quit
+13:40:22  2026/10/30
+HRP_M[FW-A]
+policy interzone trust isp2 outbound
+13:40:22  2026/10/30
+HRP_M[FW-A-policy-interzone-trust-isp2-outbound]
+policy 1
+13:40:22  2026/10/30
+HRP_M[FW-A-policy-interzone-trust-isp2-outbound-1]
+policy source 10.162.0.0 0.0.2 [1D55.255
+13:40:22  2026/10/30
+HRP_M[FW-A-policy-interzone-trust-isp2-outbound-1]
+action permit
+13:40:22  2026/10/30
+HRP_M[FW-A-policy-interzone-trust-isp2-outbound-1]
+quit
+13:40:22  2026/10/30
+HRP_M[FW-A-policy-interzone-trust-isp2-outbound]
+quit
+13:40:22  2026/10/30
+HRP_M[FW-A]
+nat-policy interzone trust isp2 outbound
+13:40:22  2026/10/30
+HRP_M[FW-A-nat-policy-interzone-trust-isp2-outbound]
+policy 1
+13:40:22  2026/10/30
+HRP_M[FW-A-nat-policy-interzone-trust-isp2-outbound-1]
+policy source 10.162.0.0 0 [1D.0.255.255
+13:40:22  2026/10/30
+HRP_M[FW-A-nat-policy-interzone-trust-isp2-outbound-1]
+action source-nat
+13:40:22  2026/10/30
+HRP_M[FW-A-nat-policy-interzone-trust-isp2-outbound-1]
+address-group 2
+13:40:22  2026/10/30
+HRP_M[FW-A-nat-policy-interzone-trust-isp2-outbound-1]
+quit
+13:40:22  2026/10/30
+HRP_M[FW-A-nat-policy-interzone-trust-isp2-outbound]
+quit
+13:40:22  2026/10/30
+HRP_M[FW-A]
+hrp ospf-cost adjust-enable
+13:40:22  2026/10/30
+HRP_M[FW-A]
+ip route-static 203.0.114.0 24 13.1.1.254
+13:40:22  2026/10/30
+HRP_M[FW-A]
+return
+13:40:22  2026/10/30
+HRP_M<FW-A>

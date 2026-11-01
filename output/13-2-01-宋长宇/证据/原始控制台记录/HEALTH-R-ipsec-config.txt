@@ -1,0 +1,85 @@
+system-view
+Enter system view, return user view with Ctrl+Z.
+[HEALTH-R]
+[HEALTH-R]
+acl number 3500
+[HEALTH-R-acl-adv-3500]
+[HEALTH-R-acl-adv-3500]
+rule 5 permit ip source 172.20.1.0 0.0.0.255 destination  [1D10.162.121.0 0.0.0.255
+[HEALTH-R-acl-adv-3500]
+[HEALTH-R-acl-adv-3500]
+quit
+[HEALTH-R]
+[HEALTH-R]
+ike proposal 10
+[HEALTH-R-ike-proposal-10]
+[HEALTH-R-ike-proposal-10]
+encryption-algorithm aes-cbc-256
+[HEALTH-R-ike-proposal-10]
+[HEALTH-R-ike-proposal-10]
+authentication-algorithm sha1
+[HEALTH-R-ike-proposal-10]
+[HEALTH-R-ike-proposal-10]
+dh group14
+[HEALTH-R-ike-proposal-10]
+[HEALTH-R-ike-proposal-10]
+quit
+[HEALTH-R]
+[HEALTH-R]
+ike peer HOSP v1
+[HEALTH-R-ike-peer-HOSP]
+[HEALTH-R-ike-peer-HOSP]
+pre-shared-key cipher Hospital-Lab-2026
+[HEALTH-R-ike-peer-HOSP]
+[HEALTH-R-ike-peer-HOSP]
+ike-proposal 10
+[HEALTH-R-ike-peer-HOSP]
+[HEALTH-R-ike-peer-HOSP]
+remote-address 198.18.0.2
+[HEALTH-R-ike-peer-HOSP]
+[HEALTH-R-ike-peer-HOSP]
+quit
+[HEALTH-R]
+[HEALTH-R]
+ipsec proposal HOSP
+[HEALTH-R-ipsec-proposal-HOSP]
+[HEALTH-R-ipsec-proposal-HOSP]
+esp encryption-algorithm aes-256
+[HEALTH-R-ipsec-proposal-HOSP]
+[HEALTH-R-ipsec-proposal-HOSP]
+esp authentication-algorithm sha1
+[HEALTH-R-ipsec-proposal-HOSP]
+[HEALTH-R-ipsec-proposal-HOSP]
+quit
+[HEALTH-R]
+[HEALTH-R]
+ipsec policy HOSP 10 isakmp
+[HEALTH-R-ipsec-policy-isakmp-HOSP-10]
+[HEALTH-R-ipsec-policy-isakmp-HOSP-10]
+security acl 3500
+[HEALTH-R-ipsec-policy-isakmp-HOSP-10]
+[HEALTH-R-ipsec-policy-isakmp-HOSP-10]
+ike-peer HOSP
+[HEALTH-R-ipsec-policy-isakmp-HOSP-10]
+[HEALTH-R-ipsec-policy-isakmp-HOSP-10]
+proposal HOSP
+[HEALTH-R-ipsec-policy-isakmp-HOSP-10]
+[HEALTH-R-ipsec-policy-isakmp-HOSP-10]
+quit
+[HEALTH-R]
+[HEALTH-R]
+interface GigabitEthernet0/0/2
+[HEALTH-R-GigabitEthernet0/0/2]
+[HEALTH-R-GigabitEthernet0/0/2]
+ipsec policy HOSP
+[HEALTH-R-GigabitEthernet0/0/2]
+[HEALTH-R-GigabitEthernet0/0/2]
+quit
+[HEALTH-R]
+[HEALTH-R]
+ip route-static 10.162.121.0 24 198.18.0.2 preference 100
+[HEALTH-R]
+[HEALTH-R]
+return
+<HEALTH-R>
+<HEALTH-R>

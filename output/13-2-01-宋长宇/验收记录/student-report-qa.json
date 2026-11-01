@@ -1,0 +1,294 @@
+{
+  "pages": 121,
+  "first_two_pages_unchanged": true,
+  "full_devices": 34,
+  "full_config_lines": 2793,
+  "devices": [
+    {
+      "name": "WAN-L2",
+      "complete_code": true,
+      "pages": [
+        19,
+        20
+      ]
+    },
+    {
+      "name": "ISP-R1",
+      "complete_code": true,
+      "pages": [
+        21
+      ]
+    },
+    {
+      "name": "ISP-R2",
+      "complete_code": true,
+      "pages": [
+        22,
+        23
+      ]
+    },
+    {
+      "name": "HEALTH-R",
+      "complete_code": true,
+      "pages": [
+        24,
+        25
+      ]
+    },
+    {
+      "name": "FW-A",
+      "complete_code": true,
+      "pages": [
+        25,
+        26,
+        27,
+        28,
+        29
+      ]
+    },
+    {
+      "name": "FW-B",
+      "complete_code": true,
+      "pages": [
+        30,
+        31,
+        32,
+        33
+      ]
+    },
+    {
+      "name": "CORE-SW1",
+      "complete_code": true,
+      "pages": [
+        34,
+        35,
+        36
+      ]
+    },
+    {
+      "name": "CORE-SW2",
+      "complete_code": true,
+      "pages": [
+        37,
+        38,
+        39
+      ]
+    },
+    {
+      "name": "DMZ-SW",
+      "complete_code": true,
+      "pages": [
+        40
+      ]
+    },
+    {
+      "name": "AGG-CLINIC",
+      "complete_code": true,
+      "pages": [
+        41,
+        42,
+        43
+      ]
+    },
+    {
+      "name": "ACC-OPD",
+      "complete_code": true,
+      "pages": [
+        44,
+        45
+      ]
+    },
+    {
+      "name": "ACC-ER",
+      "complete_code": true,
+      "pages": [
+        46,
+        47
+      ]
+    },
+    {
+      "name": "ACC-PHARM",
+      "complete_code": true,
+      "pages": [
+        48,
+        49
+      ]
+    },
+    {
+      "name": "AGG-INPATIENT",
+      "complete_code": true,
+      "pages": [
+        50,
+        51,
+        52
+      ]
+    },
+    {
+      "name": "ACC-WARD-A",
+      "complete_code": true,
+      "pages": [
+        53,
+        54
+      ]
+    },
+    {
+      "name": "ACC-WARD-B",
+      "complete_code": true,
+      "pages": [
+        55,
+        56
+      ]
+    },
+    {
+      "name": "AGG-MEDTECH",
+      "complete_code": true,
+      "pages": [
+        57,
+        58
+      ]
+    },
+    {
+      "name": "ACC-PACS",
+      "complete_code": true,
+      "pages": [
+        59,
+        60
+      ]
+    },
+    {
+      "name": "ACC-LAB",
+      "complete_code": true,
+      "pages": [
+        61,
+        62
+      ]
+    },
+    {
+      "name": "AGG-DC",
+      "complete_code": true,
+      "pages": [
+        63,
+        64,
+        65
+      ]
+    },
+    {
+      "name": "DC-SW-A",
+      "complete_code": true,
+      "pages": [
+        66,
+        67
+      ]
+    },
+    {
+      "name": "DC-SW-B",
+      "complete_code": true,
+      "pages": [
+        68,
+        69
+      ]
+    },
+    {
+      "name": "BACKUP-SW",
+      "complete_code": true,
+      "pages": [
+        69,
+        70,
+        71
+      ]
+    },
+    {
+      "name": "AGG-OFFICE",
+      "complete_code": true,
+      "pages": [
+        71,
+        72,
+        73
+      ]
+    },
+    {
+      "name": "ACC-ADMIN",
+      "complete_code": true,
+      "pages": [
+        74,
+        75
+      ]
+    },
+    {
+      "name": "ACC-FIN",
+      "complete_code": true,
+      "pages": [
+        76,
+        77
+      ]
+    },
+    {
+      "name": "NMS-SW",
+      "complete_code": true,
+      "pages": [
+        78,
+        79
+      ]
+    },
+    {
+      "name": "AGG-IOT",
+      "complete_code": true,
+      "pages": [
+        80,
+        81,
+        82,
+        83
+      ]
+    },
+    {
+      "name": "ACC-IOT",
+      "complete_code": true,
+      "pages": [
+        84,
+        85
+      ]
+    },
+    {
+      "name": "ACC-CCTV",
+      "complete_code": true,
+      "pages": [
+        85,
+        86,
+        87
+      ]
+    },
+    {
+      "name": "ACC-WLAN",
+      "complete_code": true,
+      "pages": [
+        87,
+        88
+      ]
+    },
+    {
+      "name": "AGG-BRANCH",
+      "complete_code": true,
+      "pages": [
+        89,
+        90,
+        91
+      ]
+    },
+    {
+      "name": "BRANCH-SW",
+      "complete_code": true,
+      "pages": [
+        92,
+        93
+      ]
+    },
+    {
+      "name": "TELEMED-GW",
+      "complete_code": true,
+      "pages": [
+        94,
+        95
+      ]
+    }
+  ]
+}
